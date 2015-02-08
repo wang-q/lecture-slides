@@ -1,33 +1,58 @@
+notes := $(wildcard *.md)
 
-notedir := ../notes
+notes_tex := $(patsubst %.md,%.notes.tex,$(notes))
+notes_pdf := $(patsubst %.tex,%.pdf,$(notes_tex))
 
-notes := $(wildcard $(notedir)/*.md)
-slides_tex := $(patsubst $(notedir)/%.md,%.tex,$(notes))
-slides_pdf := $(patsubst %.tex,%.pdf,$(slides_tex))
-
-$(slides_tex): %.tex: $(notedir)/%.md preamble-slides.tex
+%.notes.tex: %.md preamble-notes.tex
 	pandoc $< \
 	    -t beamer \
-	    --slide-level 1 \
+	    -H preamble-notes.tex \
+	    --latex-engine xelatex \
+	    -V theme:Pittsburgh \
+	    --slide-level 2 \
+	    -o $@
+
+$(notes_pdf): %.pdf: %.tex
+	latexmk -xelatex $(basename $<)
+	pdfjam $*.pdf \
+		--no-landscape \
+		--frame true \
+		--nup 2x4 \
+		--suffix nup
+	mv $*-nup.pdf $@
+
+slides_tex := $(patsubst %.md,%.slides.tex,$(notes))
+slides_pdf := $(patsubst %.tex,%.pdf,$(slides_tex))
+
+%.slides.tex: %.md preamble-slides.tex
+	pandoc $< \
+	    -t beamer \
 	    -H preamble-slides.tex \
 	    --latex-engine xelatex \
+	    -V fontsize=14pt \
+	    -V theme:m \
+	    --slide-level 2 \
 	    -o $@
 
 $(slides_pdf): %.pdf: %.tex
 	latexmk -xelatex $(basename $<)
 
-all: $(slides_pdf)
+slides: $(slides_pdf)
+
+notes: $(notes_pdf)
+
+all: $(slides_pdf) $(notes_pdf)
 
 # clean up everything except pdfs
 clean:
 	latexmk -c
 	rm -rf *.nav *.snm
-	rm -rf $(slides_tex)
+	rm -rf $(slides_tex) $(notes_tex)
 
 # clean up everything including pdfs
 realclean:
 	latexmk -C
-	rm -rf $(slides_tex)
+	rm -rf $(slides_tex) $(notes_tex)
 	rm -rf *.nav *.snm
 
 .DEFAULT_GOAL := all

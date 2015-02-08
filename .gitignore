@@ -8,7 +8,8 @@
 
 *.pdf
 *.tex
-
+*.jpg
+*.png
 
 !preamble-notes.tex
 !preamble-slides.tex
