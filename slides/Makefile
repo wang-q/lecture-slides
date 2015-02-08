@@ -29,9 +29,8 @@ slides_pdf := $(patsubst %.tex,%.pdf,$(slides_tex))
 	    -t beamer \
 	    -H preamble-slides.tex \
 	    --latex-engine xelatex \
-	    -V fontsize=14pt \
-	    -V theme:m \
 	    --slide-level 2 \
+	    -V fontsize=12pt \
 	    -o $@
 
 $(slides_pdf): %.pdf: %.tex

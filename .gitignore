@@ -5,10 +5,12 @@
 *.nav
 *.out
 *.snm
+*.vrb
 
 *.pdf
 *.tex
 *.jpg
+*.jpeg
 *.png
 
 !preamble-notes.tex
