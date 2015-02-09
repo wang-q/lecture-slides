@@ -12,6 +12,8 @@
 *.jpg
 *.jpeg
 *.png
+*.emf
+*.wmf
 
 !preamble-notes.tex
 !preamble-slides.tex
