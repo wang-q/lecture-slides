@@ -7,11 +7,11 @@ date: Totally Not the Last Minute
 
 ---
 
-# An ordinary slide
+## An ordinary slide
 
 With some text.
 
-## And a block
+### And a block
 
 And some text underneath.
 
@@ -19,7 +19,7 @@ And some text underneath.
 Here are my notes.
 }
 
-# Another slide
+## Another slide
 
 - With a
 - list.
@@ -28,7 +28,7 @@ Here are my notes.
 A note on my list.
 }
 
-# A slide to show overlay tricks
+## A slide to show overlay tricks
 
 This text appears on the first and third versions of the slide, but not the second.
 
