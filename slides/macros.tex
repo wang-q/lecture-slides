@@ -1,0 +1,93 @@
+\ifxetex
+  \usepackage{xeCJK}                  % 设置中英文字体
+  \setCJKmainfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3} % 中文字体
+  \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip},
+              xCJKecglue = {false}}
+  \punctstyle{plain}
+\fi
+
+\usepackage{graphicx}
+% http://tex.stackexchange.com/questions/125579/subcaption-with-beamer
+\usepackage[compatibility=false]{caption}
+\usepackage{subcaption}
+\usepackage[version=3]{mhchem}
+
+\usepackage[style=nature,
+            url=false,
+            doi=false,
+            isbn=false,
+            maxcitenames=3,
+            maxbibnames=40,
+            abbreviate=true]{biblatex}
+\addbibresource{course.bib}
+% http://tex.stackexchange.com/questions/55780/disable-month-in-biblatex-bibliography
+\AtEveryCitekey{
+    \clearlist{language}
+    \clearfield{month}
+    \clearfield{day}
+}
+\AtEveryBibitem{
+    \clearlist{language}
+    \clearfield{month}
+    \clearfield{day}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\tikzset{
+    % Define standard arrow tip
+    >=stealth',
+    % Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=4em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
+\newfontfamily\Normal{Hiragino Sans GB W3}
+\newfontfamily\Bold{Hiragino Sans GB W6}
+
+\setbeamerfont{title}{family=\Bold, size=\LARGE}
+\setbeamerfont{subtitle}{family=\Normal, size=\Large}
+\setbeamerfont{author}{family=\Normal, size=\small}
+\setbeamerfont{date}{family=\Normal, size=\small}
+
+\setbeamerfont{section title}{family=\Bold, size=\Large}
+\setbeamerfont{block title}{family=\Normal, size=\Large}
+\setbeamerfont{frametitle}{family=\Normal, size=\Large}
+
+\setbeamerfont{normal text}{family=\Normal}
+\setbeamerfont{alerted text}{family=\Normal}
+\setbeamerfont{example text}{family=\Normal}
+
+\setbeamerfont{caption}{family=\Normal}
+\setbeamerfont{caption name}{family=\Normal}
+
+
+% eliminate silly beamer navigation line at bottom of slides
+\setbeamertemplate{navigation symbols}{}
+
+\urlstyle{same}
+\usepackage[overlay,absolute]{textpos}
+
+\TPGrid[10 mm,8 mm]{9}{8}
+% beamer's left and right margin is 10 mm. The top/bottom margin is ??
+% or without a header ??
+% the slide dimensions are 128 mm x 96 mm
+% so the resulting \TPHorizModule = 12 mm and \TPVertModule = 10 mm
+
+% uncomment if you want biblatex for citations on slides
+
+% \usepackage{csquotes}
+% \usepackage[notes,short,noibid,backend=biber]{biblatex-chicago}
+% \bibliography{course.bib} 
+

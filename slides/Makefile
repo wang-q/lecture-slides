@@ -45,14 +45,14 @@ all: $(slides_pdf) $(notes_pdf)
 # clean up everything except pdfs
 clean:
 	latexmk -c
-	rm -rf *.nav *.snm *.vrb
+	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml
 	rm -rf $(slides_tex) $(notes_tex)
 
 # clean up everything including pdfs
 realclean:
 	latexmk -C
 	rm -rf $(slides_tex) $(notes_tex)
-	rm -rf *.nav *.snm *.vrb
+	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml
 
 .DEFAULT_GOAL := all
 

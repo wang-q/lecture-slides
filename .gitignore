@@ -17,6 +17,7 @@
 
 !preamble-notes.tex
 !preamble-slides.tex
+!macros.tex
 
 # webstorm project files
 .idea
