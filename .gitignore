@@ -7,6 +7,11 @@
 *.snm
 *.vrb
 
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
 *.pdf
 *.tex
 *.jpg
