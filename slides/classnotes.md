@@ -28,6 +28,18 @@ Here are my notes.
 A note on my list.
 }
 
+## Beamer
+
+Beamer中的设置的页面大小比较小, 仅为128毫米乘以96毫米.
+
+因此, 图片大小设置为8厘米就比较适宜. 150 dpi或是300 dpi都可以.
+
+## 引用管理
+
+所有原始的文献库在zotero中, 子库名为course.
+
+导出为bibtex(不要用biblatex), 再用Jabref(不用bibdesk)打开修改.
+
 ## A slide to show overlay tricks
 
 This text appears on the first and third versions of the slide, but not the second.
