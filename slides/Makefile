@@ -45,7 +45,7 @@ all: $(slides_pdf) $(notes_pdf)
 # clean up everything except pdfs
 clean:
 	latexmk -c
-	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *.slides-blx.bib
+	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib
 	rm -rf $(slides_tex) $(notes_tex)
 
 # clean up everything including pdfs
