@@ -10,6 +10,7 @@
 *.bbl
 *.bcf
 *.blg
+*-blx.bib
 *.run.xml
 
 *.pdf
