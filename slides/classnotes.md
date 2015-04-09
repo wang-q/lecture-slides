@@ -1,19 +1,25 @@
 ---
-title: A Sample Set of Slides
+title: "A Sample Set of Slides"
+subtitle: "20 遗传的基本规律"
+author: "Your Name Here"
+date: \today{}
 
-author: Your Name Here
+\note{
+上面其实是YAML, 将由pandoc处理.
 
-date: Totally Not the Last Minute
+}
 
 ---
 
-## An ordinary slide
+# 一级标题是独立的页面
 
-With some text.
+## 二级标题是带内容的
 
-### And a block
+我就是内容
 
-And some text underneath.
+### 三级标题本应是Beamer中的text block.
+
+还可以接着写内容.
 
 \note{
 Here are my notes.
@@ -24,6 +30,14 @@ Here are my notes.
 - With a
 - list.
 
+* 这是
+    * 一个多级
+        * 列表的例子.
+
+* 这同样是
+    + 多级
+        - 列表.
+
 \note{
 A note on my list.
 }
@@ -32,7 +46,37 @@ A note on my list.
 
 Beamer中的设置的页面大小比较小, 仅为128毫米乘以96毫米.
 
-因此, 图片大小设置为8厘米就比较适宜. 150 dpi或是300 dpi都可以.
+因此, 图片大小设置为8厘米就比较适宜. 150 dpi或是300 dpi都可以. 
+
+## 从PowerPoint迁移
+
+将.ppt另存为.pptx；
+解压.pptx, 所有的图片都以imageNN.png名字存在;
+使用imagemagick将.png转化为.jpg, 以节约空间.
+
+    find . -type f -name "*.png" \
+        | sort \
+        | parallel basename {} .png \
+        | parallel convert {}.png {}.jpg
+
+下面是另一种code block的形式
+
+```bash
+ls -al
+rm -fr /
+```
+
+\note{
+以大于或等于4个空格开始的行都是code block.
+}
+
+## 格式: latex
+
+下面是\LaTeX 格式的例子.
+
+这是\textit{italic}, 还有\textsuperscript{上标}, 以及\alert{强调}, 再加上脚注\footnotemark.
+
+\footnotetext{不要对中文使用斜体}
 
 ## 引用管理
 
