@@ -51,24 +51,42 @@ Beamer中的设置的页面大小比较小, 仅为128毫米乘以96毫米.
 ## 从PowerPoint迁移
 
 将.ppt另存为.pptx；
-解压.pptx, 所有的图片都以imageNN.png名字存在;
+解压.pptx到一个新的文件夹, 所有的图片都以
+ppt\\media\\imageNN.png或imageNN.jpeg
+名字存在.
+
+## 图像格式转换
+
 使用imagemagick将.png转化为.jpg, 以节约空间.
 
     find . -type f -name "*.png" \
         | sort \
         | parallel basename {} .png \
-        | parallel convert {}.png {}.jpg
+        | parallel convert -units PixelsPerInch {}.png -density 300 {}.jpg
 
-下面是另一种code block的形式
+将所有图片统一dpi
 
 ```bash
-ls -al
-rm -fr /
+find . -type f -name "*.jpeg" \
+    | sort \
+    | parallel basename {} .jpeg \
+    | parallel convert -units PixelsPerInch {}.jpeg -density 300 {}.jpg
 ```
 
 \note{
 以大于或等于4个空格开始的行都是code block.
 }
+
+---
+
+组合程序
+```bash
+cd ~/Documents/Course/lecture-slides/slides/ch-25.images
+find . -type f -name "*.jpeg" -or -name "*.png" \
+    | sort \
+    | parallel sh ../mh.sh {}
+```
+
 
 ## 格式: latex
 
