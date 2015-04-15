@@ -87,6 +87,10 @@ find . -type f -name "*.jpeg" -or -name "*.png" \
     | parallel sh ../mh.sh {}
 ```
 
+手动调整
+```bash
+mogrify -resize "x945" image11.jpg
+```
 
 ## 格式: latex
 

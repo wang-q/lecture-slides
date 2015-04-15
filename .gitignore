@@ -21,6 +21,7 @@
 *.emf
 *.wmf
 
+# Finished files
 !preamble-notes.tex
 !preamble-slides.tex
 !macros.tex
