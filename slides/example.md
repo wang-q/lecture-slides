@@ -12,6 +12,10 @@ date: \today{}
 
 前一页是一级标题, 为独立的页面
 
+使用`---`或一个二级标题分页
+
+由`Makefile`里的`pandoc --slide-level 2`指定
+
 ## 二级标题是页面标题
 
 包括内容
@@ -28,9 +32,9 @@ Here are my notes.
 
 ## 页面尺寸
 
-Beamer中的设置的页面大小比较小, 仅为128毫米乘以96毫米.
+Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
 
-因此, 图片大小设置为8厘米就比较适宜. 150 dpi或是300 dpi都可以. 
+因此, 图片大小设置为8厘米 x 300 dpi就比较适宜.
 
 ## 从PowerPoint迁移
 
@@ -73,7 +77,11 @@ find . -type f -name "*.jpeg" -or -name "*.png" \
 
 手动调整
 ```bash
+# Fill page
 mogrify -resize "x945" image11.jpg
+
+# Normal size
+mogrify -resize "x709" image11.jpg
 ```
 
 # 格式
