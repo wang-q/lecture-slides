@@ -20,4 +20,4 @@ cd slides && make example.notes.pdf
 
 To make all slide and note PDFs at once, use `make` all by itself .
 
-** Modified from [agoldst's lecture slides](https://github.com/agoldst/tex/tree/master/lecture-slides). **
+**Modified from [agoldst's lecture slides](https://github.com/agoldst/tex/tree/master/lecture-slides).**
