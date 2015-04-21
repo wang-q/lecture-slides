@@ -1,21 +1,20 @@
 ---
-title: "A Sample Set of Slides"
-subtitle: "20 遗传的基本规律"
-author: "Your Name Here"
+title: "这是首页"
+subtitle: "其实是YAML, 将由pandoc处理"
+author: "签下大名"
 date: \today{}
-
-\note{
-上面其实是YAML, 将由pandoc处理.
-
-}
 
 ---
 
-# 一级标题是独立的页面
+# 标题
 
-## 二级标题是带内容的
+---
 
-我就是内容
+前一页是一级标题, 为独立的页面
+
+## 二级标题是页面标题
+
+包括内容
 
 ### 三级标题本应是Beamer中的text block.
 
@@ -25,24 +24,9 @@ date: \today{}
 Here are my notes.
 }
 
-## Another slide
+# Beamer
 
-- With a
-- list.
-
-* 这是
-    * 一个多级
-        * 列表的例子.
-
-* 这同样是
-    + 多级
-        - 列表.
-
-\note{
-A note on my list.
-}
-
-## Beamer
+## 页面尺寸
 
 Beamer中的设置的页面大小比较小, 仅为128毫米乘以96毫米.
 
@@ -92,11 +76,32 @@ find . -type f -name "*.jpeg" -or -name "*.png" \
 mogrify -resize "x945" image11.jpg
 ```
 
-## 格式: latex
+# 格式
 
-下面是\LaTeX 格式的例子.
+## 列表
+
+- With a
+- list.
+
+* 这是
+    * 一个多级
+        * 列表的例子.
+
+* 这同样是
+    + 多级
+        - 列表.
+
+\note{
+A note on my list.
+}
+
+## latex
+
+下面是\LaTeX 格式的例子\footnotemark.
 
 这是\textit{italic}, 还有\textsuperscript{上标}, 以及\alert{强调}, 再加上脚注\footnotemark.
+
+\footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
 
 \footnotetext{不要对中文使用斜体}
 
@@ -104,36 +109,65 @@ mogrify -resize "x945" image11.jpg
 
 所有原始的文献库在zotero中, 子库名为course.
 
-导出为bibtex(不要用biblatex), 再用Jabref(不用bibdesk)打开修改.
+导出为bibtex\footnotemark, 再用Jabref\footnotemark 打开修改.
 
-## A slide to show overlay tricks
+\footnotetext{不要用biblatex}
 
-This text appears on the first and third versions of the slide, but not the second.
+\footnotetext{不用bibdesk}
 
-This uses beamer's highlighting command to \alert{draw attention here}, but only on the second slide.
+## 定义列表
 
-\note{
-Notes can also have overlay specs. First slide version note.
+Term 1
 
-Second.
+:   Definition 1
 
-}
+Term 2 with *inline markup*
 
-\note{
-And third. Use \LaTeX\ macros in notes, like \emph{emphasis}.
+:   Definition 2
 
-}
+        { some code, part of Definition 2 }
 
-\note{
-To get overlay effects with materials placed using \texttt{textpos}, you have to specify the overlay within the \texttt{textblock} environment.
+    Third paragraph of definition 2.
 
-}
+## 表格
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+
+# 图
 
 ---
 
-## Going to sleep
+![无标题页面的图](ch-24.images/image39.jpg)
 
-- 上床
-- 数羊
-- count sheep
+---
 
+\begin{figure}
+    \includegraphics{ch-24.images/image39.jpg}
+    \caption{无标题页面的图2}
+\end{figure}
+
+## 有标题页面的图
+
+\begin{figure}
+    \includegraphics[height=0.75\textheight, keepaspectratio]{ch-24.images/image39.jpg}
+    \caption{果蝇的多线染色体}
+\end{figure}
+
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-24.images/image18.jpg}
+        \subcaption{有自己独--}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-24.images/image19.jpg}
+        \subcaption{--立的图例}
+    \end{minipage}
+    \caption{两栏样式的图}
+\end{figure}
