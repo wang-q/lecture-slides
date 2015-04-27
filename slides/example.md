@@ -45,14 +45,14 @@ ppt\\media\\imageNN.png或imageNN.jpeg
 
 ## 图像格式转换
 
-使用imagemagick将.png转化为.jpg, 以节约空间.
+* 4个空格开始的行都视为代码
 
     find . -type f -name "*.png" \
         | sort \
         | parallel basename {} .png \
         | parallel convert -units PixelsPerInch {}.png -density 300 {}.jpg
 
-将所有图片统一dpi
+* 这也是代码的格式, 还可以有语法高亮
 
 ```bash
 find . -type f -name "*.jpeg" \
@@ -62,12 +62,13 @@ find . -type f -name "*.jpeg" \
 ```
 
 \note{
-以大于或等于4个空格开始的行都是code block.
+统一为300 dpi
+
 }
 
 ---
 
-组合程序
+* 组合程序
 ```bash
 cd ~/Documents/Course/lecture-slides/slides/ch-25.images
 find . -type f -name "*.jpeg" -or -name "*.png" \
@@ -75,7 +76,7 @@ find . -type f -name "*.jpeg" -or -name "*.png" \
     | parallel sh ../mh.sh {}
 ```
 
-手动调整
+* 手动调整
 ```bash
 # Fill page
 mogrify -resize "x945" image11.jpg
