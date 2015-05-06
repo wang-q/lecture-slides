@@ -28,13 +28,125 @@ date: \today{}
 Here are my notes.
 }
 
+# Markdown
+
+---
+
+* 基本内容[这本书](https://www.gitbook.com/book/gitbookio/markdown/details)讲得足够了.
+
+* Pandoc扩展部分[在此](https://www.gitbook.com/book/gitbookio/markdown/details).
+
+# 格式
+
+## 列表
+
+- With a
+- list.
+
+* 这是
+    * 一个多级
+        * 列表的例子.
+
+* 这同样是
+    + 多级
+        - 列表.
+
+\note{
+A note on my list.
+}
+
+## 定义列表
+
+Term 1
+
+:   Definition 1
+
+Term 2 with *inline markup*
+
+:   Definition 2
+
+        { some code, part of Definition 2 }
+
+    Third paragraph of definition 2.
+
+## 表格
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+
+
+## 常用的符号
+
+* Prime and arrow
+    + 5’ → 3’方向
+
+* Cross
+
+## latex
+
+下面是\LaTeX 格式的例子\footnotemark.
+
+这是\textit{italic}, 还有\textsuperscript{上标}, 以及\alert{强调}, 再加上脚注\footnotemark.
+
+\footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
+
+\footnotetext{不要对中文使用斜体}
+
+## 引用管理
+
+所有原始的文献库在zotero中, 子库名为course.
+
+导出为bibtex\footnotemark, 再用Jabref\footnotemark 打开修改.
+
+\footnotetext{不要用biblatex}
+
+\footnotetext{不用bibdesk}
+
+# 图
+
+---
+
+![无标题页面的图, Markdown](ch-24.images/image39.jpg)
+
+---
+
+\begin{figure}
+    \includegraphics{ch-24.images/image39.jpg}
+    \caption{无标题页面的图, Latex}
+\end{figure}
+
+## 有标题页面的图
+
+\begin{figure}
+    \includegraphics[height=0.75\textheight, keepaspectratio]{ch-24.images/image39.jpg}
+    \caption{果蝇的多线染色体}
+\end{figure}
+
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-24.images/image18.jpg}
+        \subcaption{有自己独--}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-24.images/image19.jpg}
+        \subcaption{--立的图例}
+    \end{minipage}
+    \caption{两栏样式的图}
+\end{figure}
+
 # Beamer
 
 ## 页面尺寸
 
 Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
 
-因此, 图片大小设置为8厘米 x 300 dpi就比较适宜.
+因此, 图片大小设置为``8 cm $\times$ 300 dpi''就比较适宜.
 
 ## 从PowerPoint迁移
 
@@ -69,6 +181,7 @@ find . -type f -name "*.jpeg" \
 ---
 
 * 组合程序
+
 ```bash
 cd ~/Documents/Course/lecture-slides/slides/ch-25.images
 find . -type f -name "*.jpeg" -or -name "*.png" \
@@ -77,106 +190,13 @@ find . -type f -name "*.jpeg" -or -name "*.png" \
 ```
 
 * 手动调整
-```bash
-# Fill page
-mogrify -resize "x945" image11.jpg
 
-# Normal size
-mogrify -resize "x709" image11.jpg
+```bash
+ # Fill page
+ mogrify -resize "x945" image11.jpg
+
+ # Normal size
+ mogrify -resize "x709" image11.jpg
 ```
 
-# 格式
-
-## 列表
-
-- With a
-- list.
-
-* 这是
-    * 一个多级
-        * 列表的例子.
-
-* 这同样是
-    + 多级
-        - 列表.
-
-\note{
-A note on my list.
-}
-
-## latex
-
-下面是\LaTeX 格式的例子\footnotemark.
-
-这是\textit{italic}, 还有\textsuperscript{上标}, 以及\alert{强调}, 再加上脚注\footnotemark.
-
-\footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
-
-\footnotetext{不要对中文使用斜体}
-
-## 引用管理
-
-所有原始的文献库在zotero中, 子库名为course.
-
-导出为bibtex\footnotemark, 再用Jabref\footnotemark 打开修改.
-
-\footnotetext{不要用biblatex}
-
-\footnotetext{不用bibdesk}
-
-## 定义列表
-
-Term 1
-
-:   Definition 1
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-## 表格
-
-| Right | Left | Default | Center |
-|------:|:-----|---------|:------:|
-|   12  |  12  |    12   |    12  |
-|  123  |  123 |   123   |   123  |
-|    1  |    1 |     1   |     1  |
-
-# 图
-
----
-
-![无标题页面的图](ch-24.images/image39.jpg)
-
----
-
-\begin{figure}
-    \includegraphics{ch-24.images/image39.jpg}
-    \caption{无标题页面的图2}
-\end{figure}
-
-## 有标题页面的图
-
-\begin{figure}
-    \includegraphics[height=0.75\textheight, keepaspectratio]{ch-24.images/image39.jpg}
-    \caption{果蝇的多线染色体}
-\end{figure}
-
----
-
-\begin{figure}
-    \begin{minipage}[b]{.48\linewidth}
-        \includegraphics{ch-24.images/image18.jpg}
-        \subcaption{有自己独--}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{.48\linewidth}
-        \includegraphics{ch-24.images/image19.jpg}
-        \subcaption{--立的图例}
-    \end{minipage}
-    \caption{两栏样式的图}
-\end{figure}
+# 结束
