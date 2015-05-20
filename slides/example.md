@@ -71,6 +71,8 @@ Term 2 with *inline markup*
 
 ## 表格
 
+: 标题
+
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
 |   12  |  12  |    12   |    12  |
@@ -84,6 +86,9 @@ Term 2 with *inline markup*
     + 5’ → 3’方向
 
 * Cross
+
+* 人名中的点
+    + ·
 
 ## latex
 
@@ -147,6 +152,14 @@ Term 2 with *inline markup*
 Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
 
 因此, 图片大小设置为``8 cm $\times$ 300 dpi''就比较适宜.
+
+纵向尺寸:
+* 8 cm / 2.54 * 300 = 945
+* 6 cm / 2.54 * 300 = 709
+* 4 cm / 2.54 * 300 = 472
+
+横向尺寸:
+* 11 cm / 2.54 * 300 = 1299
 
 ## 从PowerPoint迁移
 
