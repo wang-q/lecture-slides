@@ -90,6 +90,9 @@ Term 2 with *inline markup*
 * 人名中的点
     + ·
 
+* 摄氏度
+    + $90\,^{\circ}\mathrm{C}$
+
 ## latex
 
 下面是\LaTeX 格式的例子\footnotemark.
