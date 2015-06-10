@@ -92,6 +92,7 @@ Term 2 with *inline markup*
 
 * 摄氏度
     + $90\,^{\circ}\mathrm{C}$
+    + 3.98°C
 
 ## latex
 
