@@ -177,17 +177,13 @@ ppt\\media\\imageNN.png或imageNN.jpeg
 * 4个空格开始的行都视为代码
 
     find . -type f -name "*.png" \
-        | sort \
-        | parallel basename {} .png \
-        | parallel convert -units PixelsPerInch {}.png -density 300 {}.jpg
+        | parallel convert -units PixelsPerInch {.}.png -density 300 {.}.jpg
 
 * 这也是代码的格式, 还可以有语法高亮
 
 ```bash
 find . -type f -name "*.jpeg" \
-    | sort \
-    | parallel basename {} .jpeg \
-    | parallel convert -units PixelsPerInch {}.jpeg -density 300 {}.jpg
+    | parallel convert -units PixelsPerInch {.}.jpeg -density 300 {.}.jpg
 ```
 
 \note{
@@ -202,18 +198,15 @@ find . -type f -name "*.jpeg" \
 ```bash
 cd ~/Documents/Course/lecture-slides/slides/ch-25.images
 find . -type f -name "*.jpeg" -or -name "*.png" \
-    | sort \
     | parallel sh ../mh.sh {}
 ```
 
 * 手动调整
 
 ```bash
- # Fill page
- mogrify -resize "x945" image11.jpg
+mogrify -resize "x945" image11.jpg # Fill page
 
- # Normal size
- mogrify -resize "x709" image11.jpg
+mogrify -resize "x709" image11.jpg # Normal size
 ```
 
 # 结束
