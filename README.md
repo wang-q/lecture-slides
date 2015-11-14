@@ -1,6 +1,6 @@
 # Markdown to lecture slides
 
-The `slides` directory contains slides for General Biology.
+The `slides` directory contains slides for my course "General Biology".
 
 Check [example.md](slides/example.md) for basic syntax. Then generate PDF slides with 
 
@@ -18,6 +18,12 @@ cd slides && make example.notes.pdf
 
 [slides/example.notes.pdf](slides/example.notes.pdf) is the result on my iMac.
 
-To make all slide and note PDFs at once, use `make` all by itself .
+To make slide and note PDFs at once.
+
+```bash
+cd slides && make example.slides.pdf example.notes.pdf
+```
+
+`make clean` to delete all intermediate files.
 
 **Modified from [agoldst's lecture slides](https://github.com/agoldst/tex/tree/master/lecture-slides).**
