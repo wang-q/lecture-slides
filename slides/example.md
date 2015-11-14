@@ -40,8 +40,8 @@ Here are my notes.
 
 ## 列表
 
-- With a
-- list.
+* With a
+* list.
 
 * 这是
     * 一个多级
@@ -83,12 +83,13 @@ Term 2 with *inline markup*
 ## 常用的符号
 
 * Prime and arrow
-    + 5’ → 3’方向
+    * 5’ → 3’方向
 
-* Cross
+* 乘号
+    * $3.2\times10^9$ bp
 
 * 人名中的点
-    + ·
+    * ·
 
 * 摄氏度
     + $90\,^{\circ}\mathrm{C}$
