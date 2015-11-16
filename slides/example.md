@@ -210,4 +210,24 @@ mogrify -resize "x945" image11.jpg # Fill page
 mogrify -resize "x709" image11.jpg # Normal size
 ```
 
+## 动画
+
+可以使用`media9`来向pdf中嵌入视频(mp4), 它使用了Flash插件, 所以只能在Adobe Reader中查看.
+
+因此使用`animate`包.
+
+下面的命令将gif转换成一系列的png文件
+
+```bash
+cd ch-28.images
+convert -coalesce image14.gif endospore.png
+```
+
+---
+
+\begin{figure}
+    \animategraphics[loop,controls,width=\linewidth]{1}{ch-28.images/endospore-}{0}{39}
+    \caption{芽孢}
+\end{figure}
+
 # 结束
