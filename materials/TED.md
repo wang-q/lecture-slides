@@ -11,7 +11,6 @@ The `--proxy` option doesn't work with shadowsocks, so I install it on a linode 
 ```bash
 sudo pip install youtube-dl
 mkdir -p ~/Documents/Course/TED-Ed
-mkdir -p ~/Documents/Course/TED
 ```
 
 ### Install ffmpeg
@@ -31,104 +30,105 @@ rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
 ## TED
 
-### Genetics
+### On the linode VPS.
 
-* Pamela Ronald: The case for engineering our food
+* Create `TED.yml` manually.
+
+```bash
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
+---
+- URL: https://www.youtube.com/watch?v=qCrVpRBBSvY
+  category: TED/Ecology
+  original_title: 'Greg Asner: Ecology from the air'
+- URL: https://www.youtube.com/watch?v=RgqtrlixYR4
+  category: TED/Ecology
+  original_title: 'Johan Rockstrom: Let the environment guide our development'
+- URL: https://www.youtube.com/watch?v=X-HE4Hfa-OY
+  category: TED/Ecology
+  original_title: 'Jonathan Trent: Energy from floating algae pods'
+- URL: https://www.youtube.com/watch?v=0QVXdEOiCw8
+  category: TED/Evolution
+  original_title: 'Jack Horner: Building a dinosaur from a chicken'
+- URL: https://www.youtube.com/watch?v=i-icXZ2tMRM
+  category: TED/Evolution
+  original_title: 'Rob Knight: How our microbes make us who we are'
+- URL: https://www.youtube.com/watch?v=nzj7Wg4DAbs
+  category: TED/Evolution
+  original_title: Why Humans Run the World | Yuval Noah Harari | TED Talks
+- URL: https://www.youtube.com/watch?v=E5X6Qy772YU
+  category: TED/Genetics
+  original_title: 'Craig Venter: A voyage of DNA, genes and the sea'
+- URL: https://www.youtube.com/watch?v=O8e8Ttfz-pY
+  category: TED/Genetics
+  original_title: 'Hendrik Poinar: Bring back the woolly mammoth!'
+- URL: https://www.youtube.com/watch?v=wZ2TF8-PGQ4
+  category: TED/Genetics
+  original_title: 'Pamela Ronald: The case for engineering our food'
+- URL: https://www.youtube.com/watch?v=u8bsCiq6hvM
+  category: TED/Genetics
+  original_title: 'Richard Resnick: Welcome to the genomic revolution'
+- URL: https://www.youtube.com/watch?v=TdBAHexVYzc
+  category: TED/Genetics
+  original_title: We Can Now Edit Our DNA. But Let's Do it Wisely | Jennifer Doudna | TED Talks
+- URL: https://www.youtube.com/watch?v=xossR6eHv3I
+  category: TED/Others
+  original_title: 'Cheryl Hayashi: The magnificence of spider silk'
+- URL: https://www.youtube.com/watch?v=k_GFq12w5WU
+  category: TED/Others
+  original_title: 'Janine Benyus: Biomimicry in action'
+- URL: https://www.youtube.com/watch?v=u2V0vOFexY4
+  category: TED/Others
+  original_title: 'Jim Fallon: Exploring the mind of a killer'
+- URL: https://www.youtube.com/watch?v=176adlNeRy8
+  category: TED/Others
+  original_title: 'Paul Ewald: Can we domesticate germs?'
+EOF
+```
+
+* Get video information with `dl_video.pl`.
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a update -i TED.yml -o TED-update
+```
+
+* Then generate bash script with `dl_video.pl`.
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+mkdir -p ~/Documents/Course/TED
+perl dl_video.pl -a download -i TED-update.yml -o TED-output -d ~/Documents/Course
+```
+
+* Download videos and subtitles with the generated bash script.
+
+```bash
+mkdir -p ~/Documents/Course/TED
+bash ~/Documents/Course/TED-output.download.sh
+```
+
+* A working example which can be pasted line by line to terminal. 
+
+    "Pamela Ronald: The case for engineering our food"
 
 ```bash
 URL=https://www.youtube.com/watch?v=wZ2TF8-PGQ4
 CATEGORY="TED/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
+ORI_TITLE=`youtube-dl $URL --get-title`
+TITLE=`youtube-dl $URL --restrict-filenames --get-filename  -o "%(title)s"`
+EXT=`youtube-dl $URL --restrict-filenames --get-filename -o "%(ext)s"`
+FULLPATH="~/Documents/Course/${CATEGORY}/${TITLE}.${EXT}"
 
-* We Can Now Edit Our DNA. But Let's Do it Wisely _ Jennifer Doudna _ TED Talks
+youtube-dl $URL -o "${FULLPATH}"
 
-```bash
-URL=https://www.youtube.com/watch?v=TdBAHexVYzc
-CATEGORY="TED/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Craig Venter: A voyage of DNA, genes and the sea
-
-```bash
-URL=https://www.youtube.com/watch?v=E5X6Qy772YU
-CATEGORY="TED/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Hendrik Poinar: Bring back the woolly mammoth!
-
-```bash
-URL=https://www.youtube.com/watch?v=O8e8Ttfz-pY
-CATEGORY="TED/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-### Evolution
-
-* Why Humans Run the World | Yuval Noah Harari | TED Talks
-
-```bash
-URL=https://www.youtube.com/watch?v=nzj7Wg4DAbs
-CATEGORY="TED/Evolution"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
+youtube-dl $URL --list-subs
+youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang en --skip-download
+youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 ```
 
 ### Ecology
 
-* Johan Rockstrom: Let the environment guide our development
-
-```bash
-URL=https://www.youtube.com/watch?v=RgqtrlixYR4
-CATEGORY="TED/Ecology"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Jonathan Trent: Energy from floating algae pods
-
-```bash
-URL=https://www.youtube.com/watch?v=X-HE4Hfa-OY
-CATEGORY="TED/Ecology"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Greg Asner: Ecology from the air
-
-```bash
-URL=https://www.youtube.com/watch?v=qCrVpRBBSvY
-CATEGORY="TED/Ecology"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
 ### Others
-
-* Paul Ewald: Can we domesticate germs
-
-```bash
-URL=https://www.youtube.com/watch?v=176adlNeRy8
-CATEGORY="TED/Others"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Cheryl Hayashi: The magnificence of spider silk
-
-```bash
-URL=https://www.youtube.com/watch?v=xossR6eHv3I
-CATEGORY="TED/Others"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-CN $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
 
 ## TED Ed
 
