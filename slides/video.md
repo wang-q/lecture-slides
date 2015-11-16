@@ -8,6 +8,7 @@ The `--proxy` option doesn't work with shadowsocks, so I install it on a linode 
 
 ```bash
 sudo pip install youtube-dl
+mkdir -p ~/Documents/Course/TED-Ed
 ```
 
 ## Install ffmpeg
@@ -28,8 +29,8 @@ brew install ffmpeg --with-libass
 ```bash
 URL=https://www.youtube.com/watch?v=vP8-5Bhd2ag
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * The race to sequence the human genome - Tien Nguyen
@@ -37,7 +38,7 @@ youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downlo
 ```bash
 URL=https://www.youtube.com/watch?v=AhsIF-cmoQQ
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * How Mendel's pea plants helped us understand genetics - Hortensia Jiménez Díaz
@@ -45,7 +46,7 @@ youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s
 ```bash
 URL=https://www.youtube.com/watch?v=Mehz7tCxjSE
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * The cancer gene we all have - Michael Windelspecht
@@ -53,7 +54,7 @@ youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s
 ```bash
 URL=https://www.youtube.com/watch?v=pOyKFgGKmHE
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * RNAi: Slicing, dicing and serving your cells - Alex Dainis
@@ -61,8 +62,8 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=tzlGU5EI9rU
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Sex Determination: More Complicated Than You Thought
@@ -70,7 +71,7 @@ youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downlo
 ```bash
 URL=https://www.youtube.com/watch?v=kMWxuF9YW38
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 ### Evolution
@@ -80,7 +81,7 @@ youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s
 ```bash
 URL=https://www.youtube.com/watch?v=qrKZBh8BL_U
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Where do genes come from? - Carl Zimmer
@@ -88,7 +89,7 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=z9HIYjRRaDE
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * How we think complex cells evolved - Adam Jacobson
@@ -96,8 +97,8 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=9i7kAt97XYU
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Which Came First - The Chicken or the Egg
@@ -105,8 +106,8 @@ youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downlo
 ```bash
 URL=https://www.youtube.com/watch?v=1a8pI65emDE
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Five fingers of evolution - Paul Andersen
@@ -114,7 +115,7 @@ youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o '~/Downlo
 ```bash
 URL=https://www.youtube.com/watch?v=5NdMnlt2keE
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 ### Ecology
@@ -124,7 +125,7 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=Y5uRVv7GGQM
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Why is biodiversity so important? - Kim Preshoff
@@ -132,7 +133,7 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=GK_vRtHJZu4
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 ### Others
@@ -142,7 +143,7 @@ youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s
 ```bash
 URL=https://www.youtube.com/watch?v=rb7TVW77ZCs
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Learning from smallpox: How to eradicate a disease - Julie Garon and Walter A. Orenstein
@@ -150,7 +151,7 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=oBSandHijDc
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * Cell vs. virus: A battle for health - Shannon Stiles
@@ -158,7 +159,7 @@ youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s
 ```bash
 URL=https://www.youtube.com/watch?v=oqGuJhOeMek
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * How Life Begins in the Deep Ocean
@@ -166,7 +167,7 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=i_R7ouD8-Eo
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 * The brilliance of bioluminescence - Leslie Kenna
@@ -174,7 +175,7 @@ youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o '~/Downloads/TED-Ed/%(title
 ```bash
 URL=https://www.youtube.com/watch?v=oKjFVBVGad0
 youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Downloads/TED-Ed/%(title)s.%(ext)s'
+youtube-dl --write-sub --sub-lang en,zh-TW $URL -o '~/Documents/Course/TED-Ed/%(title)s.%(ext)s'
 ```
 
 ## Embed subtitles
