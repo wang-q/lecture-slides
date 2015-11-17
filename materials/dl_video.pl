@@ -24,19 +24,19 @@ dl_video.pl - download videos and subtitles based on yaml
     perl dl_video.pl --in <.yml> [options]
       Options:
         --help              brief help message
-        --in_file   -i STR  input .yml file's location
         --action    -a STR  update, download, report, burn or merge
-        --out       -o STR  basename of output files
         --dir       -d STR  base directory
+        --in        -i STR  input .yml file's location
+        --out       -o STR  basename of output files
 
 =cut
 
 GetOptions(
     'help|?' => sub { HelpMessage(0) },
-    'in_file|i=s' => \( my $in_file = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify ),
-    'action|a=s'  => \( my $action  = "update" ),
-    'out|o=s'     => \my $out,
-    'dir|d=s' => \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
+    'action|a=s' => \( my $action   = "update" ),
+    'dir|d=s'    => \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
+    'in|i=s'     => \( my $in_file  = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify ),
+    'out|o=s' => \my $out,
 ) or HelpMessage(1);
 
 #----------------------------------------------------------#
@@ -176,26 +176,39 @@ elsif ( $action eq "download" ) {
     my $bash_file = path( $base_dir, "$out.$action.sh" );
     print "Output bash file is $bash_file\n";
 
-    $bash_file->remove;
-    $bash_file->append("#!/bin/bash\n\n");
-
     for my $item ( @{$yml} ) {
         my $video_file = path( $base_dir, $item->{file} );
         $video_file->parent->mkpath;
-
-        $bash_file->append("# $item->{category}\n");
-        $bash_file->append("# $item->{original_title}\n");
-
-        $bash_file->append(
-            "youtube-dl $item->{URL} --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] --restrict-filenames -o '$video_file'\n"
-        );
-        for my $key ( keys %{ $item->{subs} } ) {
-            $bash_file->append(
-                "youtube-dl $item->{URL} --restrict-filenames -o '$video_file' --write-sub --sub-lang $key --skip-download\n"
-            );
-        }
-        $bash_file->append("\n");
+        $item->{video_file} = path($video_file)->stringify;
     }
+
+    my $text = <<'EOF';
+#!/bin/bash
+
+[% FOREACH item IN data -%]
+# [% item.category %]
+# [% item.original_title %]
+youtube-dl \
+    [% item.URL %] \
+    --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] \
+    --restrict-filenames \
+    -o '[% item.video_file %]'
+
+[% FOREACH key IN item.subs.keys.sort -%]
+youtube-dl \
+    [% item.URL %] \
+    --restrict-filenames \
+    -o '[% item.video_file %]' \
+    --skip-download \
+    --write-sub --sub-lang [% key %]
+[% END -%]
+
+[% END -%]
+
+EOF
+
+    my $tt = Template->new;
+    $tt->process( \$text, { data => $yml, }, $bash_file->stringify ) or die Template->error;
 
     print "\n";
 }
