@@ -175,15 +175,6 @@
     en: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.en.srt
     zh-TW: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.zh-TW.srt
   title: Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein
-- URL: https://www.youtube.com/watch?v=XMriWTvPXHI
-  category: TED-Ed/Others
-  ext: mp4
-  file: TED-Ed/Others/The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi.mp4
-  original_title: 'The mathematical secrets of Pascals triangle - Wajdi Mohamed Ratemi'
-  resolution: 1920x1080
-  subs:
-    en: TED-Ed/Others/The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi.en.srt
-  title: The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi
 - URL: https://www.youtube.com/watch?v=oKjFVBVGad0
   category: TED-Ed/Others
   ext: mp4
@@ -194,3 +185,12 @@
     en: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.en.srt
     zh-TW: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.zh-TW.srt
   title: The_brilliance_of_bioluminescence_-_Leslie_Kenna
+- URL: https://www.youtube.com/watch?v=XMriWTvPXHI
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi.mp4
+  original_title: 'The mathematical secrets of Pascals triangle - Wajdi Mohamed Ratemi'
+  resolution: 1920x1080
+  subs:
+    en: TED-Ed/Others/The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi.en.srt
+  title: The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi
