@@ -23,10 +23,10 @@ dl_video.pl - download videos and subtitles based on yaml
     perl dl_video.pl --in <.yml> [options]
       Options:
         --help              brief help message
-        -i, --in_file       input .yml file's location
-        -a, --action        update, download, report or merge
-        -o, --out           basename of output files
-        -d, --dir           base directory
+        --in_file   -i STR  input .yml file's location
+        --action    -a STR  update, download, report or merge
+        --out       -o STR  basename of output files
+        --dir       -d STR  base directory
 
 =cut
 

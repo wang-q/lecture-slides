@@ -1,9 +1,20 @@
 ---
+- URL: https://www.youtube.com/watch?v=176adlNeRy8
+  category: LOW/TED/Others
+  ext: mp4
+  file: LOW/TED/Others/Paul_Ewald_-_Can_we_domesticate_germs.mp4
+  original_title: 'Paul Ewald: Can we domesticate germs?'
+  resolution: 426x236
+  subs:
+    en: LOW/TED/Others/Paul_Ewald_-_Can_we_domesticate_germs.en.srt
+    zh-CN: LOW/TED/Others/Paul_Ewald_-_Can_we_domesticate_germs.zh-CN.srt
+  title: Paul_Ewald_-_Can_we_domesticate_germs
 - URL: https://www.youtube.com/watch?v=qCrVpRBBSvY
   category: TED/Ecology
   ext: mp4
   file: TED/Ecology/Greg_Asner_-_Ecology_from_the_air.mp4
   original_title: 'Greg Asner: Ecology from the air'
+  resolution: 1280x720
   subs:
     en: TED/Ecology/Greg_Asner_-_Ecology_from_the_air.en.srt
     zh-CN: TED/Ecology/Greg_Asner_-_Ecology_from_the_air.zh-CN.srt
@@ -13,6 +24,7 @@
   ext: mp4
   file: TED/Ecology/Johan_Rockstrom_-_Let_the_environment_guide_our_development.mp4
   original_title: 'Johan Rockstrom: Let the environment guide our development'
+  resolution: 850x480
   subs:
     en: TED/Ecology/Johan_Rockstrom_-_Let_the_environment_guide_our_development.en.srt
     zh-CN: TED/Ecology/Johan_Rockstrom_-_Let_the_environment_guide_our_development.zh-CN.srt
@@ -22,15 +34,27 @@
   ext: mp4
   file: TED/Ecology/Jonathan_Trent_-_Energy_from_floating_algae_pods.mp4
   original_title: 'Jonathan Trent: Energy from floating algae pods'
+  resolution: 1280x720
   subs:
     en: TED/Ecology/Jonathan_Trent_-_Energy_from_floating_algae_pods.en.srt
     zh-CN: TED/Ecology/Jonathan_Trent_-_Energy_from_floating_algae_pods.zh-CN.srt
   title: Jonathan_Trent_-_Energy_from_floating_algae_pods
+- URL: https://www.youtube.com/watch?v=WjBwhwe5-cc
+  category: TED/Evolution
+  ext: mp4
+  file: TED/Evolution/Isabel_Behncke_-_Evolution_s_gift_of_play_from_bonobo_apes_to_humans.mp4
+  original_title: "Isabel Behncke: Evolution's gift of play, from bonobo apes to humans"
+  resolution: 850x480
+  subs:
+    en: TED/Evolution/Isabel_Behncke_-_Evolution_s_gift_of_play_from_bonobo_apes_to_humans.en.srt
+    zh-CN: TED/Evolution/Isabel_Behncke_-_Evolution_s_gift_of_play_from_bonobo_apes_to_humans.zh-CN.srt
+  title: Isabel_Behncke_-_Evolution_s_gift_of_play_from_bonobo_apes_to_humans
 - URL: https://www.youtube.com/watch?v=0QVXdEOiCw8
   category: TED/Evolution
   ext: mp4
   file: TED/Evolution/Jack_Horner_-_Building_a_dinosaur_from_a_chicken.mp4
   original_title: 'Jack Horner: Building a dinosaur from a chicken'
+  resolution: 854x480
   subs:
     en: TED/Evolution/Jack_Horner_-_Building_a_dinosaur_from_a_chicken.en.srt
     zh-CN: TED/Evolution/Jack_Horner_-_Building_a_dinosaur_from_a_chicken.zh-CN.srt
@@ -40,6 +64,7 @@
   ext: mp4
   file: TED/Evolution/Rob_Knight_-_How_our_microbes_make_us_who_we_are.mp4
   original_title: 'Rob Knight: How our microbes make us who we are'
+  resolution: 1280x720
   subs:
     en: TED/Evolution/Rob_Knight_-_How_our_microbes_make_us_who_we_are.en.srt
     zh-CN: TED/Evolution/Rob_Knight_-_How_our_microbes_make_us_who_we_are.zh-CN.srt
@@ -49,24 +74,17 @@
   ext: mp4
   file: TED/Evolution/Why_Humans_Run_the_World_Yuval_Noah_Harari_TED_Talks.mp4
   original_title: Why Humans Run the World | Yuval Noah Harari | TED Talks
+  resolution: 1280x720
   subs:
     en: TED/Evolution/Why_Humans_Run_the_World_Yuval_Noah_Harari_TED_Talks.en.srt
     zh-CN: TED/Evolution/Why_Humans_Run_the_World_Yuval_Noah_Harari_TED_Talks.zh-CN.srt
   title: Why_Humans_Run_the_World_Yuval_Noah_Harari_TED_Talks
-- URL: https://www.youtube.com/watch?v=E5X6Qy772YU
-  category: TED/Genetics
-  ext: mp4
-  file: TED/Genetics/Craig_Venter_-_A_voyage_of_DNA_genes_and_the_sea.mp4
-  original_title: 'Craig Venter: A voyage of DNA, genes and the sea'
-  subs:
-    en: TED/Genetics/Craig_Venter_-_A_voyage_of_DNA_genes_and_the_sea.en.srt
-    zh-CN: TED/Genetics/Craig_Venter_-_A_voyage_of_DNA_genes_and_the_sea.zh-CN.srt
-  title: Craig_Venter_-_A_voyage_of_DNA_genes_and_the_sea
 - URL: https://www.youtube.com/watch?v=O8e8Ttfz-pY
   category: TED/Genetics
   ext: mp4
   file: TED/Genetics/Hendrik_Poinar_-_Bring_back_the_woolly_mammoth.mp4
   original_title: 'Hendrik Poinar: Bring back the woolly mammoth!'
+  resolution: 1280x720
   subs:
     en: TED/Genetics/Hendrik_Poinar_-_Bring_back_the_woolly_mammoth.en.srt
     zh-CN: TED/Genetics/Hendrik_Poinar_-_Bring_back_the_woolly_mammoth.zh-CN.srt
@@ -76,6 +94,7 @@
   ext: mp4
   file: TED/Genetics/Pamela_Ronald_-_The_case_for_engineering_our_food.mp4
   original_title: 'Pamela Ronald: The case for engineering our food'
+  resolution: 1280x720
   subs:
     en: TED/Genetics/Pamela_Ronald_-_The_case_for_engineering_our_food.en.srt
     zh-CN: TED/Genetics/Pamela_Ronald_-_The_case_for_engineering_our_food.zh-CN.srt
@@ -85,6 +104,7 @@
   ext: mp4
   file: TED/Genetics/Richard_Resnick_-_Welcome_to_the_genomic_revolution.mp4
   original_title: 'Richard Resnick: Welcome to the genomic revolution'
+  resolution: 854x480
   subs:
     en: TED/Genetics/Richard_Resnick_-_Welcome_to_the_genomic_revolution.en.srt
     zh-CN: TED/Genetics/Richard_Resnick_-_Welcome_to_the_genomic_revolution.zh-CN.srt
@@ -94,6 +114,7 @@
   ext: mp4
   file: TED/Genetics/We_Can_Now_Edit_Our_DNA._But_Let_s_Do_it_Wisely_Jennifer_Doudna_TED_Talks.mp4
   original_title: We Can Now Edit Our DNA. But Let's Do it Wisely | Jennifer Doudna | TED Talks
+  resolution: 1280x720
   subs:
     en: TED/Genetics/We_Can_Now_Edit_Our_DNA._But_Let_s_Do_it_Wisely_Jennifer_Doudna_TED_Talks.en.srt
   title: We_Can_Now_Edit_Our_DNA._But_Let_s_Do_it_Wisely_Jennifer_Doudna_TED_Talks
@@ -102,6 +123,7 @@
   ext: mp4
   file: TED/Others/Cheryl_Hayashi_-_The_magnificence_of_spider_silk.mp4
   original_title: 'Cheryl Hayashi: The magnificence of spider silk'
+  resolution: 854x480
   subs:
     en: TED/Others/Cheryl_Hayashi_-_The_magnificence_of_spider_silk.en.srt
     zh-CN: TED/Others/Cheryl_Hayashi_-_The_magnificence_of_spider_silk.zh-CN.srt
@@ -111,6 +133,7 @@
   ext: mp4
   file: TED/Others/Janine_Benyus_-_Biomimicry_in_action.mp4
   original_title: 'Janine Benyus: Biomimicry in action'
+  resolution: 850x480
   subs:
     en: TED/Others/Janine_Benyus_-_Biomimicry_in_action.en.srt
     zh-CN: TED/Others/Janine_Benyus_-_Biomimicry_in_action.zh-CN.srt
@@ -120,16 +143,8 @@
   ext: mp4
   file: TED/Others/Jim_Fallon_-_Exploring_the_mind_of_a_killer.mp4
   original_title: 'Jim Fallon: Exploring the mind of a killer'
+  resolution: 850x480
   subs:
     en: TED/Others/Jim_Fallon_-_Exploring_the_mind_of_a_killer.en.srt
     zh-CN: TED/Others/Jim_Fallon_-_Exploring_the_mind_of_a_killer.zh-CN.srt
   title: Jim_Fallon_-_Exploring_the_mind_of_a_killer
-- URL: https://www.youtube.com/watch?v=176adlNeRy8
-  category: TED/Others
-  ext: mp4
-  file: TED/Others/Paul_Ewald_-_Can_we_domesticate_germs.mp4
-  original_title: 'Paul Ewald: Can we domesticate germs?'
-  subs:
-    en: TED/Others/Paul_Ewald_-_Can_we_domesticate_germs.en.srt
-    zh-CN: TED/Others/Paul_Ewald_-_Can_we_domesticate_germs.zh-CN.srt
-  title: Paul_Ewald_-_Can_we_domesticate_germs

@@ -17,9 +17,6 @@
 - URL: https://www.youtube.com/watch?v=nzj7Wg4DAbs
   category: TED/Evolution
   original_title: Why Humans Run the World | Yuval Noah Harari | TED Talks
-- URL: https://www.youtube.com/watch?v=E5X6Qy772YU
-  category: TED/Genetics
-  original_title: 'Craig Venter: A voyage of DNA, genes and the sea'
 - URL: https://www.youtube.com/watch?v=O8e8Ttfz-pY
   category: TED/Genetics
   original_title: 'Hendrik Poinar: Bring back the woolly mammoth!'
@@ -42,5 +39,5 @@
   category: TED/Others
   original_title: 'Jim Fallon: Exploring the mind of a killer'
 - URL: https://www.youtube.com/watch?v=176adlNeRy8
-  category: TED/Others
+  category: LOW/TED/Others
   original_title: 'Paul Ewald: Can we domesticate germs?'

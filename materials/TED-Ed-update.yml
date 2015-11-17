@@ -1,0 +1,159 @@
+---
+- URL: https://www.youtube.com/watch?v=Y5uRVv7GGQM
+  category: TED-Ed/Ecology
+  ext: mp4
+  file: TED-Ed/Ecology/How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos.mp4
+  original_title: 'How bees help plants have sex - Fernanda S. Valdovinos'
+  subs:
+    en: TED-Ed/Ecology/How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos.en.srt
+    zh-Hans: TED-Ed/Ecology/How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos.zh-Hans.srt
+  title: How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos
+- URL: https://www.youtube.com/watch?v=GK_vRtHJZu4
+  category: TED-Ed/Ecology
+  ext: mp4
+  file: TED-Ed/Ecology/Why_is_biodiversity_so_important_-_Kim_Preshoff.mp4
+  original_title: 'Why is biodiversity so important? - Kim Preshoff'
+  subs:
+    en: TED-Ed/Ecology/Why_is_biodiversity_so_important_-_Kim_Preshoff.en.srt
+    zh-TW: TED-Ed/Ecology/Why_is_biodiversity_so_important_-_Kim_Preshoff.zh-TW.srt
+  title: Why_is_biodiversity_so_important_-_Kim_Preshoff
+- URL: https://www.youtube.com/watch?v=5NdMnlt2keE
+  category: TED-Ed/Evolution
+  ext: mp4
+  file: TED-Ed/Evolution/Five_fingers_of_evolution_-_Paul_Andersen.mp4
+  original_title: 'Five fingers of evolution - Paul Andersen'
+  subs:
+    en: TED-Ed/Evolution/Five_fingers_of_evolution_-_Paul_Andersen.en.srt
+    zh-Hans: TED-Ed/Evolution/Five_fingers_of_evolution_-_Paul_Andersen.zh-Hans.srt
+  title: Five_fingers_of_evolution_-_Paul_Andersen
+- URL: https://www.youtube.com/watch?v=9i7kAt97XYU
+  category: TED-Ed/Evolution
+  ext: mp4
+  file: TED-Ed/Evolution/How_we_think_complex_cells_evolved_-_Adam_Jacobson.mp4
+  original_title: 'How we think complex cells evolved - Adam Jacobson'
+  subs:
+    en: TED-Ed/Evolution/How_we_think_complex_cells_evolved_-_Adam_Jacobson.en.srt
+  title: How_we_think_complex_cells_evolved_-_Adam_Jacobson
+- URL: https://www.youtube.com/watch?v=qrKZBh8BL_U
+  category: TED-Ed/Evolution
+  ext: mp4
+  file: TED-Ed/Evolution/The_evolution_of_the_human_eye_-_Joshua_Harvey.mp4
+  original_title: 'The evolution of the human eye - Joshua Harvey'
+  subs:
+    en: TED-Ed/Evolution/The_evolution_of_the_human_eye_-_Joshua_Harvey.en.srt
+    zh-Hans: TED-Ed/Evolution/The_evolution_of_the_human_eye_-_Joshua_Harvey.zh-Hans.srt
+  title: The_evolution_of_the_human_eye_-_Joshua_Harvey
+- URL: https://www.youtube.com/watch?v=z9HIYjRRaDE
+  category: TED-Ed/Evolution
+  ext: mp4
+  file: TED-Ed/Evolution/Where_do_genes_come_from_-_Carl_Zimmer.mp4
+  original_title: 'Where do genes come from? - Carl Zimmer'
+  subs:
+    en: TED-Ed/Evolution/Where_do_genes_come_from_-_Carl_Zimmer.en.srt
+    zh-Hans: TED-Ed/Evolution/Where_do_genes_come_from_-_Carl_Zimmer.zh-Hans.srt
+  title: Where_do_genes_come_from_-_Carl_Zimmer
+- URL: https://www.youtube.com/watch?v=1a8pI65emDE
+  category: TED-Ed/Evolution
+  ext: mp4
+  file: TED-Ed/Evolution/Which_Came_First_-_The_Chicken_or_the_Egg.mp4
+  original_title: 'Which Came First - The Chicken or the Egg?'
+  subs:
+    en: TED-Ed/Evolution/Which_Came_First_-_The_Chicken_or_the_Egg.en.srt
+  title: Which_Came_First_-_The_Chicken_or_the_Egg
+- URL: https://www.youtube.com/watch?v=Mehz7tCxjSE
+  category: TED-Ed/Genetics
+  ext: mp4
+  file: TED-Ed/Genetics/How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az.mp4
+  original_title: "How Mendel's pea plants helped us understand genetics - Hortensia Jimnez Daz"
+  subs:
+    en: TED-Ed/Genetics/How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az.en.srt
+    zh-TW: TED-Ed/Genetics/How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az.zh-TW.srt
+  title: How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az
+- URL: https://www.youtube.com/watch?v=tzlGU5EI9rU
+  category: TED-Ed/Genetics
+  ext: mp4
+  file: TED-Ed/Genetics/RNAi_-_Slicing_dicing_and_serving_your_cells_-_Alex_Dainis.mp4
+  original_title: 'RNAi: Slicing, dicing and serving your cells - Alex Dainis'
+  subs:
+    en: TED-Ed/Genetics/RNAi_-_Slicing_dicing_and_serving_your_cells_-_Alex_Dainis.en.srt
+  title: RNAi_-_Slicing_dicing_and_serving_your_cells_-_Alex_Dainis
+- URL: https://www.youtube.com/watch?v=kMWxuF9YW38
+  category: TED-Ed/Genetics
+  ext: mp4
+  file: TED-Ed/Genetics/Sex_Determination_-_More_Complicated_Than_You_Thought.mp4
+  original_title: 'Sex Determination: More Complicated Than You Thought'
+  subs:
+    en: TED-Ed/Genetics/Sex_Determination_-_More_Complicated_Than_You_Thought.en.srt
+    zh-TW: TED-Ed/Genetics/Sex_Determination_-_More_Complicated_Than_You_Thought.zh-TW.srt
+  title: Sex_Determination_-_More_Complicated_Than_You_Thought
+- URL: https://www.youtube.com/watch?v=pOyKFgGKmHE
+  category: TED-Ed/Genetics
+  ext: mp4
+  file: TED-Ed/Genetics/The_cancer_gene_we_all_have_-_Michael_Windelspecht.mp4
+  original_title: 'The cancer gene we all have - Michael Windelspecht'
+  subs:
+    en: TED-Ed/Genetics/The_cancer_gene_we_all_have_-_Michael_Windelspecht.en.srt
+    zh-Hans: TED-Ed/Genetics/The_cancer_gene_we_all_have_-_Michael_Windelspecht.zh-Hans.srt
+  title: The_cancer_gene_we_all_have_-_Michael_Windelspecht
+- URL: https://www.youtube.com/watch?v=AhsIF-cmoQQ
+  category: TED-Ed/Genetics
+  ext: mp4
+  file: TED-Ed/Genetics/The_race_to_sequence_the_human_genome_-_Tien_Nguyen.mp4
+  original_title: 'The race to sequence the human genome - Tien Nguyen'
+  subs:
+    en: TED-Ed/Genetics/The_race_to_sequence_the_human_genome_-_Tien_Nguyen.en.srt
+    zh-TW: TED-Ed/Genetics/The_race_to_sequence_the_human_genome_-_Tien_Nguyen.zh-TW.srt
+  title: The_race_to_sequence_the_human_genome_-_Tien_Nguyen
+- URL: https://www.youtube.com/watch?v=vP8-5Bhd2ag
+  category: TED-Ed/Genetics
+  ext: mp4
+  file: TED-Ed/Genetics/What_happens_when_your_DNA_is_damaged_-_Monica_Menesini.mp4
+  original_title: 'What happens when your DNA is damaged? - Monica Menesini'
+  subs:
+    en: TED-Ed/Genetics/What_happens_when_your_DNA_is_damaged_-_Monica_Menesini.en.srt
+  title: What_happens_when_your_DNA_is_damaged_-_Monica_Menesini
+- URL: https://www.youtube.com/watch?v=oqGuJhOeMek
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles.mp4
+  original_title: 'Cell vs. virus: A battle for health - Shannon Stiles'
+  subs:
+    en: TED-Ed/Others/Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles.en.srt
+    zh-Hans: TED-Ed/Others/Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles.zh-Hans.srt
+  title: Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles
+- URL: https://www.youtube.com/watch?v=i_R7ouD8-Eo
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/How_Life_Begins_in_the_Deep_Ocean.mp4
+  original_title: How Life Begins in the Deep Ocean
+  subs:
+    en: TED-Ed/Others/How_Life_Begins_in_the_Deep_Ocean.en.srt
+    zh-Hans: TED-Ed/Others/How_Life_Begins_in_the_Deep_Ocean.zh-Hans.srt
+  title: How_Life_Begins_in_the_Deep_Ocean
+- URL: https://www.youtube.com/watch?v=rb7TVW77ZCs
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut.mp4
+  original_title: 'How do vaccines work? - Kelwalin Dhanasarnsombut'
+  subs:
+    en: TED-Ed/Others/How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut.en.srt
+    zh-Hans: TED-Ed/Others/How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut.zh-Hans.srt
+  title: How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut
+- URL: https://www.youtube.com/watch?v=oBSandHijDc
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.mp4
+  original_title: 'Learning from smallpox: How to eradicate a disease - Julie Garon and Walter A. Orenstein'
+  subs:
+    en: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.en.srt
+    zh-TW: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.zh-TW.srt
+  title: Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein
+- URL: https://www.youtube.com/watch?v=oKjFVBVGad0
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.mp4
+  original_title: 'The brilliance of bioluminescence - Leslie Kenna'
+  subs:
+    en: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.en.srt
+    zh-TW: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.zh-TW.srt
+  title: The_brilliance_of_bioluminescence_-_Leslie_Kenna
