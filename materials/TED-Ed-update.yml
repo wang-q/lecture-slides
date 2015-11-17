@@ -4,15 +4,27 @@
   ext: mp4
   file: TED-Ed/Ecology/How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos.mp4
   original_title: 'How bees help plants have sex - Fernanda S. Valdovinos'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Ecology/How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos.en.srt
     zh-Hans: TED-Ed/Ecology/How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos.zh-Hans.srt
   title: How_bees_help_plants_have_sex_-_Fernanda_S._Valdovinos
+- URL: https://www.youtube.com/watch?v=RLmKfXwWQtE
+  category: TED-Ed/Ecology
+  ext: mp4
+  file: TED-Ed/Ecology/Population_pyramids_-_Powerful_predictors_of_the_future_-_Kim_Preshoff.mp4
+  original_title: 'Population pyramids: Powerful predictors of the future - Kim Preshoff'
+  resolution: 1920x1080
+  subs:
+    en: TED-Ed/Ecology/Population_pyramids_-_Powerful_predictors_of_the_future_-_Kim_Preshoff.en.srt
+    zh-TW: TED-Ed/Ecology/Population_pyramids_-_Powerful_predictors_of_the_future_-_Kim_Preshoff.zh-TW.srt
+  title: Population_pyramids_-_Powerful_predictors_of_the_future_-_Kim_Preshoff
 - URL: https://www.youtube.com/watch?v=GK_vRtHJZu4
   category: TED-Ed/Ecology
   ext: mp4
   file: TED-Ed/Ecology/Why_is_biodiversity_so_important_-_Kim_Preshoff.mp4
   original_title: 'Why is biodiversity so important? - Kim Preshoff'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Ecology/Why_is_biodiversity_so_important_-_Kim_Preshoff.en.srt
     zh-TW: TED-Ed/Ecology/Why_is_biodiversity_so_important_-_Kim_Preshoff.zh-TW.srt
@@ -22,6 +34,7 @@
   ext: mp4
   file: TED-Ed/Evolution/Five_fingers_of_evolution_-_Paul_Andersen.mp4
   original_title: 'Five fingers of evolution - Paul Andersen'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Evolution/Five_fingers_of_evolution_-_Paul_Andersen.en.srt
     zh-Hans: TED-Ed/Evolution/Five_fingers_of_evolution_-_Paul_Andersen.zh-Hans.srt
@@ -31,6 +44,7 @@
   ext: mp4
   file: TED-Ed/Evolution/How_we_think_complex_cells_evolved_-_Adam_Jacobson.mp4
   original_title: 'How we think complex cells evolved - Adam Jacobson'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Evolution/How_we_think_complex_cells_evolved_-_Adam_Jacobson.en.srt
   title: How_we_think_complex_cells_evolved_-_Adam_Jacobson
@@ -39,6 +53,7 @@
   ext: mp4
   file: TED-Ed/Evolution/The_evolution_of_the_human_eye_-_Joshua_Harvey.mp4
   original_title: 'The evolution of the human eye - Joshua Harvey'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Evolution/The_evolution_of_the_human_eye_-_Joshua_Harvey.en.srt
     zh-Hans: TED-Ed/Evolution/The_evolution_of_the_human_eye_-_Joshua_Harvey.zh-Hans.srt
@@ -48,6 +63,7 @@
   ext: mp4
   file: TED-Ed/Evolution/Where_do_genes_come_from_-_Carl_Zimmer.mp4
   original_title: 'Where do genes come from? - Carl Zimmer'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Evolution/Where_do_genes_come_from_-_Carl_Zimmer.en.srt
     zh-Hans: TED-Ed/Evolution/Where_do_genes_come_from_-_Carl_Zimmer.zh-Hans.srt
@@ -57,6 +73,7 @@
   ext: mp4
   file: TED-Ed/Evolution/Which_Came_First_-_The_Chicken_or_the_Egg.mp4
   original_title: 'Which Came First - The Chicken or the Egg?'
+  resolution: 1280x720
   subs:
     en: TED-Ed/Evolution/Which_Came_First_-_The_Chicken_or_the_Egg.en.srt
   title: Which_Came_First_-_The_Chicken_or_the_Egg
@@ -65,6 +82,7 @@
   ext: mp4
   file: TED-Ed/Genetics/How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az.mp4
   original_title: "How Mendel's pea plants helped us understand genetics - Hortensia Jimnez Daz"
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Genetics/How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az.en.srt
     zh-TW: TED-Ed/Genetics/How_Mendel_s_pea_plants_helped_us_understand_genetics_-_Hortensia_Jim_nez_D_az.zh-TW.srt
@@ -74,6 +92,7 @@
   ext: mp4
   file: TED-Ed/Genetics/RNAi_-_Slicing_dicing_and_serving_your_cells_-_Alex_Dainis.mp4
   original_title: 'RNAi: Slicing, dicing and serving your cells - Alex Dainis'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Genetics/RNAi_-_Slicing_dicing_and_serving_your_cells_-_Alex_Dainis.en.srt
   title: RNAi_-_Slicing_dicing_and_serving_your_cells_-_Alex_Dainis
@@ -82,6 +101,7 @@
   ext: mp4
   file: TED-Ed/Genetics/Sex_Determination_-_More_Complicated_Than_You_Thought.mp4
   original_title: 'Sex Determination: More Complicated Than You Thought'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Genetics/Sex_Determination_-_More_Complicated_Than_You_Thought.en.srt
     zh-TW: TED-Ed/Genetics/Sex_Determination_-_More_Complicated_Than_You_Thought.zh-TW.srt
@@ -91,6 +111,7 @@
   ext: mp4
   file: TED-Ed/Genetics/The_cancer_gene_we_all_have_-_Michael_Windelspecht.mp4
   original_title: 'The cancer gene we all have - Michael Windelspecht'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Genetics/The_cancer_gene_we_all_have_-_Michael_Windelspecht.en.srt
     zh-Hans: TED-Ed/Genetics/The_cancer_gene_we_all_have_-_Michael_Windelspecht.zh-Hans.srt
@@ -100,6 +121,7 @@
   ext: mp4
   file: TED-Ed/Genetics/The_race_to_sequence_the_human_genome_-_Tien_Nguyen.mp4
   original_title: 'The race to sequence the human genome - Tien Nguyen'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Genetics/The_race_to_sequence_the_human_genome_-_Tien_Nguyen.en.srt
     zh-TW: TED-Ed/Genetics/The_race_to_sequence_the_human_genome_-_Tien_Nguyen.zh-TW.srt
@@ -109,6 +131,7 @@
   ext: mp4
   file: TED-Ed/Genetics/What_happens_when_your_DNA_is_damaged_-_Monica_Menesini.mp4
   original_title: 'What happens when your DNA is damaged? - Monica Menesini'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Genetics/What_happens_when_your_DNA_is_damaged_-_Monica_Menesini.en.srt
   title: What_happens_when_your_DNA_is_damaged_-_Monica_Menesini
@@ -117,6 +140,7 @@
   ext: mp4
   file: TED-Ed/Others/Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles.mp4
   original_title: 'Cell vs. virus: A battle for health - Shannon Stiles'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Others/Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles.en.srt
     zh-Hans: TED-Ed/Others/Cell_vs._virus_-_A_battle_for_health_-_Shannon_Stiles.zh-Hans.srt
@@ -126,6 +150,7 @@
   ext: mp4
   file: TED-Ed/Others/How_Life_Begins_in_the_Deep_Ocean.mp4
   original_title: How Life Begins in the Deep Ocean
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Others/How_Life_Begins_in_the_Deep_Ocean.en.srt
     zh-Hans: TED-Ed/Others/How_Life_Begins_in_the_Deep_Ocean.zh-Hans.srt
@@ -135,6 +160,7 @@
   ext: mp4
   file: TED-Ed/Others/How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut.mp4
   original_title: 'How do vaccines work? - Kelwalin Dhanasarnsombut'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Others/How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut.en.srt
     zh-Hans: TED-Ed/Others/How_do_vaccines_work_-_Kelwalin_Dhanasarnsombut.zh-Hans.srt
@@ -144,15 +170,26 @@
   ext: mp4
   file: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.mp4
   original_title: 'Learning from smallpox: How to eradicate a disease - Julie Garon and Walter A. Orenstein'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.en.srt
     zh-TW: TED-Ed/Others/Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein.zh-TW.srt
   title: Learning_from_smallpox_-_How_to_eradicate_a_disease_-_Julie_Garon_and_Walter_A._Orenstein
+- URL: https://www.youtube.com/watch?v=XMriWTvPXHI
+  category: TED-Ed/Others
+  ext: mp4
+  file: TED-Ed/Others/The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi.mp4
+  original_title: 'The mathematical secrets of Pascals triangle - Wajdi Mohamed Ratemi'
+  resolution: 1920x1080
+  subs:
+    en: TED-Ed/Others/The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi.en.srt
+  title: The_mathematical_secrets_of_Pascal_s_triangle_-_Wajdi_Mohamed_Ratemi
 - URL: https://www.youtube.com/watch?v=oKjFVBVGad0
   category: TED-Ed/Others
   ext: mp4
   file: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.mp4
   original_title: 'The brilliance of bioluminescence - Leslie Kenna'
+  resolution: 1920x1080
   subs:
     en: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.en.srt
     zh-TW: TED-Ed/Others/The_brilliance_of_bioluminescence_-_Leslie_Kenna.zh-TW.srt
