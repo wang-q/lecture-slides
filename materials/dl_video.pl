@@ -24,7 +24,7 @@ dl_video.pl - download videos and subtitles based on yaml
       Options:
         --help              brief help message
         --in_file   -i STR  input .yml file's location
-        --action    -a STR  update, download, report or merge
+        --action    -a STR  update, download, report, burn or merge
         --out       -o STR  basename of output files
         --dir       -d STR  base directory
 
@@ -82,9 +82,9 @@ if ( $action eq "update" ) {
 
         $item->{resolution} =~ /\d+x(\d+)/;
         my $height = $1;
-        if ($height < 480) {
+        if ( $height < 480 ) {
             print " " x 8 . "Low resolution video. Change category to LOW/$item->{category}\n";
-            if ($item->{category} !~ /LOW\// ) {
+            if ( $item->{category} !~ /LOW\// ) {
                 $item->{category} = "LOW/" . $item->{category};
             }
         }
@@ -169,9 +169,10 @@ elsif ( $action eq "download" ) {
     my $yml = LoadFile($in_file);
 
     $base_dir = path($base_dir)->absolute;
+    $base_dir->mkpath;
     print "Base dir is $base_dir\n";
 
-    my $bash_file = path( $base_dir, "$out.download.sh" );
+    my $bash_file = path( $base_dir, "$out.$action.sh" );
     print "Output bash file is $bash_file\n";
 
     $bash_file->remove;
@@ -179,6 +180,8 @@ elsif ( $action eq "download" ) {
 
     for my $item ( @{$yml} ) {
         my $video_file = path( $base_dir, $item->{file} );
+        $video_file->parent->mkpath;
+
         $bash_file->append("# $item->{category}\n");
         $bash_file->append("# $item->{original_title}\n");
 
@@ -201,9 +204,10 @@ elsif ( $action eq "report" ) {
     my $yml = LoadFile($in_file);
 
     $base_dir = path($base_dir)->absolute;
+    $base_dir->mkpath;
     print "Base dir is $base_dir\n";
 
-    my $report_file = path( $base_dir, "$out.report.csv" );
+    my $report_file = path( $base_dir, "$out.$action.csv" );
     print "Output report file is $report_file\n";
     $report_file->remove;
 
@@ -234,37 +238,46 @@ elsif ( $action eq "report" ) {
 
     print "\n";
 }
-elsif ( $action eq "merge" ) {
+elsif ( $action eq "burn" ) {
     print "====> Do action $action <====\n\n";
 
     my $yml = LoadFile($in_file);
 
     $base_dir = path($base_dir)->absolute;
+    $base_dir->mkpath;
     print "Base dir is $base_dir\n";
 
-    my $bash_file = path( $base_dir, "$out.merge.sh" );
+    my $bash_file = path( $base_dir, "$out.$action.sh" );
     print "Output bash file is $bash_file\n";
     $bash_file->remove;
     $bash_file->append("#!/bin/bash\n\n");
 
     for my $item ( @{$yml} ) {
         my $video_file = path( $base_dir, $item->{file} );
+        my $new_file
+            = path( $base_dir, $action, $item->{category}, $video_file->basename( ".mp4", ".webm", ".3gp", "flv" ) );
+        $new_file->parent->mkpath;
+
         $bash_file->append("# $item->{category}\n");
         $bash_file->append("# $item->{original_title}\n");
 
         # cat srt files into one
+        # and append subtitle abbr to $new_file
         $bash_file->append("cat ");
         if ( exists $item->{subs}{en} ) {
-            $bash_file->append( $item->{subs}{en} . " " );
+            $new_file .= ".en";
+            $bash_file->append( path( $base_dir, $item->{subs}{en} )->absolute . " " );
         }
         for my $key ( grep { $_ ne 'en' } keys %{ $item->{subs} } ) {
-            $bash_file->append( $item->{subs}{$key} . " " );
+            $new_file .= ".$key";
+            $bash_file->append( path( $base_dir, $item->{subs}{$key} )->absolute . " " );
         }
+        $new_file .= ".$item->{ext}";
         $bash_file->append(" > merged.srt.tmp \n");
 
         # ffmpeg
         $bash_file->append(
-            "ffmpeg -i $video_file -vf subtitles='merged.srt.tmp' -c:v libx264 -crf 20 -c:a copy embed/$item->{title}.mp4\n"
+            "ffmpeg -i $video_file -vf subtitles='merged.srt.tmp' -c:v libx264 -crf 20 -c:a copy $new_file\n"
         );
 
         # remove tmp file

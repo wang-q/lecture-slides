@@ -141,8 +141,9 @@ youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 * Generate merging bash script.
 
 ```bash
+rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
+
 cd ~/Scripts/lecture-slides/materials
-mkdir -p ~/Documents/Course/TED
 perl dl_video.pl -a merge -i TED-update.yml -o TED-output -d ~/Documents/Course
 ```
 
@@ -151,9 +152,7 @@ perl dl_video.pl -a merge -i TED-update.yml -o TED-output -d ~/Documents/Course
     Or copy and paste command lines of a video to terminal.
 
 ```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
-mkdir -p ~/Documents/Course/embed
 cd ~/Documents/Course
 bash ~/Documents/Course/TED-output.merge.sh
 ```
@@ -226,7 +225,6 @@ EOF
 cd ~/Scripts/lecture-slides/materials
 perl dl_video.pl -a update -i TED-Ed.yml -o TED-Ed-update
 
-mkdir -p ~/Documents/Course/TED-Ed
 perl dl_video.pl -a download -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
 
 bash ~/Documents/Course/TED-Ed-output.download.sh
@@ -237,13 +235,10 @@ perl dl_video.pl -a report -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/
 ### On my Mac
 
 ```bash
-cd ~/Scripts/lecture-slides/materials
-mkdir -p ~/Documents/Course/TED-Ed
-perl dl_video.pl -a merge -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
-
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
-mkdir -p ~/Documents/Course/embed
-cd ~/Documents/Course
-bash ~/Documents/Course/TED-Ed-output.merge.sh
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a burn -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
+
+bash ~/Documents/Course/TED-Ed-output.burn.sh
 ```
