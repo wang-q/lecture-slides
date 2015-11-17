@@ -9,6 +9,7 @@ use YAML qw(Dump Load DumpFile LoadFile);
 
 use Path::Tiny;
 use Number::Format qw(format_bytes);
+use Template;
 
 #----------------------------------------------------------#
 # GetOpt section
@@ -249,41 +250,61 @@ elsif ( $action eq "burn" ) {
 
     my $bash_file = path( $base_dir, "$out.$action.sh" );
     print "Output bash file is $bash_file\n";
-    $bash_file->remove;
-    $bash_file->append("#!/bin/bash\n\n");
 
     for my $item ( @{$yml} ) {
         my $video_file = path( $base_dir, $item->{file} );
         my $new_file
-            = path( $base_dir, $action, $item->{category}, $video_file->basename( ".mp4", ".webm", ".3gp", "flv" ) );
+            = path( $base_dir, $action, $item->{category},
+            $video_file->basename( ".mp4", ".webm", ".3gp", "flv" ) );
         $new_file->parent->mkpath;
 
-        $bash_file->append("# $item->{category}\n");
-        $bash_file->append("# $item->{original_title}\n");
-
-        # cat srt files into one
-        # and append subtitle abbr to $new_file
-        $bash_file->append("cat ");
+        # Gather sub files and append subtitle abbrs to $new_file
+        $item->{sub_files} = [];
         if ( exists $item->{subs}{en} ) {
             $new_file .= ".en";
-            $bash_file->append( path( $base_dir, $item->{subs}{en} )->absolute . " " );
+            push @{ $item->{sub_files} }, path( $base_dir, $item->{subs}{en} )->stringify;
         }
         for my $key ( grep { $_ ne 'en' } keys %{ $item->{subs} } ) {
             $new_file .= ".$key";
-            $bash_file->append( path( $base_dir, $item->{subs}{$key} )->absolute . " " );
+            push @{ $item->{sub_files} }, path( $base_dir, $item->{subs}{$key} )->stringify;
         }
         $new_file .= ".$item->{ext}";
-        $bash_file->append(" > merged.srt.tmp \n");
 
-        # ffmpeg
-        $bash_file->append(
-            "ffmpeg -i $video_file -vf subtitles='merged.srt.tmp' -c:v libx264 -crf 20 -c:a copy $new_file\n"
-        );
-
-        # remove tmp file
-        $bash_file->append("rm merged.srt.tmp\n");
-        $bash_file->append("\n");
+        $item->{video_file} = path($video_file)->stringify;
+        $item->{new_file}   = path($new_file)->stringify;
     }
+
+    my $text = <<'EOF';
+#!/bin/bash
+
+[% FOREACH item IN data -%]
+# [% item.category %]
+# [% item.original_title %]
+if [ -f [% item.new_file %] ];
+then
+    echo [% item.new_file %] exists!;
+else
+    cat \
+[% FOREACH sub_file IN item.sub_files -%]
+        [% sub_file %] \
+[% END -%]
+        > merged.srt.tmp
+
+    ffmpeg \
+        -i [% item.video_file %] \
+        -vf subtitles='merged.srt.tmp' \
+        -c:v libx264 -crf 20 -c:a copy \
+        [% item.new_file %]
+
+    rm merged.srt.tmp
+fi
+
+[% END -%]
+
+EOF
+
+    my $tt = Template->new;
+    $tt->process( \$text, { data => $yml, }, $bash_file->stringify ) or die Template->error;
 
     print "\n";
 }
