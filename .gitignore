@@ -1,3 +1,4 @@
+# LaTeX tmp
 *.toc
 *.aux
 *.fdb_latexmk
@@ -7,12 +8,14 @@
 *.snm
 *.vrb
 
+# bibtex tmp
 *.bbl
 *.bcf
 *.blg
 *-blx.bib
 *.run.xml
 
+# Pictures
 *.pdf
 *.tex
 *.jpg
@@ -20,6 +23,12 @@
 *.png
 *.emf
 *.wmf
+
+# Videos
+*.mp4
+*.flv
+*.egp
+*.mkv
 
 # Finished files
 !preamble-notes.tex
