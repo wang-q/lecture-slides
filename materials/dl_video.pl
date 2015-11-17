@@ -81,9 +81,10 @@ if ( $action eq "update" ) {
         );
         print " " x 8 . "$item->{resolution}\n";
 
-        $item->{resolution} =~ /\d+x(\d+)/;
-        my $height = $1;
-        if ( $height < 480 ) {
+        $item->{resolution} =~ /(\d+)x(\d+)/;
+        $item->{width} = $1;
+            $item->{height} = $2;
+        if ( $item->{height} < 480 ) {
             print " " x 8 . "Low resolution video. Change category to LOW/$item->{category}\n";
             if ( $item->{category} !~ /LOW\// ) {
                 $item->{category} = "LOW/" . $item->{category};
@@ -188,6 +189,7 @@ elsif ( $action eq "download" ) {
 [% FOREACH item IN data -%]
 # [% item.category %]
 # [% item.original_title %]
+# [% item.resolution %]
 youtube-dl \
     [% item.URL %] \
     --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] \
@@ -293,6 +295,8 @@ elsif ( $action eq "burn" ) {
 [% FOREACH item IN data -%]
 # [% item.category %]
 # [% item.original_title %]
+# [% item.width %]x[% item.height %]
+[% IF item.sub_files.size > 0 -%]
 if [ -f [% item.new_file %] ];
 then
     echo [% item.new_file %] exists!;
@@ -305,13 +309,17 @@ else
 
     ffmpeg \
         -i [% item.video_file %] \
-        -vf subtitles='merged.srt.tmp' \
+        -vf "subtitles='merged.srt.tmp'[% IF item.height < 480 %], scale=-1:480[% END %]" \
         -c:v libx264 -crf 20 -c:a copy \
         [% item.new_file %]
 
     rm merged.srt.tmp
 fi
 
+[% ELSE -%]
+echo No subs for [% item.video_file %]
+
+[% END -%]
 [% END -%]
 
 EOF
