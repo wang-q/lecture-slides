@@ -10,10 +10,23 @@ The `--proxy` option doesn't work with shadowsocks, so I install it on a linode 
 
 ```bash
 sudo pip install youtube-dl
-mkdir -p ~/Documents/Course/TED-Ed
 ```
 
-### Install ffmpeg
+### Install ffmpeg in VPS
+
+Ubuntu 14.04 ships `libav-tools` other than `ffmpeg`, so get it by [ppa](https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media).
+
+```bash
+sudo add-apt-repository ppa:mc3man/trusty-media
+sudo apt-get update
+
+sudo apt-get install ffmpeg
+
+sudo add-apt-repository --remove ppa:mc3man/trusty-media
+sudo apt-get update
+```
+
+### Install ffmpeg in Mac
 
 Use ffmpeg to burn subtitles into videos.
 
@@ -22,17 +35,15 @@ brew install x264 lame libvo-aacenc xvid
 brew install ffmpeg --with-libass
 ```
 
-### Bring files back with rsync
-
-```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
-```
-
 ## TED
+
+For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download them directly from ted.com.
 
 ### On the linode VPS.
 
 * Create `TED.yml` manually.
+
+    Human beings make mistakes. Compare `TED.yml` and auto-generated `TED-update.yml` to fix errors.
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
@@ -54,10 +65,10 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
   original_title: 'Rob Knight: How our microbes make us who we are'
 - URL: https://www.youtube.com/watch?v=nzj7Wg4DAbs
   category: TED/Evolution
-  original_title: Why Humans Run the World | Yuval Noah Harari | TED Talks
-- URL: https://www.youtube.com/watch?v=E5X6Qy772YU
-  category: TED/Genetics
-  original_title: 'Craig Venter: A voyage of DNA, genes and the sea'
+  original_title: 'Why Humans Run the World | Yuval Noah Harari | TED Talks'
+- URL: https://www.youtube.com/watch?v=WjBwhwe5-cc
+  category: TED/Evolution
+  original_title: "Isabel Behncke: Evolution's gift of play, from bonobo apes to humans"
 - URL: https://www.youtube.com/watch?v=O8e8Ttfz-pY
   category: TED/Genetics
   original_title: 'Hendrik Poinar: Bring back the woolly mammoth!'
@@ -80,7 +91,7 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
   category: TED/Others
   original_title: 'Jim Fallon: Exploring the mind of a killer'
 - URL: https://www.youtube.com/watch?v=176adlNeRy8
-  category: TED/Others
+  category: LOW/TED/Others
   original_title: 'Paul Ewald: Can we domesticate germs?'
 EOF
 ```
@@ -92,19 +103,17 @@ cd ~/Scripts/lecture-slides/materials
 perl dl_video.pl -a update -i TED.yml -o TED-update
 ```
 
-* Then generate bash script with `dl_video.pl`.
+* Generate downloading bash script, download files and generate reports.
 
 ```bash
 cd ~/Scripts/lecture-slides/materials
 mkdir -p ~/Documents/Course/TED
 perl dl_video.pl -a download -i TED-update.yml -o TED-output -d ~/Documents/Course
-```
 
-* Download videos and subtitles with the generated bash script.
-
-```bash
 mkdir -p ~/Documents/Course/TED
 bash ~/Documents/Course/TED-output.download.sh
+
+perl dl_video.pl -a report -i TED-update.yml -o TED-output -d ~/Documents/Course
 ```
 
 * A working example which can be pasted line by line to terminal. 
@@ -119,229 +128,122 @@ TITLE=`youtube-dl $URL --restrict-filenames --get-filename  -o "%(title)s"`
 EXT=`youtube-dl $URL --restrict-filenames --get-filename -o "%(ext)s"`
 FULLPATH="~/Documents/Course/${CATEGORY}/${TITLE}.${EXT}"
 
-youtube-dl $URL -o "${FULLPATH}"
+youtube-dl $URL --list-formats
+youtube-dl $URL --format 22 -o "${FULLPATH}"
 
 youtube-dl $URL --list-subs
 youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang en --skip-download
 youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 ```
 
-### Ecology
+### On my Mac
 
-### Others
+* Generate merging bash script.
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+mkdir -p ~/Documents/Course/TED
+perl dl_video.pl -a merge -i TED-update.yml -o TED-output -d ~/Documents/Course
+```
+
+* Burn subtitles into videos with the generated script.
+
+    Or copy and paste command lines of a video to terminal.
+
+```bash
+rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
+
+mkdir -p ~/Documents/Course/embed
+cd ~/Documents/Course
+bash ~/Documents/Course/TED-output.merge.sh
+```
 
 ## TED Ed
 
-### Genetics
-
-* What happens when your DNA is damaged - Monica Menesini
+### On the linode VPS.
 
 ```bash
-URL=https://www.youtube.com/watch?v=vP8-5Bhd2ag
-CATEGORY="TED-Ed/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED-Ed.yml
+---
+- URL: https://www.youtube.com/watch?v=Y5uRVv7GGQM
+  category: TED-Ed/Ecology
+  original_title: 'How bees help plants have sex - Fernanda S. Valdovinos'
+- URL: https://www.youtube.com/watch?v=GK_vRtHJZu4
+  category: TED-Ed/Ecology
+  original_title: 'Why is biodiversity so important? - Kim Preshoff'
+- URL: https://www.youtube.com/watch?v=5NdMnlt2keE
+  category: TED-Ed/Evolution
+  original_title: 'Five fingers of evolution - Paul Andersen'
+- URL: https://www.youtube.com/watch?v=9i7kAt97XYU
+  category: TED-Ed/Evolution
+  original_title: 'How we think complex cells evolved - Adam Jacobson'
+- URL: https://www.youtube.com/watch?v=qrKZBh8BL_U
+  category: TED-Ed/Evolution
+  original_title: 'The evolution of the human eye - Joshua Harvey'
+- URL: https://www.youtube.com/watch?v=z9HIYjRRaDE
+  category: TED-Ed/Evolution
+  original_title: 'Where do genes come from? - Carl Zimmer'
+- URL: https://www.youtube.com/watch?v=1a8pI65emDE
+  category: TED-Ed/Evolution
+  original_title: 'Which Came First - The Chicken or the Egg?'
+- URL: https://www.youtube.com/watch?v=Mehz7tCxjSE
+  category: TED-Ed/Genetics
+  original_title: "How Mendel's pea plants helped us understand genetics - Hortensia Jimnez Daz"
+- URL: https://www.youtube.com/watch?v=tzlGU5EI9rU
+  category: TED-Ed/Genetics
+  original_title: 'RNAi: Slicing, dicing and serving your cells - Alex Dainis'
+- URL: https://www.youtube.com/watch?v=kMWxuF9YW38
+  category: TED-Ed/Genetics
+  original_title: 'Sex Determination: More Complicated Than You Thought'
+- URL: https://www.youtube.com/watch?v=pOyKFgGKmHE
+  category: TED-Ed/Genetics
+  original_title: 'The cancer gene we all have - Michael Windelspecht'
+- URL: https://www.youtube.com/watch?v=AhsIF-cmoQQ
+  category: TED-Ed/Genetics
+  original_title: 'The race to sequence the human genome - Tien Nguyen'
+- URL: https://www.youtube.com/watch?v=vP8-5Bhd2ag
+  category: TED-Ed/Genetics
+  original_title: 'What happens when your DNA is damaged? - Monica Menesini'
+- URL: https://www.youtube.com/watch?v=oqGuJhOeMek
+  category: TED-Ed/Others
+  original_title: 'Cell vs. virus: A battle for health - Shannon Stiles'
+- URL: https://www.youtube.com/watch?v=i_R7ouD8-Eo
+  category: TED-Ed/Others
+  original_title: How Life Begins in the Deep Ocean
+- URL: https://www.youtube.com/watch?v=rb7TVW77ZCs
+  category: TED-Ed/Others
+  original_title: 'How do vaccines work? - Kelwalin Dhanasarnsombut'
+- URL: https://www.youtube.com/watch?v=oBSandHijDc
+  category: TED-Ed/Others
+  original_title: 'Learning from smallpox: How to eradicate a disease - Julie Garon and Walter A. Orenstein'
+- URL: https://www.youtube.com/watch?v=oKjFVBVGad0
+  category: TED-Ed/Others
+  original_title: 'The brilliance of bioluminescence - Leslie Kenna'
+EOF
 ```
 
-* The race to sequence the human genome - Tien Nguyen
-
 ```bash
-URL=https://www.youtube.com/watch?v=AhsIF-cmoQQ
-CATEGORY="TED-Ed/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a update -i TED-Ed.yml -o TED-Ed-update
+
+mkdir -p ~/Documents/Course/TED-Ed
+perl dl_video.pl -a download -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
+
+bash ~/Documents/Course/TED-Ed-output.download.sh
+
+perl dl_video.pl -a report -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
 ```
 
-* How Mendel's pea plants helped us understand genetics - Hortensia Jiménez Díaz
+### On my Mac
 
 ```bash
-URL=https://www.youtube.com/watch?v=Mehz7tCxjSE
-CATEGORY="TED-Ed/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
+cd ~/Scripts/lecture-slides/materials
+mkdir -p ~/Documents/Course/TED-Ed
+perl dl_video.pl -a merge -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
 
-* The cancer gene we all have - Michael Windelspecht
+rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
-```bash
-URL=https://www.youtube.com/watch?v=pOyKFgGKmHE
-CATEGORY="TED-Ed/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* RNAi: Slicing, dicing and serving your cells - Alex Dainis
-
-```bash
-URL=https://www.youtube.com/watch?v=tzlGU5EI9rU
-CATEGORY="TED-Ed/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Sex Determination: More Complicated Than You Thought
-
-```bash
-URL=https://www.youtube.com/watch?v=kMWxuF9YW38
-CATEGORY="TED-Ed/Genetics"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-### Evolution
-
-* Five fingers of evolution - Paul Andersen
-
-```bash
-URL=https://www.youtube.com/watch?v=5NdMnlt2keE
-CATEGORY="TED-Ed/Evolution"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* The evolution of the human eye - Joshua Harvey
-
-```bash
-URL=https://www.youtube.com/watch?v=qrKZBh8BL_U
-CATEGORY="TED-Ed/Evolution"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Where do genes come from? - Carl Zimmer
-
-```bash
-URL=https://www.youtube.com/watch?v=z9HIYjRRaDE
-CATEGORY="TED-Ed/Evolution"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* How we think complex cells evolved - Adam Jacobson
-
-```bash
-URL=https://www.youtube.com/watch?v=9i7kAt97XYU
-CATEGORY="TED-Ed/Evolution"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Which Came First - The Chicken or the Egg
-
-```bash
-URL=https://www.youtube.com/watch?v=1a8pI65emDE
-CATEGORY="TED-Ed/Evolution"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-#youtube-dl --skip-download --write-auto-sub --sub-lang zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-### Ecology
-
-* How bees help plants have sex - Fernanda S. Valdovinos
-
-```bash
-URL=https://www.youtube.com/watch?v=Y5uRVv7GGQM
-CATEGORY="TED-Ed/Ecology"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Why is biodiversity so important? - Kim Preshoff
-
-```bash
-URL=https://www.youtube.com/watch?v=GK_vRtHJZu4
-CATEGORY="TED-Ed/Ecology"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-### Others
-
-* How do vaccines work? - Kelwalin Dhanasarnsombut
-
-```bash
-URL=https://www.youtube.com/watch?v=GK_vRtHJZu4
-CATEGORY="TED-Ed/Ecology"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Learning from smallpox: How to eradicate a disease - Julie Garon and Walter A. Orenstein
-
-```bash
-URL=https://www.youtube.com/watch?v=oBSandHijDc
-CATEGORY="TED-Ed/Others"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* Cell vs. virus: A battle for health - Shannon Stiles
-
-```bash
-URL=https://www.youtube.com/watch?v=oqGuJhOeMek
-CATEGORY="TED-Ed/Others"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* How Life Begins in the Deep Ocean
-
-```bash
-URL=https://www.youtube.com/watch?v=i_R7ouD8-Eo
-CATEGORY="TED-Ed/Others"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-Hans $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-* The brilliance of bioluminescence - Leslie Kenna
-
-```bash
-URL=https://www.youtube.com/watch?v=oKjFVBVGad0
-CATEGORY="TED-Ed/Others"
-youtube-dl --list-subs $URL
-youtube-dl --write-sub --sub-lang en,zh-TW $URL -o "~/Documents/Course/${CATEGORY}/%(title)s.%(ext)s"
-```
-
-## Embed subtitles
-
-```bash
-mkdir -p ~/Docuemnts/Course/TED-Ed/Evolution/embed
-cd ~/Docuemnts/Course/TED-Ed/Evolution
-
-TITLE="Five fingers of evolution - Paul Andersen"
-cat "${TITLE}.en.srt" "${TITLE}.zh-Hans.srt" > "${TITLE}.merged.srt"
-ffmpeg -i "${TITLE}.mp4" -vf "subtitles='${TITLE}.merged.srt'" \
-    -c:v libx264 -crf 20 \
-    -c:a copy \
-    "embed/${TITLE}.mp4"
-
-TITLE="The evolution of the human eye - Joshua Harvey"
-cat "${TITLE}.en.srt" "${TITLE}.zh-Hans.srt" > "${TITLE}.merged.srt"
-ffmpeg -i "${TITLE}.mp4" -vf "subtitles='${TITLE}.merged.srt'" \
-    -c:v libx264 -crf 20 \
-    -c:a copy \
-    "embed/${TITLE}.mp4"
-
-TITLE="Where do genes come from - Carl Zimmer"
-cat "${TITLE}.en.srt" "${TITLE}.zh-Hans.srt" > "${TITLE}.merged.srt"
-ffmpeg -i "${TITLE}.mp4" -vf "subtitles='${TITLE}.merged.srt'" \
-    -c:v libx264 -crf 20 \
-    -c:a copy \
-    "embed/${TITLE}.mp4"
-
-TITLE="How we think complex cells evolved - Adam Jacobson"
-ffmpeg -i "${TITLE}.mp4" -vf "subtitles='${TITLE}.en.srt'" \
-    -c:v libx264 -crf 20 \
-    -c:a copy \
-    "embed/${TITLE}.mp4"
-
-TITLE="Which Came First - The Chicken or the Egg"
-ffmpeg -i "${TITLE}.mp4" -vf "subtitles='${TITLE}.en.srt'" \
-    -c:v libx264 -crf 20 \
-    -c:a copy \
-    "embed/${TITLE}.mp4"
+mkdir -p ~/Documents/Course/embed
+cd ~/Documents/Course
+bash ~/Documents/Course/TED-Ed-output.merge.sh
 ```
