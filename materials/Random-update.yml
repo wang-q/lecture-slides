@@ -1,4 +1,15 @@
 ---
+- URL: https://www.youtube.com/watch?v=Dw4Fr4eyGv8
+  category: LOW/Random
+  ext: mp4
+  file: LOW/Random/Discovering_Religion_Ep_08_-_Archaeopteryx.mp4
+  height: 360
+  original_title: ' Discovering Religion  Ep 08 - Archaeopteryx'
+  resolution: 640x360
+  subs:
+    zh-Hant: LOW/Random/Discovering_Religion_Ep_08_-_Archaeopteryx.zh-Hant.srt
+  title: Discovering_Religion_Ep_08_-_Archaeopteryx
+  width: 640
 - URL: https://www.youtube.com/watch?v=_ApDinCBt8g
   category: Random
   ext: mp4
@@ -28,6 +39,28 @@
   resolution: 640x480
   title: Food_Chains
   width: 640
+- URL: https://www.youtube.com/watch?v=mcM23M-CCog
+  category: Random
+  ext: mp4
+  file: Random/Galapagos_Finch_Evolution_HHMI_BioInteractive_Video.mp4
+  height: 1080
+  original_title: Galapagos Finch Evolution  HHMI BioInteractive Video
+  resolution: 1920x1080
+  subs:
+    en: Random/Galapagos_Finch_Evolution_HHMI_BioInteractive_Video.en.srt
+  title: Galapagos_Finch_Evolution_HHMI_BioInteractive_Video
+  width: 1920
+- URL: https://www.youtube.com/watch?v=l25MBq8T77w
+  category: Random
+  ext: mp4
+  file: Random/Galapagos_-_the_finches_4_7.mp4
+  height: 480
+  original_title: 'Galapagos: the finches (4/7)'
+  resolution: 640x480
+  subs:
+    en: Random/Galapagos_-_the_finches_4_7.en.srt
+  title: Galapagos_-_the_finches_4_7
+  width: 640
 - URL: https://www.youtube.com/watch?v=2pp17E4E-O8
   category: Random
   ext: mp4
@@ -37,6 +70,26 @@
   resolution: 1920x1080
   title: Genome_Editing_with_CRISPR-Cas9
   width: 1920
+- URL: https://www.youtube.com/watch?v=MkUgkDLp2iE
+  category: Random
+  ext: mp4
+  file: Random/How_Genes_are_Regulated_-_Transcription_Factors.mp4
+  height: 720
+  original_title: 'How Genes are Regulated: Transcription Factors'
+  resolution: 1280x720
+  title: How_Genes_are_Regulated_-_Transcription_Factors
+  width: 1280
+- URL: https://www.youtube.com/watch?v=oBwtxdI1zvk
+  category: Random
+  ext: mp4
+  file: Random/Lac_Operon.mp4
+  height: 480
+  original_title: Lac Operon
+  resolution: 640x480
+  subs:
+    en: Random/Lac_Operon.en.srt
+  title: Lac_Operon
+  width: 640
 - URL: https://www.youtube.com/watch?v=NWqgZUnJdAY
   category: LOW/Random
   ext: mp4
@@ -105,3 +158,12 @@
     en: LOW/Random/The_Scientific_Method.en.srt
   title: The_Scientific_Method
   width: 576
+- URL: https://www.youtube.com/watch?v=iMz6lApJgu4
+  category: Random
+  ext: mp4
+  file: Random/Xanthopan_morgani_praedicta_The_Darwin_s_Moth.mp4
+  height: 480
+  original_title: Xanthopan morgani praedicta The Darwin's Moth
+  resolution: 854x480
+  title: Xanthopan_morgani_praedicta_The_Darwin_s_Moth
+  width: 854

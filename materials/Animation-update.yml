@@ -1,0 +1,143 @@
+---
+- URL: https://www.youtube.com/watch?v=28mgfg8nRT4
+  category: Animation
+  ext: mp4
+  file: Animation/DNA_transcription_and_translation_Dr_Osama_Ma3rof_..mp4
+  height: 1080
+  original_title: DNA transcription and translation Dr Osama Ma3rof .
+  resolution: 1920x1080
+  title: DNA_transcription_and_translation_Dr_Osama_Ma3rof_.
+  width: 1920
+- URL: https://www.youtube.com/watch?v=0JpOJ4F4984
+  category: Animation/WEHI
+  ext: mp4
+  file: Animation/WEHI/Chromosome_and_Kinetochore.mp4
+  height: 720
+  original_title: Chromosome and Kinetochore
+  resolution: 1280x720
+  title: Chromosome_and_Kinetochore
+  width: 1280
+- URL: https://www.youtube.com/watch?v=aA5fyWJh5S0
+  category: Animation/WEHI
+  ext: mp4
+  file: Animation/WEHI/Restriction_Enzyme_EcoR1.mp4
+  height: 720
+  original_title: Restriction Enzyme EcoR1
+  resolution: 1280x720
+  title: Restriction_Enzyme_EcoR1
+  width: 1280
+- URL: https://www.youtube.com/watch?v=DA2t5N72mgw
+  category: Animation/WEHI
+  ext: mp4
+  file: Animation/WEHI/Transcription_-_Central_Dogma_Part_1.mp4
+  height: 720
+  original_title: 'Transcription - Central Dogma Part 1'
+  resolution: 1280x720
+  title: Transcription_-_Central_Dogma_Part_1
+  width: 1280
+- URL: https://www.youtube.com/watch?v=WkI_Vbwn14g
+  category: Animation/WEHI
+  ext: mp4
+  file: Animation/WEHI/Translation_-_Central_Dogma_Part_2.mp4
+  height: 720
+  original_title: 'Translation - Central Dogma Part 2'
+  resolution: 1280x720
+  title: Translation_-_Central_Dogma_Part_2
+  width: 1280
+- URL: https://www.youtube.com/watch?v=mHak9EZjySs
+  category: Animation/WEHI
+  ext: mp4
+  file: Animation/WEHI/X_Inactivation_and_Epigenetics.mp4
+  height: 720
+  original_title: X Inactivation and Epigenetics
+  resolution: 1280x720
+  title: X_Inactivation_and_Epigenetics
+  width: 1280
+- URL: https://www.youtube.com/watch?v=SMtWvDbfHLo
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/DNA_Transcription_Advanced.mp4
+  height: 720
+  original_title: DNA Transcription (Advanced)
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/DNA_Transcription_Advanced.en.srt
+  title: DNA_Transcription_Advanced
+  width: 1280
+- URL: https://www.youtube.com/watch?v=gbSIBhFwQ4s
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/How_DNA_is_Packaged_Advanced.mp4
+  height: 720
+  original_title: How DNA is Packaged (Advanced)
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/How_DNA_is_Packaged_Advanced.en.srt
+  title: How_DNA_is_Packaged_Advanced
+  width: 1280
+- URL: https://www.youtube.com/watch?v=I9ArIJWYZHI
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/Mechanism_of_DNA_Replication_Advanced.mp4
+  height: 720
+  original_title: Mechanism of DNA Replication (Advanced)
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/Mechanism_of_DNA_Replication_Advanced.en.srt
+  title: Mechanism_of_DNA_Replication_Advanced
+  width: 1280
+- URL: https://www.youtube.com/watch?v=8rXizmLjegI
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/Mechanism_of_Recombination.mp4
+  height: 720
+  original_title: Mechanism of Recombination
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/Mechanism_of_Recombination.en.srt
+  title: Mechanism_of_Recombination
+  width: 1280
+- URL: https://www.youtube.com/watch?v=2KoLnIwoZKU
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/Polymerase_Chain_Reaction_PCR.mp4
+  height: 720
+  original_title: Polymerase Chain Reaction (PCR)
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/Polymerase_Chain_Reaction_PCR.en.srt
+  title: Polymerase_Chain_Reaction_PCR
+  width: 1280
+- URL: https://www.youtube.com/watch?v=aVgwr0QpYNE
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/RNA_Splicing.mp4
+  height: 720
+  original_title: RNA Splicing
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/RNA_Splicing.en.srt
+  title: RNA_Splicing
+  width: 1280
+- URL: https://www.youtube.com/watch?v=6ldtdWjDwes
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/Sanger_Sequencing.mp4
+  height: 720
+  original_title: Sanger Sequencing
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/Sanger_Sequencing.en.srt
+  title: Sanger_Sequencing
+  width: 1280
+- URL: https://www.youtube.com/watch?v=TfYf_rPWUdY
+  category: Animation/dnalc
+  ext: mp4
+  file: Animation/dnalc/mRNA_Translation_Advanced.mp4
+  height: 720
+  original_title: mRNA Translation (Advanced)
+  resolution: 1280x720
+  subs:
+    en: Animation/dnalc/mRNA_Translation_Advanced.en.srt
+  title: mRNA_Translation_Advanced
+  width: 1280

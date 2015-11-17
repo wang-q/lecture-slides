@@ -96,25 +96,22 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
 EOF
 ```
 
-* Get video information with `dl_video.pl`.
+1. Get video information with `dl_video.pl`.
+2. Generate downloading bash script and download video and subtitles files.
+3. Generate reports.
 
 ```bash
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a update -i TED.yml -o TED-update
-```
+perl dl_video.pl -a update -i TED.yml -o TED-update                                 # step 1
 
-* Generate downloading bash script, download files and generate reports.
-
-```bash
-cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a download -i TED-update.yml -o TED-output -d ~/Documents/Course
+perl dl_video.pl -a download -i TED-update.yml -o TED-output -d ~/Documents/Course  # step 2
 
 bash ~/Documents/Course/TED-output.download.sh
 
-perl dl_video.pl -a report -i TED-update.yml -o TED-output -d ~/Documents/Course
+perl dl_video.pl -a report -i TED-update.yml -o TED-output -d ~/Documents/Course    # step 3
 ```
 
-* A working example which can be pasted to terminal line by line . 
+* A working example which can be pasted to terminal line by line. 
 
     "Pamela Ronald: The case for engineering our food"
 
@@ -137,19 +134,15 @@ youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 ### On my Mac
 
 * Generate merging bash script.
-
+* Burn subtitles into videos with the generated script.
+* Or copy and paste command lines of a video to terminal.
+    
 ```bash
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a burn -i TED-update.yml -o TED-output -d ~/Documents/Course
-```
+perl dl_video.pl -a burn -i TED-update.yml -o TED-output -d ~/Documents/Course      # step 4
 
-* Burn subtitles into videos with the generated script.
-
-    Or copy and paste command lines of a video to terminal.
-
-```bash
 bash ~/Documents/Course/TED-output.burn.sh
 ```
 
@@ -245,6 +238,80 @@ perl dl_video.pl -a burn -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Co
 bash ~/Documents/Course/TED-Ed-output.burn.sh
 ```
 
+## WEHI and dnalc animations
+
+### On the linode VPS.
+
+```bash
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/Animation.yml
+---
+- URL: https://www.youtube.com/watch?v=28mgfg8nRT4
+  category: Animation
+  original_title: DNA transcription and translation Dr Osama Ma3rof .
+- URL: https://www.youtube.com/watch?v=0JpOJ4F4984
+  category: Animation/WEHI
+  original_title: Chromosome and Kinetochore
+- URL: https://www.youtube.com/watch?v=aA5fyWJh5S0
+  category: Animation/WEHI
+  original_title: Restriction Enzyme EcoR1
+- URL: https://www.youtube.com/watch?v=DA2t5N72mgw
+  category: Animation/WEHI
+  original_title: 'Transcription - Central Dogma Part 1'
+- URL: https://www.youtube.com/watch?v=WkI_Vbwn14g
+  category: Animation/WEHI
+  original_title: 'Translation - Central Dogma Part 2'
+- URL: https://www.youtube.com/watch?v=mHak9EZjySs
+  category: Animation/WEHI
+  original_title: X Inactivation and Epigenetics
+- URL: https://www.youtube.com/watch?v=SMtWvDbfHLo
+  category: Animation/dnalc
+  original_title: DNA Transcription (Advanced)
+- URL: https://www.youtube.com/watch?v=gbSIBhFwQ4s
+  category: Animation/dnalc
+  original_title: How DNA is Packaged (Advanced)
+- URL: https://www.youtube.com/watch?v=I9ArIJWYZHI
+  category: Animation/dnalc
+  original_title: Mechanism of DNA Replication (Advanced)
+- URL: https://www.youtube.com/watch?v=8rXizmLjegI
+  category: Animation/dnalc
+  original_title: Mechanism of Recombination
+- URL: https://www.youtube.com/watch?v=2KoLnIwoZKU
+  category: Animation/dnalc
+  original_title: Polymerase Chain Reaction (PCR)
+- URL: https://www.youtube.com/watch?v=aVgwr0QpYNE
+  category: Animation/dnalc
+  original_title: RNA Splicing
+- URL: https://www.youtube.com/watch?v=6ldtdWjDwes
+  category: Animation/dnalc
+  original_title: Sanger Sequencing
+- URL: https://www.youtube.com/watch?v=TfYf_rPWUdY
+  category: Animation/dnalc
+  original_title: mRNA Translation (Advanced)
+EOF
+```
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a update -i Animation.yml -o Animation-update
+
+perl dl_video.pl -a download -i Animation-update.yml -o Animation-output -d ~/Documents/Course
+
+bash ~/Documents/Course/Animation-output.download.sh
+
+perl dl_video.pl -a report -i Animation-update.yml -o Animation-output -d ~/Documents/Course
+```
+
+### On my Mac
+
+```bash
+rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
+
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a burn -i Animation-update.yml -o Animation-output -d ~/Documents/Course
+
+bash ~/Documents/Course/Animation-output.burn.sh
+```
+
 ## Random source
 
 ### On the linode VPS.
@@ -252,26 +319,54 @@ bash ~/Documents/Course/TED-Ed-output.burn.sh
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
 ---
+- URL: https://www.youtube.com/watch?v=Dw4Fr4eyGv8
+  category: Random
+  original_title: ' Discovering Religion  Ep 08 - Archaeopteryx'
 - URL: https://www.youtube.com/watch?v=_ApDinCBt8g
   category: Random
-- URL: https://www.youtube.com/watch?v=TE6wqG4nb3M
-  category: Random
-- URL: https://www.youtube.com/watch?v=2pp17E4E-O8
-  category: Random
-- URL: https://www.youtube.com/watch?v=8yvEDqrc3XE
-  category: Random
+  original_title: '1st, 2nd, and 3rd Generation Genome Sequencing Technologies'
 - URL: https://www.youtube.com/watch?v=YTR21os8gTA
   category: Random
-- URL: https://www.youtube.com/watch?v=fQwI90bkJl4
+  original_title: Birds-of-Paradise Project Introduction
+- URL: https://www.youtube.com/watch?v=TE6wqG4nb3M
   category: Random
+  original_title: Food Chains
+- URL: https://www.youtube.com/watch?v=mcM23M-CCog
+  category: Random
+  original_title: Galapagos Finch Evolution  HHMI BioInteractive Video
+- URL: https://www.youtube.com/watch?v=l25MBq8T77w
+  category: Random
+  original_title: 'Galapagos: the finches (4/7)'
+- URL: https://www.youtube.com/watch?v=2pp17E4E-O8
+  category: Random
+  original_title: Genome Editing with CRISPR-Cas9
+- URL: https://www.youtube.com/watch?v=MkUgkDLp2iE
+  category: Random
+  original_title: 'How Genes are Regulated: Transcription Factors'
+- URL: https://www.youtube.com/watch?v=oBwtxdI1zvk
+  category: Random
+  original_title: Lac Operon
 - URL: https://www.youtube.com/watch?v=NWqgZUnJdAY
   category: Random
-- URL: https://www.youtube.com/watch?v=xPkOAnK20kw
-  category: Random
+  original_title: Mendelian Genetics
 - URL: https://www.youtube.com/watch?v=R6La6_kIr9g
   category: Random
+  original_title: Natural Selection
+- URL: https://www.youtube.com/watch?v=fQwI90bkJl4
+  category: Random
+  original_title: Phylogenetics
+- URL: https://www.youtube.com/watch?v=xPkOAnK20kw
+  category: Random
+  original_title: Solving Hardy Weinberg Problems
+- URL: https://www.youtube.com/watch?v=8yvEDqrc3XE
+  category: Random
+  original_title: 'Speciation: An Illustrated Introduction'
 - URL: https://www.youtube.com/watch?v=GKGtkzgKfkc
   category: Random
+  original_title: The Scientific Method
+- URL: https://www.youtube.com/watch?v=iMz6lApJgu4
+  category: Random
+  original_title: Xanthopan morgani praedicta The Darwin's Moth
 EOF
 ```
 
