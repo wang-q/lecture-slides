@@ -289,6 +289,8 @@ elsif ( $action eq "burn" ) {
         $item->{new_file}   = path($new_file)->stringify;
     }
 
+    # If height < 480p, scale up to 480p.
+    # If there're subtitles, burn them into videos.
     my $text = <<'EOF';
 #!/bin/bash
 
@@ -307,17 +309,45 @@ else
 [% END -%]
         > merged.srt.tmp
 
+[% IF item.height < 480 -%]
     ffmpeg \
         -i [% item.video_file %] \
-        -vf "subtitles='merged.srt.tmp'[% IF item.height < 480 %], scale=-1:480[% END %]" \
+        -vf "scale=trunc(oh*a/2)*2:480" \
+        -c:v libx264 -crf 20 -c:a copy \
+        scaled.tmp.mp4
+
+    ffmpeg \
+        -i scaled.tmp.mp4 \
+        -vf "subtitles='merged.srt.tmp'" \
         -c:v libx264 -crf 20 -c:a copy \
         [% item.new_file %]
+
+    rm scaled.tmp.mp4
+[% ELSE -%]
+    ffmpeg \
+        -i [% item.video_file %] \
+        -vf "subtitles='merged.srt.tmp'" \
+        -c:v libx264 -crf 20 -c:a copy \
+        [% item.new_file %]
+[% END -%]
 
     rm merged.srt.tmp
 fi
 
 [% ELSE -%]
 echo No subs for [% item.video_file %]
+if [ -f [% item.new_file %] ];
+then
+    echo [% item.new_file %] exists!;
+else
+    ffmpeg \
+        -i [% item.video_file %] \
+[% IF item.height < 480 -%]
+        -vf "scale=trunc(oh*a/2)*2:480" \
+[% END -%]
+        -c:v libx264 -crf 20 -c:a copy \
+        [% item.new_file %]
+fi
 
 [% END -%]
 [% END -%]
