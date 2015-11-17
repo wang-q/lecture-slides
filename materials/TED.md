@@ -107,16 +107,14 @@ perl dl_video.pl -a update -i TED.yml -o TED-update
 
 ```bash
 cd ~/Scripts/lecture-slides/materials
-mkdir -p ~/Documents/Course/TED
 perl dl_video.pl -a download -i TED-update.yml -o TED-output -d ~/Documents/Course
 
-mkdir -p ~/Documents/Course/TED
 bash ~/Documents/Course/TED-output.download.sh
 
 perl dl_video.pl -a report -i TED-update.yml -o TED-output -d ~/Documents/Course
 ```
 
-* A working example which can be pasted line by line to terminal. 
+* A working example which can be pasted to terminal line by line . 
 
     "Pamela Ronald: The case for engineering our food"
 
@@ -144,7 +142,7 @@ youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a merge -i TED-update.yml -o TED-output -d ~/Documents/Course
+perl dl_video.pl -a burn -i TED-update.yml -o TED-output -d ~/Documents/Course
 ```
 
 * Burn subtitles into videos with the generated script.
@@ -152,9 +150,7 @@ perl dl_video.pl -a merge -i TED-update.yml -o TED-output -d ~/Documents/Course
     Or copy and paste command lines of a video to terminal.
 
 ```bash
-
-cd ~/Documents/Course
-bash ~/Documents/Course/TED-output.merge.sh
+bash ~/Documents/Course/TED-output.burn.sh
 ```
 
 ## TED Ed
@@ -167,6 +163,9 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED-Ed.yml
 - URL: https://www.youtube.com/watch?v=Y5uRVv7GGQM
   category: TED-Ed/Ecology
   original_title: 'How bees help plants have sex - Fernanda S. Valdovinos'
+- URL: https://www.youtube.com/watch?v=RLmKfXwWQtE
+  category: TED-Ed/Ecology
+  original_title: 'Population pyramids: Powerful predictors of the future - Kim Preshoff'
 - URL: https://www.youtube.com/watch?v=GK_vRtHJZu4
   category: TED-Ed/Ecology
   original_title: 'Why is biodiversity so important? - Kim Preshoff'
@@ -218,6 +217,9 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED-Ed.yml
 - URL: https://www.youtube.com/watch?v=oKjFVBVGad0
   category: TED-Ed/Others
   original_title: 'The brilliance of bioluminescence - Leslie Kenna'
+- URL: https://www.youtube.com/watch?v=XMriWTvPXHI
+  category: TED-Ed/Others
+  original_title: 'The mathematical secrets of Pascals triangle - Wajdi Mohamed Ratemi'
 EOF
 ```
 
@@ -241,4 +243,56 @@ cd ~/Scripts/lecture-slides/materials
 perl dl_video.pl -a burn -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
 
 bash ~/Documents/Course/TED-Ed-output.burn.sh
+```
+
+## Random source
+
+### On the linode VPS.
+
+```bash
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
+---
+- URL: https://www.youtube.com/watch?v=_ApDinCBt8g
+  category: Random
+- URL: https://www.youtube.com/watch?v=TE6wqG4nb3M
+  category: Random
+- URL: https://www.youtube.com/watch?v=2pp17E4E-O8
+  category: Random
+- URL: https://www.youtube.com/watch?v=8yvEDqrc3XE
+  category: Random
+- URL: https://www.youtube.com/watch?v=YTR21os8gTA
+  category: Random
+- URL: https://www.youtube.com/watch?v=fQwI90bkJl4
+  category: Random
+- URL: https://www.youtube.com/watch?v=NWqgZUnJdAY
+  category: Random
+- URL: https://www.youtube.com/watch?v=xPkOAnK20kw
+  category: Random
+- URL: https://www.youtube.com/watch?v=R6La6_kIr9g
+  category: Random
+- URL: https://www.youtube.com/watch?v=GKGtkzgKfkc
+  category: Random
+EOF
+```
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a update -i Random.yml -o Random-update
+
+perl dl_video.pl -a download -i Random-update.yml -o Random-output -d ~/Documents/Course
+
+bash ~/Documents/Course/Random-output.download.sh
+
+perl dl_video.pl -a report -i Random-update.yml -o Random-output -d ~/Documents/Course
+```
+
+### On my Mac
+
+```bash
+rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
+
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a burn -i Random-update.yml -o Random-output -d ~/Documents/Course
+
+bash ~/Documents/Course/Random-output.burn.sh
 ```

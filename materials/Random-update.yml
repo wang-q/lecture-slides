@@ -1,0 +1,107 @@
+---
+- URL: https://www.youtube.com/watch?v=_ApDinCBt8g
+  category: Random
+  ext: mp4
+  file: Random/1st_2nd_and_3rd_Generation_Genome_Sequencing_Technologies.mp4
+  height: 480
+  original_title: '1st, 2nd, and 3rd Generation Genome Sequencing Technologies'
+  resolution: 656x480
+  title: 1st_2nd_and_3rd_Generation_Genome_Sequencing_Technologies
+  width: 656
+- URL: https://www.youtube.com/watch?v=YTR21os8gTA
+  category: Random
+  ext: mp4
+  file: Random/Birds-of-Paradise_Project_Introduction.mp4
+  height: 1080
+  original_title: Birds-of-Paradise Project Introduction
+  resolution: 1920x1080
+  subs:
+    en: Random/Birds-of-Paradise_Project_Introduction.en.srt
+  title: Birds-of-Paradise_Project_Introduction
+  width: 1920
+- URL: https://www.youtube.com/watch?v=TE6wqG4nb3M
+  category: Random
+  ext: mp4
+  file: Random/Food_Chains.mp4
+  height: 480
+  original_title: Food Chains
+  resolution: 640x480
+  title: Food_Chains
+  width: 640
+- URL: https://www.youtube.com/watch?v=2pp17E4E-O8
+  category: Random
+  ext: mp4
+  file: Random/Genome_Editing_with_CRISPR-Cas9.mp4
+  height: 1080
+  original_title: Genome Editing with CRISPR-Cas9
+  resolution: 1920x1080
+  title: Genome_Editing_with_CRISPR-Cas9
+  width: 1920
+- URL: https://www.youtube.com/watch?v=NWqgZUnJdAY
+  category: LOW/Random
+  ext: mp4
+  file: LOW/Random/Mendelian_Genetics.mp4
+  height: 240
+  original_title: Mendelian Genetics
+  resolution: 384x240
+  subs:
+    en: LOW/Random/Mendelian_Genetics.en.srt
+    zh-Hans: LOW/Random/Mendelian_Genetics.zh-Hans.srt
+  title: Mendelian_Genetics
+  width: 384
+- URL: https://www.youtube.com/watch?v=R6La6_kIr9g
+  category: LOW/Random
+  ext: mp4
+  file: LOW/Random/Natural_Selection.mp4
+  height: 360
+  original_title: Natural Selection
+  resolution: 576x360
+  subs:
+    en: LOW/Random/Natural_Selection.en.srt
+    zh-Hans: LOW/Random/Natural_Selection.zh-Hans.srt
+  title: Natural_Selection
+  width: 576
+- URL: https://www.youtube.com/watch?v=fQwI90bkJl4
+  category: LOW/Random
+  ext: mp4
+  file: LOW/Random/Phylogenetics.mp4
+  height: 360
+  original_title: Phylogenetics
+  resolution: 576x360
+  subs:
+    en: LOW/Random/Phylogenetics.en.srt
+  title: Phylogenetics
+  width: 576
+- URL: https://www.youtube.com/watch?v=xPkOAnK20kw
+  category: Random
+  ext: mp4
+  file: Random/Solving_Hardy_Weinberg_Problems.mp4
+  height: 720
+  original_title: Solving Hardy Weinberg Problems
+  resolution: 1280x720
+  subs:
+    en: Random/Solving_Hardy_Weinberg_Problems.en.srt
+  title: Solving_Hardy_Weinberg_Problems
+  width: 1280
+- URL: https://www.youtube.com/watch?v=8yvEDqrc3XE
+  category: Random
+  ext: mp4
+  file: Random/Speciation_-_An_Illustrated_Introduction.mp4
+  height: 1080
+  original_title: 'Speciation: An Illustrated Introduction'
+  resolution: 1920x1080
+  subs:
+    en: Random/Speciation_-_An_Illustrated_Introduction.en.srt
+  title: Speciation_-_An_Illustrated_Introduction
+  width: 1920
+- URL: https://www.youtube.com/watch?v=GKGtkzgKfkc
+  category: LOW/Random
+  ext: mp4
+  file: LOW/Random/The_Scientific_Method.mp4
+  height: 360
+  original_title: The Scientific Method
+  resolution: 576x360
+  subs:
+    en: LOW/Random/The_Scientific_Method.en.srt
+  title: The_Scientific_Method
+  width: 576
