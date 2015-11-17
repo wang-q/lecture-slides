@@ -20,9 +20,17 @@ date: \today{}
 
 包括内容
 
-### 三级标题本应是Beamer中的text block.
+### 三级标题
 
-还可以接着写内容.
+本应是Beamer中的text block, 还可以接着写内容.
+
+\begin{block}{Block Title}
+Beamer block.
+\end{block}
+
+\begin{alertblock}{Alert Block Title}
+Beamer alert block.
+\end{alertblock}
 
 \note{
 Here are my notes.
