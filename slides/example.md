@@ -91,7 +91,7 @@ Term 2 with *inline markup*
 ## 常用的符号
 
 * Prime and arrow
-    * 5’ → 3’方向
+    * 5’ $\rightarrow$ 3’方向
     * $5^{\prime} \rightarrow 3^{\prime}$
 
 * 乘号
