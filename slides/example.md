@@ -92,6 +92,7 @@ Term 2 with *inline markup*
 
 * Prime and arrow
     * 5’ → 3’方向
+    * $5^{\prime} \rightarrow 3^{\prime}$
 
 * 乘号
     * $3.2\times10^9$ bp
