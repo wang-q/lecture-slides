@@ -31,8 +31,8 @@ sudo apt-get update
 Use ffmpeg to burn subtitles into videos.
 
 ```bash
-brew install x264 lame libvo-aacenc xvid
-brew install ffmpeg --with-libass
+brew install x264 lame libvo-aacenc xvid fdk-aac
+brew install ffmpeg --with-libass --with-fdk-aac
 ```
 
 ## TED

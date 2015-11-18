@@ -24,7 +24,7 @@ dl_video.pl - download videos and subtitles based on yaml
     perl dl_video.pl --in <.yml> [options]
       Options:
         --help              brief help message
-        --action    -a STR  update, download, report, burn or merge
+        --action    -a STR  update, download, report, or burn
         --dir       -d STR  base directory
         --in        -i STR  input .yml file's location
         --out       -o STR  basename of output files
@@ -290,6 +290,7 @@ elsif ( $action eq "burn" ) {
     }
 
     # If height < 480p, scale up to 480p.
+    # If height > 720p, scale down to 720p.
     # If there're subtitles, burn them into videos.
     my $text = <<'EOF';
 #!/bin/bash
@@ -313,13 +314,31 @@ else
     ffmpeg \
         -i [% item.video_file %] \
         -vf "scale=trunc(oh*a/2)*2:480" \
-        -c:v libx264 -crf 20 -c:a copy \
+        -c:v libx264 -crf 20 \
+        -c:a libfdk_aac -b:a 128k \
         scaled.tmp.mp4
 
     ffmpeg \
         -i scaled.tmp.mp4 \
         -vf "subtitles='merged.srt.tmp'" \
-        -c:v libx264 -crf 20 -c:a copy \
+        -c:v libx264 -crf 20 \
+        -c:a copy \
+        [% item.new_file %]
+
+    rm scaled.tmp.mp4
+[% ELSIF item.height > 720 -%]
+    ffmpeg \
+        -i [% item.video_file %] \
+        -vf "scale=trunc(oh*a/2)*2:720" \
+        -c:v libx264 -crf 20 \
+        -c:a libfdk_aac -b:a 128k \
+        scaled.tmp.mp4
+
+    ffmpeg \
+        -i scaled.tmp.mp4 \
+        -vf "subtitles='merged.srt.tmp'" \
+        -c:v libx264 -crf 20 \
+        -c:a copy \
         [% item.new_file %]
 
     rm scaled.tmp.mp4
@@ -327,7 +346,8 @@ else
     ffmpeg \
         -i [% item.video_file %] \
         -vf "subtitles='merged.srt.tmp'" \
-        -c:v libx264 -crf 20 -c:a copy \
+        -c:v libx264 -crf 20 \
+        -c:a libfdk_aac -b:a 128k \
         [% item.new_file %]
 [% END -%]
 
@@ -345,7 +365,8 @@ else
 [% IF item.height < 480 -%]
         -vf "scale=trunc(oh*a/2)*2:480" \
 [% END -%]
-        -c:v libx264 -crf 20 -c:a copy \
+        -c:v libx264 -crf 20 \
+        -c:a libfdk_aac -b:a 128k \
         [% item.new_file %]
 fi
 
