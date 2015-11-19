@@ -48,8 +48,8 @@ Here are my notes.
 
 ## 列表
 
-* With a
-* list.
+* 普通
+* 列表
 
 * 这是
     * 一个多级
@@ -58,10 +58,6 @@ Here are my notes.
 * 这同样是
     + 多级
         - 列表.
-
-\note{
-A note on my list.
-}
 
 ## 定义列表
 
@@ -108,7 +104,14 @@ Term 2 with *inline markup*
 
 下面是\LaTeX 格式的例子\footnotemark.
 
-这是\textit{italic}, 还有\textsuperscript{上标}, 以及\alert{强调}, 再加上脚注\footnotemark.
+* \textit{italic} 
+    * `\textit{}`
+* \textbf{粗体} 
+    * `\textbf{}`
+* \underline{下划线} 
+    * `\underline{}`
+
+还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnotemark.
 
 \footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
 
@@ -116,7 +119,7 @@ Term 2 with *inline markup*
 
 ## 引用管理
 
-所有原始的文献库在zotero中, 子库名为course.
+所有原始的文献库在zotero中.
 
 导出为bibtex\footnotemark, 再用Jabref\footnotemark 打开修改.
 
@@ -168,11 +171,13 @@ Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
 因此, 图片大小设置为``8 cm $\times$ 300 dpi''就比较适宜.
 
 纵向尺寸:
+
 * 8 cm / 2.54 * 300 = 945
 * 6 cm / 2.54 * 300 = 709
 * 4 cm / 2.54 * 300 = 472
 
 横向尺寸:
+
 * 11 cm / 2.54 * 300 = 1299
 
 ## 从PowerPoint迁移
