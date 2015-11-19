@@ -1,12 +1,12 @@
-notes := $(wildcard *.md)
+markdown := $(wildcard *.md)
 
-notes_tex := $(patsubst %.md,%.notes.tex,$(notes))
+notes_tex := $(patsubst %.md,%.notes.tex,$(markdown))
 notes_pdf := $(patsubst %.tex,%.pdf,$(notes_tex))
 
-%.notes.tex: %.md preamble-notes.tex
+%.notes.tex: %.md
 	pandoc $< \
 	    -t beamer \
-	    -H preamble-notes.tex \
+	    -H ../common/preamble-notes.tex \
 	    --latex-engine xelatex \
 	    -V theme:Pittsburgh \
 	    --slide-level 2 \
@@ -21,13 +21,13 @@ $(notes_pdf): %.pdf: %.tex
 		--suffix nup
 	mv $*-nup.pdf $@
 
-slides_tex := $(patsubst %.md,%.slides.tex,$(notes))
+slides_tex := $(patsubst %.md,%.slides.tex,$(markdown))
 slides_pdf := $(patsubst %.tex,%.pdf,$(slides_tex))
 
-%.slides.tex: %.md preamble-slides.tex
+%.slides.tex: %.md
 	pandoc $< \
 	    -t beamer \
-	    -H preamble-slides.tex \
+	    -H ../common/preamble-slides.tex \
 	    --latex-engine xelatex \
 	    --slide-level 2 \
 	    -V fontsize=12pt \

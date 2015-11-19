@@ -31,9 +31,9 @@
 *.mkv
 
 # Finished files
-!preamble-notes.tex
-!preamble-slides.tex
-!macros.tex
+!common/preamble-notes.tex
+!common/preamble-slides.tex
+!common/macros.tex
 
 # webstorm project files
 .idea
