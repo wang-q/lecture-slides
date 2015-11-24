@@ -12,6 +12,13 @@ The `--proxy` option doesn't work with shadowsocks, so I install it on a linode 
 sudo pip install youtube-dl
 ```
 
+### Install you-get
+
+```bash
+sudo apt-get install python3-pip
+sudo pip3 install you-get
+```
+
 ### Install ffmpeg in VPS
 
 Ubuntu 14.04 ships `libav-tools` other than `ffmpeg`, so get it by [ppa](https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media).
