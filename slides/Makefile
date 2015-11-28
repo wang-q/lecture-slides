@@ -1,16 +1,16 @@
-markdown := $(wildcard *.md)
+markdowns := $(wildcard *.md)
 
-notes_tex := $(patsubst %.md,%.notes.tex,$(markdown))
+notes_tex := $(patsubst %.md,%.notes.tex,$(markdowns))
 notes_pdf := $(patsubst %.tex,%.pdf,$(notes_tex))
 
 %.notes.tex: %.md
 	pandoc $< \
-	    -t beamer \
-	    -H ../common/preamble-notes.tex \
-	    --latex-engine xelatex \
-	    -V theme:Pittsburgh \
-	    --slide-level 2 \
-	    -o $@
+		-t beamer \
+		-H ../common/preamble-notes.tex \
+		--latex-engine xelatex \
+		-V theme:Pittsburgh \
+		--slide-level 2 \
+		-o $@
 
 $(notes_pdf): %.pdf: %.tex
 	latexmk -xelatex $(basename $<)
@@ -21,20 +21,31 @@ $(notes_pdf): %.pdf: %.tex
 		--suffix nup
 	mv $*-nup.pdf $@
 
-slides_tex := $(patsubst %.md,%.slides.tex,$(markdown))
+slides_tex := $(patsubst %.md,%.slides.tex,$(markdowns))
 slides_pdf := $(patsubst %.tex,%.pdf,$(slides_tex))
 
 %.slides.tex: %.md
 	pandoc $< \
-	    -t beamer \
-	    -H ../common/preamble-slides.tex \
-	    --latex-engine xelatex \
-	    --slide-level 2 \
-	    -V fontsize=12pt \
-	    -o $@
+		-t beamer \
+		-H ../common/preamble-slides.tex \
+		--latex-engine xelatex \
+		--slide-level 2 \
+		-V fontsize=12pt \
+		-o $@
 
 $(slides_pdf): %.pdf: %.tex
 	latexmk -xelatex $(basename $<)
+
+# from http://stackoverflow.com/questions/9691508/how-can-i-use-macros-to-generate-multiple-makefile-targets-rules-inside-foreach
+basenames := $(basename $(wildcard *.md))
+
+define DUAL
+
+$(1): $(1).slides.pdf $(1).notes.pdf
+
+endef
+
+$(foreach i, $(basenames), $(eval $(call DUAL, $(i))))
 
 slides: $(slides_pdf)
 
@@ -56,4 +67,4 @@ realclean:
 
 .DEFAULT_GOAL := all
 
-.PHONY: all clean realclean
+.PHONY: slides notes all clean realclean

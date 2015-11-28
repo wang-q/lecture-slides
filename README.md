@@ -21,7 +21,7 @@ make example.notes.pdf
 To make slide and note PDFs at once.
 
 ```bash
-make example.slides.pdf example.notes.pdf
+make example
 ```
 
 `make clean` to delete all intermediate files.
