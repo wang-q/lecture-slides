@@ -24,6 +24,12 @@ date: \today{}
 
 本应是Beamer中的text block, 还可以接着写内容.
 
+\note{
+Here are my notes.
+}
+
+## Block examples
+
 \begin{block}{Block Title}
 Beamer block.
 \end{block}
@@ -32,9 +38,9 @@ Beamer block.
 Beamer alert block.
 \end{alertblock}
 
-\note{
-Here are my notes.
-}
+\begin{exampleblock}{Example Block Title}
+Beamer example block.
+\end{exampleblock}
 
 # Markdown
 
