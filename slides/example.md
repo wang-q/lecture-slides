@@ -219,7 +219,7 @@ find . -type f -name "*.jpeg" \
 ```bash
 cd ~/Documents/Course/lecture-slides/slides/ch-25.images
 find . -type f -name "*.jpeg" -or -name "*.png" \
-    | parallel sh ../mh.sh {}
+    | parallel sh ../../common/mh.sh {}
 ```
 
 * 手动调整

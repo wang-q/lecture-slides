@@ -22,10 +22,10 @@ make example.notes.pdf
 
 [`slides/example.notes.pdf`](slides/example.notes.pdf) is the result on my iMac.
 
-To make slide and note PDFs at once.
+To force updating and make slide and note PDFs at once.
 
 ```bash
-make example
+make example -B
 ```
 
 `make clean` to delete all intermediate files.
