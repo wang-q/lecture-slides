@@ -41,3 +41,27 @@ Contains preambles for TeX.
 Video materials for students.
 
 See [`list.md`](materials/list.md) for details.
+
+## Tools needed
+
+### Required
+
+* General tools
+    * pandoc: `brew install pandoc`
+    * MacTex: `brew cask install mactex` or download from [TUG](https://tug.org/mactex/mactex-download.html)
+    * Gnu make utitily
+* Image converter
+    * imagemagick: `brew install imagemagick`
+* Template
+    * my fork of [mtheme](https://github.com/wang-q/mtheme)
+* Fonts
+    * [Fira Sans](https://github.com/mozilla/Fira)
+    * Hiragino Sans GB (冬青黑体简体中文)
+
+### Optional
+
+* References management
+    * JabRef: `brew cask install jabref`
+* Text editor
+    * Webstorm with markdown and latex supports
+    * Atom
