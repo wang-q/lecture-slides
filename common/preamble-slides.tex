@@ -3,17 +3,5 @@
 \usepackage{pgfpages}
 \setbeameroption{hide notes}
 
-\definecolor{mLightBrown}{HTML}{EB811B}
-\setbeamercolor{description item}{fg=mLightBrown}
-
-\setbeamerfont{quote}{shape=\upshape}
-
-% ensure text jusfication
-\usepackage{ragged2e}
-\justifying
-
-% pandoc makes 2nd-lever headers into blocks, and this ensures justification
-% in blocks too
-\addtobeamertemplate{block begin}{}{\justifying}
 
 \input{../common/macros.tex}
