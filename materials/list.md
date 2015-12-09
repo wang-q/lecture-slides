@@ -55,6 +55,9 @@ For videos that max resolution less than 480p in youtube (e.g., ones released be
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
 ---
+- URL: https://www.youtube.com/watch?v=176adlNeRy8
+  category: LOW/TED/Others
+  original_title: 'Paul Ewald: Can we domesticate germs?'
 - URL: https://www.youtube.com/watch?v=qCrVpRBBSvY
   category: TED/Ecology
   original_title: 'Greg Asner: Ecology from the air'
@@ -64,6 +67,9 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
 - URL: https://www.youtube.com/watch?v=X-HE4Hfa-OY
   category: TED/Ecology
   original_title: 'Jonathan Trent: Energy from floating algae pods'
+- URL: https://www.youtube.com/watch?v=WjBwhwe5-cc
+  category: TED/Evolution
+  original_title: "Isabel Behncke: Evolution's gift of play, from bonobo apes to humans"
 - URL: https://www.youtube.com/watch?v=0QVXdEOiCw8
   category: TED/Evolution
   original_title: 'Jack Horner: Building a dinosaur from a chicken'
@@ -72,10 +78,10 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
   original_title: 'Rob Knight: How our microbes make us who we are'
 - URL: https://www.youtube.com/watch?v=nzj7Wg4DAbs
   category: TED/Evolution
-  original_title: 'Why Humans Run the World | Yuval Noah Harari | TED Talks'
-- URL: https://www.youtube.com/watch?v=WjBwhwe5-cc
-  category: TED/Evolution
-  original_title: "Isabel Behncke: Evolution's gift of play, from bonobo apes to humans"
+  original_title: Why Humans Run the World | Yuval Noah Harari | TED Talks
+- URL: https://www.youtube.com/watch?v=rHbjwH2Blfg
+  category: TED/Genetics
+  original_title: 'Elizabeth Murchison: Fighting a contagious cancer'
 - URL: https://www.youtube.com/watch?v=O8e8Ttfz-pY
   category: TED/Genetics
   original_title: 'Hendrik Poinar: Bring back the woolly mammoth!'
@@ -88,6 +94,9 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
 - URL: https://www.youtube.com/watch?v=TdBAHexVYzc
   category: TED/Genetics
   original_title: We Can Now Edit Our DNA. But Let's Do it Wisely | Jennifer Doudna | TED Talks
+- URL: https://www.youtube.com/watch?v=Fivy99RtMfM
+  category: TED/Others
+  original_title: 'Bart Knols: Cheese, dogs and a pill to kill mosquitoes and end malaria'
 - URL: https://www.youtube.com/watch?v=xossR6eHv3I
   category: TED/Others
   original_title: 'Cheryl Hayashi: The magnificence of spider silk'
@@ -97,9 +106,6 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
 - URL: https://www.youtube.com/watch?v=u2V0vOFexY4
   category: TED/Others
   original_title: 'Jim Fallon: Exploring the mind of a killer'
-- URL: https://www.youtube.com/watch?v=176adlNeRy8
-  category: LOW/TED/Others
-  original_title: 'Paul Ewald: Can we domesticate germs?'
 EOF
 ```
 
