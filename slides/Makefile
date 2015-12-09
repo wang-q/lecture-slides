@@ -8,6 +8,7 @@
 		--latex-engine xelatex \
 		-V theme:Pittsburgh \
 		--slide-level 2 \
+		-V fontsize=12pt \
 		-o $(basename $@).tex
 	latexmk -xelatex $(basename $@)
 	pdfjam $@ \
