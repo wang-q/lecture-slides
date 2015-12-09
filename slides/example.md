@@ -79,6 +79,8 @@ Term 2 with *inline markup*
 
     Third paragraph of definition 2.
 
+---
+
 ## 表格
 
 : 标题
@@ -117,9 +119,11 @@ Term 2 with *inline markup*
 * \underline{下划线} 
     * `\underline{}`
 
-还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnotemark.
-
 \footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
+
+---
+
+还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnotemark.
 
 \footnotetext{不要对中文使用斜体}
 
@@ -128,6 +132,8 @@ Term 2 with *inline markup*
 所有原始的文献库在zotero中.
 
 导出为bibtex\footnotemark, 再用Jabref\footnotemark 打开修改.
+
+下面的脚注编号是错误的, 但我现在不知道是什么引起了这个BUG, 所以一页上不要出现两个脚注.
 
 \footnotetext{不要用biblatex}
 
