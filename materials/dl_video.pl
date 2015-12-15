@@ -82,46 +82,49 @@ if ( $action eq "update" ) {
         print " " x 8 . "$item->{resolution}\n";
 
         $item->{resolution} =~ /(\d+)x(\d+)/;
-        $item->{width} = $1;
-            $item->{height} = $2;
+        $item->{width}  = $1;
+        $item->{height} = $2;
         if ( $item->{height} < 480 ) {
-            print " " x 8 . "Low resolution video. Change category to LOW/$item->{category}\n";
-            if ( $item->{category} !~ /LOW\// ) {
-                $item->{category} = "LOW/" . $item->{category};
-            }
+            print " " x 8 . "Low resolution video.\n";
         }
 
         $item->{file} = path( $item->{category}, $item->{title} . '.' . $item->{ext} )->stringify;
         print " " x 4 . "Full path [$item->{file}]\n";
 
-        print " " x 4 . "Get subs\n";
-        my $sub_text = `youtube-dl --list-subs $URL`;
-        if ( $sub_text =~ m{Available subtitles.+Language formats(.+)$}s ) {
-            my @lines = grep {/srt/} grep {/^(:?en|zh)/} grep {/\w+/} split( /\n/, $1 );
-            my %seen = map { ( split /\s+/ )[0] => 1 } @lines;
-            my %sub_of;
-
-            # always keep the en subtitles
-            if ( $seen{en} ) {
-                $sub_of{en} = path( $item->{category}, $item->{title} . ".en.srt" )->stringify;
-                print " " x 8 . "en\n";
-
-            }
-
-            # get the best Chinese subtitles
-            for my $key (qw{zh-CN zh-Hans zh-TW zh-Hant}) {
-                if ( $seen{$key} ) {
-                    $sub_of{$key}
-                        = path( $item->{category}, $item->{title} . ".$key.srt" )->stringify;
-                    print " " x 8 . "$key\n";
-                    last;
-                }
-            }
-
-            $item->{subs} = \%sub_of;
+        if ( exists $item->{subs} ) {
+            print " " x 4 . "Use existing subs\n";
         }
         else {
-            warn " " x 8 . "Can't get subs\n";
+            print " " x 4 . "Get subs\n";
+
+            my $sub_text = `youtube-dl --list-subs $URL`;
+            if ( $sub_text =~ m{Available subtitles.+Language formats(.+)$}s ) {
+                my @lines = grep {/srt/} grep {/^(:?en|zh)/} grep {/\w+/} split( /\n/, $1 );
+                my %seen = map { ( split /\s+/ )[0] => 1 } @lines;
+                my %sub_of;
+
+                # always keep the en subtitles
+                if ( $seen{en} ) {
+                    $sub_of{en} = path( $item->{category}, $item->{title} . ".en.srt" )->stringify;
+                    print " " x 8 . "en\n";
+
+                }
+
+                # get the best Chinese subtitles
+                for my $key (qw{zh-CN zh-Hans zh-TW zh-Hant}) {
+                    if ( $seen{$key} ) {
+                        $sub_of{$key}
+                            = path( $item->{category}, $item->{title} . ".$key.srt" )->stringify;
+                        print " " x 8 . "$key\n";
+                        last;
+                    }
+                }
+
+                $item->{subs} = \%sub_of;
+            }
+            else {
+                warn " " x 8 . "Can't get subs\n";
+            }
         }
 
 # `youtube-dl -f bestvideo+bestaudio/best ` just do the job.
