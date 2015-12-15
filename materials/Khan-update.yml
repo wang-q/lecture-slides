@@ -1,0 +1,48 @@
+---
+- URL: https://www.youtube.com/watch?v=8183HPmA2_I
+  category: Human-Prehistory
+  ext: mp4
+  file: Human-Prehistory/Human_Prehistory_101_Part_1_of_3_-_Out_of_Eastern_Africa.mp4
+  height: 360
+  original_title: 'Human Prehistory 101 (Part 1 of 3): Out of (Eastern) Africa'
+  resolution: 480x360
+  title: Human_Prehistory_101_Part_1_of_3_-_Out_of_Eastern_Africa
+  width: 480
+- URL: https://www.youtube.com/watch?v=T9Nw66RCMhg
+  category: Human-Prehistory
+  ext: mp4
+  file: Human-Prehistory/Human_Prehistory_101_Part_2_of_3_-_Weathering_The_Storm.mp4
+  height: 360
+  original_title: 'Human Prehistory 101 (Part 2 of 3): Weathering The Storm'
+  resolution: 480x360
+  title: Human_Prehistory_101_Part_2_of_3_-_Weathering_The_Storm
+  width: 480
+- URL: https://www.youtube.com/watch?v=IVHD9wGlbho
+  category: Human-Prehistory
+  ext: mp4
+  file: Human-Prehistory/Human_Prehistory_101_Part_3_of_3_-_Agriculture_Rocks_Our_World.mp4
+  height: 360
+  original_title: 'Human Prehistory 101 (Part 3 of 3): Agriculture Rocks Our World'
+  resolution: 480x360
+  title: Human_Prehistory_101_Part_3_of_3_-_Agriculture_Rocks_Our_World
+  width: 480
+- URL: https://www.youtube.com/watch?v=F-zRXHAo4-U
+  category: Human-Prehistory
+  ext: mp4
+  file: Human-Prehistory/Human_Prehistory_101_-_Epilogue.mp4
+  height: 360
+  original_title: 'Human Prehistory 101: Epilogue'
+  resolution: 480x360
+  title: Human_Prehistory_101_-_Epilogue
+  width: 480
+- URL: https://www.youtube.com/watch?v=Mm-IxK1GrYE
+  category: Human-Prehistory
+  ext: mp4
+  file: Human-Prehistory/Human_Prehistory_101_-_Prologue.mp4
+  height: 360
+  original_title: 'Human Prehistory 101: Prologue'
+  resolution: 480x360
+  subs:
+    en: Human-Prehistory/Human_Prehistory_101_-_Prologue.en.ass
+  title: Human_Prehistory_101_-_Prologue
+  width: 480

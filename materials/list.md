@@ -404,3 +404,57 @@ perl dl_video.pl -a burn -i Random-update.yml -o Random-output -d ~/Documents/Co
 
 bash ~/Documents/Course/Random-output.burn.sh
 ```
+
+## Khan
+
+Videos of human prehistory from 23andme.
+
+### On the linode VPS.
+
+```bash
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/Khan.yml
+---
+- URL: https://www.youtube.com/watch?v=8183HPmA2_I
+  category: Human-Prehistory
+  original_title: 'Human Prehistory 101 (Part 1 of 3): Out of (Eastern) Africa'
+- URL: https://www.youtube.com/watch?v=T9Nw66RCMhg
+  category: Human-Prehistory
+  original_title: 'Human Prehistory 101 (Part 2 of 3): Weathering The Storm'
+- URL: https://www.youtube.com/watch?v=IVHD9wGlbho
+  category: Human-Prehistory
+  original_title: 'Human Prehistory 101 (Part 3 of 3): Agriculture Rocks Our World'
+- URL: https://www.youtube.com/watch?v=F-zRXHAo4-U
+  category: Human-Prehistory
+  original_title: 'Human Prehistory 101: Epilogue'
+- URL: https://www.youtube.com/watch?v=Mm-IxK1GrYE
+  category: Human-Prehistory
+  original_title: 'Human Prehistory 101: Prologue'
+  subs:
+    en: Human-Prehistory/Human_Prehistory_101_-_Prologue.en.ass
+EOF
+```
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a update -i Khan.yml -o Khan-update
+
+perl dl_video.pl -a download -i Khan-update.yml -o Khan-output -d ~/Documents/Course
+
+bash ~/Documents/Course/Khan-output.download.sh
+
+perl dl_video.pl -a report -i Khan-update.yml -o Khan-output -d ~/Documents/Course
+```
+
+### On my Mac
+
+```bash
+rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
+
+cp ~/Scripts/lecture-slides/materials/subtitles/Human-Prehistory/Human_Prehistory_101_-_Prologue.en.ass ~/Documents/Course/Human-Prehistory/
+
+cd ~/Scripts/lecture-slides/materials
+perl dl_video.pl -a burn -i Khan-update.yml -o Khan-output -d ~/Documents/Course
+
+bash ~/Documents/Course/Khan-output.burn.sh
+```
+
