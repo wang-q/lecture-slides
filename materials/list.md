@@ -42,6 +42,12 @@ brew install x264 lame libvo-aacenc xvid fdk-aac
 brew install ffmpeg --with-libass --with-fdk-aac
 ```
 
+### Install Aegisub
+
+```bash
+brew cask install aegisub
+```
+
 ## TED
 
 For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download them directly from ted.com.
@@ -417,15 +423,23 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Khan.yml
 - URL: https://www.youtube.com/watch?v=8183HPmA2_I
   category: Human-Prehistory
   original_title: 'Human Prehistory 101 (Part 1 of 3): Out of (Eastern) Africa'
+  subs:
+    en: Human-Prehistory/Human_Prehistory_101_Part_1_of_3_-_Out_of_Eastern_Africa.en.ass
 - URL: https://www.youtube.com/watch?v=T9Nw66RCMhg
   category: Human-Prehistory
   original_title: 'Human Prehistory 101 (Part 2 of 3): Weathering The Storm'
+  subs:
+    en: Human-Prehistory/Human_Prehistory_101_Part_2_of_3_-_Weathering_The_Storm.en.ass
 - URL: https://www.youtube.com/watch?v=IVHD9wGlbho
   category: Human-Prehistory
   original_title: 'Human Prehistory 101 (Part 3 of 3): Agriculture Rocks Our World'
+  subs:
+    en: Human-Prehistory/Human_Prehistory_101_Part_3_of_3_-_Agriculture_Rocks_Our_World.en.ass
 - URL: https://www.youtube.com/watch?v=F-zRXHAo4-U
   category: Human-Prehistory
   original_title: 'Human Prehistory 101: Epilogue'
+  subs:
+    en: Human-Prehistory/Human_Prehistory_101_-_Epilogue.en.ass
 - URL: https://www.youtube.com/watch?v=Mm-IxK1GrYE
   category: Human-Prehistory
   original_title: 'Human Prehistory 101: Prologue'
@@ -447,10 +461,12 @@ perl dl_video.pl -a report -i Khan-update.yml -o Khan-output -d ~/Documents/Cour
 
 ### On my Mac
 
+Create .ass subtitles manually by Aegisub.
+
 ```bash
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
-cp ~/Scripts/lecture-slides/materials/subtitles/Human-Prehistory/Human_Prehistory_101_-_Prologue.en.ass ~/Documents/Course/Human-Prehistory/
+cp ~/Scripts/lecture-slides/materials/subtitles/Human-Prehistory/*.en.ass ~/Documents/Course/Human-Prehistory/
 
 cd ~/Scripts/lecture-slides/materials
 perl dl_video.pl -a burn -i Khan-update.yml -o Khan-output -d ~/Documents/Course
