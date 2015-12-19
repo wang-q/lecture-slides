@@ -46,20 +46,38 @@ See [`list.md`](materials/list.md) for details.
 
 ### Required
 
+* TeX: `brew cask install mactex` or download from [TUG](https://tug.org/mactex/mactex-download.html)
+    * Update TeX packages
+        * `sudo tlmgr update --self`
+        * `sudo tlmgr update --all`
+    * Template: `sudo tlmgr install beamertheme-metropolis`
+    * TeX utils
+        * XeLaTeX
+        * latexmk
+        * pdfjam
+    * Other TeX packages that should come with MacTeX.
+        * xeCJK
+        * TikZ
+        * graphicx
+        * caption
+        * subcaption
+        * animate
+        * mhchem
+        * biblatex
+        * hyperref
+        * pgfpages
+        * calc
 * General tools
     * pandoc: `brew install pandoc`
-    * MacTex: `brew cask install mactex` or download from [TUG](https://tug.org/mactex/mactex-download.html)
     * Gnu make utitily
-* Image converter
-    * imagemagick: `brew install imagemagick`
-* Template
-    * my fork of [mtheme](https://github.com/wang-q/mtheme)
 * Fonts
-    * [Fira Sans](https://github.com/mozilla/Fira)
+    * [Fira](https://github.com/mozilla/Fira)
     * Hiragino Sans GB (冬青黑体简体中文)
 
 ### Optional
 
+* Image converter
+    * imagemagick: `brew install imagemagick`
 * References management
     * JabRef: `brew cask install jabref`
 * Text editor

@@ -1,6 +1,11 @@
+\usetheme[titleformat=regular,
+          inner/block=fill,
+          inner/sectionpage=progressbar]{metropolis}
+
+% 中文字体
 \ifxetex
-  \usepackage{xeCJK}                  % 设置中英文字体
-  \setCJKmainfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3} % 中文字体
+  \usepackage{xeCJK}
+  \setCJKmainfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
   \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip},
               xCJKecglue = {false}}
   \punctstyle{plain}
@@ -67,30 +72,28 @@
            shorten >=2pt,}
 }
 
-% fonts
-\newfontfamily\Normal{Hiragino Sans GB W3}
-\newfontfamily\Bold{Hiragino Sans GB W6}
+% items
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[ball]
+\setbeamertemplate{caption label separator}{. }
 
-\setbeamerfont{title}{family=\Bold, size=\LARGE}
-\setbeamerfont{subtitle}{family=\Normal, size=\Large}
-\setbeamerfont{author}{family=\Normal, size=\small}
-\setbeamerfont{date}{family=\Normal, size=\small}
+% descriptions
+\defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+\setbeamertemplate{description item}[align left]
 
-\setbeamerfont{section title}{family=\Bold, size=\Large}
-\setbeamerfont{frametitle}{family=\Normal, size=\Large}
+% links
+\usepackage{hyperref}
+\hypersetup{colorlinks = true,
+            linkcolor = mDarkBrown,
+            urlcolor  = mDarkBrown,
+            citecolor = mDarkBrown,
+            anchorcolor = mDarkBrown}
 
-\setbeamerfont{normal text}{family=\Normal}
-\setbeamerfont{alerted text}{family=\Normal}
-\setbeamerfont{example text}{family=\Normal}
+% font size of codes
+\renewenvironment{Shaded}{\footnotesize}{}
+\renewenvironment{texttt}{\small}{}
 
-\setbeamerfont{caption}{family=\Normal}
-\setbeamerfont{caption name}{family=\Normal}
-
-
-% eliminate silly beamer navigation line at bottom of slides
-\setbeamertemplate{navigation symbols}{}
-
-\urlstyle{same}
 \usepackage[overlay,absolute]{textpos}
 
 \TPGrid[10 mm,8 mm]{9}{8}
