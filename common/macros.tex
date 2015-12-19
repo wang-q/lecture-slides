@@ -91,8 +91,11 @@
             anchorcolor = mDarkBrown}
 
 % font size of codes
-\renewenvironment{Shaded}{\footnotesize}{}
 \renewenvironment{texttt}{\small}{}
+\usepackage{etoolbox}
+\ifcsmacro{Shaded}{
+    \renewenvironment{Shaded}{\footnotesize}{}
+}
 
 \usepackage[overlay,absolute]{textpos}
 
