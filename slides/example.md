@@ -95,20 +95,20 @@ Term 2 with *inline markup*
 ## 常用的符号
 
 * Prime and arrow
-    * 5’ $\rightarrow$ 3’方向
-    * $5^{\prime} \rightarrow 3^{\prime}$
+    * $5^{\prime} \rightarrow 3^{\prime}$方向
 
 * 乘号
     * $3.2\times10^9$ bp
 
 * 人名中的点
-    * ·
+    * 艾萨克·牛顿
+    * 艾萨克$\cdot$牛顿
 
 * 摄氏度
     + $90\,^{\circ}\mathrm{C}$
     + 3.98°C
 
-## latex
+## \LaTeX
 
 下面是\LaTeX 格式的例子\footnotemark.
 
@@ -201,16 +201,15 @@ ppt\\media\\imageNN.png或imageNN.jpeg
 
 ## 图像格式转换
 
-* 4个空格开始的行都视为代码
+* 代码格式, 还可以有语法高亮
 
-    find . -type f -name "*.png" \
-        | parallel convert -units PixelsPerInch {.}.png -density 300 {.}.jpg
-
-* 这也是代码的格式, 还可以有语法高亮
+    由`pandoc`自动生成, 默认的样式是`pygments`.
 
 ```bash
 find . -type f -name "*.jpeg" \
-    | parallel convert -units PixelsPerInch {.}.jpeg -density 300 {.}.jpg
+    | parallel \
+    convert -units PixelsPerInch -density 300 \
+    {.}.jpeg {.}.jpg
 ```
 
 \note{
@@ -222,11 +221,15 @@ find . -type f -name "*.jpeg" \
 
 * 组合程序
 
-```bash
+可以为程序添加行号
+
+```{.bash .numberLines}
 cd ~/Documents/Course/lecture-slides/slides/ch-25.images
 find . -type f -name "*.jpeg" -or -name "*.png" \
     | parallel sh ../../common/mh.sh {}
 ```
+
+---
 
 * 手动调整
 

@@ -6,7 +6,6 @@
 		-t beamer \
 		-H ../common/preamble-notes.tex \
 		--latex-engine xelatex \
-		-V theme:Pittsburgh \
 		--slide-level 2 \
 		-V fontsize=12pt \
 		-o $(basename $@).tex
