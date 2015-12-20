@@ -4,6 +4,7 @@
 %.notes.pdf: %.md
 	pandoc $< \
 		-t beamer \
+		--template ../common/beamer.template.tex \
 		-H ../common/preamble-notes.tex \
 		--latex-engine xelatex \
 		--slide-level 2 \
@@ -22,6 +23,7 @@
 %.slides.pdf: %.md
 	pandoc $< \
 		-t beamer \
+		--template ../common/beamer.template.tex \
 		-H ../common/preamble-slides.tex \
 		--latex-engine xelatex \
 		--slide-level 2 \

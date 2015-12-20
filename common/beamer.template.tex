@@ -1,0 +1,268 @@
+% With modifications to the default Pandoc beamer template.
+
+% 12pt by default
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+% theme
+\usetheme[]{metropolis}
+\metroset{inner/block=fill}
+
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+
+% xetex
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+
+  % 中文字体
+  \usepackage{xeCJK}
+  \setCJKmainfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
+  \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
+  \punctstyle{plain}
+
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\fi
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+$if(natbib)$
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+$endif$
+$if(biblatex)$
+\usepackage{biblatex}
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+$endif$
+
+$if(listings)$
+\usepackage{listings}
+$endif$
+$if(lhs)$
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+$endif$
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+$endif$
+$if(tables)$
+\usepackage{longtable,booktabs}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+$endif$
+$if(url)$
+\usepackage{url}
+$endif$
+
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+$endif$
+
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+$if(numbersections)$
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+$if(verbatim-in-note)$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+$if(lang)$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{$mainlang$}
+  \setotherlanguages{$for(otherlang)$$otherlang$$sep$,$endfor$}
+\else
+  \usepackage[shorthands=off,$lang$]{babel}
+\fi
+$endif$
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+%%% title page variables
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(institute)$
+\institute{$institute$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+
+%%% custom settings
+
+% http://tex.stackexchange.com/questions/125579/subcaption-with-beamer
+\usepackage[compatibility=false]{caption}
+\usepackage{subcaption}
+
+% for gif
+\usepackage{animate}
+
+% chemistry
+\usepackage[version=3]{mhchem}
+
+% citations
+\usepackage[backend=bibtex,
+            style=nature,
+            url=false,
+            doi=false,
+            isbn=false,
+            maxcitenames=3,
+            maxbibnames=40,
+            abbreviate=true]{biblatex}
+\addbibresource{course.bib}
+% http://tex.stackexchange.com/questions/55780/disable-month-in-biblatex-bibliography
+\AtEveryCitekey{
+    \clearlist{language}
+    \clearfield{month}
+    \clearfield{day}
+}
+\AtEveryBibitem{
+    \clearlist{language}
+    \clearfield{month}
+    \clearfield{day}
+}
+
+% tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+\tikzset{
+    % Define standard arrow tip
+    >=stealth',
+    % Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=4em,
+           minimum height=2em,
+           text centered},
+    invisible/.style={
+        draw,
+        circle,
+        minimum size=0mm,
+        inner sep=0pt,
+        outer sep=0pt},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
+% items
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[ball]
+\setbeamertemplate{caption label separator}{. }
+
+% descriptions
+\defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+\setbeamertemplate{description item}[align left]
+\setbeamercolor{description item}{fg=mLightBrown}
+
+% links
+\usepackage{hyperref}
+\hypersetup{colorlinks = true,
+            linkcolor = mDarkBrown,
+            urlcolor  = mDarkBrown,
+            citecolor = mDarkBrown,
+            anchorcolor = mDarkBrown}
+
+% font size of codes
+\renewenvironment{texttt}{\small}{}
+\usepackage{etoolbox}
+\ifcsmacro{Shaded}{
+    \renewenvironment{Shaded}{\footnotesize}{}
+}
+
+%%% textpos
+
+%\usepackage[overlay,absolute]{textpos}
+%
+%\TPGrid[10 mm,8 mm]{9}{8}
+%% beamer's left and right margin is 10 mm. The top/bottom margin is ??
+%% or without a header ??
+%% the slide dimensions are 128 mm x 96 mm
+%% so the resulting \TPHorizModule = 12 mm and \TPVertModule = 10 mm
+
+
+%%% document starts here
+
+\begin{document}
+$if(title)$
+\frame{\titlepage}
+$endif$
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+\begin{frame}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+$endif$
+$body$
+
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\begin{frame}[allowframebreaks]{$biblio-title$}
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+\end{frame}
+
+$endif$
+$endif$
+$if(biblatex)$
+\begin{frame}[allowframebreaks]{$biblio-title$}
+\printbibliography[heading=none]
+\end{frame}
+
+$endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
+\end{document}
