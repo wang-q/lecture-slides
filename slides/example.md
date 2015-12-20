@@ -2,6 +2,7 @@
 title: "这是首页"
 subtitle: "其实是YAML, 将由pandoc处理"
 author: "签下大名"
+institute: "衣食父母"
 date: \today{}
 
 ---

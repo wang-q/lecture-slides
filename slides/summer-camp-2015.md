@@ -1,7 +1,8 @@
 ---
 title: "生物信息学的例子"
 subtitle: "2015暑期学校"
-author: "王强, 南京大学生命科学学院"
+author: "王强"
+institute: "南京大学生命科学学院"
 date: \today{}
 ...
 

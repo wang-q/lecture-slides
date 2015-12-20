@@ -7,6 +7,7 @@
 *.out
 *.snm
 *.vrb
+*(busy)
 
 # bibtex tmp
 *.bbl
@@ -16,8 +17,6 @@
 *.run.xml
 
 # Pictures
-*.pdf
-*.tex
 *.jpg
 *.jpeg
 *.png
@@ -30,10 +29,14 @@
 *.egp
 *.mkv
 
+# Generated files
+*.tex
+*.pdf
+
 # Finished files
 !common/preamble-notes.tex
 !common/preamble-slides.tex
-!common/macros.tex
+!common/beamer.template.tex
 
 # webstorm project files
 .idea
