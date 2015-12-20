@@ -204,12 +204,18 @@ $endif$
             citecolor = mDarkBrown,
             anchorcolor = mDarkBrown}
 
-% font size of codes
+% font family and size
 \renewenvironment{texttt}{\small}{}
-\usepackage{etoolbox}
+\RequirePackage{etoolbox}
 \ifcsmacro{Shaded}{
     \renewenvironment{Shaded}{\footnotesize}{}
 }
+
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{section title}{series=\normalfont}
+\setbeamerfont{frametitle}{series=\normalfont}
+\setbeamerfont{caption name}{series=\normalfont}
+\setbeamerfont{description item}{series=\normalfont}
 
 %%% textpos
 
