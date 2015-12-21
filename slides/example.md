@@ -109,7 +109,9 @@ Term 2 with *inline markup*
     + $90\,^{\circ}\mathrm{C}$
     + 3.98°C
 
-## \LaTeX
+# \LaTeX
+
+## 格式
 
 下面是\LaTeX 格式的例子\footnotemark.
 
@@ -128,6 +130,89 @@ Term 2 with *inline markup*
 
 \footnotetext{不要对中文使用斜体}
 
+## 字形
+
+\begin{itemize}
+    \item Regular
+    \item \textit{Italic}
+    \item \textsc{SmallCaps}
+    \item \textbf{Bold}
+    \item \textbf{\textit{Bold Italic}}
+    \item \textbf{\textsc{Bold SmallCaps}}
+    \item \texttt{Monospace}
+    \item \texttt{\textit{Monospace Italic}}
+    \item \texttt{\textbf{Monospace Bold}}
+    \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
+\end{itemize}
+
+## 列表
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.33\textwidth}
+        Items
+        \begin{itemize}
+            \item Milk \item Eggs \item Potatos
+        \end{itemize}
+    
+    \column{0.33\textwidth}
+        Enumerations
+        \begin{enumerate}
+            \item First, \item Second and \item Last.
+        \end{enumerate}
+    
+    \column{0.33\textwidth}
+        Descriptions
+        \begin{description}
+            \item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
+        \end{description}
+\end{columns}
+
+## Blocks
+
+Three different block environments are pre-defined and may be styled with an
+optional background color.
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+
+        \metroset{block=transparent}
+    
+        \begin{block}{Default}
+            Block content.
+        \end{block}
+        
+        \begin{alertblock}{Alert}
+            Block content.
+        \end{alertblock}
+        
+        \begin{exampleblock}{Example}
+            Block content.
+        \end{exampleblock}
+
+    \column{0.5\textwidth}
+
+        \metroset{block=fill}
+        
+        \begin{block}{Default}
+            Block content.
+        \end{block}
+        
+        \begin{alertblock}{Alert}
+            Block content.
+        \end{alertblock}
+        
+        \begin{exampleblock}{Example}
+            Block content.
+        \end{exampleblock}
+
+\end{columns}
+
+## Math
+
+\begin{equation*}
+    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+\end{equation*}
+  
 ## 引用管理
 
 所有原始的文献库在zotero中.
