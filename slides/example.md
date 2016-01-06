@@ -29,29 +29,36 @@ date: \today{}
 Here are my notes.
 }
 
-## Block examples
-
-\begin{block}{Block Title}
-Beamer block.
-\end{block}
-
-\begin{alertblock}{Alert Block Title}
-Beamer alert block.
-\end{alertblock}
-
-\begin{exampleblock}{Example Block Title}
-Beamer example block.
-\end{exampleblock}
-
 # Markdown
 
 ---
 
 * 基本内容[这本书](https://www.gitbook.com/book/gitbookio/markdown/details)讲得足够了.
 
-* Pandoc扩展部分[在此](https://www.gitbook.com/book/gitbookio/markdown/details).
+* Pandoc扩展部分[在此](http://pandoc.org/README.html#pandocs-markdown).
 
 # 格式
+
+## 样式
+
+普通
+
+*italic*
+
+**加粗**
+
+~~删除线~~
+
+## Line blocks
+
+| The limerick packs laughs anatomical
+| In space that is quite economical.
+|    But the good ones I've seen
+|    So seldom are clean
+| And the clean ones so seldom are comical
+
+| 200 Main St.
+| Berkeley, CA 94718
 
 ## 列表
 
@@ -212,7 +219,33 @@ optional background color.
 \begin{equation*}
     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
 \end{equation*}
-  
+
+## Quote
+
+\begin{exampleblock}{}
+  {\large ``To be, or not to be: that is the question.''}
+  \vskip5mm
+  \hspace*\fill{\small--- William Shakespeare, Hamlet}
+\end{exampleblock}
+
+---
+
+\includegraphics{example.images/feynman_blackboard5.jpg}
+
+\begin{exampleblock}{}
+  {\large ``What I cannot create, I do not understand.''}
+  \vskip5mm
+  \hspace*\fill{\small--- Richard Feynman}
+\end{exampleblock}
+
+---
+
+Markdown有自己的引用格式.
+
+> Markdown
+
+> Quote
+
 ## 引用管理
 
 所有原始的文献库在zotero中.
