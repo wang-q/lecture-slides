@@ -50,6 +50,7 @@ $highlighting-macros$
 $endif$
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
+\VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
 $if(tables)$
 \usepackage{longtable,booktabs}
@@ -116,7 +117,7 @@ $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 $endif$
 $if(institute)$
-\institute{$institute$}
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
 $if(date)$
 \date{$date$}

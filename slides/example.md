@@ -26,7 +26,15 @@ date: \today{}
 本应是Beamer中的text block, 还可以接着写内容.
 
 \note{
-Here are my notes.
+
+注释中可以用latex的格式, 但不可以用markdown的.
+
+Some \textit{italic} texts.
+
+Not *italic*.
+
+Not **bold**.
+
 }
 
 # Markdown
@@ -220,7 +228,7 @@ optional background color.
     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
 \end{equation*}
 
-## Quote
+## Quotes
 
 \begin{exampleblock}{}
   {\large ``To be, or not to be: that is the question.''}
