@@ -5,9 +5,9 @@
 	pandoc $< \
 		-t beamer \
 		--template ../common/beamer.template.tex \
-		-H ../common/preamble-notes.tex \
 		--latex-engine xelatex \
 		--slide-level 2 \
+		-V beamer-notes=true \
 		-V fontsize=12pt \
 		-o $(basename $@).tex
 	latexmk -xelatex $(basename $@)
@@ -24,7 +24,6 @@
 	pandoc $< \
 		-t beamer \
 		--template ../common/beamer.template.tex \
-		-H ../common/preamble-slides.tex \
 		--latex-engine xelatex \
 		--slide-level 2 \
 		-V fontsize=12pt \

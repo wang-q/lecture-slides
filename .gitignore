@@ -34,8 +34,6 @@
 *.pdf
 
 # Finished files
-!common/preamble-notes.tex
-!common/preamble-slides.tex
 !common/beamer.template.tex
 
 # webstorm project files
