@@ -46,7 +46,8 @@ See [`list.md`](materials/list.md) for details.
 
 ### Required
 
-* TeX: `brew cask install mactex` or download from [TUG](https://tug.org/mactex/mactex-download.html)
+* TeXLive 2016: `brew cask install mactex` or download from
+  [TUG](https://tug.org/mactex/mactex-download.html)
     * Update TeX packages
         * `sudo tlmgr update --self`
         * `sudo tlmgr update --all`

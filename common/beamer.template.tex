@@ -8,7 +8,6 @@
 
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \usepackage{lmodern}
 
 % xetex
@@ -136,7 +135,12 @@ $endif$
 \usepackage[version=3]{mhchem}
 
 % citations
-\usepackage[backend=bibtex,
+% http://tex.stackexchange.com/questions/202988/beamer-patching-footnotes-warning
+% Filter warnings issued by package biblatex starting with "Patching footnotes failed"
+\usepackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
+
+\usepackage[backend=biber,
             style=nature,
             url=false,
             doi=false,
