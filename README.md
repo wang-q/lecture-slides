@@ -6,21 +6,17 @@ The `slides` directory contains slides for my course "General Biology".
 
 **Modified from [agoldst's repo](https://github.com/agoldst/tex/tree/master/lecture-slides).**
 
-Check [`example.md`](slides/example.md) for basic syntax. Then generate PDF slides with 
+Check [`example.md`](slides/example.md) for basic syntax. Then generate [PDF slides](slides/example.slides.pdf)  with 
 
 ```bash
 make example.slides.pdf
 ```
 
-[`slides/example.slides.pdf`](slides/example.slides.pdf) is the result on my iMac.
-
-To generate PDF handouts, with
+To generate [PDF handouts](slides/example.notes.pdf), with
 
 ```bash
 make example.notes.pdf
 ```
-
-[`slides/example.notes.pdf`](slides/example.notes.pdf) is the result on my iMac.
 
 To force updating and make slide and note PDFs at once.
 
@@ -32,7 +28,7 @@ make example -B
 
 ## [`common`](common/)
 
-Contains preambles for TeX.
+[`beamer.template.tex`](common/beamer.template.tex) contains customized beamer templates.
 
 [`mh.sh`](common/mh.sh) changes sizes and resolutions of pictures.
 
@@ -82,5 +78,4 @@ See [`list.md`](materials/list.md) for details.
 * References management
     * JabRef: `brew cask install jabref`
 * Text editor
-    * Webstorm with markdown and latex supports
-    * Atom
+    * IntelliJ with markdown and latex supports
