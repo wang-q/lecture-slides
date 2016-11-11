@@ -340,7 +340,7 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
 ---
 - URL: https://www.youtube.com/watch?v=Dw4Fr4eyGv8
   category: Random
-  original_title: ' Discovering Religion  Ep 08 - Archaeopteryx'
+  original_title: 'Discovering Religion  Ep 08 - Archaeopteryx'
 - URL: https://www.youtube.com/watch?v=_ApDinCBt8g
   category: Random
   original_title: '1st, 2nd, and 3rd Generation Genome Sequencing Technologies'
@@ -382,10 +382,13 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
   original_title: 'Speciation: An Illustrated Introduction'
 - URL: https://www.youtube.com/watch?v=GKGtkzgKfkc
   category: Random
-  original_title: The Scientific Method
+  original_title: 'The Scientific Method'
 - URL: https://www.youtube.com/watch?v=iMz6lApJgu4
   category: Random
   original_title: Xanthopan morgani praedicta The Darwin's Moth
+- URL: https://www.youtube.com/watch?v=PUwmA3Q0_OE
+  category: Random
+  original_title: Human Population Through Time
 EOF
 ```
 
