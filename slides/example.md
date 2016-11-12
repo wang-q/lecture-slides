@@ -330,7 +330,7 @@ ppt\\media\\imageNN.png或imageNN.jpeg
 
 * 代码格式, 还可以有语法高亮
 
-    由`pandoc`自动生成, 默认的样式是`pygments`.
+    由`pandoc`自动生成, 默认的样式是`pygments`. `行内代码`
 
 ```bash
 find . -type f -name "*.jpeg" \
