@@ -1,15 +1,4 @@
 ---
-- URL: https://www.youtube.com/watch?v=Dw4Fr4eyGv8
-  category: LOW/Random
-  ext: mp4
-  file: LOW/Random/Discovering_Religion_Ep_08_-_Archaeopteryx.mp4
-  height: 360
-  original_title: ' Discovering Religion  Ep 08 - Archaeopteryx'
-  resolution: 640x360
-  subs:
-    zh-Hant: LOW/Random/Discovering_Religion_Ep_08_-_Archaeopteryx.zh-Hant.srt
-  title: Discovering_Religion_Ep_08_-_Archaeopteryx
-  width: 640
 - URL: https://www.youtube.com/watch?v=_ApDinCBt8g
   category: Random
   ext: mp4
@@ -23,13 +12,24 @@
   category: Random
   ext: mp4
   file: Random/Birds-of-Paradise_Project_Introduction.mp4
-  height: 1080
+  height: 480
   original_title: Birds-of-Paradise Project Introduction
-  resolution: 1920x1080
+  resolution: 854x480
   subs:
     en: Random/Birds-of-Paradise_Project_Introduction.en.srt
   title: Birds-of-Paradise_Project_Introduction
-  width: 1920
+  width: 854
+- URL: https://www.youtube.com/watch?v=Dw4Fr4eyGv8
+  category: Random
+  ext: mp4
+  file: Random/Discovering_Religion_Ep_08_-_Archaeopteryx.mp4
+  height: 360
+  original_title: 'å§ç¥é³¥å¦ä½è­å¯¦é²å Discovering Religion  Ep 08 - Archaeopteryx'
+  resolution: 640x360
+  subs:
+    zh-Hant: Random/Discovering_Religion_Ep_08_-_Archaeopteryx.zh-Hant.srt
+  title: Discovering_Religion_Ep_08_-_Archaeopteryx
+  width: 640
 - URL: https://www.youtube.com/watch?v=TE6wqG4nb3M
   category: Random
   ext: mp4
@@ -44,7 +44,7 @@
   ext: mp4
   file: Random/Galapagos_Finch_Evolution_HHMI_BioInteractive_Video.mp4
   height: 1080
-  original_title: Galapagos Finch Evolution  HHMI BioInteractive Video
+  original_title: Galapagos Finch Evolution â HHMI BioInteractive Video
   resolution: 1920x1080
   subs:
     en: Random/Galapagos_Finch_Evolution_HHMI_BioInteractive_Video.en.srt
@@ -79,6 +79,15 @@
   resolution: 1280x720
   title: How_Genes_are_Regulated_-_Transcription_Factors
   width: 1280
+- URL: https://www.youtube.com/watch?v=PUwmA3Q0_OE
+  category: Random
+  ext: mp4
+  file: Random/Human_Population_Through_Time.mp4
+  height: 1080
+  original_title: Human Population Through Time
+  resolution: 1920x1080
+  title: Human_Population_Through_Time
+  width: 1920
 - URL: https://www.youtube.com/watch?v=oBwtxdI1zvk
   category: Random
   ext: mp4
@@ -91,38 +100,38 @@
   title: Lac_Operon
   width: 640
 - URL: https://www.youtube.com/watch?v=NWqgZUnJdAY
-  category: LOW/Random
+  category: Random
   ext: mp4
-  file: LOW/Random/Mendelian_Genetics.mp4
+  file: Random/Mendelian_Genetics.mp4
   height: 240
   original_title: Mendelian Genetics
   resolution: 384x240
   subs:
-    en: LOW/Random/Mendelian_Genetics.en.srt
-    zh-Hans: LOW/Random/Mendelian_Genetics.zh-Hans.srt
+    en: Random/Mendelian_Genetics.en.srt
+    zh-Hans: Random/Mendelian_Genetics.zh-Hans.srt
   title: Mendelian_Genetics
   width: 384
 - URL: https://www.youtube.com/watch?v=R6La6_kIr9g
-  category: LOW/Random
+  category: Random
   ext: mp4
-  file: LOW/Random/Natural_Selection.mp4
+  file: Random/Natural_Selection.mp4
   height: 360
   original_title: Natural Selection
   resolution: 576x360
   subs:
-    en: LOW/Random/Natural_Selection.en.srt
-    zh-Hans: LOW/Random/Natural_Selection.zh-Hans.srt
+    en: Random/Natural_Selection.en.srt
+    zh-Hans: Random/Natural_Selection.zh-Hans.srt
   title: Natural_Selection
   width: 576
 - URL: https://www.youtube.com/watch?v=fQwI90bkJl4
-  category: LOW/Random
+  category: Random
   ext: mp4
-  file: LOW/Random/Phylogenetics.mp4
+  file: Random/Phylogenetics.mp4
   height: 360
   original_title: Phylogenetics
   resolution: 576x360
   subs:
-    en: LOW/Random/Phylogenetics.en.srt
+    en: Random/Phylogenetics.en.srt
   title: Phylogenetics
   width: 576
 - URL: https://www.youtube.com/watch?v=xPkOAnK20kw
@@ -148,14 +157,14 @@
   title: Speciation_-_An_Illustrated_Introduction
   width: 1920
 - URL: https://www.youtube.com/watch?v=GKGtkzgKfkc
-  category: LOW/Random
+  category: Random
   ext: mp4
-  file: LOW/Random/The_Scientific_Method.mp4
+  file: Random/The_Scientific_Method.mp4
   height: 360
   original_title: The Scientific Method
   resolution: 576x360
   subs:
-    en: LOW/Random/The_Scientific_Method.en.srt
+    en: Random/The_Scientific_Method.en.srt
   title: The_Scientific_Method
   width: 576
 - URL: https://www.youtube.com/watch?v=iMz6lApJgu4
