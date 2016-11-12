@@ -33,9 +33,12 @@ dl_video.pl - download videos and subtitles based on yaml
 
 GetOptions(
     'help|?' => sub { HelpMessage(0) },
-    'action|a=s' => \( my $action   = "update" ),
-    'dir|d=s'    => \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
-    'in|i=s'     => \( my $in_file  = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify ),
+    'action|a=s' => \( my $action = "update" ),
+    'dir|d=s' =>
+        \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
+    'in|i=s' => \(
+        my $in_file = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify
+    ),
     'out|o=s' => \my $out,
 ) or HelpMessage(1);
 
@@ -66,7 +69,8 @@ if ( $action eq "update" ) {
 
         print " " x 4 . "Get title\n";
         chomp( $item->{title}
-                = `youtube-dl $URL --get-filename --restrict-filenames -o "%(title)s"` );
+                = `youtube-dl $URL --get-filename --restrict-filenames -o "%(title)s"`
+        );
         print " " x 8 . "$item->{title}\n";
 
         print " " x 4 . "Get ext\n";
@@ -88,7 +92,9 @@ if ( $action eq "update" ) {
             print " " x 8 . "Low resolution video.\n";
         }
 
-        $item->{file} = path( $item->{category}, $item->{title} . '.' . $item->{ext} )->stringify;
+        $item->{file}
+            = path( $item->{category}, $item->{title} . '.' . $item->{ext} )
+            ->stringify;
         print " " x 4 . "Full path [$item->{file}]\n";
 
         if ( exists $item->{subs} ) {
@@ -97,15 +103,21 @@ if ( $action eq "update" ) {
         else {
             print " " x 4 . "Get subs\n";
 
+# Can't use youtube-dl to convert subtitles from vtt to srt with --skip-download.
+# Postprocessors only run after download happens.
+# https://github.com/rg3/youtube-dl/issues/8415
             my $sub_text = `youtube-dl --list-subs $URL`;
             if ( $sub_text =~ m{Available subtitles.+Language formats(.+)$}s ) {
-                my @lines = grep {/srt/} grep {/^(:?en|zh)/} grep {/\w+/} split( /\n/, $1 );
+                my @lines = grep {/srt|ass|vtt|ttml/}
+                    grep {/^(:?en|zh)/} grep {/\w+/} split( /\n/, $1 );
                 my %seen = map { ( split /\s+/ )[0] => 1 } @lines;
                 my %sub_of;
 
                 # always keep the en subtitles
                 if ( $seen{en} ) {
-                    $sub_of{en} = path( $item->{category}, $item->{title} . ".en.srt" )->stringify;
+                    $sub_of{en}
+                        = path( $item->{category}, $item->{title} . ".en.srt" )
+                        ->stringify;
                     print " " x 8 . "en\n";
 
                 }
@@ -114,7 +126,8 @@ if ( $action eq "update" ) {
                 for my $key (qw{zh-CN zh-Hans zh-TW zh-Hant}) {
                     if ( $seen{$key} ) {
                         $sub_of{$key}
-                            = path( $item->{category}, $item->{title} . ".$key.srt" )->stringify;
+                            = path( $item->{category},
+                            $item->{title} . ".$key.srt" )->stringify;
                         print " " x 8 . "$key\n";
                         last;
                     }
@@ -196,24 +209,19 @@ elsif ( $action eq "download" ) {
 youtube-dl \
     [% item.URL %] \
     --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] \
-    --restrict-filenames \
-    -o '[% item.video_file %]'
-
-[% FOREACH key IN item.subs.keys.sort -%]
-youtube-dl \
-    [% item.URL %] \
-    --restrict-filenames \
-    -o '[% item.video_file %]' \
-    --skip-download \
-    --write-sub --sub-lang [% key %]
+    --restrict-filenames --continue --ignore-errors --no-call-home \
+[% IF item.subs -%]
+    --write-sub --convert-subs srt --sub-lang [% FOREACH key IN item.subs.keys.sort %][% key %],[% END %] \
 [% END -%]
+    -o '[% item.video_file %]'
 
 [% END -%]
 
 EOF
 
     my $tt = Template->new;
-    $tt->process( \$text, { data => $yml, }, $bash_file->stringify ) or die Template->error;
+    $tt->process( \$text, { data => $yml, }, $bash_file->stringify )
+        or die Template->error;
 
     print "\n";
 }
@@ -280,11 +288,13 @@ elsif ( $action eq "burn" ) {
         $item->{sub_files} = [];
         if ( exists $item->{subs}{en} ) {
             $new_file .= ".en";
-            push @{ $item->{sub_files} }, path( $base_dir, $item->{subs}{en} )->stringify;
+            push @{ $item->{sub_files} },
+                path( $base_dir, $item->{subs}{en} )->stringify;
         }
         for my $key ( grep { $_ ne 'en' } keys %{ $item->{subs} } ) {
             $new_file .= ".$key";
-            push @{ $item->{sub_files} }, path( $base_dir, $item->{subs}{$key} )->stringify;
+            push @{ $item->{sub_files} },
+                path( $base_dir, $item->{subs}{$key} )->stringify;
         }
         $new_file .= ".$item->{ext}";
 
@@ -379,7 +389,8 @@ fi
 EOF
 
     my $tt = Template->new;
-    $tt->process( \$text, { data => $yml, }, $bash_file->stringify ) or die Template->error;
+    $tt->process( \$text, { data => $yml, }, $bash_file->stringify )
+        or die Template->error;
 
     print "\n";
 }
