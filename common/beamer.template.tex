@@ -1,7 +1,10 @@
 % With modifications to the default Pandoc beamer template.
 
-% 12 pt by default
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+% set font size by pandoc metadata
+\documentclass[
+    $if(fontsize)$$fontsize$,$endif$
+    $if(beamer)$ignorenonframetext,$endif$
+    $for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 % theme
 \usetheme[]{metropolis}
@@ -12,31 +15,50 @@
 
 % xetex
 \ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
+    \usepackage{fontspec,xltxtra,xunicode}
 
-  % 中文字体
-  \usepackage{xeCJK}
-  \setCJKmainfont[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
-  \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
-  \punctstyle{plain}
+    % 中文字体
+    \usepackage{xeCJK}
+    \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
+    \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
+    \punctstyle{plain}
 
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 \fi
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-$if(natbib)$
-\usepackage{natbib}
-\bibliographystyle{plainnat}
-$endif$
-$if(biblatex)$
-\usepackage{biblatex}
+
+% citations
+% http://tex.stackexchange.com/questions/202988/beamer-patching-footnotes-warning
+% Filter warnings issued by package biblatex starting with "Patching footnotes failed"
+\usepackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}
+
+\usepackage[backend=biber,
+            style=nature,
+            url=false,
+            doi=false,
+            isbn=false,
+            maxcitenames=3,
+            maxbibnames=40,
+            abbreviate=true]{biblatex}
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
-$endif$
+% http://tex.stackexchange.com/questions/55780/disable-month-in-biblatex-bibliography
+\AtEveryCitekey{
+    \clearlist{language}
+    \clearfield{month}
+    \clearfield{day}
+}
+\AtEveryBibitem{
+    \clearlist{language}
+    \clearfield{month}
+    \clearfield{day}
+}
 
 $if(listings)$
 \usepackage{listings}
@@ -83,7 +105,7 @@ $endif$
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(numbersections)$
 $else$
 \setcounter{secnumdepth}{0}
@@ -93,34 +115,17 @@ $if(verbatim-in-note)$
 $endif$
 $if(lang)$
 \ifxetex
-  \usepackage{polyglossia}
-  \setmainlanguage{$mainlang$}
-  \setotherlanguages{$for(otherlang)$$otherlang$$sep$,$endfor$}
+    \usepackage{polyglossia}
+    \setmainlanguage{$mainlang$}
+    \setotherlanguages{$for(otherlang)$$otherlang$$sep$,$endfor$}
 \else
-  \usepackage[shorthands=off,$lang$]{babel}
+    \usepackage[shorthands=off,$lang$]{babel}
 \fi
 $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
 
-%%% title page variables
-
-$if(title)$
-\title{$title$}
-$endif$
-$if(subtitle)$
-\subtitle{$subtitle$}
-$endif$
-$if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
-$endif$
-$if(institute)$
-\institute{$for(institute)$$institute$$sep$ \and $endfor$}
-$endif$
-$if(date)$
-\date{$date$}
-$endif$
 
 %%% custom settings
 
@@ -133,33 +138,6 @@ $endif$
 
 % chemistry
 \usepackage[version=3]{mhchem}
-
-% citations
-% http://tex.stackexchange.com/questions/202988/beamer-patching-footnotes-warning
-% Filter warnings issued by package biblatex starting with "Patching footnotes failed"
-\usepackage{silence}
-\WarningFilter{biblatex}{Patching footnotes failed}
-
-\usepackage[backend=biber,
-            style=nature,
-            url=false,
-            doi=false,
-            isbn=false,
-            maxcitenames=3,
-            maxbibnames=40,
-            abbreviate=true]{biblatex}
-\addbibresource{course.bib}
-% http://tex.stackexchange.com/questions/55780/disable-month-in-biblatex-bibliography
-\AtEveryCitekey{
-    \clearlist{language}
-    \clearfield{month}
-    \clearfield{day}
-}
-\AtEveryBibitem{
-    \clearlist{language}
-    \clearfield{month}
-    \clearfield{day}
-}
 
 % tikz
 \usepackage{tikz}
@@ -263,6 +241,23 @@ $endif$
 %% the slide dimensions are 128 mm x 96 mm
 %% so the resulting \TPHorizModule = 12 mm and \TPVertModule = 10 mm
 
+%%% title page variables
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
 
 %%% document starts here
 
@@ -275,12 +270,13 @@ $for(include-before)$
 $include-before$
 
 $endfor$
+
 $if(toc)$
-\begin{frame}
+\begin{frame}[allowframebreaks,t,containsverbatim]{Outline}
 \tableofcontents[hideallsubsections]
 \end{frame}
-
 $endif$
+
 $body$
 
 $if(natbib)$

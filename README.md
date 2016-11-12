@@ -70,6 +70,7 @@ See [`list.md`](materials/list.md) for details.
 * Fonts
     * [Fira](https://github.com/mozilla/Fira)
     * Hiragino Sans GB (冬青黑体简体中文)
+    * Kaiti SC (常州华文楷体-简)
 
 ### Optional
 
