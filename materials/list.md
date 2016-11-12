@@ -389,6 +389,9 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
 - URL: https://www.youtube.com/watch?v=PUwmA3Q0_OE
   category: Random
   original_title: Human Population Through Time
+- URL: https://www.youtube.com/watch?v=ymI5Uv5cGU4
+  category: Random
+  original_title: 'History of the World: Every Year'
 EOF
 ```
 

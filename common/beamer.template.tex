@@ -1,6 +1,6 @@
 % With modifications to the default Pandoc beamer template.
 
-% 12pt by default
+% 12 pt by default
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 % theme
@@ -225,6 +225,7 @@ $endif$
 \setbeamerfont{caption name}{series=\normalfont}
 \setbeamerfont{description item}{series=\normalfont}
 
+% handouts with notes
 $if(beamer-notes)$
 \usepackage{pgfpages}
 \setbeameroption{show notes}
