@@ -2,7 +2,7 @@
 title: "这是首页"
 subtitle: "其实是YAML, 将由pandoc处理"
 author: "签下大名"
-institute: "衣食父母"
+institute: "单位"
 date: \today{}
 
 ---
@@ -47,15 +47,15 @@ Not **bold**.
 
 # 格式
 
-## 样式
+## 字体样式
 
-普通
+Regular 普通
 
-*italic*
+*italic* *楷体*
 
-**加粗**
+**Bold** **加粗**
 
-~~删除线~~
+~~Strikethrough~~ ~~删除线~~
 
 ## Line blocks
 
@@ -130,7 +130,7 @@ Term 2 with *inline markup*
 
 下面是\LaTeX 格式的例子\footnotemark.
 
-* \textit{italic} 
+* \textit{楷体} 
     * `\textit{}`
 * \textbf{粗体} 
     * `\textbf{}`
@@ -143,7 +143,7 @@ Term 2 with *inline markup*
 
 还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnotemark.
 
-\footnotetext{不要对中文使用斜体}
+\footnotetext{中文使用楷体代替斜体}
 
 ## 字形
 
