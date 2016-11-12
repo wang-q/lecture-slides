@@ -4,9 +4,11 @@
 
 The `slides` directory contains slides for my course "General Biology".
 
-**Modified from [agoldst's repo](https://github.com/agoldst/tex/tree/master/lecture-slides).**
+**Modified from
+[agoldst's repo](https://github.com/agoldst/tex/tree/master/lecture-slides).**
 
-Check [`example.md`](slides/example.md) for basic syntax. Then generate [PDF slides](slides/example.slides.pdf)  with 
+Check [`example.md`](slides/example.md) for basic syntax. Then generate
+[PDF slides](slides/example.slides.pdf) with
 
 ```bash
 make example.slides.pdf
@@ -28,7 +30,8 @@ make example -B
 
 ## [`common`](common/)
 
-[`beamer.template.tex`](common/beamer.template.tex) contains customized beamer templates.
+[`beamer.template.tex`](common/beamer.template.tex) contains customized
+beamer templates.
 
 [`mh.sh`](common/mh.sh) changes sizes and resolutions of pictures.
 
@@ -70,7 +73,7 @@ See [`list.md`](materials/list.md) for details.
 * Fonts
     * [Fira](https://github.com/mozilla/Fira)
     * Hiragino Sans GB (冬青黑体简体中文)
-    * Kaiti SC (常州华文楷体-简)
+    * Kaiti SC (常州华文 楷体-简)
 
 ### Optional
 
