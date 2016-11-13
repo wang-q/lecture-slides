@@ -48,6 +48,18 @@ brew install ffmpeg --with-libass --with-fdk-aac
 brew cask install aegisub
 ```
 
+## One command for all
+
+```bash
+youtube-dl \
+    -o "%(title)s.%(ext)s" --recode-video mp4 \
+    --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] \
+    --restrict-filenames --continue --ignore-errors --no-call-home \
+    --write-sub --write-auto-sub --convert-subs srt --sub-lang en \
+    https://www.youtube.com/watch?v=zY3nRgEZTm8
+
+```
+
 ## TED
 
 For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download them directly from ted.com.
