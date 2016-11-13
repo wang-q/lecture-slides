@@ -10,21 +10,18 @@
 \usetheme[]{metropolis}
 
 \usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
 \usepackage{lmodern}
 
 % xetex
-\ifxetex
-    \usepackage{fontspec,xltxtra,xunicode}
+\usepackage{fontspec,xltxtra,xunicode}
 
-    % 中文字体
-    \usepackage{xeCJK}
-    \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
-    \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
-    \punctstyle{plain}
+% 中文字体
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
+\xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
+\punctstyle{plain}
 
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-\fi
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -126,9 +123,9 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
-
 %%% custom settings
 
+% subcaption
 % http://tex.stackexchange.com/questions/125579/subcaption-with-beamer
 \usepackage[compatibility=false]{caption}
 \usepackage{subcaption}
@@ -272,7 +269,7 @@ $include-before$
 $endfor$
 
 $if(toc)$
-\begin{frame}[allowframebreaks,t,containsverbatim]{Outline}
+\begin{frame}[allowframebreaks,c,containsverbatim]{Outline}
 \tableofcontents[hideallsubsections]
 \end{frame}
 $endif$
