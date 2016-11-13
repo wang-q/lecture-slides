@@ -14,14 +14,13 @@
 
 % xetex
 \usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
 % 中文字体
 \usepackage{xeCJK}
 \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
 \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
 \punctstyle{plain}
-
-\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
