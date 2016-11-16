@@ -1,4 +1,6 @@
 % With modifications to the default Pandoc beamer template.
+% Here is the original template:
+% https://github.com/jgm/pandoc-templates/blob/master/default.latex
 
 % set font size by pandoc metadata
 \documentclass[
@@ -14,13 +16,15 @@
 
 % xetex
 \usepackage{fontspec,xltxtra,xunicode}
-\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
 % 中文字体
 \usepackage{xeCJK}
 \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
 \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
 \punctstyle{plain}
+
+% don't move this line above
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -267,8 +271,9 @@ $include-before$
 
 $endfor$
 
+% http://stackoverflow.com/questions/913966/how-to-split-table-of-contents-across-multiple-slides-with-latex-beamer
 $if(toc)$
-\begin{frame}[allowframebreaks,c,containsverbatim]{Outline}
+\begin{frame}[shrink]{Outline}
 \tableofcontents[hideallsubsections]
 \end{frame}
 $endif$
