@@ -12,7 +12,7 @@
 \usetheme[]{metropolis}
 
 \usepackage{amssymb,amsmath}
-\usepackage{lmodern}
+%\usepackage{lmodern}
 
 % xetex
 \usepackage{fontspec,xltxtra,xunicode}
@@ -191,12 +191,17 @@ $endfor$
             anchorcolor = mDarkBrown}
 
 % font family and size
-\renewenvironment{texttt}{\small}{}
+
+% make inline codes smaller
+%\renewenvironment{texttt}{\small}{}
+\renewcommand{\texttt}[1]{{\small\ttfamily #1}}
+
 \RequirePackage{etoolbox}
 \ifcsmacro{Shaded}{
     \renewenvironment{Shaded}{\footnotesize}{}
 }
 
+% title page font sizes
 \setbeamerfont{institute}{size=\small}
 \setbeamerfont{section title}{series=\normalfont}
 \setbeamerfont{frametitle}{series=\normalfont}
