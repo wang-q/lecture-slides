@@ -7,7 +7,7 @@ date: \today{}
 
 ---
 
-# 标题
+# 分页
 
 ---
 
@@ -21,33 +21,23 @@ date: \today{}
 
 正文是页面内容
 
+---
+
 ### 三级标题
 
-本应是Beamer中的text block, 还可以接着写内容.
+本应是Beamer中的text block, 但`mtheme`的默认样式里不明显.
 
-\note{
+后面LaTeX部分`Blocks`一节有例子.
 
-注释中可以用latex的格式, 但不可以用markdown的.
-
-Some \textit{italic} texts.
-
-Not *italic*.
-
-Not **bold**.
-
-}
-
-# Markdown
+# Markdown样式
 
 ---
 
-* 基本内容[这本书](https://www.gitbook.com/book/gitbookio/markdown/details)讲得足够了.
+* 基本内容[这本书](https://www.gitbook.com/book/gitbookio/markdown/details)讲得足够了, 正文仅十页.
 
 * Pandoc扩展部分[在此](http://pandoc.org/README.html#pandocs-markdown).
 
-# 格式
-
-## 字体样式
+## 文字样式
 
 Regular 普通
 
@@ -99,7 +89,7 @@ Term 2 with *inline markup*
 
 ## 表格
 
-: 标题
+: 表格说明
 
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
@@ -107,6 +97,12 @@ Term 2 with *inline markup*
 |  123  |  123 |   123   |   123  |
 |    1  |    1 |     1   |     1  |
 
+
+## 引用格式
+
+> Markdown
+
+> Quotes
 
 ## 常用的符号
 
@@ -124,11 +120,11 @@ Term 2 with *inline markup*
     + $90\,^{\circ}\mathrm{C}$
     + 3.98°C
 
-# \LaTeX
+# \LaTeX 样式
 
-## 格式
+## 文字样式
 
-下面是\LaTeX 格式的例子\footnotemark.
+下面是\LaTeX 文字样式的例子\footnotemark.
 
 * \textit{楷体} 
     * `\textit{}`
@@ -139,13 +135,25 @@ Term 2 with *inline markup*
 
 \footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
 
+\note{
+
+注释中可以用latex的格式, 但不可以用markdown的.
+
+Some \textit{italic} texts.
+
+Not *italic*.
+
+Not **bold**.
+
+}
+
 ---
 
 还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnotemark.
 
 \footnotetext{中文使用楷体代替斜体}
 
-## 字形
+## 更多文字样式
 
 \begin{itemize}
     \item Regular
@@ -246,14 +254,6 @@ optional background color.
   \hspace*\fill{\small--- Richard Feynman}
 \end{exampleblock}
 
----
-
-Markdown有自己的引用格式.
-
-> Markdown
-
-> Quote
-
 ## 引用管理
 
 所有原始的文献库在zotero中.
@@ -276,7 +276,7 @@ Markdown有自己的引用格式.
 
 \begin{figure}
     \includegraphics{ch-24.images/image39.jpg}
-    \caption{无标题页面的图, Latex}
+    \caption{无标题页面的图, LaTeX}
 \end{figure}
 
 ## 有标题页面的图
@@ -311,19 +311,17 @@ Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
 
 纵向尺寸:
 
-* 8 cm / 2.54 * 300 = 945
-* 6 cm / 2.54 * 300 = 709
-* 4 cm / 2.54 * 300 = 472
+* $8 \div 2.54 \times 300 \approx 945$
+* $6 \div 2.54 \times 300 \approx 709$
+* $4 \div 2.54 \times 300 \approx 472$
 
 横向尺寸:
 
-* 11 cm / 2.54 * 300 = 1299
+* $11 \div 2.54 \times 300 \approx 1299$
 
 ## 从PowerPoint迁移
 
-将.ppt另存为.pptx；
-解压.pptx到一个新的文件夹, 所有的图片都以
-ppt\\media\\imageNN.png或imageNN.jpeg
+将`.ppt`另存为`.pptx`; 解压`.pptx`到一个新的文件夹, 所有的图片都以 `ppt/media/imageNN.png` 或 `imageNN.jpeg` 
 名字存在.
 
 ## 图像格式转换
