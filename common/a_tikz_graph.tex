@@ -1,5 +1,9 @@
+\documentclass[crop,tikz,border=2bp]{standalone}
 
-\documentclass[tikz]{standalone}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont[BoldFont={Fira Sans}]{Fira Sans Light}
+\setmonofont{Fira Mono}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,positioning}
@@ -10,20 +14,21 @@
 \begin{document}
 
 \tikzset{
-	>=stealth', black!50, text=black, thick,
+    >=stealth', black!50, text=black, thick,
     every new ->/.style       = {shorten >=1pt},
     graphs/every graph/.style = {edges=rounded corners},
     skip loop/.style          = {to path={-- ++(0,#1) -| (\tikztotarget)}},
     hv path/.style            = {to path={-| (\tikztotarget)}},
     vh path/.style            = {to path={|- (\tikztotarget)}},
-	nonterminal/.style={		rectangle, minimum size=6mm, very thick, draw=red!50!black!50, 
-		top color=white, bottom color=red!50!black!20, 
-		font=\itshape, text height=1.5ex,text depth=.25ex},
-	terminal/.style={
-		rounded rectangle, minimum size=6mm, very thick, draw=black!50, 
-		top color=white, bottom color=black!20, 
-		font=\ttfamily, text height=1.5ex, text depth=.25ex},
-	shape = coordinate
+    nonterminal/.style={
+        rectangle, minimum size=6mm, very thick, draw=red!50!black!50, 
+        top color=white, bottom color=red!50!black!20, 
+        font=\itshape, text height=1.5ex,text depth=.25ex},
+    terminal/.style={
+        rounded rectangle, minimum size=6mm, very thick, draw=black!50, 
+        top color=white, bottom color=black!20, 
+        font=\ttfamily, text height=1.5ex, text depth=.25ex},
+    shape = coordinate
 }
 
 \begin{tikzpicture}
@@ -52,6 +57,7 @@
     p5 ->[skip loop=-11mm] p6;
 
     q1 -- q2 -- q3; % make these edges plain
-};\end{tikzpicture}
+};
+\end{tikzpicture}
 
 \end{document}
