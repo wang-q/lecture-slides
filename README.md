@@ -79,6 +79,8 @@ See [`list.md`](materials/list.md) for details.
 
 * Image converter
     * imagemagick: `brew install imagemagick`
+    * pdf2svg: `brew install pdf2svg`
+    * inkscape
 * References management
     * JabRef: `brew cask install jabref`
 * Text editor
