@@ -239,9 +239,9 @@ optional background color.
 ## Quotes
 
 \begin{exampleblock}{}
-  {\large ``To be, or not to be: that is the question.''}
-  \vskip5mm
-  \hspace*\fill{\small--- William Shakespeare, Hamlet}
+    {\large ``To be, or not to be: that is the question.''}
+    \vskip5mm
+    \hspace*\fill{\small--- William Shakespeare, Hamlet}
 \end{exampleblock}
 
 ---
@@ -249,9 +249,9 @@ optional background color.
 \includegraphics{example.images/feynman_blackboard5.jpg}
 
 \begin{exampleblock}{}
-  {\large ``What I cannot create, I do not understand.''}
-  \vskip5mm
-  \hspace*\fill{\small--- Richard Feynman}
+    {\large ``What I cannot create, I do not understand.''}
+    \vskip5mm
+    \hspace*\fill{\small--- Richard Feynman}
 \end{exampleblock}
 
 ## 引用管理
