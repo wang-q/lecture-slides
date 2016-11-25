@@ -29,5 +29,11 @@ if [[ $WIDTH -gt $max_w ]]; then
     mogrify -resize "${max_w}x" "$FILE"
 fi
 
-BASE=`basename "${FILE%.*}"`
-convert -units PixelsPerInch "$FILE" -density 300 "$BASE.jpg"
+# http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+BASE=$(basename "${FILE%.*}")
+EXT=$(basename "${FILE##*.}")
+if [[ EXT -eq "png" ]]; then
+    convert -units PixelsPerInch -background white -alpha remove "$FILE" -density 300 "$BASE.jpg"
+else
+    convert -units PixelsPerInch "$FILE" -density 300 "$BASE.jpg"
+fi
