@@ -497,6 +497,14 @@ framework known as the "The Chain of Being."
 
 ---
 
+* [自然历史](https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E5%8E%86%E5%8F%B2)
+
+* [自然哲学](https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E5%93%B2%E5%AD%A6)
+
+* [自然科学](https://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6)
+
+---
+
 \begin{figure}
     \includegraphics{ch-27.images/image29.jpg}
     \caption{林奈 (Carl Linnaeus), 1707--1778}
