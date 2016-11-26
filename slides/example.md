@@ -38,6 +38,69 @@ toc: true
 
 后面 LaTeX 部分 Blocks 一节有好看些的例子.
 
+## 长页面的处理
+
+* 这
+* 是
+* 一
+* 个
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 长
+* 的
+* 列
+* 表
+
+## 自动分页 {.allowframebreaks}
+
+* 这
+* 是
+* 一
+* 个
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 长
+* 的
+* 列
+* 表
+
+## 自动压缩 {.shrink}
+
+* 这
+* 是
+* 一
+* 个
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 非
+* 常
+* 长
+* 的
+* 列
+* 表
+
 # Markdown 样式
 
 ---
@@ -50,13 +113,13 @@ toc: true
 
 Regular 普通
 
-*italic* *楷体*[^1]
+*italic* *楷体*[^note]
 
 **Bold** **加粗**
 
 ~~Strikethrough~~ ~~删除线~~
 
-[^1]: 中文用 *楷体* 来代替 *italic*, 但是水平线并不一致, 慎用
+[^note]: 中文用 *楷体* 来代替 *italic*, 但是水平线并不一致, 慎用
 
 ## Line blocks
 
@@ -134,7 +197,7 @@ Term 2 with *inline markup*
 
 ## 文字样式
 
-下面是\LaTeX 文字样式的例子\footnotemark.
+下面是\LaTeX 文字样式的例子\footnote{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}.
 
 * \textit{楷体} 
     * `\textit{}`
@@ -142,8 +205,6 @@ Term 2 with *inline markup*
     * `\textbf{}`
 * \underline{下划线} 
     * `\underline{}`
-
-\footnotetext{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}
 
 \note{
 
@@ -159,9 +220,7 @@ Not **bold**.
 
 ---
 
-还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnotemark.
-
-\footnotetext{中文使用楷体代替斜体}
+还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnote{中文使用楷体代替斜体}.
 
 ## 更多文字样式
 
@@ -266,15 +325,17 @@ optional background color.
 
 ## 引用管理
 
-所有原始的文献库在zotero中.
+所有原始的文献库在 zotero 中.
 
-导出为bibtex\footnotemark, 再用Jabref\footnotemark 打开修改.
+导出为 bibtex\footnote{不用 biblatex}, 再用 Jabref\footnote{不用 bibdesk} 打开修改.
 
-下面的脚注编号是错误的, 但我现在不知道是什么引起了这个BUG, 所以一页上不要出现两个脚注.
+一页里出现两个 `\footnotemark` 会导致脚注编号出错错误.
 
-\footnotetext{不要用biblatex}
+文件里如果只用 `\footnotemark`, 会让脚注始编号终为 `1`.
 
-\footnotetext{不用bibdesk}
+所以尽量用 `\footnote` 来引用.\footnotemark
+
+\footnotetext{\fullcite{Meselson1958}}
 
 # 图
 
