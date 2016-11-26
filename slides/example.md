@@ -1,35 +1,44 @@
 ---
-title: "这是首页"
-subtitle: "其实是YAML, 将由pandoc处理"
+title: "这是标题"
+subtitle: "副标题"
 author: "签下大名"
 institute: "单位"
 date: \today{}
+toc: true
 
 ---
 
-# 分页
+* 首页其实是多个参数, 用于设置的 `Beamer` 模板里的变量, 形成的 `\titlepage`.
+
+* 用的是 `YAML` 的形式, 变量可以是 `string` 或 `boolean`.
+
+# 标题与分页
 
 ---
 
-前一页是一级标题, 为独立的页面
+* 一级标题, 为只含有标题的独立页面.
 
-使用`---`或一个二级标题分页
+* 使用 `---` 分页, 或参考下一页使用二级标题.
 
-由`Makefile`里的`pandoc --slide-level 2`指定
+* 在模板中设置了 `\tableofcontents[hideallsubsections]`, 所以只有一级标题会被纳入 `TOC`.
 
-## 二级标题是页面标题
+* 一级标题后如有内容, 需要在之前加入 `---` 来分页.
 
-正文是页面内容
+## 二级标题
+
+二级标题会引起分页, 同时作为页面标题.
+
+这是由 `Makefile` 里的 `pandoc --slide-level 2` 指定的.
 
 ---
 
 ### 三级标题
 
-本应是Beamer中的text block, 但`mtheme`的默认样式里不明显.
+本应是 `Beamer` 中的 `text block`, 但 `mtheme` 的默认样式里不明显.
 
-后面LaTeX部分`Blocks`一节有例子.
+后面 LaTeX 部分 Blocks 一节有好看些的例子.
 
-# Markdown样式
+# Markdown 样式
 
 ---
 
@@ -41,11 +50,13 @@ date: \today{}
 
 Regular 普通
 
-*italic* *楷体*
+*italic* *楷体*[^1]
 
 **Bold** **加粗**
 
 ~~Strikethrough~~ ~~删除线~~
+
+[^1]: 中文用 *楷体* 来代替 *italic*, 但是水平线并不一致, 慎用
 
 ## Line blocks
 
@@ -65,11 +76,11 @@ Regular 普通
 
 * 这是
     * 一个多级
-        * 列表的例子.
+        * 列表的例子
 
 * 这同样是
     + 多级
-        - 列表.
+        - 列表
 
 ## 定义列表
 
@@ -97,12 +108,13 @@ Term 2 with *inline markup*
 |  123  |  123 |   123   |   123  |
 |    1  |    1 |     1   |     1  |
 
-
 ## 引用格式
 
-> Markdown
+> Markdown quotes.
 
-> Quotes
+> 吾爱吾师, 吾更爱真理.
+
+# \LaTeX 样式
 
 ## 常用的符号
 
@@ -119,8 +131,6 @@ Term 2 with *inline markup*
 * 摄氏度
     + $90\,^{\circ}\mathrm{C}$
     + 3.98°C
-
-# \LaTeX 样式
 
 ## 文字样式
 
