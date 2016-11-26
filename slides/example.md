@@ -237,6 +237,21 @@ Not **bold**.
     \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
 \end{itemize}
 
+## 颜色
+
+* \textcolor{TolDarkRed}{TolDarkRed}
+* \textcolor{TolLightRed}{TolLightRed}
+* \textcolor{TolDarkPink}{TolDarkPink}
+* \textcolor{TolLightPink}{TolLightPink}
+* \textcolor{TolDarkGreen}{TolDarkGreen}
+* \textcolor{TolLightGreen}{TolLightGreen}
+* \textcolor{TolDarkBrown}{TolDarkBrown}
+* \textcolor{TolLightBrown}{TolLightBrown}
+* \textcolor{TolDarkBlue}{TolDarkBlue}
+* \textcolor{TolLightBlue}{TolLightBlue}
+* \textcolor{TolDarkPurple}{TolDarkPurple}
+* \textcolor{TolLightPurple}{TolLightPurple}
+
 ## 列表
 
 \begin{columns}[T,onlytextwidth]
