@@ -2,7 +2,7 @@
 
 ## Software needed
 
-### Install youtube-dl
+* Install youtube-dl
 
 `youtube-dl` can download videos and subtitles.
 
@@ -12,14 +12,14 @@ The `--proxy` option doesn't work with shadowsocks, so I install it on a linode 
 sudo pip install youtube-dl
 ```
 
-### Install you-get
+* Install you-get
 
 ```bash
 sudo apt-get install python3-pip
 sudo pip3 install you-get
 ```
 
-### Install ffmpeg in VPS
+* Install ffmpeg in VPS
 
 Ubuntu 14.04 ships `libav-tools` other than `ffmpeg`, so get it by [ppa](https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media).
 
@@ -33,7 +33,7 @@ sudo add-apt-repository --remove ppa:mc3man/trusty-media
 sudo apt-get update
 ```
 
-### Install ffmpeg in Mac
+* Install ffmpeg in Mac
 
 Use ffmpeg to burn subtitles into videos.
 
@@ -42,7 +42,7 @@ brew install x264 lame libvo-aacenc xvid fdk-aac
 brew install ffmpeg --with-libass --with-fdk-aac
 ```
 
-### Install Aegisub
+* Install Aegisub
 
 ```bash
 brew cask install aegisub
@@ -50,12 +50,15 @@ brew cask install aegisub
 
 ## One command for all
 
+On May 10, 2016, youtube-dl supports socks proxy.
+
 ```bash
 youtube-dl \
     -o "%(title)s.%(ext)s" --recode-video mp4 \
     --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] \
     --restrict-filenames --continue --ignore-errors --no-call-home \
     --write-sub --write-auto-sub --convert-subs srt --sub-lang en \
+    --proxy socks5://127.0.0.1:1080 \
     https://www.youtube.com/watch?v=zY3nRgEZTm8
 
 ```
@@ -345,8 +348,6 @@ bash ~/Documents/Course/Animation-output.burn.sh
 
 ## Random source
 
-### On the linode VPS.
-
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
 ---
@@ -404,24 +405,22 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
 - URL: https://www.youtube.com/watch?v=ymI5Uv5cGU4
   category: Random
   original_title: 'History of the World: Every Year'
+- URL: https://www.youtube.com/watch?v=4EpI7UbQvUI
+  category: Random
+  original_title: 'Solving Compound Interest Problems'
+- URL: https://www.youtube.com/watch?v=pg827uDPFqA
+  category: Random
+  original_title: 'What is the number e and where does it come from'
 EOF
-```
 
-```bash
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a update -i Random.yml -o Random-update
+perl dl_video.pl -p socks5://127.0.0.1:1080 -a update -i Random.yml -o Random-update
 
-perl dl_video.pl -a download -i Random-update.yml -o Random-output -d ~/Documents/Course
+perl dl_video.pl -p socks5://127.0.0.1:1080 -a download -i Random-update.yml -o Random-output -d ~/Documents/Course
 
 bash ~/Documents/Course/Random-output.download.sh
 
 perl dl_video.pl -a report -i Random-update.yml -o Random-output -d ~/Documents/Course
-```
-
-### On my Mac
-
-```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
 cd ~/Scripts/lecture-slides/materials
 perl dl_video.pl -a burn -i Random-update.yml -o Random-output -d ~/Documents/Course

@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use autodie;
 
-use Getopt::Long qw(HelpMessage);
+use Getopt::Long;
 use FindBin;
 use YAML qw(Dump Load DumpFile LoadFile);
 
@@ -28,19 +28,18 @@ dl_video.pl - download videos and subtitles based on yaml
         --dir       -d STR  base directory
         --in        -i STR  input .yml file's location
         --out       -o STR  basename of output files
+        --proxy     -p STR  proxy for youtube-dl
 
 =cut
 
 GetOptions(
-    'help|?' => sub { HelpMessage(0) },
-    'action|a=s' => \( my $action = "update" ),
-    'dir|d=s' =>
-        \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
-    'in|i=s' => \(
-        my $in_file = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify
-    ),
-    'out|o=s' => \my $out,
-) or HelpMessage(1);
+    'help|?' => sub { Getopt::Long::HelpMessage(0) },
+    'action|a=s' => \( my $action   = "update" ),
+    'dir|d=s'    => \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
+    'in|i=s'     => \( my $in_file  = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify ),
+    'out|o=s'   => \( my $out ),
+    'proxy|p=s' => \( my $proxy ),
+) or Getopt::Long::HelpMessage(1);
 
 #----------------------------------------------------------#
 # actions
@@ -57,6 +56,9 @@ if ( $action eq "update" ) {
     ];
     DumpFile( $in_file, $yml );
 
+    my $YTDL = 'youtube-dl';
+    $YTDL .= " --proxy $proxy" if $proxy;
+
     for my $item ( @{$yml} ) {
         my $URL = $item->{URL};
         next unless defined $URL;
@@ -64,24 +66,22 @@ if ( $action eq "update" ) {
         print "==> Process URL [$URL]\n";
 
         print " " x 4 . "Get original_title\n";
-        chomp( $item->{original_title} = `youtube-dl --get-title $URL` );
+        chomp( $item->{original_title} = `$YTDL --get-title $URL` );
         print " " x 8 . "$item->{original_title}\n";
 
         print " " x 4 . "Get title\n";
-        chomp( $item->{title}
-                = `youtube-dl $URL --get-filename --restrict-filenames -o "%(title)s"`
-        );
+        chomp( $item->{title} = `$YTDL $URL --get-filename --restrict-filenames -o "%(title)s"` );
         print " " x 8 . "$item->{title}\n";
 
         print " " x 4 . "Get ext\n";
         chomp( $item->{ext}
-                = `youtube-dl $URL --get-filename --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] --restrict-filenames -o "%(ext)s"`
+                = `$YTDL $URL --get-filename --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] --restrict-filenames -o "%(ext)s"`
         );
         print " " x 8 . "$item->{ext}\n";
 
         print " " x 4 . "Get resolution\n";
         chomp( $item->{resolution}
-                = `youtube-dl $URL --get-filename --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] --restrict-filenames -o "%(resolution)s"`
+                = `$YTDL $URL --get-filename --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] --restrict-filenames -o "%(resolution)s"`
         );
         print " " x 8 . "$item->{resolution}\n";
 
@@ -92,9 +92,7 @@ if ( $action eq "update" ) {
             print " " x 8 . "Low resolution video.\n";
         }
 
-        $item->{file}
-            = path( $item->{category}, $item->{title} . '.' . $item->{ext} )
-            ->stringify;
+        $item->{file} = path( $item->{category}, $item->{title} . '.' . $item->{ext} )->stringify;
         print " " x 4 . "Full path [$item->{file}]\n";
 
         if ( exists $item->{subs} ) {
@@ -103,10 +101,10 @@ if ( $action eq "update" ) {
         else {
             print " " x 4 . "Get subs\n";
 
-# Can't use youtube-dl to convert subtitles from vtt to srt with --skip-download.
-# Postprocessors only run after download happens.
-# https://github.com/rg3/youtube-dl/issues/8415
-            my $sub_text = `youtube-dl --list-subs $URL`;
+            # Can't use youtube-dl to convert subtitles from vtt to srt with --skip-download.
+            # Postprocessors only run after download happens.
+            # https://github.com/rg3/youtube-dl/issues/8415
+            my $sub_text = `$YTDL --list-subs $URL`;
             if ( $sub_text =~ m{Available subtitles.+Language formats(.+)$}s ) {
                 my @lines = grep {/srt|ass|vtt|ttml/}
                     grep {/^(:?en|zh)/} grep {/\w+/} split( /\n/, $1 );
@@ -115,9 +113,7 @@ if ( $action eq "update" ) {
 
                 # always keep the en subtitles
                 if ( $seen{en} ) {
-                    $sub_of{en}
-                        = path( $item->{category}, $item->{title} . ".en.srt" )
-                        ->stringify;
+                    $sub_of{en} = path( $item->{category}, $item->{title} . ".en.srt" )->stringify;
                     print " " x 8 . "en\n";
 
                 }
@@ -126,8 +122,7 @@ if ( $action eq "update" ) {
                 for my $key (qw{zh-CN zh-Hans zh-TW zh-Hant}) {
                     if ( $seen{$key} ) {
                         $sub_of{$key}
-                            = path( $item->{category},
-                            $item->{title} . ".$key.srt" )->stringify;
+                            = path( $item->{category}, $item->{title} . ".$key.srt" )->stringify;
                         print " " x 8 . "$key\n";
                         last;
                     }
@@ -139,41 +134,6 @@ if ( $action eq "update" ) {
                 warn " " x 8 . "Can't get subs\n";
             }
         }
-
-# `youtube-dl -f bestvideo+bestaudio/best ` just do the job.
-#        print " " x 4 . "Get formats\n";
-#        my $format_text = `youtube-dl --list-formats $URL`;
-#        if ( $format_text
-#            =~ m{Available formats for.+format code\s+extension\s+resolution\s+note(.+)$}s )
-#        {
-#            my @lines = grep {/mp4/} grep { !/(audio|video) only/ } grep {/\w+/} split( /\n/, $1 );
-#            my ($best) = grep {/best/} @lines;
-#            if ( $best and $best =~ /^(\d+)\s+/ ) {
-#                $item->{format} = $1;
-#                print " " x 8 . "Get best format [$item->{format}]\n";
-#            }
-#            else {
-#                my %res_of;
-#                for my $line (@lines) {
-#                    my @fields = split /\s+/, $line;
-#                    next unless $fields[0];
-#                    next unless $fields[2];
-#                    next unless $fields[2] =~ /\d+x(\d+)/;
-#                    $res_of{ $fields[0] } = $fields[2];
-#                }
-#                if ( scalar keys %res_of ) {
-#                    my ($largest) = sort { $res_of{$b} <=> $res_of{$a} } keys %res_of;
-#                    $item->{format} = $largest;
-#                    print " " x 8 . "Get best resolution [$largest] [$res_of{$largest}]\n";
-#                }
-#                else {
-#                    warn " " x 8 . "Can't find best formats\n";
-#                }
-#            }
-#        }
-#        else {
-#            warn " " x 8 . "Can't get formats\n";
-#        }
 
         print "\n";
     }
@@ -210,6 +170,9 @@ youtube-dl \
     [% item.URL %] \
     --format bestvideo[ext!=webm]+bestaudio[ext!=webm]/best[ext!=webm] \
     --restrict-filenames --continue --ignore-errors --no-call-home \
+[% IF proxy -%]
+    --proxy [% proxy %] \
+[% END -%]
 [% IF item.subs -%]
     --write-sub --convert-subs srt --sub-lang [% FOREACH key IN item.subs.keys.sort %][% key %],[% END %] \
 [% END -%]
@@ -220,7 +183,7 @@ youtube-dl \
 EOF
 
     my $tt = Template->new;
-    $tt->process( \$text, { data => $yml, }, $bash_file->stringify )
+    $tt->process( \$text, { data => $yml, proxy => $proxy, }, $bash_file->stringify )
         or die Template->error;
 
     print "\n";
@@ -288,13 +251,11 @@ elsif ( $action eq "burn" ) {
         $item->{sub_files} = [];
         if ( exists $item->{subs}{en} ) {
             $new_file .= ".en";
-            push @{ $item->{sub_files} },
-                path( $base_dir, $item->{subs}{en} )->stringify;
+            push @{ $item->{sub_files} }, path( $base_dir, $item->{subs}{en} )->stringify;
         }
         for my $key ( grep { $_ ne 'en' } keys %{ $item->{subs} } ) {
             $new_file .= ".$key";
-            push @{ $item->{sub_files} },
-                path( $base_dir, $item->{subs}{$key} )->stringify;
+            push @{ $item->{sub_files} }, path( $base_dir, $item->{subs}{$key} )->stringify;
         }
         $new_file .= ".$item->{ext}";
 
