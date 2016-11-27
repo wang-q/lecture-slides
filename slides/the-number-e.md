@@ -7,6 +7,10 @@ toc: false
 
 ---
 
+# 书上说的
+
+---
+
 $e$
 :   自然对数的底
 
@@ -19,15 +23,37 @@ $e$
     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
 \end{equation*}
 
+\pause{
+\begin{equation*}
+     e = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
+\end{equation*}
+}
+
+\pause{
+定义 $e$ 为唯一的正数 $x$, 使得
+
+\begin{equation*}
+    \int_{1}^{x} \frac{1}{t} \, dt = {1}
+\end{equation*}
+}
+
+\pause{
+定义 $e$ 为唯一的实数 $x$, 使得
+
+\begin{equation*}
+    \lim_{h\to 0}\frac{x^h-1}{h}=1
+\end{equation*}
+}
+
 \note{
+
+数学家说, 想要详细的定义? 没问题, 想要多少种? 都给你.
 
 这样一个极限是从什么地方冒出来的?
 
-对于纯粹数学家来说, 严密的推理与认证就够了, 数学是他们的智力游戏.
+对于纯粹数学家来说, 严密的推理与证明就够了, 数学是他们的智力游戏, 是一定规则下的相容体系.
 
 但对普通人来说, 动机非常重要, 为什么要这样做? 这样做有什么用处?
-
-放高利贷的.
 
 }
 
@@ -39,11 +65,13 @@ $e$
     \hspace*\fill{\small--- 戈弗雷 $\cdot$ 哈罗德 $\cdot$ 哈代, 一个数学家的辩白}
 \end{exampleblock}
 
+\pause{
 \begin{exampleblock}{}
     {\large ``在二十世纪中叶, 人们试图将数学与物理分割开来. 其结果是\alert{灾难性的}.''}
     \vskip5mm
     \hspace*\fill{\small--- 弗拉基米尔 $\cdot$ 阿诺尔德}
 \end{exampleblock}
+}
 
 \note{
 
@@ -55,7 +83,15 @@ Vladimir Arnold, 1937--2010.
 
 \url{https://en.wikiquote.org/wiki/Vladimir_Arnold}
 
+下面来还原我们人类历史上对这个数的发现过程.
+
+放高利贷的人意识到了有个数存在.
+
+第一次把e看为常数的是雅各布·伯努利，他尝试计算下式的值.
+
 }
+
+# 真实的历史
 
 ## 利息
 
@@ -224,3 +260,193 @@ UNDETERMINED
 http://www.snopes.com/quotes/einstein/interest.asp
 
 }
+
+# 另一条路径
+
+---
+
+\begin{equation*}
+    \begin{split}
+        f(x)  &= R^{x} \\
+        f'(x) &= \lim_{h\to0} \frac{f(x+h) - f(x)}{h} \\
+        f'(x) &= \lim_{h\to0} \frac{R^{x+h} - R^x}{h} \\
+              &= \lim_{h\to0} \left(R^x \cdot \frac{R^h - 1}{h} \right) \\
+              &= R^x  \cdot \lim_{h\to0} \frac{R^h - 1}{h} \\
+        \frac{d}{dx} R^x &= R^x
+    \end{split}
+\end{equation*}
+
+\note{
+
+\url{http://math.stackexchange.com/questions/190773/proof-of-fracddxex-ex}
+
+This can be done because $R^{x}$ is "constant" and "constant" means "not depending on $h$".
+
+But this is equal to $(R^x \cdot \text{constant})$. But in this case "constant" means "not depending
+on $x$". "Constant" always means "not depending on something", but "something" varies with the
+context.
+
+}
+
+---
+
+数学家们应用 l'Hôpital's rule, 可以求出
+
+\begin{equation*}
+    \lim_{h\to0} \frac{R^h - 1}{h} = \ln(R)
+\end{equation*}
+
+\note{
+
+洛必达法则, 泰勒展式什么的我已经忘记了, 问你们的数学老师.
+
+这里用土一点的办法.
+
+}
+
+---
+
+\begin{figure}
+
+    \centering
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=major,
+            xmin=-2,
+            xmax=2,
+            ymax=4,
+            ymin=0,
+            axis x line=bottom,
+            axis y line=middle,
+        ]
+            \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-2:1.5,
+            ]{(2^(x) - 1 ) / x } node[above,pos=1] {R=2};
+            \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-2:1.5,
+            ]{(3^(x) - 1 ) / x } node[above,pos=1] {R=3};
+            \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-2:1.2,
+            ]{(4^(x) - 1 ) / x } node[above,pos=1] {R=4};
+        \end{axis}
+    \end{tikzpicture}
+
+    \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2 \rightarrow 4$}
+\end{figure}
+
+---
+
+\begin{figure}
+
+    \centering
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=major,
+            xmin=-1,
+            xmax=1,
+            ymax=1.6,
+            ymin=0.6,
+            axis x line=bottom,
+            axis y line=middle,
+        ]
+            \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.6^(x) - 1 ) / x } node[right,pos=1] {R=2.6};
+            \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.7^(x) - 1 ) / x } node[right,pos=1] {R=2.7};
+            \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.8^(x) - 1 ) / x } node[right,pos=1] {R=2.8};
+            \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.9^(x) - 1 ) / x } node[right,pos=1] {R=2.9};
+        \end{axis}
+    \end{tikzpicture}
+
+    \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2.6 \rightarrow 2.9$}
+\end{figure}
+
+---
+
+\begin{figure}
+
+    \centering
+    \pgfplotsset{xticklabel style={
+                         /pgf/number format/fixed,
+                         /pgf/number format/precision=5
+                 },
+                 scaled x ticks=false}
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=major,
+            xmin=0,
+            xmax=0.08,
+            ymax=1.04,
+            ymin=0.98,
+            axis x line=bottom,
+            axis y line=left,
+        ]
+            \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.06,
+            ]{(2.70^(x) - 1 ) / x } node[right,pos=1] {R=2.70};
+            \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.06,
+            ]{(2.71^(x) - 1 ) / x } node[right,pos=1] {R=2.71};
+            \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.06,
+            ]{(2.72^(x) - 1 ) / x } node[right,pos=1] {R=2.72};
+            \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.06,
+            ]{(2.73^(x) - 1 ) / x } node[right,pos=1] {R=2.73};
+        \end{axis}
+    \end{tikzpicture}
+
+    \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2.70 \rightarrow 2.73$}
+\end{figure}
