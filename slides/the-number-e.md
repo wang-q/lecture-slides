@@ -31,6 +31,32 @@ $e$
 
 }
 
+---
+
+\begin{exampleblock}{}
+    {\large ``美是第一位的, 在这个世界上\alert{丑陋的数学}没有永久存在的位置.''}
+    \vskip5mm
+    \hspace*\fill{\small--- 戈弗雷 $\cdot$ 哈罗德 $\cdot$ 哈代, 一个数学家的辩白}
+\end{exampleblock}
+
+\begin{exampleblock}{}
+    {\large ``在二十世纪中叶, 人们试图将数学与物理分割开来. 其结果是\alert{灾难性的}.''}
+    \vskip5mm
+    \hspace*\fill{\small--- 弗拉基米尔 $\cdot$ 阿诺尔德}
+\end{exampleblock}
+
+\note{
+
+哈代, 1877--1947. 对于纯粹数学和应用数学的看法
+
+\url{https://en.wikiquote.org/wiki/G._H._Hardy}
+
+Vladimir Arnold, 1937--2010.
+
+\url{https://en.wikiquote.org/wiki/Vladimir_Arnold}
+
+}
+
 ## 利息
 
 利息
@@ -190,6 +216,8 @@ Trillion 万亿
 \end{exampleblock}
 
 \note{
+
+现在通常使用不同年限的不同单利利率, 来避免复利.
 
 UNDETERMINED
 
