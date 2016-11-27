@@ -84,6 +84,75 @@ P 也可以指 principal, 本金.
 
 ---
 
+\begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-2.jpg}
+\end{figure}
+
+\note{
+
+Save Exponential-growth.pptx as Exponential-growth.pdf
+
+Don't use pdfcrop. Quality of pdfcrop product is very poor.
+
+\texttt{
+cd ~/Scripts/lecture-slides/slides/the-number-e
+
+mkdir -p temp
+
+cd temp
+
+pdftoppm -rx 300 -ry 300 -png ../Exponential-growth.pdf Exponential-growth
+
+}
+
+}
+
+---
+
+\begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-3.jpg}
+\end{figure}
+
+\note{
+
+\texttt{
+
+cd ..
+
+find temp -maxdepth 1 -name "Exponential*.png" | parallel -j 1 "convert {} -trim {}"
+
+find temp -maxdepth 1 -name "Exponential*.png" | parallel -j 1 "bash ~/Scripts/lecture-slides/common/mh.sh {}"
+
+rm -fr temp
+
+}
+
+}
+
+---
+
+\begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-4.jpg}
+\end{figure}
+
+---
+
+\begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-5.jpg}
+\end{figure}
+
+---
+
+\begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-6.jpg}
+\end{figure}
+
+---
+
+\begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-7.jpg}
+\end{figure}
+
 ## Bonus slides
 
 1626 年, 荷兰人以 60 荷兰盾 (NLG) 从当地印地安酋长那里买下整个曼哈顿岛.
