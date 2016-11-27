@@ -62,7 +62,7 @@ $r$
 : 周期内的利息率, interest \underline{r}ate.
 
 $n$
-: 累计的周期.
+: 累计的周期数.
 
 单利
 
@@ -78,11 +78,13 @@ $n$
 
 \note{
 
-P 也可以指 principal, 资本.
+P 也可以指 principal, 本金.
 
 }
 
 ---
+
+## Bonus slides
 
 1626 年, 荷兰人以 60 荷兰盾 (NLG) 从当地印地安酋长那里买下整个曼哈顿岛.
 
@@ -90,8 +92,8 @@ P 也可以指 principal, 资本.
 
 \begin{equation*}
     \begin{split}
-        F &= 60 \text{NLG} \times ( 1 + 6.5 \div 100)^{2016 - 1626} \\
-          &= 60 \text{NLG} \times 1.065^{390} \\
+        F &= 60 \text{ NLG} \times ( 1 + 6.5 \div 100)^{2016 - 1626} \\
+          &= 60 \text{ NLG} \times 1.065^{390} \\
           &\approx 2782904368555 \text{ NLG} \\
           &= 2782904368555 \div 2.20371 \times 1.0595 \text{ USD} \\
           &\approx 1.338 \text{ Trillion USD}
