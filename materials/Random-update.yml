@@ -70,6 +70,15 @@
   resolution: 1920x1080
   title: Genome_Editing_with_CRISPR-Cas9
   width: 1920
+- URL: https://www.youtube.com/watch?v=ymI5Uv5cGU4
+  category: Random
+  ext: mp4
+  file: Random/History_of_the_World_-_Every_Year.mp4
+  height: 1080
+  original_title: 'History of the World: Every Year'
+  resolution: 1920x1080
+  title: History_of_the_World_-_Every_Year
+  width: 1920
 - URL: https://www.youtube.com/watch?v=MkUgkDLp2iE
   category: Random
   ext: mp4
@@ -134,6 +143,17 @@
     en: Random/Phylogenetics.en.srt
   title: Phylogenetics
   width: 576
+- URL: https://www.youtube.com/watch?v=4EpI7UbQvUI
+  category: Random
+  ext: mp4
+  file: Random/Solving_Compound_Interest_Problems_PLEASE_READ_DESCRIPTION_-.mp4
+  height: 720
+  original_title: Solving Compound Interest Problems PLEASE READ DESCRIPTION:)
+  resolution: 1280x720
+  subs:
+    en: Random/Solving_Compound_Interest_Problems_PLEASE_READ_DESCRIPTION_-.en.srt
+  title: Solving_Compound_Interest_Problems_PLEASE_READ_DESCRIPTION_-
+  width: 1280
 - URL: https://www.youtube.com/watch?v=xPkOAnK20kw
   category: Random
   ext: mp4
@@ -167,6 +187,15 @@
     en: Random/The_Scientific_Method.en.srt
   title: The_Scientific_Method
   width: 576
+- URL: https://www.youtube.com/watch?v=pg827uDPFqA
+  category: Random
+  ext: mp4
+  file: Random/What_is_the_number_e_and_where_does_it_come_from.mp4
+  height: 1080
+  original_title: What is the number "e" and where does it come from?
+  resolution: 1920x1080
+  title: What_is_the_number_e_and_where_does_it_come_from
+  width: 1920
 - URL: https://www.youtube.com/watch?v=iMz6lApJgu4
   category: Random
   ext: mp4
