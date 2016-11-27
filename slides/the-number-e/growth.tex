@@ -1,0 +1,45 @@
+\documentclass[10pt]{article}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+
+\definecolor{TolDarkBlue}{HTML}{6699CC}
+\definecolor{TolLightBlue}{HTML}{88CCEE}
+\definecolor{TolLightGreen}{HTML}{44AA99}
+\definecolor{TolDarkGreen}{HTML}{117733}
+
+\begin{document}
+\tikzset{
+    MrBle/.style={
+        circle, minimum size=2pt, line width=1pt,
+        draw=TolDarkBlue, fill=TolLightBlue, text centered},
+    MrGre/.style={
+        circle, minimum size=2pt, line width=1pt,
+        draw=TolDarkGreen, fill=TolLightGreen, text centered}
+}
+
+\begin{tikzpicture}[line cap=round, line join=round, >=triangle 45, x=2cm,y=0.5cm]
+    \draw[->,color=black,line width=1pt] (-0.5,-1) -- (4,-1);
+    \draw[->,color=black,line width=1pt] (-0.5,-1) -- (-0.5,12);
+    \foreach \x in {0,1,2,3}
+        \draw[shift={(\x,0)},color=black] (0,-1.4) node[below] {\footnotesize $\x$};
+    \draw[color=black] (4,-1.4) node[below] {\footnotesize $time$};
+    \node[MrBle] at (0,0) {};
+    \node[MrBle] at (1,0) {};
+    \node[MrGre] at (1,1) {};
+    \node[MrBle] at (2,0) {};
+    \node[MrBle] at (2,1) {};
+    \node[MrGre] at (2,2) {};
+    \node[MrGre] at (2,3) {};
+    \node[MrBle] at (3,0) {};
+    \node[MrBle] at (3,1) {};
+    \node[MrBle] at (3,2) {};
+    \node[MrBle] at (3,3) {};
+    \node[MrGre] at (3,4) {};
+    \node[MrGre] at (3,5) {};
+    \node[MrGre] at (3,6) {};
+    \node[MrGre] at (3,7) {};
+\end{tikzpicture}
+
+\end{document}
