@@ -24,24 +24,24 @@ $e$
 \end{equation*}
 
 \pause{
+
+定义 $e$ 为唯一的实数 $x$, 使得
+\begin{equation*}
+    \lim_{h\to 0}\frac{x^h-1}{h}=1
+\end{equation*}
+}
+
+\pause{
 \begin{equation*}
      e = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
 \end{equation*}
 }
 
 \pause{
-定义 $e$ 为唯一的正数 $x$, 使得
 
+定义 $e$ 为唯一的正数 $x$, 使得
 \begin{equation*}
     \int_{1}^{x} \frac{1}{t} \, dt = {1}
-\end{equation*}
-}
-
-\pause{
-定义 $e$ 为唯一的实数 $x$, 使得
-
-\begin{equation*}
-    \lim_{h\to 0}\frac{x^h-1}{h}=1
 \end{equation*}
 }
 
@@ -54,6 +54,8 @@ $e$
 对于纯粹数学家来说, 严密的推理与证明就够了, 数学是他们的智力游戏, 是一定规则下的相容体系.
 
 但对普通人来说, 动机非常重要, 为什么要这样做? 这样做有什么用处?
+
+第三个是 $e^x$ 的泰勒展式
 
 }
 
@@ -298,7 +300,7 @@ context.
 
 \note{
 
-洛必达法则, 泰勒展式什么的我已经忘记了, 问你们的数学老师.
+洛必达法则什么的我已经忘记了, 问你们的数学老师.
 
 这里用土一点的办法.
 
