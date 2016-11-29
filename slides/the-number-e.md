@@ -112,6 +112,8 @@ Vladimir Arnold, 1937--2010.
 
 对于借债方来说, 利息是借钱的代价; 对于提供贷款或购买债券的投资者来说, 利息可以部分抵消债务投资的信用风险和机会成本.
 
+收到利息之后, 可以将利息继续放贷给别人. 如果这个别人是同一个借贷人, 即是复利.
+
 }
 
 ## 利息的计算公式
@@ -144,42 +146,27 @@ $n$
 
 P 也可以指 principal, 本金.
 
+Save Exponential-growth.pptx as Exponential-growth.pdf
+
+Don't use pdfcrop. Quality of pdfcrop product is very poor.
+
 }
 
 ---
 
 \begin{figure}
     \includegraphics{the-number-e/Exponential-growth-2.jpg}
+    \caption{简化条件: 令 $P = 1$, $r = 1$, 则 $F = (1+1)^{n}$}
 \end{figure}
 
 \note{
 
-Save Exponential-growth.pptx as Exponential-growth.pdf
-
-Don't use pdfcrop. Quality of pdfcrop product is very poor.
-
 \texttt{
-cd ~/Scripts/lecture-slides/slides/the-number-e
+cd the-number-e
 
-mkdir -p temp
-
-cd temp
+mkdir -p temp \string&\string& cd temp
 
 pdftoppm -rx 300 -ry 300 -png ../Exponential-growth.pdf Exponential-growth
-
-}
-
-}
-
----
-
-\begin{figure}
-    \includegraphics{the-number-e/Exponential-growth-3.jpg}
-\end{figure}
-
-\note{
-
-\texttt{
 
 cd ..
 
@@ -196,6 +183,20 @@ rm -fr temp
 ---
 
 \begin{figure}
+    \includegraphics{the-number-e/Exponential-growth-3.jpg}
+\end{figure}
+
+\note{
+
+上的的周期是一年. 现在来观察一年内的情况.
+
+利息学随着时间的推移, 慢慢地出现的.
+
+}
+
+---
+
+\begin{figure}
     \includegraphics{the-number-e/Exponential-growth-4.jpg}
 \end{figure}
 
@@ -204,6 +205,12 @@ rm -fr temp
 \begin{figure}
     \includegraphics{the-number-e/Exponential-growth-5.jpg}
 \end{figure}
+
+\note{
+
+实际上, 银行里的存款提前支取是要受到利率惩罚的.
+
+}
 
 ---
 
@@ -216,6 +223,66 @@ rm -fr temp
 \begin{figure}
     \includegraphics{the-number-e/Exponential-growth-7.jpg}
 \end{figure}
+
+---
+
+$m$
+: 一个周期内, 计复利的次数.
+
+前面的简化公式
+
+\begin{equation*}
+    F = (1+1)^1
+\end{equation*}
+
+利率 $r=1/m$, 累计的周期数 $n=m$, 上式变成了
+
+\begin{equation*}
+    F = (1 + {1 \over m})^m
+\end{equation*}
+
+\note{
+
+半年复利, 季度复利, 月复利等的通用公式
+
+}
+
+---
+
+| $m$ | $(a+b)^m$                       | $(1+1/m)^m$                                                                                   | $F$  |
+|:----|:--------------------------------|:----------------------------------------------------------------------------------------------|:-----|
+| 1   | $a+b$                           | 1 + 1                                                                                         | 2    |
+| 2   | $a^2 + 2ab + b^2$               | $1^2 + 2 \cdot 1 \cdot 1/2 + (1/2)^2 = 1 + 1 + 0.25$                                          | 2.25 |
+| 3   | $a^3 + 3 a^2 b + 3 a b^2 + b^3$ | $1^3 + 3 \cdot 1^2 \cdot 1/3 + 3 \cdot 1 \cdot (1/3)^2 + (1/3)^3 \approx 1 + 1 + 0.33 + 0.04$ | 2.37 |
+
+\note{
+
+和前面的图里完全一致, 连数字出现的顺序都一样.
+
+}
+
+---
+
+| $m$                     | $F=(1+1/m)^m$ |
+|:------------------------|:--------------|
+| 1                       | 2             |
+| 2                       | 2.25          |
+| 3                       | 2.37          |
+| 12                      | 2.613         |
+| 365                     | 2.714567      |
+| $365 \cdot 24 \cdot 60$ | 2.718279      |
+
+\pause{
+\begin{equation*}
+    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+\end{equation*}
+}
+
+\note{
+
+525600
+
+}
 
 ## Bonus slides
 
