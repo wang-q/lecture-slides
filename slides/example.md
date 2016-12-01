@@ -192,7 +192,7 @@ Term 2 with *inline markup*
     * 艾萨克·牛顿
 
 * 摄氏度
-    + $90\,^{\circ}\mathrm{C}$
+    + $90\,^{\circ}\text{C}$
     + 3.98°C
 
 ## 文字样式
@@ -340,13 +340,12 @@ optional background color.
 
 ## 引用管理
 
-所有原始的文献库在 zotero 中.
-
-导出为 bibtex\footnote{不用 biblatex}, 再用 Jabref\footnote{不用 bibdesk} 打开修改.
+所有原始的文献库在 zotero 中. 导出为 bibtex\footnote{不用 biblatex}, 再用 Jabref\footnote{不用 bibdesk}
+打开修改.
 
 一页里出现两个 `\footnotemark` 会导致脚注编号出错错误.
 
-文件里如果只用 `\footnotemark`, 会让脚注始编号终为 `1`.
+文件里如果只用 `\footnotemark`, 会让脚注始编号始终为 `1`. 若一页上有两个脚注, 则都为 `2`.
 
 所以尽量用 `\footnote` 来引用.\footnotemark
 
@@ -372,6 +371,12 @@ optional background color.
     \caption{果蝇的多线染色体}
 \end{figure}
 
+## 不加 `\caption` 不会记入图的编号序列
+
+\begin{figure}
+    \includegraphics[height=0.75\textheight, keepaspectratio]{ch-24.images/image39.jpg}
+\end{figure}
+
 ---
 
 \begin{figure}
@@ -391,9 +396,9 @@ optional background color.
 
 ## 页面尺寸
 
-Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
+Beamer 中的设置的页面尺寸比较小, 为 ``128 mm $\times$ 96 mm''.
 
-因此, 图片大小设置为``8 cm $\times$ 300 dpi''就比较适宜.
+因此, 图片大小设置为 ``8 cm $\times$ 300 dpi'' 就比较适宜.
 
 纵向尺寸:
 
@@ -414,7 +419,7 @@ Beamer中的设置的页面尺寸比较小, 为128毫米乘以96毫米.
 
 * 代码格式, 还可以有语法高亮
 
-    由`pandoc`自动生成, 默认的样式是`pygments`. `行内代码`
+    由 `pandoc` 自动生成, 默认的样式是 `pygments`. `行内代码`
 
 ```bash
 find . -type f -name "*.jpeg" \
@@ -424,6 +429,7 @@ find . -type f -name "*.jpeg" \
 ```
 
 \note{
+
 统一为300 dpi
 
 }
@@ -452,11 +458,11 @@ mogrify -resize "x709" image11.jpg # Normal size
 
 ## 动画
 
-可以使用`media9`来向pdf中嵌入视频(mp4), 它使用了Flash插件, 所以只能在Adobe Reader中查看.
+可以使用 `media9` 来向pdf中嵌入视频 (mp4), 它使用了 Flash 插件, 所以只能在 Adobe Reader 中查看.
 
-因此使用`animate`包.
+这里使用 `animate` 包.
 
-下面的命令将gif转换成一系列的png文件
+下面的命令将 gif 转换成一系列的 png 文件
 
 ```bash
 cd ch-28.images
