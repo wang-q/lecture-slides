@@ -4,7 +4,7 @@
 %.notes.pdf: %.md
 	pandoc $< \
 		-t beamer \
-		--template ../common/beamer.template.tex \
+		--template beamer.template.tex \
 		--latex-engine xelatex \
 		--slide-level 2 \
 		-V beamer-notes=true \
@@ -25,7 +25,7 @@
 %.slides.pdf: %.md
 	pandoc $< \
 		-t beamer \
-		--template ../common/beamer.template.tex \
+		--template beamer.template.tex \
 		--latex-engine xelatex \
 		--slide-level 2 \
 		-V fontsize=12pt \

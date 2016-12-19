@@ -4,8 +4,7 @@
 
 The `slides` directory contains slides for my course "General Biology".
 
-**Modified from
-[agoldst's repo](https://github.com/agoldst/tex/tree/master/lecture-slides).**
+**Modified from [agoldst's repo](https://github.com/agoldst/tex/tree/master/lecture-slides).**
 
 Check [`example.md`](slides/example.md) for basic syntax. Then generate
 [PDF slides](slides/example.slides.pdf) with
@@ -28,10 +27,9 @@ make example -B
 
 `make clean` to delete all intermediate files.
 
-## [`common`](common/)
+[`beamer.template.tex`](slides/beamer.template.tex) contains customized beamer templates.
 
-[`beamer.template.tex`](common/beamer.template.tex) contains customized
-beamer templates.
+## [`common`](common/)
 
 [`mh.sh`](common/mh.sh) changes sizes and resolutions of pictures.
 
