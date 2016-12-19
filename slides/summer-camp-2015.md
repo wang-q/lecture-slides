@@ -1,15 +1,16 @@
 ---
 title: "生物信息学的例子"
-subtitle: "2015暑期学校"
+subtitle: "2015 暑期学校"
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
+toc: false
 ...
 
 ---
 
 
-生命现象: 遗传与变异，新陈代谢, 生长, 繁殖等.
+生命现象: 遗传与变异, 新陈代谢, 生长, 繁殖等.
 
 
 ---
@@ -38,6 +39,7 @@ http://en.wikipedia.org/wiki/Weasel-program
 ![遗传算法](ch-28.images/lisa.jpg)
 
 \note{
+
 遗传算法, 还加入重组
 
 }
@@ -61,4 +63,3 @@ http://en.wikipedia.org/wiki/Weasel-program
 ---
 
 ![学习与协作: github](summer-camp-2015/github.png)
-
