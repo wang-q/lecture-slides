@@ -34,8 +34,9 @@
 *.tex
 *.pdf
 
-# Finished files
-!common/beamer.template.tex
+# Templates
+!slides/beamer.template.tex
+!articles/article.template.tex
 
 # webstorm project files
 .idea
