@@ -3,11 +3,12 @@
 #----------------------------#
 %.pdf: %.md
 	pandoc $< \
+	    --standalone \
 		-t latex \
 		--template article.template.tex \
 		--latex-engine xelatex \
 		-V fontsize=12pt \
-		--toc \
+		-V papersize=A4 \
 		-o $(basename $@).tex
 	latexmk -xelatex $(basename $@)
 

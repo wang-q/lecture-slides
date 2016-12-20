@@ -20,9 +20,15 @@ $endif$
 % xetex
 \usepackage{fontspec,xltxtra,xunicode}
 
+% 西文字体
+% https://www.reddit.com/r/typography/comments/2vzkad/a_good_serif_webfont_to_pair_with_fira_sans_thats/
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[BoldFont={Charter Bold}, ItalicFont={Charter Italic}]{Charter}
+\setmonofont{Fira Mono}
+
 % 中文字体
 \usepackage{xeCJK}
-\setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
+\setCJKmainfont[BoldFont={Heiti SC Medium}, ItalicFont={Kaiti SC Regular}]{Songti SC Regular}
 \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
 \punctstyle{plain}
 
@@ -136,7 +142,7 @@ $else$
 $endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(numbersections)$
 \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$
@@ -181,6 +187,18 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+%%% custom settings
+
+% subcaption
+% http://tex.stackexchange.com/questions/125579/subcaption-with-beamer
+\usepackage[compatibility=false]{caption}
+\usepackage{subcaption}
+
+% chemistry
+\usepackage[version=3]{mhchem}
+% make inline codes smaller
+%\renewenvironment{texttt}{\small}{}
+\renewcommand{\texttt}[1]{{\small\ttfamily #1}}
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
