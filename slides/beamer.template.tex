@@ -1,11 +1,11 @@
 % With modifications to the default Pandoc beamer template.
 % Here is the original template:
-% https://github.com/jgm/pandoc-templates/blob/master/default.latex
+% https://github.com/jgm/pandoc-templates/blob/master/default.beamer
 
 % set font size by pandoc metadata
 \documentclass[
-    $if(fontsize)$$fontsize$,$endif$
-    $if(beamer)$ignorenonframetext,$endif$
+    $if(fontsize)$$fontsize$,$endif$%
+    $if(beamer)$ignorenonframetext,$endif$%
     $for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
 % theme
