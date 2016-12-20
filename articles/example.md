@@ -30,7 +30,6 @@ Regular 普通
 [^1]: 中文用 *楷体* 来代替 *Italic*
 [^2]: 中文用 **黑体** 来代替 **Bold**
 
-
 ## Line blocks
 
 | The limerick packs laughs anatomical
@@ -179,4 +178,15 @@ Term 2 with *inline markup*
         \subcaption{--立的图例}
     \end{minipage}
     \caption{两栏样式的图}
+\end{figure}
+
+## 动画
+
+可以使用 `media9` 来向pdf中嵌入视频 (mp4), 它使用了 Flash 插件, 所以只能在 Adobe Reader 中查看.
+
+这里使用 `animate` 包.
+
+\begin{figure}
+    \animategraphics[loop,controls,width=\linewidth]{1}{../slides/ch-28.images/endospore-}{0}{39}
+    \caption{芽孢}
 \end{figure}

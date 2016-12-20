@@ -194,6 +194,9 @@ $endfor$
 \usepackage[compatibility=false]{caption}
 \usepackage{subcaption}
 
+% for gif
+\usepackage{animate}
+
 % chemistry
 \usepackage[version=3]{mhchem}
 % make inline codes smaller
@@ -213,7 +216,11 @@ $if(institute)$
 \providecommand{\institute}[1]{}
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
+$if(date)$
 \date{$date$}
+$endif$
+
+%%% document starts here
 
 \begin{document}
 $if(title)$
