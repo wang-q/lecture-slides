@@ -27,17 +27,15 @@ make example -B
 
 `make clean` to delete all intermediate files.
 
-[`beamer.template.tex`](slides/beamer.template.tex) contains customized beamer templates.
-
-## [`common`](common/)
-
-[`mh.sh`](common/mh.sh) changes sizes and resolutions of pictures.
-
 ## [`materials`](materials/)
 
 Video materials for students.
 
 See [`list.md`](materials/list.md) for details.
+
+## [`common`](common/)
+
+[`mh.sh`](common/mh.sh) changes sizes and resolutions of pictures.
 
 ## Tools needed
 
@@ -83,3 +81,59 @@ See [`list.md`](materials/list.md) for details.
     * JabRef: `brew cask install jabref`
 * Text editor
     * IntelliJ with markdown and latex supports
+
+## Pandoc templates
+
+[`slides/beamer.template.tex`](slides/beamer.template.tex) contains customized pandoc template for
+[beamer](https://en.wikipedia.org/wiki/Beamer_(LaTeX)).
+
+### Variables and control statements in pandoc templates
+
+1. `$---$`: variables. Can be provided with YAML document or `pandoc -V key=value`.
+
+    ```yaml
+    ---
+    title: "21 基因的分子生物学"
+    author: "王强"
+    institute: "南京大学生命科学学院"
+    date: \today{}
+    ...
+    ```
+
+    ```bash
+    pandoc $< \
+		-t beamer \
+		--template beamer.template.tex \
+		--latex-engine xelatex \
+		--slide-level 2 \
+		-V fontsize=12pt \
+		-V bibliography=course.bib \
+		--toc \
+		-o $(basename $@).tex
+    ```
+
+2. `$if(---)$ --- $else$ --- $endif$`: conditional branch statements.
+
+    Inline.
+
+    ```
+    $if(fontsize)$$fontsize$,$endif$
+    ```
+
+    Standalone.
+
+    ```
+    $if(listings)$
+    \usepackage{listings}
+    $endif$
+    ```
+
+3. `$for(---)$ --- $endfor$`: loop statements.
+
+    ```
+    $for(bibliography)$
+    \addbibresource{$bibliography$}
+    $endfor$
+    ```
+
+4. `$body$` contains all the contents of `input.md` file after processed by Pandoc converter.
