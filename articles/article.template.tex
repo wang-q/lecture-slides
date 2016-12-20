@@ -22,7 +22,6 @@ $endif$
 
 % 西文字体
 % https://www.reddit.com/r/typography/comments/2vzkad/a_good_serif_webfont_to_pair_with_fira_sans_thats/
-\defaultfontfeatures{Mapping=tex-text}
 \setmainfont[BoldFont={Charter Bold}, ItalicFont={Charter Italic}]{Charter}
 \setmonofont{Fira Mono}
 
@@ -34,6 +33,9 @@ $endif$
 
 % don't move this line above
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+
+% Line spacing
+\linespread{1.2}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
