@@ -39,7 +39,7 @@ texs  := $(patsubst %.md, %.tex, $(markdowns))
 clean:
 	latexmk -c
 	rm -rf $(texs)
-	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib
+	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib *.nls *.nlo
 
 .DEFAULT_GOAL := all
 
