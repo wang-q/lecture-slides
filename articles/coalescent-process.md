@@ -8,6 +8,7 @@ institute:
   - "University of Chicago"
   - "南京大学生命科学学院"
 toc: true
+nomencl: ture
 ...
 
 # 引言
@@ -222,7 +223,7 @@ $N$ 的值就是母本的数目.
 
 $t$ 是指数分布的, 在二倍体模型中有平均值 $2N$.
 
-这是一个经典结果 (Kimura 和 Crow 1964) , 当然可以用递归方法得到, 但是在这里需要知道它和系谱的联系.
+这是一个经典结果 (Kimura 和 Crow 1964), 当然可以用递归方法得到, 但是在这里需要知道它和系谱的联系.
 
 方程 (8) 也举例说明了无限等位基因模型和溯祖过程之间的联系. 对于群体过程的任何一个决定系谱过程的模型,
 如果突变过程是我们已经假设的无限等位基因恒定突变率中性突变过程, 两个随机取样的等位基因相同的概率是 $C(\uptheta
@@ -277,7 +278,6 @@ $\uptheta =5$ 和 $n=20$ 的 $S$ 的分布.
 用方程 (12) , 我们可以计算 9 个或更小的多态性的概率, 在一个大小为 64 的样本中, $\uptheta = 2112(0.005) = 10.6$,
 概率近似为 $2 \times 10^{-6}$. 假设中性平衡理论是正确的, 必须拒绝 0.005 作为这一区域的每个碱基对的突变参数值.
 如果假设在这一区域发生了重组, 9 个多态性位点或更少的概率会更小.
-
 
 # 重组
 
@@ -810,6 +810,8 @@ mtDNA 作为一个基因座, 核基因作为另一个基因座.
 
 * 搭乘效应 (Hitchhiking) 
 
-\begin{equation*}
-    \pi
-\end{equation*}
+\renewcommand{\nomname}{List of Symbols}
+\nomenclature{$c$}{Speed of light in a vacuum inertial frame}
+\nomenclature{$h$}{Planck constant}
+
+\printnomenclature

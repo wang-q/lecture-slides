@@ -17,6 +17,11 @@
 *-blx.bib
 *.run.xml
 
+# nomencl tmp
+*.ilg
+*.nlo
+*.nls
+
 # Pictures
 *.jpg
 *.jpeg

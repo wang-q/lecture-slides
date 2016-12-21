@@ -28,7 +28,7 @@ $endif$
 
 % 中文字体
 \usepackage{xeCJK}
-\setCJKmainfont[BoldFont={Heiti SC Medium}, ItalicFont={Kaiti SC Regular}]{Songti SC Regular}
+\setCJKmainfont[BoldFont={Songti SC Bold}, ItalicFont={Kaiti SC Regular}]{Songti SC Regular}
 \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
 \punctstyle{plain}
 
@@ -186,10 +186,6 @@ $endif$
 \def\fps@figure{htbp}
 \makeatother
 
-$for(header-includes)$
-$header-includes$
-$endfor$
-
 %%% custom settings
 
 % subcaption
@@ -205,6 +201,14 @@ $endfor$
 % make inline codes smaller
 %\renewenvironment{texttt}{\small}{}
 \renewcommand{\texttt}[1]{{\small\ttfamily #1}}
+
+\usepackage{nomencl}
+\makenomenclature
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
