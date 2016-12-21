@@ -217,7 +217,7 @@ $N$ 的值就是母本的数目.
 这从突变的泊松假设可以得到. 因此, 如果我们得到期望 $\mathrm{e}^{-2\upmu t}$, 在 $t$ 的分布之上, 我们得到:
 
 \begin{equation*}
-    E(F)=E(\mathrm{e}^{-2\upmu t})=\int _{0}^{x}\frac{\mathrm{e}^{-\frac{t}{2N}}}{2N}\mathrm{e}^{-2\upmu t}dt=\frac{1}{1+\uptheta }
+    E(F)=E(\mathrm{e}^{-2\upmu t})=\int _{0}^{\infty}\frac{\mathrm{e}^{-\frac{t}{2N}}}{2N}\mathrm{e}^{-2\upmu t}dt=\frac{1}{1+\uptheta }
 \end{equation*}
 
 $t$ 是指数分布的, 在二倍体模型中有平均值 $2N$.
@@ -248,14 +248,14 @@ $–\uptheta C'(0)$, 其中 $–C'(0)$ 代表 $-C(\uptheta )$ 的导数, 取 $\u
 (Watterson, 1975):
 
 \begin{equation*}
-    P_{2}(j)=(\frac{\uptheta }{1+\uptheta })^{j}\frac{1}{1+\uptheta }
+    P_{2}(j)=\left (\frac{\uptheta}{1+\uptheta}\right )^{j}\frac{1}{1+\uptheta}
 \end{equation*}
 
 用同样的理由, 我们可以得到有 $n$ 个祖先世系时发生 $j$ 个突变的概率 $Q_{n}(j)$. 得到 $j$ 个突变的这段时间, 有 $n$
 个世系, 前 $j$ 个事件必须是突变, 第 $(j+1)$ 个事件必须是共同祖先. 因此, 概率是:
 
 \begin{equation*}
-    Q_{n}(j)=(\frac{n\upmu }{n\upmu +\frac{(\binom{n}{2})}{2N}})^{j}\frac{\frac{(\binom{n}{2})}{2N}}{n\upmu +\frac{(\binom{n}{2})}{2N}}=(\frac{\uptheta }{\uptheta +n-1})^{j}\frac{n-1}{\uptheta +n-1}
+    Q_{n}(j) = \left (\frac{n\upmu}{n\upmu + \frac{\binom{n}{2}}{2N}} \right )^{j}\frac{\frac{\binom{n}{2}}{2N}}{n\upmu +\frac{\binom{n}{2}}{2N}} = \left (\frac{\uptheta }{\uptheta +n-1} \right )^{j}\frac{n-1}{\uptheta +n-1}
 \end{equation*}
 
 大小为 $n$ 的样本中分离位点的数目是 $n$ 个世系时发生的个数和系谱中剩余部分发生个数的加和, 在其他部分的分布如同一个大小为
@@ -404,7 +404,7 @@ small to moderate values of $R$) (Kaplan 和 Hudson 1985) . Hudson 和 Kaplan (1
 W--F 模型下无重组时, 估计量的方差是 (见 Nei 1987 方程 10.9):
 
 \begin{equation*}
-    \text{Var}(\overset{‾}{\uptheta})=\frac{n+1}{3(n-1)}\uptheta + \frac{2(n^{2}+n+3)}{9n(n-1)}\uptheta^{2}
+    \text{Var}(\hat{\uptheta})=\frac{n+1}{3(n-1)}\uptheta + \frac{2(n^{2}+n+3)}{9n(n-1)}\uptheta^{2}
 \end{equation*}
 
 Watterson (1975)在方程 (6) 的基础上提出了一个估计量, 即:
@@ -423,7 +423,7 @@ $\uptheta$ 的方差总小于 $\overset{‾}{\uptheta}$ 的方差. 在有重组�
 在有重组的情况下, $\hat{\uptheta}$ 的方差可以用公式 (14) , (15) 和 (18) 来估算.
 
 在一些情况下, 有重组时 $S$ 方差的减小可能是某些问题中考虑核基因代替线粒体基因的理由. 比如说, 最近的线粒体基因组研究
-(Avise 等 1988)用于估算有效群体大小, 用先前的 $mu $ 的估计. 尽管和核基因相比, 出于 mtDNA
+(Avise 等 1988)用于估算有效群体大小, 用先前的 $\upmu$ 的估计. 尽管和核基因相比, 出于 mtDNA
 相对容易分离的考虑对核基因的应用不利, 但是更多准确的估算可能从核数据获得.
 
 对于没有重组的模型, 基于 $S$ 的 $\uptheta$ 的最大可能性估算能够获得, 并且能证明最大可能性估计总是超过 $\hat{\uptheta}$
@@ -456,7 +456,7 @@ $(i,j)$, 表示祖先世系的情况, 表示 $i$ 个祖先在亚群体 1 中而 
 中的一个世系住处改变的概率是:
 
 \begin{equation*}
-    \frac{n_{i}\frac{M}{2}}{2}{(\binom{n_1}{2} + \binom{n_2}{2} + (n_{1}+n_{2})\frac{M}{2})}
+    \frac{n_{i}\frac{M}{2}}{(\binom{n_1}{2} + \binom{n_2}{2} + (n_{1}+n_{2})\frac{M}{2})}
 \end{equation*}
 
 如果一个世系从亚群体 1 中改变到亚群体 2 中, 沿时间向前追溯仍然有效, 祖先世系的情况变成 $(n_{1}-1,n_{2}+1)$.
@@ -473,7 +473,7 @@ Maddison(1989)已经实现了基于这个途径的蒙特卡洛模拟.
 如果第一个事件是迁移, 这两个等位基因相同的概率是 $P_{d}(theta )$. 从此可以导出以下 $P_{s}(theta )$ 的方程:
 
 \begin{equation*}
-    P_{s}(\uptheta)=\frac{1}{1+\uptheta +M}\cdot 1+\frac{\uptheta}{1+\uptheta +M}\cdot 0+\frac{\mathrm{M}}{1+\uptheta +M}P_{d}(\uptheta)
+    P_{s}(\uptheta)=\frac{1}{1+\uptheta +M}\cdot 1+\frac{\uptheta}{1+\uptheta +M}\cdot 0+\frac{M}{1+\uptheta +M}P_{d}(\uptheta)
 \end{equation*}
 
 对于两个来自不同群体的等位基因, 只有把两个世系带入同一个亚种群的突变和迁移事件需要考虑. 如果第一个事件是一个突变事件,
@@ -542,7 +542,7 @@ $\uptheta =5.0$. 同时还显示了 $M=\mathrm{\infty }$ 同样的统计分布, 
 
 ![图 7](coalescent-process.images/image7.png)
 
-图 7(a) $pi $ 的分布, $pi $ 为取自同一个亚群体的大小为 10 的样本中等位基因间差异的平均对数. 群体由三个亚种群组成,
+图 7(a) $\uppi$ 的分布, $\uppi$ 为取自同一个亚群体的大小为 10 的样本中等位基因间差异的平均对数. 群体由三个亚种群组成,
 每一个都是大小为二倍体 $N$, $\uptheta =4Nmu =5$, 其中 $M=4Nm=0.2$ (实心条) 和 $M=\mathrm{\infty}$ (斜纹条) .
 两个分布的平均值都大约是 15. (b)对于一个单独的的随机交配群体, 相同数量的分布 $\uptheta =4N\upmu =5$.
 注意和(a)中低迁移率的情况的相似性.
@@ -551,44 +551,44 @@ $\uptheta =5.0$. 同时还显示了 $M=\mathrm{\infty }$ 同样的统计分布, 
 
 Kaplan 等已经给出了怎样在有某种形式的选择模型下分析溯祖过程.
 他们主要关注一个特定核苷酸位点上含有两个等位基因多态性的平衡选择的情况, 这个特定的核苷酸位点为 ``选择位点''.
-假设在每一次复制中两个选择等位基因之间的循环突变率为 $nu$, 这两个等位基因用 \textbf{F} 和 \textbf{S} 表示.
+假设在每一次复制中两个选择等位基因之间的循环突变率为 $\upnu$, 这两个等位基因用 \textbf{F} 和 \textbf{S} 表示.
 分析导致这个问题: 对于和选择位点完全连锁的位点的系谱和一个独立于任何选择之外的中性位点的系谱有怎样的不同？当选择弱,
-并且在选择位点的基因频率可以相当大地漂移时, 花些力气可以得到数值结果(Darden 等 1989). 当选择很强且不变时, 结果相当简单,
-前提是选择基因 \textbf{S} 和 \textbf{F} 的频率保持恒定.
+并且在选择位点的基因频率可以相当大地漂移时, 花些力气可以得到数值结果 (Darden 等 1989). 当选择很强且不变时,
+结果相当简单, 前提是选择基因 \textbf{S} 和 \textbf{F} 的频率保持恒定.
 
-强的和保持不变的选择情况下, 样本基因的溯祖过程和细分的群体模型的溯祖过程相似, 除了迁移不再是均衡的.
-如果 \textbf{S} 和 \textbf{F} 的频率分别为 $p$ 和 $q$, 然后可以考虑群体被再分成大小为 $2Np$ 和 $2Nq$ 的两个亚群体.
-突变担当迁移的角色. 每一代, 平均 $2Nqnu$ 个 \textbf{F} 基因突变 (迁移) 成为 \textbf{S} 基因 (亚群体) , $2Npnu $
-个向另一个方向突变. 这意味着每一代中一定比例的 \textbf{S} 基因, $2Nqnu /2Np$, 大约是上一代 \textbf{F} 基因的后代.
-换句话说, 一代中的一个 \textbf{S} 基因的亲本是 \textbf{F} 基因的概率是 $qnu /p$. 如果考虑 $n_{1}$ 个 \textbf{S} 基因,
-其中一个的亲本是 \textbf{F} 基因的概率 $P_{\text{SF}}$ 大约是: \newline
+强的和保持不变的选择情况下, 样本基因的溯祖过程和细分的群体模型的溯祖过程相似, 除了迁移不再是均衡的. 如果 \textbf{S} 和
+\textbf{F} 的频率分别为 $p$ 和 $q$, 然后可以考虑群体被再分成大小为 $2Np$ 和 $2Nq$ 的两个亚群体. 突变担当迁移的角色.
+每一代, 平均 $2Nq\upnu$ 个 \textbf{F} 基因突变 (迁移) 成为 \textbf{S} 基因 (亚群体) , $2Np\upnu$
+个向另一个方向突变. 这意味着每一代中一定比例的 \textbf{S} 基因, $2Nq\upnu/2Np$, 大约是上一代 \textbf{F}
+基因的后代. 换句话说, 一代中的一个 \textbf{S} 基因的亲本是 \textbf{F} 基因的概率是 $q\upnu/p$. 如果考虑 $n_{1}$
+个 \textbf{S} 基因, 其中一个的亲本是 \textbf{F} 基因的概率 $P_{\text{SF}}$ 大约是:
 
 \begin{equation*}
-    P_{\text{SF}}=n_{1}\frac{qnu}{p}
+    P_{\text{SF}}=n_{1}\frac{q\upnu}{p}
 \end{equation*}
 
 同样的, $n_{2}$ 个 \textbf{F} 基因, 其中一个的亲本是 \textbf{S} 基因的概率 $P_{\text{FS}}$ 大约是: \newline
 
 \begin{equation*}
-    P_{\text{FS}}=n_{2}\frac{pnu}{q}
+    P_{\text{FS}}=n_{2}\frac{p\upnu}{q}
 \end{equation*}
 
-量 $pnu /q$ 和 $qnu /p$ 类似于细分群体模型(subdivided population model)中的迁移. 在这种情况下, ``迁移''
-不再是对称的, 并且两个``细分群体''的大小不相等.
+量 $p\upnu/q$ 和 $q\upnu/p$ 类似于细分群体模型(subdivided population model)中的迁移. 在这种情况下, ``迁移''
+不再是对称的, 并且两个 ``细分群体'' 的大小不相等.
 
 溯祖事件的概率是每个细分群体的基因大小的函数. 比如说, 两个 \textbf{S} 配子在上一代有一个共同祖先的概率大约是 $1/2Np$,
 对于 \textbf{F} 配子来说, 相应的是 $1/2Nq$. 更普遍地, $n_{1}$ 个 \textbf{S}
 基因中的任意两个在前一代有共同祖先的概率 $\mathrm{P}_{\text{CA},\mathrm{S}}$ 是:
 
 \begin{equation*}
-    \text{P}_{\text{CA},\text{S}}=\frac{\binom{n_1}{2}}{2\text{Np}}
+    P_{\text{CA},\text{S}}=\frac{\binom{n_1}{2}}{2Np}
 \end{equation*}
 
 同样的, 对于 $n_{2}$ 个 \textbf{F} 基因, 其中任意两个在前一代有共同祖先的概率
 $\text{P}_{\text{CA},\text{F}}$ 是:
 
 \begin{equation*}
-    \text{P}_{\text{CA},\text{F}}=\frac{\binom{n_2}{2}}{2\text{Nq}}
+    P_{\text{CA},\text{F}}=\frac{\binom{n_2}{2}}{2Nq}
 \end{equation*}
 
 包含不同基因型 \textbf{F} 和 \textbf{S} 的共同祖先事件要求一个突变和在同一代的一个共同祖先事件.
@@ -598,7 +598,7 @@ $\text{P}_{\text{CA},\text{F}}$ 是:
 每一代事件的总比率是:
 
 \begin{equation*}
-    P_{\text{tot}}=\text{P}_{\text{CA},\text{S}}+\text{P}_{\text{CA},\text{F}}+\text{P}_{\text{FS}}+\text{P}_{\text{SF}}
+    P_{\text{tot}} = P_{\text{CA},\text{S}} + P_{\text{CA},\text{F}} + P_{\text{FS}} + P_{\text{SF}}
 \end{equation*}
 
 因此, 回溯到某个事件的时间是指数分布的, 有平均值 $1/P_{\text{tot}}$. 假设一个事件发生了,
@@ -609,8 +609,8 @@ $\text{P}_{\text{CA},\text{F}}$ 是:
 
 溯祖过程的分析显示, 如果 \textbf{S} 和 \textbf{F} 间的突变率很小,
 一个随机的 \textbf{S} 和一个随机的 \textbf{F} 找到一个共同祖先的平均时间是很大的, 如我们和迁移模型类比所预料到的. Kaplan
-等 (1988) 也表明, 如果随机选取 $n$ 个基因, 不考虑哪个基因出现选择位点, 如果 $4Nnu $ 小,
-样本系谱上的总时间比在严格中性模型下要大得多. 如果 $4Nnu $ 大, 到共同祖先的平均时间本质上不受选择的影响. 图 6b
+等 (1988) 也表明, 如果随机选取 $n$ 个基因, 不考虑哪个基因出现选择位点, 如果 $4N\upnu$ 小,
+样本系谱上的总时间比在严格中性模型下要大得多. 如果 $4N\upnu$ 大, 到共同祖先的平均时间本质上不受选择的影响. 图 6b
 显示的系谱举例展示了一个典型的低突变率下的系谱. 细分模型和平衡模型之间的一个不同是,
 地理细分情况下所有位点应该以相同方式受影响, 选择情况下, 只有和选择位点紧密连锁的位点显示大的系谱.
 
@@ -620,11 +620,11 @@ Hudson 和 Kaplan (1988) 表明了之前叙述的在选择模型中加入重组�
 考虑一个选择位点含有 \textbf{S} 基因的配子样本. 我们称之为含有 \textbf{S} 的配子. 配子的亲本 (在 \textit{A} 位置)
 很可能也和 \textbf{S} 基因连锁, 但是因为产生我们的样本配子的过程中可能发生突变或重组,
 亲本的 \textit{A} 位置可能和一个 \textbf{F} 基因连锁. Hudson 和 Kaplan 显示了每一代中这种改变
-(从与 \textbf{S} 连锁到与 \textbf{F} 连锁) 的概率是 $qnu /p+2pqr/p=(nu +pr)q/p$. 同样的,
-一个含有 \textbf{S} 的配子的 A 基因座的亲本是一个含有 \textbf{S} 的配子的概率是 $(nu +pr)q/p$. 因此,
-对于连锁位点的溯祖过程和完全连锁的位点一样, 除了在某些情况下用 $nu +pr$ 代替 $nu $, 另一些情况下用 $nu +qr$ 代替 $nu
-$. 假设 $p$, $r$, $nu $ 和 $N$ 保持不变, 事件之间时间是指数分布的. 事件之间的平均时间和不同可能的改变的相对概率依赖于
-$2Nnu $, $2Nr$ 和 $p$.
+(从与 \textbf{S} 连锁到与 \textbf{F} 连锁) 的概率是 $q\upnu/p+2pqr/p=(\upnu+pr)q/p$. 同样的,
+一个含有 \textbf{S} 的配子的 A 基因座的亲本是一个含有 \textbf{S} 的配子的概率是 $(\upnu+pr)q/p$. 因此,
+对于连锁位点的溯祖过程和完全连锁的位点一样, 除了在某些情况下用 $\upnu+pr$ 代替 $\upnu$, 另一些情况下用 $\upnu+qr$ 代替 $nu
+$. 假设 $p$, $r$, $\upnu$ 和 $N$ 保持不变, 事件之间时间是指数分布的. 事件之间的平均时间和不同可能的改变的相对概率依赖于
+$2N\upnu$, $2Nr$ 和 $p$.
 
 如我们所料, 如果一个位点和选择位点是紧密连锁的 ($2Nr$ 小) , 并且 $2Nnu$ 小,
 含有 \textbf{S} 的配子的位点和含有 \textbf{F} 的配子的位点到达共同祖先的时间的期望比严格中性的情况更大. 换句话说,
@@ -656,7 +656,7 @@ sechellia} 的乙醇脱氢酶区域的数据的应用上导致了对中性的否
 我们应该可以从数量上预期那些选择导致的大的系谱所引起的紧密连锁位点的种间差异的增加水平.
 \textit{Adh} 的 \textbf{F}/\textbf{S} 多态性是由 \textit{Adh} 基因的 192 号的一个核苷酸的多态性产生的.
 在选择模型下预测和 \textit{Adh} 基因的 192 号连锁的位点的多态性水平, 必须给参数指定一个值. 需要的参数有: $p$,
-\textbf{S} 基因的频率；$2Nnu $, 其中 $nu $ 是被选择基因间的突变率；$\uptheta$
+\textbf{S} 基因的频率；$2N\upnu$, 其中 $\upnu$ 是被选择基因间的突变率；$\uptheta$
 连锁位点上每个碱基对的中性突变率；$R=4Nr$, 其中 $r$ 是每个碱基对的重组率. 对于所有这些参数,
 预先可知的信息允许我们指定这些参数的近似值, 然后比较序列之间差异的预期水平和 Kreitman 观察的序列数据水平 (1983) .
 
