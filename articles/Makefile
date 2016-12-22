@@ -8,7 +8,6 @@
 		--template article.template.tex \
 		--latex-engine xelatex \
 		-V fontsize=12pt \
-		-V papersize=A4 \
 		-o $(basename $@).tex
 	latexmk -xelatex $(basename $@)
 
