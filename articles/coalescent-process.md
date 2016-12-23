@@ -17,7 +17,7 @@ nomencl: ture
 哪些序列亲缘关系更近, 不同序列的最近共同祖先出现在多长时间之前. 如果这些序列取自不同的物种,
 那么这些信息通常表现为一个推断的系统发生树, 它可能代表了样本物种之间的进化关系. 如果这些序列是取自同一群体内的不同的个体,
 而不是取自不同的物种, 那么这些信息就是系谱的, 在此情况下可以推断出基因树. 一个基因树显示了样本序列中哪些序列的亲缘关系更近,
-以及这些序列的最近共同祖先出可能现在什么时候. 一个假想的包含五个序列的样本的基因树或者系谱如图 \ref{fig:1} 所示.
+以及这些序列的最近共同祖先出可能出现在什么时候. 一个假想的包含五个序列的样本的基因树或者系谱如图 \ref{fig:1} 所示.
 在没有重组的情况下, 每一个序列在上一代有一个单独的祖先. (来自于样本序列的基因树, 与二倍体个体的世系是非常不同的.
 每个二倍体个体有两个亲本, 因些向前追溯时祖先的数量会增加.) 现在已经可以获得样本基因的详细系谱信息,
 分子群体遗传学的地位也得到了显著的改变.
@@ -156,11 +156,11 @@ W--F 模型下, 上一代的每一个个体有相同的可能性成为现一代�
 世系对都有相同的可能性在这一点接合. 注意, $(n-1)$ 个世系中的一个在我们起初的样本中有两个后裔, 其他的世系有一个.
 我们可以按照这种方式继续下去, 直到所有世系接合到一个世系, 样本里全部的 $n$ 个个体的共同祖先.
 
-如图 \ref{fig:1} 中所示的五个样本等位基因的系谱. 产生一个谱系的随机过程, 被称为溯祖过程, 可以简要概括出来. $T(j)$, 有 $j$
-个不同世系的时间近似呈指数分布, 如果以 $N$ 代为单位衡量时间, $T(j)$ 的平均值是:
+如图 \ref{fig:1} 中所示的五个样本等位基因的系谱. 产生一个谱系的随机过程, 被称为溯祖过程, 可以简要概括出来. 时间
+$T(j)$, 有 $j$ 个不同世系的时间近似呈指数分布, 如果以 $N$ 代为单位衡量时间, $T(j)$ 的平均值是:
 
 \begin{equation} \label{eq:5}
-    \mathrm{E}[T(j)]=\frac{1}{\binom{j}{2}}
+    E[T(j)]=\frac{1}{\binom{j}{2}}
 \end{equation}
 
 在 $t$ 代所有世系中随机选择的两个世系在 $t+1$ 代接合在系谱图的一个节点. 注意, 我们没有关心我们样本的祖先之外的世系.
@@ -602,7 +602,7 @@ Kaplan 等已经给出了怎样在有某种形式的选择模型下分析溯祖�
 
 溯祖事件的概率是每个细分群体的基因大小的函数. 比如说, 两个 \textbf{S} 配子在上一代有一个共同祖先的概率大约是 $1/2Np$,
 对于 \textbf{F} 配子来说, 相应的是 $1/2Nq$. 更普遍地, $n_{1}$ 个 \textbf{S}
-基因中的任意两个在前一代有共同祖先的概率 $\mathrm{P}_{\text{CA},\mathrm{S}}$ 是:
+基因中的任意两个在前一代有共同祖先的概率 $P_{\text{CA},\mathrm{S}}$ 是:
 
 \begin{equation*}
     P_{\text{CA},\text{S}}=\frac{\binom{n_1}{2}}{2Np}
@@ -627,7 +627,7 @@ $\text{P}_{\text{CA},\text{F}}$ 是:
 
 因此, 回溯到某个事件的时间是指数分布的, 有平均值 $1/P_{\text{tot}}$. 假设一个事件发生了,
 概率时间这个事件发生的比率除以总事件的比率. 比如说, 我们沿着世系向前追溯,
-第一个事件是一个 \textbf{S} 基因变成一个 \textbf{F} 基因的概率是 $\mathrm{P}_{\text{SF}}/P_{\text{tot}}$,
+第一个事件是一个 \textbf{S} 基因变成一个 \textbf{F} 基因的概率是 $P_{\text{SF}}/P_{\text{tot}}$,
 在这种情况下, 我们的样本的祖先在第一个事件发生的那一代应该包含 $n_{1}-1$ 个 \textbf{S} 基因和 $n_{2}+1$
 个 \textbf{F} 基因. 最终, 结合其他模型, 溯祖事件将会导致整个样本的一个共同祖先.
 
@@ -842,7 +842,8 @@ mtDNA 作为一个基因座, 核基因作为另一个基因座.
 \nomenclature[A]{bp}{base pair, 碱基对}
 \nomenclature[A]{W--F model}{Wright--Fisher model, W--F 模型}
 
-\nomenclature[N]{Pedigree}{世系}
+\nomenclature[N]{Pedigree}{家谱}
+\nomenclature[N]{Lineage}{世系}
 \nomenclature[N]{Genealogy}{系谱}
 \nomenclature[N]{Sample}{样本}
 \nomenclature[N]{Gene tree}{基因树}
@@ -855,6 +856,8 @@ mtDNA 作为一个基因座, 核基因作为另一个基因座.
 \nomenclature[N]{Infinite allele model}{无限等位基因模型}
 \nomenclature[N]{Equation}{方程}
 \nomenclature[N]{Demographics}{人口统计学}
+\nomenclature[N]{Sampled allele}{样本等位基因}
+\nomenclature[N]{Stochastic precess}{随机过程}
 \nomenclature[N]{Hitchhiking}{搭乘效应}
 
 \nomenclature[S]{$\upmu$}{The mean number of mutations, 突变数的平均值}
