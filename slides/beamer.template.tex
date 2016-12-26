@@ -12,16 +12,17 @@
 \usetheme[]{metropolis}
 
 \usepackage{amssymb,amsmath}
-%\usepackage{lmodern}
+\usepackage{upgreek} % upright greek symbols
 
 % xetex
+% set by metropolis theme
 \usepackage{fontspec,xltxtra,xunicode}
 
 % 中文字体
 \usepackage{xeCJK}
-\setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
-\xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
-\punctstyle{plain}
+    \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
+    \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
+    \punctstyle{plain}
 
 % don't move this line above
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
@@ -29,7 +30,10 @@
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\IfFileExists{microtype.sty}{%
+    \usepackage{microtype}
+    \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+    }{}
 
 % citations
 % http://tex.stackexchange.com/questions/202988/beamer-patching-footnotes-warning
@@ -37,14 +41,16 @@
 \usepackage{silence}
 \WarningFilter{biblatex}{Patching footnotes failed}
 
-\usepackage[backend=biber,
-            style=nature,
-            url=false,
-            doi=false,
-            isbn=false,
-            maxcitenames=3,
-            maxbibnames=40,
-            abbreviate=true]{biblatex}
+\usepackage[
+    backend=biber,
+    style=nature,
+    url=false,
+    doi=false,
+    isbn=false,
+    maxcitenames=2,
+    maxbibnames=40,
+    abbreviate=true
+]{biblatex}
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -85,7 +91,7 @@ $if(url)$
 $endif$
 
 $if(graphics)$
-\usepackage{graphicx}
+\usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
