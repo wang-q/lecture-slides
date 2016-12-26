@@ -1,6 +1,6 @@
 ---
 title: DNA 测序技术的发展
-subtitle: 三代测序的优势与应用
+subtitle: 三代测序的原理与应用
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
@@ -207,7 +207,7 @@ Intel Core i7-2700K. 	October 23, 2011
 
 \note{
 
-足够拼装出人类个体基因组了
+足够在有几乎完美的参考基因组下, 拼装出人类个体基因组了.
 
 刚推出时有限制, 只能用于人类基因组测序. 现在已经取消.
 
@@ -268,35 +268,115 @@ Intel Core i7-2700K. 	October 23, 2011
 * \alert{读长短}
     * 转座子 (transposons and retrotransposons)
     * 片段重复 (tandom or segment duplications)
-    * 一般不超过 5 kbp
+    * 一般不超过 5 kbp, 但就是二代跨越不了的障碍
 
-## 商业化服务
+## 二代的对策
 
-* \small\url{http://allseq.com/providers/}
-* \small\url{http://www.pacb.com/products-and-services/service-providers/}
-
----
-
-![商业化服务列表](pacbio.images/provider-list.png)
-
----
-
-![2015 年 全球装机约 160 台](pacbio.images/RSII-install-base.png)
+* Pair end (short jump)
+* Mate pair (long jump)
+* 10X Genomics
 
 \note{
 
-Sequel 的全球预购已达50余台
+10 kbp, 复杂基因组拼接, 跨越重复区, 检出结构变异.
+
+}
+
+## 三代的优势
+
+\center\Huge{读长 \alert{长!}}
+
+## 三代的原理
+
+几个名词
+
+* \Large\alert{PacBio}: \normalsize\underline{Pac}ific \underline{Bio}sciences
+* SMRT: \underline{S}ingle \underline{M}olecule \underline{R}eal \underline{T}ime Sequencing
+* ZMW: \underline{Z}ero-\underline{m}ode \underline{w}aveguide, 20 zl (zeptoliters, $10^{-21}$)
+
+\note{
+
+只介绍最有希望的方法, PacBio
+
+单分子实时测序
+
+20 普托升, 反应体系
+
+waveguide, 光 波导管
 
 }
 
 ---
 
-\begin{figure}
-    \includegraphics{pacbio.images/frasergen.png}
-\end{figure}
+![建库与模板\footnote{\fullcite{rhoads2015}}](pacbio.images/SMRTbell-template.jpg)
 
-武汉菲沙基因信息有限公司联合美国 Pacific Biosciences 公司在武汉东湖综合保税区共建高通量测序中心, 引进了不少于 6 台
-Sequel 三代测序系统, 将建成大规模的三代测序中心.
+\note{
+
+SMRTbell template
+
+Hairpin adaptors (green) are ligated to the end of a double-stranded DNA molecule (yellow and
+purple), forming a closed circle. The polymerase (gray) is anchored to the bottom of a ZMW and
+incorporates bases into the read strand (orange).
+
+}
+
+---
+
+![单分子荧光测序](pacbio.images/Sequencing-via-light-pulses.jpg)
+
+\note{
+
+Sequencing via light pulses
+
+A. A SMRTbell (gray) diffuses into a ZMW, and the adaptor binds to a polymerase immobilized at the
+bottom.
+
+B. Each of the four nucleotides is labeled with a different fluorescent dye (indicated in red,
+yellow, green, and blue, respectively for G, C, T, and A) so that they have distinct emission
+spectrums. As a nucleotide is held in the detection volume by the polymerase, a light pulse is
+produced that identifies the base.
+
+(1) A fluorescently-labeled nucleotide associates with the template in the active site of the
+polymerase.
+
+(2) The fluorescence output of the color corresponding to the incorporated base (yellow for base C
+as an example here) is elevated.
+
+(3) The dye-linker-pyrophosphate product is cleaved from the nucleotide and diffuses out of the ZMW,
+ending the fluorescence pulse.
+
+(4) The polymerase translocates to the next position.
+
+(5) The next nucleotide associates with the template in the active site of the polymerase,
+initiating the next fluorescence pulse, which corresponds to base A here.
+
+}
+
+---
+
+![一个 SMRT cell](pacbio.images/SMRT-cell.jpg)
+
+\note{
+
+Each SMRT cell contains 150,000 ZMWs. Approximately 35,000–75,000 of these wells produce a read in a
+run lasting 0.5–4 h, resulting in 0.5–1 Gb of sequence. The image is adapted with permission from
+Pacific Biosciences . ZMW, zero-mode waveguide.
+
+}
+
+---
+
+![读长分布](pacbio.images/read-length-distribution.jpg)
+
+\note{
+
+PacBio RS II read length distribution using P6-C4 chemistry
+
+Data are based on a 20 kb size-selected E. coli library using a 4-h movie. Each SMRT cell produces
+0.5–1 billion bases. The P6-C4 chemistry is currently the most advanced sequencing chemistry offered
+by PacBio.
+
+}
 
 ##  RS II 与 Sequel 对比
 
@@ -314,7 +394,7 @@ Sequel 三代测序系统, 将建成大规模的三代测序中心.
 
 \note{
 
-现在主流的两种 PacBio 平台
+现在主流的两种 PacBio 平台. Sequel 是今年刚出来的.
 
 P 指得是聚合酶, C 是化学试剂.
 
@@ -339,7 +419,7 @@ P 指得是聚合酶, C 是化学试剂.
 
 人类全基因组: 低偏向, 长读长,
 
-Targeted 靶向
+Targeted 靶向, 如 HLA 分型 (人类白细胞抗原, Human Leukocyte Antigen)
 
 RNA Profiling 表达谱
 
@@ -347,41 +427,88 @@ ChIP-Seq 染色质免疫沉淀接高通量测序
 
 }
 
-## 信息学的问题
+## 信息学的问题  {.shrink}
 
-SMRT Analysis Software 包括了一些第三方程序:
+二代所用的算法和策略很多没法在三代上使用, 只能重新开发.
+
+SMRT Analysis Software 包括了大量自有和第三方程序:
 
 * 编程语言
-    * Java 7
-    * Mono 3
-    * Perl 5.8
-    * Python 2.7
-    * Scala 2.9
-* 平台
-    * Tomcat 7.0.23
-    * MySQL 5.1.73
-    * Docutils
-* 生物信息学工具
-    * Celera Assembler 8.1
-    * GMAP
-    * HMMER 3.1
-    * SAMtools
+    * C/C++
+    * Bash
+    * Java, Scala
+    * Mono 3 (C#, VB.net)
+    * Perl 5.8, Python 2.7
+* 平台: Tomcat, MySQL
+* 文件格式 HDF5 $\rightarrow$ BAM
+* Celera Assembler, GMAP, HMMER, SAMtools 等
 
 \note{
 
+快速迭代
+
 在版本更替过程中, 出现过多个程序, 有些已经死了, 有的正在死.
+
+安装也比较麻烦.
 
 }
 
+## 商业化服务
+
+* \small\url{http://allseq.com/providers/}
+* \small\url{http://www.pacb.com/products-and-services/service-providers/}
+
+---
+
+![商业化服务列表](pacbio.images/provider-list.png)
+
+---
+
+![2015 年 全球装机约 160 台](pacbio.images/RSII-install-base.png)
+
+\note{
+
+Sequel 的全球预购已达 50 余台, 很多客户都在等
+
+}
+
+---
+
+\begin{figure}
+    \includegraphics{pacbio.images/frasergen.png}
+\end{figure}
+
+武汉菲沙基因信息有限公司联合美国 Pacific Biosciences 公司在武汉东湖综合保税区共建高通量测序中心, 引进了不少于 6 台
+Sequel 三代测序系统, 将建成大规模的三代测序中心.
+
+\note{
+
+诺和致源好像也在买
+
+5000 块 1 G
+
+}
 
 ##  其它三代方法
 
 * Helicos, 读长过短, 已经破产
 * \alert{Oxford Nanopore}
 
+\note{
+
+Helicos, 也是基于单分子荧光技术
+
+}
+
 ---
 
 \begin{figure}
     \includegraphics{pacbio.images/github-wang-q.png}
-    \caption{\small\url{https://github.com/wang-q}}
+    \caption{\small\url{https://github.com/wang-q/lecture-slides/blob/master/slides/pacbio.slides.pdf}}
 \end{figure}
+
+\note{
+
+没有 .ppt. 从源码编译出来的 .pdf.
+
+}
