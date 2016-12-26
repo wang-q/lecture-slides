@@ -21,15 +21,17 @@ toc: true
 
 ---
 
-* 1955 年, 胰岛素测序
+* 1955 年, 第一个蛋白质测序, 胰岛素
 * 1958 年, 诺贝尔化学奖
-* 1975 年, 双脱氧法
-* 1977 年, $\phi$--X174 噬菌体基因组
+* 1975 年, 双脱氧法, ddNTP
+* 1977 年, 第一个基因组, $\phi$--X174 噬菌体
 * 1980 年, 再度获得诺贝尔化学奖
 
 \note{
 
 我国人工合成牛胰岛素
+
+70 年代早期, 基于双向层析的 DNA 测序
 
 }
 
@@ -109,6 +111,49 @@ other publicly available maps.
 
 # 二代: (短读长的) 高通量测序
 
+## Personal Genomes
+
+\begin{columns}[onlytextwidth]
+    \column{0.5\textwidth}
+        \begin{itemize}
+            \item Craig Venter
+            \item James Watson
+            \item Stephen Quake
+            \item George Church
+            \item Marjolein Kriek
+            \item Hermann Hauser
+            \item Han Chinese
+            \item Seong-Jin Kim
+            \item Korean AK1
+            \item Yoruban African NA18507
+        \end{itemize}
+    \column{0.5\textwidth}
+        \begin{itemize}
+            \item 14 others sequenced by Complete Genomics
+            \item Unknown number sequenced by Knome
+            \item 6 genomes sequenced at high depth by the 1000 Genomes Project
+            \item 180 genomes sequenced at low coverage by the 1000 Genomes Project
+            \item Two acute myeloid leukemia patients
+        \end{itemize}
+\end{columns}
+
+\note{
+
+三十亿美元
+
+三千万美元
+
+People Who’ve Had Their Genomes Sequenced
+
+Stephen Quake, A Stanford engineer
+
+Marjolein Kriek, a clinical geneticist at LUMC
+
+Dr. Hauser, Partner, Amadeus Capital Partners Ltd, is the first consumer
+to purchase Illumina's individual genome sequencing service.
+
+}
+
 ---
 
 ![测序能力的增长](ch-24.images/image24.jpg)
@@ -164,6 +209,8 @@ Intel Core i7-2700K. 	October 23, 2011
 
 足够拼装出人类个体基因组了
 
+刚推出时有限制, 只能用于人类基因组测序. 现在已经取消.
+
 }
 
 ---
@@ -214,7 +261,20 @@ Intel Core i7-2700K. 	October 23, 2011
 
 # 三代: (长读长的) 单分子测序
 
+## 二代的缺点
 
+* 建库过程中扩增带来的偏性
+* 高 GC 区域的覆盖度与准确性
+* \alert{读长短}
+
+## 商业化服务
+
+* \small\url{http://allseq.com/providers/}
+* \small\url{http://www.pacb.com/products-and-services/service-providers/}
+
+---
+
+![商业化服务](pacbio.images/provider-list.png)
 
 ##  RS II 与 Sequel 对比
 
@@ -242,16 +302,16 @@ P 指得是聚合酶, C 是化学试剂.
 
 ## 适用范围
 
-|            |  Sequel   |          原因          |
-|:-----------|:---------:|:---------------------:|
-| 人类全基因组 |  Ok/Good  | 贵; 利于鉴定结构变异及组装 |
-| 小基因组    |   Good    |  长读长, 只需要较低的通量  |
-| 靶向测序    |   Good    |  长读长, 只需要较低的通量  |
-| 转录组      | Poor/Good |  贵; 可得到全长的转录本   |
-| 宏基因组    |  Poor/Ok  |  贵; 利于 de novo 组装  |
-| 外显子组    |   Poor    | 贵; 长读长对外显子没有用处 |
-| 表达谱      |   Poor    |           贵           |
-| ChIP-Seq   |   Poor    |           贵           |
+|            |    Sequel     |          原因          |
+|:-----------|:-------------:|:---------------------:|
+| 人类全基因组 |  Ok/**Good**  | 贵; 利于鉴定结构变异及组装 |
+| 小基因组    |   **Good**    |  长读长, 只需要较低的通量  |
+| 靶向测序    |   **Good**    |  长读长, 只需要较低的通量  |
+| 转录组      | Poor/**Good** |  贵; 可得到全长的转录本   |
+| 宏基因组    |    Poor/Ok    |  贵; 利于 de novo 组装  |
+| 外显子组    |     Poor      | 贵; 长读长对外显子没有用处 |
+| 表达谱      |     Poor      |           贵           |
+| ChIP-Seq   |     Poor      |           贵           |
 
 \note{
 
@@ -265,3 +325,7 @@ ChIP-Seq 染色质免疫沉淀接高通量测序
 
 }
 
+##  其它三代方法
+
+* Helicos, 读长过短, 已经破产
+* Oxford Nanopore
