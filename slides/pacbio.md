@@ -266,6 +266,9 @@ Intel Core i7-2700K. 	October 23, 2011
 * 建库过程中扩增带来的偏性
 * 高 GC 区域的覆盖度与准确性
 * \alert{读长短}
+    * 转座子 (transposons and retrotransposons)
+    * 片段重复 (tandom or segment duplications)
+    * 一般不超过 5 kbp
 
 ## 商业化服务
 
@@ -274,7 +277,26 @@ Intel Core i7-2700K. 	October 23, 2011
 
 ---
 
-![商业化服务](pacbio.images/provider-list.png)
+![商业化服务列表](pacbio.images/provider-list.png)
+
+---
+
+![2015 年 全球装机约 160 台](pacbio.images/RSII-install-base.png)
+
+\note{
+
+Sequel 的全球预购已达50余台
+
+}
+
+---
+
+\begin{figure}
+    \includegraphics{pacbio.images/frasergen.png}
+\end{figure}
+
+武汉菲沙基因信息有限公司联合美国 Pacific Biosciences 公司在武汉东湖综合保税区共建高通量测序中心, 引进了不少于 6 台
+Sequel 三代测序系统, 将建成大规模的三代测序中心.
 
 ##  RS II 与 Sequel 对比
 
@@ -325,7 +347,41 @@ ChIP-Seq 染色质免疫沉淀接高通量测序
 
 }
 
+## 信息学的问题
+
+SMRT Analysis Software 包括了一些第三方程序:
+
+* 编程语言
+    * Java 7
+    * Mono 3
+    * Perl 5.8
+    * Python 2.7
+    * Scala 2.9
+* 平台
+    * Tomcat 7.0.23
+    * MySQL 5.1.73
+    * Docutils
+* 生物信息学工具
+    * Celera Assembler 8.1
+    * GMAP
+    * HMMER 3.1
+    * SAMtools
+
+\note{
+
+在版本更替过程中, 出现过多个程序, 有些已经死了, 有的正在死.
+
+}
+
+
 ##  其它三代方法
 
 * Helicos, 读长过短, 已经破产
-* Oxford Nanopore
+* \alert{Oxford Nanopore}
+
+---
+
+\begin{figure}
+    \includegraphics{pacbio.images/github-wang-q.png}
+    \caption{\small\url{https://github.com/wang-q}}
+\end{figure}
