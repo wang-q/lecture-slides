@@ -1,5 +1,6 @@
 ---
-title: 三代测序的优势与应用
+title: DNA 测序技术的发展
+subtitle: 三代测序的优势与应用
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
@@ -23,8 +24,14 @@ toc: true
 * 1955 年, 胰岛素测序
 * 1958 年, 诺贝尔化学奖
 * 1975 年, 双脱氧法
-* 1977 年, $\phi$-X174 噬菌体基因组
+* 1977 年, $\phi$--X174 噬菌体基因组
 * 1980 年, 再度获得诺贝尔化学奖
+
+\note{
+
+我国人工合成牛胰岛素
+
+}
 
 ---
 
@@ -151,7 +158,7 @@ Intel Core i7-2700K. 	October 23, 2011
 
 ![HiSeq X](pacbio.images/HiSeqX.png)
 
-100 GB $\approx$ 33x Human genome $\approx$ 10,000 CNY
+100 GB $\approx$ 33X Human genome $\approx$ 10,000 CNY
 
 \note{
 
