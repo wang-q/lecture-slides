@@ -249,7 +249,7 @@ Intel Core i7-2700K. 	October 23, 2011
 
 边连接边测序, SOLiD, ABI
 
-已被华大收购, 最有名的是 69 个人的基因组数据
+已被华大收购, 最有名的是 69 个人的基因组数据, ligation
 
 }
 
@@ -294,6 +294,8 @@ Intel Core i7-2700K. 	October 23, 2011
 
 华大做的. 只要是华大的, 都得打个问号.
 
+本来有计划写篇文章的, 但很多物种错误实在太多, 程序跑不完了. 浪费我们服务器和超算的时间. 也就算了.
+
 }
 
 ## 二代的对策
@@ -307,6 +309,8 @@ Intel Core i7-2700K. 	October 23, 2011
 10 kbp, 复杂基因组拼接, 跨越重复区, 检出结构变异.
 
 并没有什么用处.
+
+\url{https://zhuanlan.zhihu.com/p/20723934}
 
 }
 
@@ -419,7 +423,7 @@ by PacBio.
 | 输出量     |   0.5-1 Gb    | 5-10 Gb  |
 | 每日输出量  |     2 Gb      |  20 Gb   |
 | 平均读长   |   10-15 kb    | 10-15 kb |
-| 单程准确率  |     ~86%      |   ~86%   |
+| 单程准确率  |   **~86%**    | **~86%** |
 | 30X 准确率 |   >99.999%    | >99.999% |
 | Reads 数  |      50k      |   500k   |
 | 平台价格   |     $700k     |  $350k   |
@@ -433,28 +437,77 @@ P 指得是聚合酶, C 是化学试剂.
 
 \url{http://allseq.com/knowledge-bank/sequencing-platforms/pacific-biosciences/}
 
+错误是随机分布的, 目前还没有发现特别有规律的地方.
+
 }
 
 ## 三代应用: 哺乳动物基因组
 
 大猩猩基因组\footnote{\fullcite{gordon2016}}
 
+|                |    Susie3     |     gorGor4     |    panTro4    |
+|:---------------|:-------------:|:---------------:|:-------------:|
+| Assembly size  | 3,080,414,926 |  3,063,362,754  | 3,323,267,922 |
+| Total coverage |     74.8X     |     101.1X      |      6X       |
+| Technology     |    PacBio     | Sanger/Illumina |    Sanger     |
+| Contig N50     |   9,558,608   |     52,934      |    50,656     |
+| #contigs       |    16,073     |     170,105     |    183,860    |
+
+\note{
+
+发在 Science 上, 要知道大猩猩基因组出来好多年了.
+
+}
+
+---
+
+![Susie](pacbio.images/Susie.jpg)
+
+\note{
+
+Long-read sequence assembly of the gorilla genome.
+
+(A) Susie, a female Western lowland gorilla, was used as the reference sample for full-genome
+sequencing and assembly.
+
+(B and C) A treemaps representing the differences in fragmentation of the long-read and short-read
+gorilla genome assemblies. The rectangles are the largest contigs that cumulatively make up 300 Mbp
+(~10%) of the assembly.
+
+}
+
 ## 三代应用: 全长转录组
 
-玉米转录组\footnote{\fullcite{wang2016}}
+玉米转录组\footnote{\fullcite{wang2016}}, 6 个组织.
+
+二代测序只能准确地确定剪接点 (splice junctions), 对完整的转录本, 只能靠算法 (猜).
+
+对于三代, 一个转录本就是一个单分子.
+
+---
+
+![玉米全长转录组](pacbio.images/maize-transcriptome.jpg)
+
+\note{
+
+大量的新的可变剪接, 还发现未被注释的基因.
+
+还有很多新的 lncRNA.
+
+}
 
 ## 适用范围
 
-|            |    Sequel     |          原因          |
-|:-----------|:-------------:|:---------------------:|
-| 人类全基因组 |  Ok/**Good**  | 贵; 利于鉴定结构变异及组装 |
-| 小基因组    |   **Good**    |  长读长, 只需要较低的通量  |
-| 靶向测序    |   **Good**    |  长读长, 只需要较低的通量  |
-| 转录组      | Poor/**Good** |  贵; 可得到全长的转录本   |
-| 宏基因组    |    Poor/Ok    |  贵; 利于 de novo 组装  |
-| 外显子组    |     Poor      | 贵; 长读长对外显子没有用处 |
-| 表达谱      |     Poor      |           贵           |
-| ChIP-Seq   |     Poor      |           贵           |
+|            |      Sequel       |          原因          |
+|:-----------|:-----------------:|:---------------------:|
+| 人类全基因组 |  Ok/\alert{Good}  | 贵; 利于鉴定结构变异及组装 |
+| 小基因组    |   \alert{Good}    |  长读长, 只需要较低的通量  |
+| 靶向测序    |   \alert{Good}    |  长读长, 只需要较低的通量  |
+| 转录组      | Poor/\alert{Good} |  贵; 可得到全长的转录本   |
+| 宏基因组    |      Poor/Ok      |  贵; 利于 de novo 组装  |
+| 外显子组    |       Poor        | 贵; 长读长对外显子没有用处 |
+| 表达谱      |       Poor        |           贵           |
+| ChIP-Seq   |       Poor        |           贵           |
 
 \note{
 
@@ -541,7 +594,56 @@ Helicos, 也是基于单分子荧光技术
 
 }
 
-# 结束
+---
+
+
+![纳米孔测序](pacbio.images/direct-molecular-analysis.jpg)
+
+\note{
+
+nanopore sequencing
+
+宽度为 4 nm, 比双链 DNA 分子略宽, DNA 分子像一条线一样穿过纳米孔.
+
+每种碱基的化学性质差异会导致流经该纳米孔的电流值发生变化, 因为每种碱基的电势不一样, 这样就可以分辨出各种碱基.
+
+}
+
+---
+
+![MinION](pacbio.images/MinION.jpg)
+
+\note{
+
+2012 年就公布了, 等到去年才上市. MinION, 优盘大小.
+
+}
+
+---
+
+![第一次在太空中测序 DNA](pacbio.images/MinION-in-space.jpg)
+
+\note{
+
+2016 年, NASA 带上了太空.
+
+}
+
+# 总结
+
+---
+
+![高能量测序的发展](pacbio.images/developments_in_high_throughput_sequencing.jpg)
+
+\note{
+
+一代, 终归是一代, 始终有它存在的位置;
+
+二代, 高能量;
+
+三代, 长读长, 通量和准确度都还在提高.
+
+}
 
 ---
 
