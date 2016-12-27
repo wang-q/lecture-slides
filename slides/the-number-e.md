@@ -24,7 +24,6 @@ $e$
 \end{equation*}
 
 \pause{
-
 定义 $e$ 为唯一的实数 $x$, 使得
 \begin{equation*}
     \lim_{h\to 0}\frac{x^h-1}{h}=1
@@ -38,7 +37,6 @@ $e$
 }
 
 \pause{
-
 定义 $e$ 为唯一的正数 $x$, 使得
 \begin{equation*}
     \int_{1}^{x} \frac{1}{t} \, dt = {1}
@@ -54,8 +52,6 @@ $e$
 对于纯粹数学家来说, 严密的推理与证明就够了, 数学是他们的智力游戏, 是一定规则下的相容体系.
 
 但对普通人来说, 动机非常重要, 为什么要这样做? 这样做有什么用处?
-
-第三个是 $e^x$ 的泰勒展式
 
 }
 
@@ -89,7 +85,7 @@ Vladimir Arnold, 1937--2010.
 
 放高利贷的人意识到了有个数存在.
 
-第一次把e看为常数的是雅各布·伯努利，他尝试计算下式的值.
+第一次把 $e$ 看为常数的是雅各布·伯努利, 他尝试计算下式的值.
 
 }
 
@@ -133,13 +129,13 @@ $n$
 单利
 
 \begin{equation*}
-    F = P + P \cdot r \cdot n
+    F_\text{S} = P + P \cdot r \cdot n
 \end{equation*}
 
 复利
 
 \begin{equation*}
-    F = P \cdot (1+r)^{n}
+    F_\text{C} = P \cdot (1+r)^{n}
 \end{equation*}
 
 \note{
@@ -156,12 +152,13 @@ Don't use pdfcrop. Quality of pdfcrop product is very poor.
 
 \begin{figure}
     \includegraphics{the-number-e/Exponential-growth-2.jpg}
-    \caption{简化条件: 令 $P = 1$, $r = 1$, 则 $F = (1+1)^{n}$}
+    \caption{简化条件: 令 $P = 1$, $r = 1$, 则 $F_\text{C} = (1+1)^{n}$}
 \end{figure}
 
 \note{
 
-\texttt{
+\scriptsize\texttt{
+
 cd the-number-e
 
 mkdir -p temp \string&\string& cd temp
@@ -232,13 +229,13 @@ $m$
 前面的简化公式
 
 \begin{equation*}
-    F = (1+1)^1
+    F_\text{C} = (1+1)^1
 \end{equation*}
 
 利率 $r=1/m$, 累计的周期数 $n=m$, 上式变成了
 
 \begin{equation*}
-    F = (1 + {1 \over m})^m
+    F_\text{C} = (1 + {1 \over m})^m
 \end{equation*}
 
 \note{
@@ -249,11 +246,11 @@ $m$
 
 ---
 
-| $m$ | $(a+b)^m$                       | $(1+1/m)^m$                                                                                   | $F$  |
-|:----|:--------------------------------|:----------------------------------------------------------------------------------------------|:-----|
-| 1   | $a+b$                           | 1 + 1                                                                                         | 2    |
-| 2   | $a^2 + 2ab + b^2$               | $1^2 + 2 \cdot 1 \cdot 1/2 + (1/2)^2 = 1 + 1 + 0.25$                                          | 2.25 |
-| 3   | $a^3 + 3 a^2 b + 3 a b^2 + b^3$ | $1^3 + 3 \cdot 1^2 \cdot 1/3 + 3 \cdot 1 \cdot (1/3)^2 + (1/3)^3 \approx 1 + 1 + 0.33 + 0.04$ | 2.37 |
+| $m$ | $(a+b)^m$                       | $(1+1/m)^m$                                                                                   | $F_\text{C}$ |
+|:----|:--------------------------------|:----------------------------------------------------------------------------------------------|:-------------|
+| 1   | $a+b$                           | 1 + 1                                                                                         | 2            |
+| 2   | $a^2 + 2ab + b^2$               | $1^2 + 2 \cdot 1 \cdot 1/2 + (1/2)^2 = 1 + 1 + 0.25$                                          | 2.25         |
+| 3   | $a^3 + 3 a^2 b + 3 a b^2 + b^3$ | $1^3 + 3 \cdot 1^2 \cdot 1/3 + 3 \cdot 1 \cdot (1/3)^2 + (1/3)^3 \approx 1 + 1 + 0.33 + 0.04$ | 2.37         |
 
 \note{
 
@@ -263,14 +260,14 @@ $m$
 
 ---
 
-| $m$                     | $F=(1+1/m)^m$ |
-|:------------------------|:--------------|
-| 1                       | 2             |
-| 2                       | 2.25          |
-| 3                       | 2.37          |
-| 12                      | 2.613         |
-| 365                     | 2.714567      |
-| $365 \cdot 24 \cdot 60$ | 2.718279      |
+| $m$                     | $F_\text{C} = (1+1/m)^m$ |
+|:------------------------|:-------------------------|
+| 1                       | 2                        |
+| 2                       | 2.25                     |
+| 3                       | 2.37                     |
+| 12                      | 2.613                    |
+| 365                     | 2.714567                 |
+| $365 \cdot 24 \cdot 60$ | 2.718279                 |
 
 \pause{
 \begin{equation*}
@@ -280,7 +277,7 @@ $m$
 
 \note{
 
-525600
+$365 \cdot 24 \cdot 60 = 525600$
 
 }
 
@@ -519,3 +516,64 @@ context.
 
     \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2.70 \rightarrow 2.73$}
 \end{figure}
+
+#  剩下的两个
+
+##  第三种定义
+
+\begin{equation*}
+     e = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
+\end{equation*}
+
+$e^x$ 的泰勒展式, 令 $x = 1$
+\begin{equation*}
+    \text{Series}\left[e^x,\{x,0,5\}\right]
+    = 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+O\left(x^5\right)
+\end{equation*}
+
+\note{
+
+具体的泰勒展式, 我也记不清了, 问数学老师.
+
+}
+
+##  第四种定义
+
+定义 $e$ 为唯一的正数 $x$, 使得
+\begin{equation*}
+    \int_{1}^{x} \frac{1}{t} \, dt = {1}
+\end{equation*}
+
+看下这个不定积分
+\begin{equation*}
+    \int \frac{1}{t} \, dt = \ln (t)
+\end{equation*}
+
+\note{
+
+当然, 为了避免循环定义, 我们要用最原始的方法来算积分, ``数柱子''.
+
+这就是我们人类科学发展的历史
+
+}
+
+---
+
+* 人类科学发展的历史, 先有猜想和算法, 而后严格地形式化证明.
+* 每次进一步地形式化, 都提高了门槛, 降低了人们的学习兴趣.
+* 没有新人进入, 就减慢了学科的发展, (降低了杂志的影响因子 \Simley{-1},) 被动地毁灭了学科\footnote{\fullcite{watterson1975}}.
+* 形式化的学科内容, 决不能在一开始就灌输给初学者.
+
+\note{
+
+Theoretical Population Biology, 不乏被引上千次的经典论文, 现在影响因子只有 1.452.
+
+和大多数数学杂志影响因子一样.
+
+Watterson's $\theta$, 3005 次, 世界上最难的一篇论文.
+
+教小学生自然数的时候, 先给他们讲皮亚诺公理体系, 会不会被打死?
+
+等人入坑了, 秋后算帐倒是没问题.
+
+}
