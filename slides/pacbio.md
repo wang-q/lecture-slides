@@ -94,6 +94,12 @@ other publicly available maps.
 
 ![Celera stocks](ch-24.images/image17.jpg)
 
+\note{
+
+克林顿宣布只测序不能申请专利
+
+}
+
 ---
 
 \begin{figure}
@@ -203,7 +209,7 @@ Intel Core i7-2700K. 	October 23, 2011
 
 ![HiSeq X](pacbio.images/HiSeqX.png)
 
-100 GB $\approx$ 33X Human genome $\approx$ 10,000 CNY
+\center\large\alert{100 GB $\approx$ 33X Human genome $\approx$ 10,000 CNY}
 
 \note{
 
@@ -222,7 +228,7 @@ Intel Core i7-2700K. 	October 23, 2011
 
 \note{
 
-也有不高兴的
+也有不高兴的, 但这是幸福地不高兴
 
 }
 
@@ -231,14 +237,19 @@ Intel Core i7-2700K. 	October 23, 2011
 * Ion Torrent
 * 454
 * SOLiD
+* Complete genomics
 
 \note{
 
 边合成边测序, Illumina
 
-焦磷酸测序
+机器便宜, 临床上可能有点前途
 
-边连接边测序, SOLiD
+焦磷酸测序, 读长长些, 罗氏, 已经放弃
+
+边连接边测序, SOLiD, ABI
+
+已被华大收购, 最有名的是 69 个人的基因组数据
 
 }
 
@@ -308,7 +319,7 @@ waveguide, 光 波导管
 
 ---
 
-![建库与模板\footnote{\fullcite{rhoads2015}}](pacbio.images/SMRTbell-template.jpg)
+![建库与模板, SMRTbell\footnote{\fullcite{rhoads2015}}](pacbio.images/SMRTbell-template.jpg)
 
 \note{
 
@@ -328,6 +339,7 @@ incorporates bases into the read strand (orange).
 
 Sequencing via light pulses
 
+\scriptsize
 A. A SMRTbell (gray) diffuses into a ZMW, and the adaptor binds to a polymerase immobilized at the
 bottom.
 
@@ -438,7 +450,7 @@ SMRT Analysis Software 包括了大量自有和第三方程序:
     * Bash
     * Java, Scala
     * Mono 3 (C#, VB.net)
-    * Perl 5.8, Python 2.7
+    * Perl, Python
 * 平台: Tomcat, MySQL
 * 文件格式 HDF5 $\rightarrow$ BAM
 * Celera Assembler, GMAP, HMMER, SAMtools 等
@@ -481,11 +493,11 @@ Sequel 的全球预购已达 50 余台, 很多客户都在等
 武汉菲沙基因信息有限公司联合美国 Pacific Biosciences 公司在武汉东湖综合保税区共建高通量测序中心, 引进了不少于 6 台
 Sequel 三代测序系统, 将建成大规模的三代测序中心.
 
+\center\large\alert{1 GB $\approx$ 5,000 CNY}
+
 \note{
 
 诺和致源好像也在买
-
-5000 块 1 G
 
 }
 
@@ -500,12 +512,15 @@ Helicos, 也是基于单分子荧光技术
 
 }
 
+# 结束
+
 ---
 
 \begin{figure}
     \includegraphics{pacbio.images/github-wang-q.png}
-    \caption{\small\url{https://github.com/wang-q/lecture-slides/blob/master/slides/pacbio.slides.pdf}}
 \end{figure}
+
+\tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/pacbio.slides.pdf}
 
 \note{
 
