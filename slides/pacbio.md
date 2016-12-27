@@ -281,6 +281,21 @@ Intel Core i7-2700K. 	October 23, 2011
     * 片段重复 (tandom or segment duplications)
     * 一般不超过 5 kbp, 但就是二代跨越不了的障碍
 
+---
+
+我们在甘蓝 (*Brassica oleracea*)\footnote{\fullcite{liu2014}} 基因组草图中发现了一个约 2 kbp 的片段,
+重复数超过了 1000 次.
+
+在其它完全基于二代测序的基因组里, 重复片段的数量都远大于用基于 BAC 的方法测序的物种.
+
+基本都是测序与拼装中的错误.
+
+\note{
+
+华大做的. 只要是华大的, 都得打个问号.
+
+}
+
 ## 二代的对策
 
 * Pair end (short jump)
@@ -290,6 +305,8 @@ Intel Core i7-2700K. 	October 23, 2011
 \note{
 
 10 kbp, 复杂基因组拼接, 跨越重复区, 检出结构变异.
+
+并没有什么用处.
 
 }
 
@@ -319,7 +336,11 @@ waveguide, 光 波导管
 
 ---
 
-![建库与模板, SMRTbell\footnote{\fullcite{rhoads2015}}](pacbio.images/SMRTbell-template.jpg)
+![建库, 脉冲场电泳\footnote{\fullcite{chakraborty2016}}](pacbio.images/field-inversion-gel-electrophoresis.jpg)
+
+---
+
+![模板, SMRTbell\footnote{\fullcite{rhoads2015}}](pacbio.images/SMRTbell-template.jpg)
 
 \note{
 
@@ -414,6 +435,14 @@ P 指得是聚合酶, C 是化学试剂.
 
 }
 
+## 三代应用: 哺乳动物基因组
+
+大猩猩基因组\footnote{\fullcite{gordon2016}}
+
+## 三代应用: 全长转录组
+
+玉米转录组\footnote{\fullcite{wang2016}}
+
 ## 适用范围
 
 |            |    Sequel     |          原因          |
@@ -467,8 +496,8 @@ SMRT Analysis Software 包括了大量自有和第三方程序:
 
 ## 商业化服务
 
-* \small\url{http://allseq.com/providers/}
 * \small\url{http://www.pacb.com/products-and-services/service-providers/}
+* \small\url{http://allseq.com/providers/}
 
 ---
 
