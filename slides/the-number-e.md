@@ -337,10 +337,15 @@ http://www.snopes.com/quotes/einstein/interest.asp
         f'(x) &= \lim_{h\to0} \frac{f(x+h) - f(x)}{h} \\
         f'(x) &= \lim_{h\to0} \frac{R^{x+h} - R^x}{h} \\
               &= \lim_{h\to0} \left(R^x \cdot \frac{R^h - 1}{h} \right) \\
-              &= R^x  \cdot \lim_{h\to0} \frac{R^h - 1}{h} \\
-        \frac{d}{dx} R^x &= R^x
+              &= R^x  \cdot \lim_{h\to0} \frac{R^h - 1}{h}
     \end{split}
 \end{equation*}
+
+\pause{
+\begin{equation*}
+    R^x = \frac{d}{dx} R^x \rightarrow \lim_{h\to 0}\frac{R^h-1}{h}=1
+\end{equation*}
+}
 
 \note{
 
@@ -362,11 +367,11 @@ context.
     \lim_{h\to0} \frac{R^h - 1}{h} = \ln(R)
 \end{equation*}
 
+这里用土一点的办法.
+
 \note{
 
 洛必达法则什么的我已经忘记了, 问你们的数学老师.
-
-这里用土一点的办法.
 
 }
 
@@ -527,7 +532,7 @@ context.
 
 $e^x$ 的泰勒展式, 令 $x = 1$
 \begin{equation*}
-    \text{Series}\left[e^x,\{x,0,5\}\right]
+    \text{Series}\left[e^x,\{x,0,4\}\right]
     = 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+O\left(x^5\right)
 \end{equation*}
 
