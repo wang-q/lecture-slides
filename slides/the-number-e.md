@@ -1,5 +1,5 @@
 ---
-title: $e$ 是什么?
+title: $\text{e}$ 是什么?
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
@@ -11,20 +11,20 @@ toc: false
 
 ---
 
-$e$
+$\text{e}$
 :   自然对数的底
 
 自然对数
-:   以 $e$ 为底的对数
+:   以 $\text{e}$ 为底的对数
 
 ---
 
 \begin{equation*}
-    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+    \text{e} = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
 \end{equation*}
 
 \pause{
-定义 $e$ 为唯一的实数 $x$, 使得
+定义 $\text{e}$ 为唯一的实数 $x$, 使得
 \begin{equation*}
     \lim_{h\to 0}\frac{x^h-1}{h}=1
 \end{equation*}
@@ -32,12 +32,12 @@ $e$
 
 \pause{
 \begin{equation*}
-     e = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
+     \text{e} = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
 \end{equation*}
 }
 
 \pause{
-定义 $e$ 为唯一的正数 $x$, 使得
+定义 $\text{e}$ 为唯一的正数 $x$, 使得
 \begin{equation*}
     \int_{1}^{x} \frac{1}{t} \, dt = {1}
 \end{equation*}
@@ -85,7 +85,7 @@ Vladimir Arnold, 1937--2010.
 
 放高利贷的人意识到了有个数存在.
 
-第一次把 $e$ 看为常数的是雅各布·伯努利, 他尝试计算下式的值.
+第一次把 $\text{e}$ 看为常数的是雅各布·伯努利, 他尝试计算下式的值.
 
 }
 
@@ -271,7 +271,7 @@ $m$
 
 \pause{
 \begin{equation*}
-    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+    \text{e} = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
 \end{equation*}
 }
 
@@ -527,12 +527,12 @@ context.
 ##  第三种定义
 
 \begin{equation*}
-     e = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
+     \text{e} = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
 \end{equation*}
 
-$e^x$ 的泰勒展式, 令 $x = 1$
+$\text{e}^x$ 的泰勒展式, 令 $x = 1$
 \begin{equation*}
-    \text{Series}\left[e^x,\{x,0,4\}\right]
+    \text{Series}\left[\text{e}^x,\{x,0,4\}\right]
     = 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+O\left(x^5\right)
 \end{equation*}
 
@@ -544,7 +544,7 @@ $e^x$ 的泰勒展式, 令 $x = 1$
 
 ##  第四种定义
 
-定义 $e$ 为唯一的正数 $x$, 使得
+定义 $\text{e}$ 为唯一的正数 $x$, 使得
 \begin{equation*}
     \int_{1}^{x} \frac{1}{t} \, dt = {1}
 \end{equation*}
