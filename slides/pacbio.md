@@ -617,6 +617,8 @@ nanopore sequencing
 
 2012 年就公布了, 等到去年才上市. MinION, 优盘大小.
 
+等到 2016 年才陆续上市.
+
 }
 
 ---
@@ -633,13 +635,13 @@ nanopore sequencing
 
 ---
 
-![高能量测序的发展](pacbio.images/developments_in_high_throughput_sequencing.jpg)
+![高通量测序的发展](pacbio.images/developments_in_high_throughput_sequencing.jpg)
 
 \note{
 
 一代, 终归是一代, 始终有它存在的位置;
 
-二代, 高能量;
+二代, 高通量;
 
 三代, 长读长, 通量和准确度都还在提高.
 
