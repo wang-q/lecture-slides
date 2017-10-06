@@ -71,7 +71,7 @@ Markdown + Latex
     * pandoc: `brew install pandoc`
     * GNU `make` utitily
 * Fonts
-    * [Fira](https://github.com/mozilla/Fira)
+    * [Fira](https://github.com/mozilla/Fira): `brew cask install caskroom/fonts/font-fira-sans caskroom/fonts/font-fira-mono`
     * Hiragino Sans GB (冬青黑体简体中文)
     * Kaiti SC (常州华文 楷体-简)
 
