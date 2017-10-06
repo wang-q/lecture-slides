@@ -1,6 +1,21 @@
 #!/bin/bash
 
+USAGE="Usage: $0 IMAGE_FILE"
+
+if [ "$#" -lt 1 ]; then
+    echo >&2 "$USAGE"
+    exit 1
+fi
+
+# check whether faops is installed
+hash mogrify 2>/dev/null || {
+    echo >&2 "ImageMagick is required but it's not installed.";
+    echo >&2 "Install with homebrew: brew install imagemagick";
+    exit 1;
+}
+
 FILE="$1"
+
 HEIGHT=`identify -format "%[fx:h]" "${FILE}"`
 WIDTH=`identify -format "%[fx:w]" "${FILE}"`
 
