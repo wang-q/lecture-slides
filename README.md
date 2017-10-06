@@ -33,6 +33,10 @@ Video materials for students.
 
 See [`list.md`](materials/list.md) for details.
 
+## [`articles`](articles/)
+
+Markdown + Latex
+
 ## Others
 
 [`resize.sh`](resize.sh) changes sizes and resolutions of pictures.
@@ -65,7 +69,7 @@ See [`list.md`](materials/list.md) for details.
         * calc
 * General tools
     * pandoc: `brew install pandoc`
-    * Gnu make utitily
+    * GNU `make` utitily
 * Fonts
     * [Fira](https://github.com/mozilla/Fira)
     * Hiragino Sans GB (冬青黑体简体中文)
