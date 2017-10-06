@@ -169,7 +169,7 @@ cd ..
 
 find temp -maxdepth 1 -name "Exponential*.png" | parallel -j 1 "convert {} -trim {}"
 
-find temp -maxdepth 1 -name "Exponential*.png" | parallel -j 1 "bash ~/Scripts/lecture-slides/common/mh.sh {}"
+find temp -maxdepth 1 -name "Exponential*.png" | parallel -j 1 "bash ~/Scripts/lecture-slides/resize.sh {}"
 
 rm -fr temp
 

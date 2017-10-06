@@ -33,9 +33,9 @@ Video materials for students.
 
 See [`list.md`](materials/list.md) for details.
 
-## [`common`](common/)
+## Others
 
-[`mh.sh`](common/mh.sh) changes sizes and resolutions of pictures.
+[`resize.sh`](resize.sh) changes sizes and resolutions of pictures.
 
 ## Tools needed
 

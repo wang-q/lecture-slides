@@ -442,7 +442,7 @@ find . -type f -name "*.jpeg" \
 ```{.bash .numberLines}
 cd ~/Documents/Course/lecture-slides/slides/ch-25.images
 find . -type f -name "*.jpeg" -or -name "*.png" \
-    | parallel sh ../../common/mh.sh {}
+    | parallel sh ../../resize.sh {}
 ```
 
 ---
