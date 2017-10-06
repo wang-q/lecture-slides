@@ -55,7 +55,7 @@ Markdown + Latex
         * XeLaTeX
         * latexmk
         * pdfjam
-    * Other TeX packages that should come with MacTeX.
+    * Some TeX packages that should come with MacTeX.
         * xeCJK
         * TikZ
         * graphicx
@@ -70,6 +70,7 @@ Markdown + Latex
 * General tools
     * pandoc: `brew install pandoc`
     * GNU `make` utitily
+    * imagemagick: `brew install imagemagick`
 * Fonts
     * [Fira](https://github.com/mozilla/Fira): `brew cask install caskroom/fonts/font-fira-sans caskroom/fonts/font-fira-mono`
     * Hiragino Sans GB (冬青黑体简体中文)
@@ -78,7 +79,6 @@ Markdown + Latex
 ### Optional
 
 * Image converter
-    * imagemagick: `brew install imagemagick`
     * pdf2svg: `brew install pdf2svg`
     * inkscape
 * References management
