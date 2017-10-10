@@ -145,9 +145,9 @@ other publicly available maps.
 
 \note{
 
-三十亿美元
+HGP - 三十亿美元
 
-三千万美元
+First personal genome - 三千万美元
 
 People Who’ve Had Their Genomes Sequenced
 
