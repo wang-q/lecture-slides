@@ -283,6 +283,16 @@ Intel Core i7-2700K. 	October 23, 2011
 
 ---
 
+![组装中的欧拉路径算法](pacbio.images/Eular-Path-in-Graph.jpg)
+
+\note{
+
+再完美的算法也有限制，超出它的适用的范围，就是靠猜
+
+}
+
+---
+
 我们在甘蓝 (*Brassica oleracea*)\footnote{\fullcite{liu2014}} 基因组草图中发现了一个约 2 kbp 的片段,
 重复数超过了 1000 次.
 
