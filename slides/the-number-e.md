@@ -373,7 +373,7 @@ context.
 
 ---
 
-数学家们应用 l'Hôpital's rule, 可以求出
+数学家们应用洛必达法则, 可以求出
 
 \begin{equation*}
     \lim_{h\to0} \frac{R^h - 1}{h} = \ln(R)
