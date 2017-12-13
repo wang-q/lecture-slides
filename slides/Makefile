@@ -5,7 +5,7 @@
 	pandoc $< \
 		-t beamer \
 		--template beamer.template.tex \
-		--latex-engine xelatex \
+		--pdf-engine xelatex \
 		--slide-level 2 \
 		-V beamer-notes=true \
 		-V fontsize=12pt \
@@ -26,7 +26,7 @@
 	pandoc $< \
 		-t beamer \
 		--template beamer.template.tex \
-		--latex-engine xelatex \
+		--pdf-engine xelatex \
 		--slide-level 2 \
 		-V fontsize=12pt \
 		-V bibliography=course.bib \
@@ -67,7 +67,7 @@ slides_tex := $(patsubst %.md, %.slides.tex, $(markdowns))
 clean:
 	latexmk -c
 	rm -rf $(slides_tex) $(notes_tex)
-	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib
+	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib *.xdv
 
 # clean up everything including pdfs
 realclean:
