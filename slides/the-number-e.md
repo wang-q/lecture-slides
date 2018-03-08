@@ -58,6 +58,22 @@ $\text{e}$
 ---
 
 \begin{exampleblock}{}
+    {\large ``当一幢建筑物完成时, 应该把脚手架拆除干净.''}
+    \vskip5mm
+    \hspace*\fill{\small--- 高斯}
+\end{exampleblock}
+
+\pause{
+\begin{exampleblock}{}
+    {\large ``高斯象一只狐狸, 用尾巴扫砂子来掩盖自己的足迹.''}
+    \vskip5mm
+    \hspace*\fill{\small--- 阿贝尔}
+\end{exampleblock}
+}
+
+---
+
+\begin{exampleblock}{}
     {\large ``美是第一位的, 在这个世界上\alert{丑陋的数学}没有永久存在的位置.''}
     \vskip5mm
     \hspace*\fill{\small--- 戈弗雷 $\cdot$ 哈罗德 $\cdot$ 哈代, 一个数学家的辩白}
