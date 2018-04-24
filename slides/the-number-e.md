@@ -47,6 +47,8 @@ $\text{e}$
 
 数学家说, 想要详细的定义? 没问题, 想要多少种? 都给你.
 
+来来来, 让我告诉你 e 的四种写法
+
 这样一个极限是从什么地方冒出来的?
 
 对于纯粹数学家来说, 严密的推理与证明就够了, 数学是他们的智力游戏, 是一定规则下的相容体系.
@@ -76,24 +78,26 @@ $\text{e}$
 \begin{exampleblock}{}
     {\large ``美是第一位的, 在这个世界上\alert{丑陋的数学}没有永久存在的位置.''}
     \vskip5mm
-    \hspace*\fill{\small--- 戈弗雷 $\cdot$ 哈罗德 $\cdot$ 哈代, 一个数学家的辩白}
+    \hspace*\fill{\small--- 哈代, 一个数学家的辩白}
 \end{exampleblock}
 
 \pause{
 \begin{exampleblock}{}
     {\large ``在二十世纪中叶, 人们试图将数学与物理分割开来. 其结果是\alert{灾难性的}.''}
     \vskip5mm
-    \hspace*\fill{\small--- 弗拉基米尔 $\cdot$ 阿诺尔德}
+    \hspace*\fill{\small--- 阿诺尔德}
 \end{exampleblock}
 }
 
 \note{
 
-哈代, 1877--1947. 对于纯粹数学和应用数学的看法
+戈弗雷 $\cdot$ 哈罗德 $\cdot$ 哈代, 1877--1947. 对于纯粹数学和应用数学的看法
 
 \url{https://en.wikiquote.org/wiki/G._H._Hardy}
 
-Vladimir Arnold, 1937--2010.
+弗拉基米尔 $\cdot$ 阿诺尔德, Vladimir Arnold, 1937--2010.
+
+菲尔兹奖得主
 
 \url{https://en.wikiquote.org/wiki/Vladimir_Arnold}
 
