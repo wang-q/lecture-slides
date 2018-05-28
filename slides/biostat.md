@@ -39,3 +39,18 @@ Frequently attributed to Richard Feynman
 老杨讲得不好
 
 }
+
+---
+
+杜鲁门与杜威
+
+川普
+
+---
+
+幸存者偏差
+
+---
+
+Ascertainment bias
+
