@@ -194,7 +194,48 @@ Frequently attributed to Richard Feynman
     \caption{帕斯卡三角}
 \end{figure}
 
-* 抛硬币的概率
+## 抛硬币的概率
+
+* 抛 4 次硬币, 两个正面的概率是多少?
+* 包含 4 个对象的集合 $\{A, B, C, D\}$, 由两个对象组成的子集有多少?
+* 一共 6 个 $\{AB, AC, AD, BC, BD, CD\}$
+* 所有可能的序列总数也可以这样逐个数出来
+    * 0 个对象: 1
+    * 1 个对象: 4
+    * 3 个对象: 4
+    * 4 个对象: 1
+    * $1+4+6+4+1=16$
+* 概率是 $6 \div 16 = 0.375$
+
+\note{
+
+一个个数 AB, AC...
+
+$1+4+6+4+1=16$ 是不是有似曾相识的感觉?
+
+}
+
+---
+
+\center\includegraphics[width=0.5\columnwidth]{biostat.images/Pascal_C_4_2.jpg}
+
+\begin{equation*}
+    \begin{split}
+    16 & \rightarrow 2^4 \\
+    1, 4, 6, 4, 1 & \rightarrow \text{帕斯卡三角的第五行} \\
+    6 & \rightarrow \text{第五行的第三列}
+    \end{split}
+\end{equation*}
+
+\note{
+
+因为是丛空集开始的, 所以序数也从 0 开始
+
+第五行的序数是 4, 第三列的序数是 2
+
+\url{https://www.mathsisfun.com/data/quincunx.html}
+
+}
 # 样本偏差
 
 ---
