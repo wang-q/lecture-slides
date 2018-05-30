@@ -1,10 +1,10 @@
 ---
-title: 生物统计的理论基础
-subtitle: 其实不是太理论的
+title: 生物统计原理
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
-toc: false
+toc: true
+
 
 ---
 
