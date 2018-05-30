@@ -115,12 +115,49 @@ toc: true
 
 ![统计表样例](biostat.images/stat-table.jpg)
 
+## 描述组成
+
+![饼图 (pie chart)](biostat.images/pie_chart.jpg)
+
+\note{
+
+\url{http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html}
+
+}
+
 ---
 
-* 饼图
-* 柱/条形图
-* 直方图, 密度图
-* 箱形图
+![柱/条形图 (bar chart)](biostat.images/bar_chart.jpg)
+
+---
+
+![矩阵树图 (treemap)](biostat.images/treemap.jpg)
+
+## 描述分布
+
+![密度图 (density plot)](biostat.images/density_plot.jpg)
+
+\note{
+
+直方图 histogram
+
+}
+
+---
+
+![箱形图 (box plot)](biostat.images/box_plot.jpg)
+
+## 描述相关
+
+![散点图 (scatter plot)](biostat.images/scatter_plot.jpg)
+
+---
+
+![边缘直方图 (scatter plot)](biostat.images/marginal_histogram.jpg)
+
+## 时间序列
+
+![时间序列图 (time series plot)](biostat.images/time_series_plot.jpg)
 
 
 ---
