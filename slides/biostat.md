@@ -107,7 +107,7 @@ Frequently attributed to Richard Feynman
 
 白居易
 
-老杨讲得不好
+老杨统计讲得不好
 
 }
 
@@ -115,10 +115,8 @@ Frequently attributed to Richard Feynman
 
 ---
 
-杜鲁门与杜威
 ![杨辉三角](biostat.images/YangHui.jpg)
 
-川普
 
 ---
 
@@ -127,6 +125,7 @@ Frequently attributed to Richard Feynman
     \caption{帕斯卡三角}
 \end{figure}
 
+# 样本偏差
 
 ---
 
@@ -139,7 +138,7 @@ Frequently attributed to Richard Feynman
 
 \note{
 
-Excerpt From: 美乔丹·艾伦伯格（Jordan Ellenberg）. “魔鬼数学：大数据时代，数学思维的力量.”
+Excerpt From: 美乔丹·艾伦伯格（Jordan Ellenberg）. “魔鬼数学：大数据时代, 数学思维的力量.”
 
 }
 
@@ -192,4 +191,11 @@ Excerpt From: 美乔丹·艾伦伯格（Jordan Ellenberg）. “魔鬼数学：�
 ---
 
 Ascertainment bias
+
+
+---
+
+杜鲁门与杜威
+
+川普
 
