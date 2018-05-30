@@ -125,6 +125,7 @@ Frequently attributed to Richard Feynman
     \caption{帕斯卡三角}
 \end{figure}
 
+* 抛硬币的概率
 # 样本偏差
 
 ---
