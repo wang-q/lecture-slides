@@ -84,6 +84,12 @@ toc: true
 
 * 研究的对象是样本, 根据样本对母体的推断.
 
+\note{
+
+也是实验科学的基础
+
+}
+
 ## 关于样本的主要问题
 
 1. 如何有效地描述样本?
@@ -160,6 +166,8 @@ toc: true
 ![时间序列图 (time series plot)](biostat.images/time_series_plot.jpg)
 
 
+# 进入高级部分: 概率与分布
+
 ---
 
 \begin{exampleblock}{}
@@ -176,11 +184,11 @@ Frequently attributed to Richard Feynman
 
 白居易
 
-老杨统计讲得不好
+有时候讲得深一点对初学者反而是有好处的
+
+老杨统计讲得不好, 叫初学者死记硬背更没有用
 
 }
-
-# 进入高级部分: 概率与分布
 
 ---
 
