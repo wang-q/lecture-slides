@@ -111,11 +111,22 @@ Frequently attributed to Richard Feynman
 
 }
 
+# 进入高级部分: 概率与分布
+
 ---
 
 杜鲁门与杜威
+![杨辉三角](biostat.images/YangHui.jpg)
 
 川普
+
+---
+
+\begin{figure}
+    \animategraphics[loop,controls]{1}{biostat.images/Pascal-}{0}{40}
+    \caption{帕斯卡三角}
+\end{figure}
+
 
 ---
 
