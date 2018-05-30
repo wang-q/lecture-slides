@@ -427,3 +427,15 @@ Ascertainment bias
 }
 
 # 总结
+
+---
+
+1. 如何有效地描述样本?
+    * 数据, 类别, 参数, 图表
+2. 由这个样本的证据如何推断有关总体的结论?
+3. 这些结论有多可靠?
+    * 数学上的理论基础
+4. 如何取样本才能使它们尽可能说明问题并可信?
+    * 避免偏差
+
+\tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/biostat.slides.pdf}
