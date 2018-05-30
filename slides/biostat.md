@@ -307,14 +307,119 @@ Excerpt From: 美乔丹·艾伦伯格（Jordan Ellenberg）. “魔鬼数学：�
 
 }
 
+## 1948 年美国总统大选
+
+![杜鲁门与杜威](biostat.images/candidates.jpg)
+
+
+\note{
+
+罗斯福的副总统
+
+}
+
 ---
+
+* 密苏里农民, 没有大学学历
+* 民主党分裂
+    * 左翼民主党成立进步党
+    * 南方民主党成立迪克西民主党
+* 民主党大会, 出现不祥的兆头
+
+\note{
+
+\url{http://culture.dwnews.com/history/news/2016-11-10/59781201.html}
+
+\url{http://www.thepaper.cn/baidu.jsp?contid=1401061}
+
+最后一位没有大学学历的美国总统
+
+左翼民主党因为冷战因素在费城成立进步党
+
+南方民主党因为种族问题
+
+当杜鲁门出现在民主党的会场时, 他的支持者们从一个用鲜花扎成的自由之钟里放出 50 只鸽子作为和平的象征,
+但其中一只正撞到了阳台上, 坠地而死. "一只死鸽!" 一位代表抬头看着杜鲁门大声嚷道.
+
+}
+
+---
+
+![1948 年, 北平城中支持杜威的游行](biostat.images/Dewey.jpg)
+
+---
+
+* 三大民意调查机构
+    * 盖洛普
+    * 罗珀
+    * 克罗斯利
+* 媒体
+    * 新闻周刊
+    * 读者文摘
+    * 纽约时报
+
+\note{
+
+民意调查机构从 1936 年总统大选开始, 进行有统计意义上的民意调查
+
+}
+
+---
+
+![火车旅行, 小站脱稿演讲](biostat.images/whistle_stop_tour.jpg)
+
+\note{
+
+相信民调就应该认输了
+
+典型的杜鲁门式小站演讲是, 先谈谈当地的地理人文, 然后猛烈抨击共和党控制的国会, 接着介绍妻子女儿出场, 接受民众欢呼,
+最后与民众互动.
+
+}
+
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{biostat.images/whistle_stop_map.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{biostat.images/ElectoralCollege1948.jpg}
+    \end{minipage}
+\end{figure}
+
+\note{
+
+三万多公里的火车旅行
+
+川普每天都进行 rally, 有时一天数场
+
+}
+
+---
+
+![芝加哥每日论坛报](biostat.images/Truman.jpg)
+
+---
+
+以偏概全
+
+* 民调样本只限于大中城市
+* 富裕或中等家庭成员, 特别是家庭主妇, 才会购买报纸杂志并邮寄调查问卷
+* 羞于表达政治观点
+
+改进
+
+* 调查方法上, 从不太精确的配额抽样转向随机概率抽样
+* 为了把选民偏好在最后一刻的变化考虑进去, 民意调查几乎会一直持续到选举之夜
+* 实名的电话民调与匿名的网络民调同时进行
+
+\note{
 
 Ascertainment bias
 
-
----
-
-杜鲁门与杜威
-
 川普
+
+}
 
