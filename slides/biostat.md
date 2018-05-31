@@ -110,7 +110,7 @@ toc: true
     * 平均值 mean, $\mu$
     * 中位数 median
     * 方差 Var
-    * 标准差 SD $\sigma$
+    * 标准差 SD, $\sigma$
 
 \note{
 
@@ -187,9 +187,9 @@ Frequently attributed to Richard Feynman
 
 白居易
 
-有时候讲得深一点对初学者反而是有好处的
-
 老杨统计讲得不好, 叫初学者死记硬背更没有用
+
+有时候讲得深一点对初学者反而是有好处的
 
 }
 
