@@ -321,6 +321,64 @@ Excel 公式里, `Sheetname!A1` 表示其它工作表的单元格
 
 }
 
+## 二项式系数
+
+\begin{equation*}
+    \begin{split}
+    (x+y)^0 & = 1  \\
+    (x+y)^1 & = x+y \\
+    (x+y)^2 & = x^2 + 2xy + y^2 \\
+    (x+y)^3 & = x^3 + 3 x^2 y + 3 x y^2 + y^3 \\
+    (x+y)^n & = \sum_{k=0}^n {n \choose k} x^{n - k} y^k
+    \end{split}
+\end{equation*}
+
+\note{
+
+杨辉三角又与乘方有什么关系?
+
+}
+
+## 组合数
+
+从 $n$ 个元素的集合中选取 $k$ 个元素组成的子集的个数
+
+
+$$\text{ from } n \text{ choose } k$$
+
+$$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
+
+\center{ $C^{n}_{k} \quad C^{k}_{n} \quad _nC_k \quad ^nC_k \quad C(n,k)$ }
+
+\note{
+
+我高中学数学时, 是先讲排列再讲组合的, 但其实组合更基础些
+
+\url{https://en.wikipedia.org/wiki/Binomial_theorem}
+
+}
+
+## 一些专业术语
+
+伯努利实验
+: 只有两种可能结果的单次随机试验, 成功或失败, 是或非, 1 或 0.
+
+大数定律
+: 描述相当多次数重复实验的结果的定律. 样本数量越多, 则其平均就越趋近期望值.
+
+二项分布
+: n 个独立的是/非试验中成功的次数的离散概率分布.
+
+\note{
+
+雅各布·伯努利 Jakob I. Bernoulli
+
+* 在重复试验中, 随着试验次数的增加, 事件发生的频率趋于一个稳定值
+
+* 在对物理量的测量实践中, 测定值的算术平均也具有稳定性
+
+}
+
 # 样本偏差
 
 ## 瓦尔德与弹孔
