@@ -305,20 +305,6 @@ Excel 公式里, `Sheetname!A1` 表示其它工作表的单元格
 
 可以观察到, 随着 N 增大, 密度分布有点像一个似曾相识的钟形曲线
 
-但这些只是些数字游戏罢了, 给真实世界里会不会有什么变化也说不定
-
-}
-
-## 高尔顿板
-
-\href{https://www.mathsisfun.com/data/quincunx.html}{模拟}
-
-\href{run:./biostat.images/Galton_box.webm}{视频}
-
-\note{
-
-\url{https://en.wikipedia.org/wiki/Bean_machine}
-
 }
 
 ## 二项式系数
@@ -388,6 +374,20 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 * 在对物理量的测量实践中, 测定值的算术平均也具有稳定性
 
 二项分布的名字来源于二项式系数
+
+}
+
+## 高尔顿板
+
+\href{https://www.mathsisfun.com/data/quincunx.html}{模拟}
+
+\href{run:./biostat.images/Galton_box.webm}{视频}
+
+\note{
+
+但这些只是些数字游戏罢了, 给真实世界里会不会有什么变化也说不定
+
+\url{https://en.wikipedia.org/wiki/Bean_machine}
 
 }
 
