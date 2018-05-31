@@ -193,17 +193,28 @@ Frequently attributed to Richard Feynman
 
 }
 
----
-
-![杨辉三角](biostat.images/YangHui.jpg)
-
-
----
+## 帕斯卡三角
 
 \begin{figure}
     \animategraphics[loop,controls]{1}{biostat.images/Pascal-}{0}{40}
     \caption{帕斯卡三角}
 \end{figure}
+
+\note{
+
+每个数是它左上方和右上方的数的和
+
+}
+
+---
+
+![杨辉三角](biostat.images/YangHui.jpg)
+
+\note{
+
+朱世杰《四元玉鉴》中的 "古法七乘方图"
+
+}
 
 ## 抛硬币的概率
 
@@ -211,10 +222,10 @@ Frequently attributed to Richard Feynman
 * 包含 4 个对象的集合 $\{A, B, C, D\}$, 由两个对象组成的子集有多少?
 * 一共 6 个 $\{AB, AC, AD, BC, BD, CD\}$
 * 所有可能的序列总数也可以这样逐个数出来
-    * 0 个对象: 1
-    * 1 个对象: 4
-    * 3 个对象: 4
-    * 4 个对象: 1
+    * 0 个对象: 1, 反反反反
+    * 1 个对象: 4, 正反反反, 反正反反, 反反正反, 反反反正
+    * 3 个对象: 4, 反正正正, 正反正正, 正正反正, 正正正反
+    * 4 个对象: 1, 正正正正
     * $1+4+6+4+1=16$
 * 概率是 $6 \div 16 = 0.375$
 
@@ -244,12 +255,71 @@ $1+4+6+4+1=16$ 是不是有似曾相识的感觉?
 
 第五行的序数是 4, 第三列的序数是 2
 
-\url{https://www.mathsisfun.com/data/quincunx.html}
+}
+
+## 帕斯卡三角里的概率
+
+创建一个空白 Excel 工作薄
+
+1. 在 `A1:A20` 中填上 1
+2. 在 `B2` 里填 1
+3. 在 `B3` 里填公式 `=A2+B2`
+4. 拷贝这个公式到 `B3:T20`
+5. 对 `A1:T20` 设置条件格式, 所有等于 0 的单元格, 前景设为白色, 背景也设为白色
+6. 在 `U1` 里填公式 `=SUM(A1:T1)`, 拷贝这个公式到 `U1:U20`
+7. 设置所有单元格列宽为 6
+8. 将当前工作表全名为 `Triangle`
+
+\note{
+
+注意第二列是从 0 开始的序数, 第三列是三角形数, 毕达哥拉斯
+
+跳棋是 10, 台球是 15
 
 }
-# 样本偏差
 
 ---
+
+创建新工作表
+
+1. 在 `A1` 填入公式 `=Triangle!A1/Triangle!$U1`
+2. 拷贝这个公式到 `A1:T20`
+3. 选择 `A2:T20`, 插入一个折线图
+
+\note{
+
+Excel 公式里, `Sheetname!A1` 表示其它工作表的单元格
+
+`$U1` 里的 `$` 表示绝对单元格, 不会随当前单元格而变化
+
+7 个里面取 4 个的概率, 等等
+
+}
+
+---
+
+![帕斯卡三角的密度图](biostat.images/pascal_density.jpg)
+
+
+\note{
+
+可以观察到, 随着 N 增大, 密度分布有点像一个似曾相识的钟形曲线
+
+但这些只是些数字游戏罢了, 给真实世界里会不会有什么变化也说不定
+
+}
+
+## 高尔顿板
+
+\href{https://www.mathsisfun.com/data/quincunx.html}{模拟}
+
+\href{run:./biostat.images/Galton_box.webm}{视频}
+
+\note{
+
+\url{https://en.wikipedia.org/wiki/Bean_machine}
+
+}
 
 场景:
 
