@@ -421,6 +421,53 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 }
 
+## 正态分布
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{biostat.images/pascal_density.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{biostat.images/Normal_Distribution_PDF.jpg}
+    \end{minipage}
+    \caption{当二项分布的 $n$ 极大时, 就近似为正态分布}
+\end{figure}
+
+---
+
+概率密度函数为
+
+\begin{equation*}
+    f(x \mid \mu,\sigma)={\frac {1}{\sigma\sqrt {2\pi}}}\,e^{-{\frac {(x-\mu )^{2}}{2\sigma ^{2}}}}
+\end{equation*}
+
+标准化后
+
+\begin{equation*}
+    f(x)={\frac {1}{\sqrt {2\pi}}}\,e^{-{\frac {x^{2}}{2}}}
+\end{equation*}
+
+## 数学定理
+
+德莫佛--拉普拉斯定理
+: 参数为 $n, p$ 的二项分布以 $np$ 为均值, $np(1-p)$ 为方差的正态分布为极限 (de Moivre--Laplace).
+
+林德伯格--列维定理
+: 独立同分布的, 随机变量序列的标准化和, 以正态分布为极限 (Lindeberg-Levy).
+
+林德伯格--费勒定理
+: 满足一定条件时, 独立, 但不同分布的随机变量序列的标准化和, 以标准正态分布为极限 (Lindeberg-Feller).
+
+中心极限定理
+: 在适当的条件下, 大量相互独立随机变量的均值经适当标准化后依分布收敛于正态分布.
+
+\note{
+
+且数学期望和方差有限的
+
+}
+
 ## 生物表型特征
 
 * 由单基因决定的表型, 即孟德尔遗传的特征, 有显隐性的 3:1 的分离比
