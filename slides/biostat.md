@@ -426,6 +426,62 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
     * 光合作用的速率
     * ...
 
+# 统计检验
+
+## 正态群体
+
+|          目的          |              方法               |
+|:---------------------:|:------------------------------:|
+|        描述数据        |            Mean, SD            |
+|   比较一组数据与假定值    |      One-sample *t* test       |
+|      比较两组数据       |            *t* test            |
+|    比较成对的两组数据    |        Paired *t* test         |
+|   比较三组或更多组数据    |         One-way ANOVA          |
+| 比较成对的三组或更多组数据 |    Repeated-measures ANOVA     |
+|   两个变量间的量化关系    |      Pearson correlation       |
+|  从其它测定变量得到预测值  | Linear or nonlinear regression |
+
+\note{
+
+理论部分讲得很多了, 具体要处理数据了, 该用什么方法?
+
+这里就是简单的总结表
+
+}
+
+## 非正态群体
+
+|          目的          |             方法             |
+|:---------------------:|:---------------------------:|
+|        描述数据        | Median, interquartile range |
+|   比较一组数据与假定值    |        Wilcoxon test        |
+|      比较两组数据       |      Mann-Whitney test      |
+|    比较成对的两组数据    |        Wilcoxon test        |
+|   比较三组或更多组数据    |     Kruskal-Wallis test     |
+| 比较成对的三组或更多组数据 |        Friedman test        |
+|   两个变量间的量化关系    |    Spearman correlation     |
+|  从其它测定变量得到预测值  |  Nonparametric regression   |
+
+\note{
+
+换句话说, 是一般性的群体
+
+这里列出的方法都可以用于正态群体, 只是会不太显著一些
+
+}
+
+## 二项实验
+
+|          目的          |             方法             |
+|:---------------------:|:---------------------------:|
+|        描述数据        |         Proportion          |
+|   比较一组数据与假定值    |         Chi-square          |
+|      比较两组数据       | Fisher's test or Chi-square |
+|    比较成对的两组数据    |       McNemar's test        |
+|   比较三组或更多组数据    |       Chi-square test       |
+| 比较成对的三组或更多组数据 |         Cochrane Q          |
+|   两个变量间的量化关系    |  Contingency coefficients   |
+|  从其它测定变量得到预测值  |     Logistic regression     |
 
 # 样本偏差
 
