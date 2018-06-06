@@ -554,6 +554,16 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 }
 
+## 其它一些概念
+
+* $P$ 值
+* $R^2$ 值
+* 置信区间 (Confidence Interval)
+* 泊松分布
+    * 二项实验中的 $p$ 非常小
+* $\chi^2$ 分布, *t* 分布, *F* 分布
+    * 正态分布的衍生或推广
+
 # 统计检验
 
 ## 正态群体
@@ -837,9 +847,3 @@ Ascertainment bias
 \bigskip
 
 \tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/biostat.slides.pdf}
-
-\note{
-
-P 值与置信区间在这里没有细讲, 它们平常很常见
-
-}
