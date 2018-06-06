@@ -169,7 +169,7 @@ toc: true
 ![时间序列图 (time series plot)](biostat.images/time_series_plot.jpg)
 
 
-# 进入高级部分: 概率与分布
+# 进入高级部分: 二项分布
 
 ---
 
@@ -302,7 +302,6 @@ Excel 公式里, `Sheetname!A1` 表示其它工作表的单元格
 
 ![帕斯卡三角的密度图](biostat.images/pascal_density.jpg)
 
-
 \note{
 
 可以观察到, 随着 N 增大, 密度分布有点像一个似曾相识的钟形曲线
@@ -412,7 +411,6 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
     * 孟德尔的豌豆, 子叶颜色有黄色与绿色两种性状, 8023 个 $F_2$ 代个体中, 6022 个个体为黄色. 这个结果符合 $3:1$
       的分离比吗?
 
-
 \note{
 
 1218 个独立是/非试验
@@ -421,7 +419,9 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 }
 
-## 正态分布
+# 进入高级部分: 正态分布
+
+---
 
 \begin{figure}
     \begin{minipage}[b]{.48\linewidth}
@@ -433,6 +433,19 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
     \end{minipage}
     \caption{当二项分布的 $n$ 极大时, 就近似为正态分布}
 \end{figure}
+
+\note{
+
+为了防止迷惑, 怎么又来了一个分布? 先告诉大家结论
+
+}
+
+---
+
+德国数学家高斯寻找随机误差分布的规律, 发现在率先将正态分布应用于科学研究, 计算出了该分布的方差,
+故正态分布又叫\alert{高斯分布}.
+
+![高斯](biostat.images/10-Mark.jpg)
 
 ---
 
@@ -453,11 +466,27 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 德莫佛--拉普拉斯定理
 : 参数为 $n, p$ 的二项分布以 $np$ 为均值, $np(1-p)$ 为方差的正态分布为极限 (de Moivre--Laplace).
 
+\bigskip
+
 林德伯格--列维定理
 : 独立同分布的, 随机变量序列的标准化和, 以正态分布为极限 (Lindeberg-Levy).
 
+\bigskip
+
 林德伯格--费勒定理
-: 满足一定条件时, 独立, 但不同分布的随机变量序列的标准化和, 以标准正态分布为极限 (Lindeberg-Feller).
+: 满足一定条件时, 独立, 但不同分布的随机变量序列的标准化和, 以正态分布为极限 (Lindeberg-Feller).
+
+\note{
+
+陈希孺的《数理统计学简史》
+
+正态分布的密度形式首次发现是在德莫弗--拉普拉斯的中心极限定理中
+
+每个因素不能产生支配性的影响 (Lindeberg 条件)
+
+}
+
+## 中心极限定理
 
 中心极限定理
 : 在适当的条件下, 大量相互独立随机变量的均值经适当标准化后依分布收敛于正态分布.
@@ -468,24 +497,62 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 }
 
-## 生物表型特征
-
-* 由单基因决定的表型, 即孟德尔遗传的特征, 有显隐性的 3:1 的分离比
-    * 单/双眼皮
-    * 耳垂
-    * 美人尖
-    * 喝酒脸红
-    * ...
-
 ---
 
-* 决大多数生物学表型特征, 都由多基因及环境条件决定, 服从正态分布或者可以转化为正态分布
-    * 身高
-    * 新生儿体重
-    * 药物对疾病的效果
-    * 种子的大小
-    * 光合作用的速率
-    * ...
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{biostat.images/Probability_Theory.jpg}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{biostat.images/Probability_Theory.cn.jpg}
+    \end{minipage}
+    \caption{概率论沉思录}
+\end{figure}
+
+\note{
+
+天赋异禀, 我要纯数学的推导
+
+}
+
+
+# 生物表型特征
+
+## 单基因
+
+由\alert{单基因决定的表型}, 即孟德尔遗传的特征, 有显隐性的 3:1 的分离比
+
+* 单/双眼皮
+* 耳垂
+* 美人尖
+* 喝酒脸红
+* ...
+
+\note{
+
+二项实验的检验
+
+}
+
+## 多基因
+
+\alert{绝大多数生物学表型特征}, 都由多个基因及环境条件决定
+
+* 身高
+* 新生儿体重
+* 药物对疾病的效果
+* 种子的大小
+* 光合作用的速率
+* ...
+
+多个二项实验的结果的叠加, 按前面所说的中心极限定理, 即\alert{服从正态分布或者可以转化为正态分布}
+
+\note{
+
+人有两万个基因, 大多数植物有四万个基因
+
+}
 
 # 统计检验
 
@@ -720,11 +787,10 @@ Excerpt From: 美乔丹·艾伦伯格（Jordan Ellenberg）. “魔鬼数学：�
     \begin{minipage}[b]{.48\linewidth}
         \includegraphics{biostat.images/ElectoralCollege1948.jpg}
     \end{minipage}
+    \caption{三万多公里的火车旅行}
 \end{figure}
 
 \note{
-
-三万多公里的火车旅行
 
 川普每天都进行 rally, 有时一天数场
 
@@ -764,8 +830,16 @@ Ascertainment bias
     * 数据, 类别, 参数, 图表
 2. 由这个样本的证据如何推断有关总体的结论?
 3. 这些结论有多可靠?
-    * 数学上的理论基础
+    * 二项分布, 正态分布等数学上的理论基础
 4. 如何取样本才能使它们尽可能说明问题并可信?
     * 避免偏差
 
+\bigskip
+
 \tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/biostat.slides.pdf}
+
+\note{
+
+P 值与置信区间在这里没有细讲, 它们平常很常见
+
+}
