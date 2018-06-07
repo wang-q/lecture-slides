@@ -667,7 +667,77 @@ Note the variables with no whitespaces in the definition.
 
 法国数学家勒让德也独立发现了最小二乘法, 为了平衡, 给出了正态分布的名字
 
+高斯--马尔可夫定理
+:   在线性回归模型中, 如果误差满足零均值、同方差且互不相关, 则回归系数的最佳线性无偏估计就是普通最小二乘法估计
+    (Gauss--Markov).
+
 }
+
+---
+
+\begin{figure}
+
+    \centering
+    \scriptsize
+
+    \begin{tikzpicture}[
+        declare function={gausspdf(\x,\mu,\sigma)=
+            ( (1 / (\sigma * sqrt(2 * pi))) * exp(- (\x - \mu)^2 / (2 * \sigma) ) ); }
+    ]
+        \begin{axis}[
+            grid=major,
+            xmin=-5,
+            xmax=5,
+            ymax=1,
+            ymin=0,
+            axis x line=bottom,
+            axis y line=left,
+        ]
+            \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, 0, 1)};
+            \addlegendentry{$\mu=0, \sigma=1$};
+            \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, 0, 0.5)};
+            \addlegendentry{$\mu=0, \sigma=0.5$};
+            \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, 0, 2)};
+            \addlegendentry{$\mu=0, \sigma=2$};
+            \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, -2, 0.8)};
+            \addlegendentry{$\mu=-2, \sigma=0.8$};
+        \end{axis}
+    \end{tikzpicture}
+
+    \caption{正态分布, $\mu$ 是位置参数, $\sigma$ 是尺度参数}
+\end{figure}
+
+---
+
+![正态分布的标准差](biostat.images/Standard_deviation_diagram.jpg)
+
+* $1 \sigma \rightarrow 68.3\%$
+* $2 \sigma \rightarrow 95.4\%$
+* $3 \sigma \rightarrow 99.7\%$
 
 ---
 
@@ -712,12 +782,6 @@ Note the variables with no whitespaces in the definition.
 
 中心极限定理
 : 在适当的条件下, 大量相互独立随机变量的均值经适当标准化后依分布收敛于正态分布.
-
-\bigskip
-
-高斯--马尔可夫定理
-:   在线性回归模型中, 如果误差满足零均值、同方差且互不相关, 则回归系数的最佳线性无偏估计就是普通最小二乘法估计
-    (Gauss--Markov).
 
 \note{
 
@@ -819,6 +883,10 @@ Note the variables with no whitespaces in the definition.
 十个基因, 每个基因的编码区与非翻译区, 也是成对的
 
 ANOVA 方差分析
+
+服从正态分布的变量的频数分布由 $\mu, \sigma$ 完全决定.
+
+各种统计方法, 都是着眼于 $\mu, \sigma$, 根据不同的数据集的特性, 进行分析.
 
 }
 
