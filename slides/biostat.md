@@ -467,6 +467,94 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
     * 本初子午线的测定
     * 海船经纬度的测定
 
+## 拉普拉斯
+
+* 皮埃尔-西蒙·拉普拉斯侯爵 (1749--1827)
+* Pierre-Simon marquis de Laplace
+* 法国著名的天文学家和数学家
+* *天体力学* 和 *宇宙体系*
+    * 拿破仑看问拉普拉斯, 为何在他的书中一句也不提上帝.
+    * 拉普拉斯回答: "陛下, 我不需要那个假设."
+    * *拉普拉斯妖*, 是一位智者, 知道宇宙中每个原子确切的位置和动量, 能够使用牛顿定律来展现宇宙事件的整个过程,
+      过去以及未来.
+* *分析概率论*
+
+\note{
+
+拉普拉斯在 1806 年成为法兰西第一帝国的伯爵, 并且他在波旁复辟后于 1817 年被任命为侯爵.
+
+拉瓦锡死后, 拉格朗日惋惜道: "他们只一瞬间就砍下了这颗头, 但再过一百年也找不到像他那样杰出的脑袋了."
+
+\url{https://en.wikipedia.org/wiki/Pierre-Simon_Laplace}
+
+三角形分布
+
+托马斯·辛普森 (Thomas Simpson, 1710--1761), 英国数学家
+
+}
+
+---
+
+\begin{figure}
+
+    \centering
+    \scriptsize
+
+    \begin{tikzpicture}[
+        declare function={laplacepdf(\x,\mu,\b)=
+            ( (1 / (2 * \b)) * exp(- abs(\x - \mu) / \b) ); }
+    ]
+        \begin{axis}[
+            grid=major,
+            xmin=-10,
+            xmax=10,
+            ymax=0.6,
+            ymin=0,
+            axis x line=bottom,
+            axis y line=left,
+        ]
+            \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-10:10,
+            ]{laplacepdf(x, 0, 1)};
+            \addlegendentry{$\mu=0, b=1$};
+            \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-10:10,
+            ]{laplacepdf(x, 0, 2)};
+            \addlegendentry{$\mu=0, b=2$};
+            \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-10:10,
+            ]{laplacepdf(x, 0, 4)};
+            \addlegendentry{$\mu=0, b=2$};
+        \end{axis}
+    \end{tikzpicture}
+
+    \caption{拉普拉斯分布, $\mu$ 是位置参数, $b > 0$ 是尺度参数}
+\end{figure}
+
+\note{
+
+\url{https://tex.stackexchange.com/questions/378302/defining-a-function-inside-tikz-enviroment}
+
+Note the variables with no whitespaces in the definition.
+
+\begin{equation*}
+    f(x \mid \mu,b)={\frac {1}{2b}}\,e^{-{\frac {|x-\mu|}{b}}}
+\end{equation*}
+
+}
+
 ---
 
 德国数学家高斯寻找随机误差分布的规律, 发现在率先将正态分布应用于科学研究, 计算出了该分布的方差,
