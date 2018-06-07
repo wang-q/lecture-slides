@@ -438,6 +438,8 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 为了防止迷惑, 怎么又来了一个分布? 先告诉大家结论
 
+这一部分对于用过统计工具的人来说, 有很多熟悉的科学家, 熟悉的名词, 这里会略过数学推导, 只给出里面的历史与逻辑上的联系.
+
 }
 
 ## 伽利略
@@ -449,6 +451,7 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
     1. 观测数据存在误差
     2. 误差是对称分布的
     3. 大的误差出现频率低, 小的误差出现频率高
+* 经验: 对于有误差的测量数据, 多次测量取\alert{算术平均}是好的处理方法.
 
 \note{
 
@@ -456,12 +459,14 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 伽利略用脉搏计时, 测定加速度
 
+这个经验并没有数学基础
+
 }
 
 ---
 
 * 伽利略将数学引进了物理学研究
-* 微积分和万有引力定律的发展, 科学进入了黄金时代
+* 牛顿, 发展了微积分和万有引力定律, 科学进入了黄金时代
 * 天文学与地理学的数据积累
     * 行星与小行星的轨道
     * 本初子午线的测定
@@ -469,9 +474,8 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 ## 拉普拉斯
 
-* 皮埃尔-西蒙·拉普拉斯侯爵 (1749--1827)
-* Pierre-Simon marquis de Laplace
-* 法国著名的天文学家和数学家
+* 皮埃尔-西蒙·拉普拉斯侯爵 (Pierre-Simon marquis de Laplace, 1749--1827)
+* 法国天文学家和数学家
 * *天体力学* 和 *宇宙体系*
     * 拿破仑看问拉普拉斯, 为何在他的书中一句也不提上帝.
     * 拉普拉斯回答: "陛下, 我不需要那个假设."
@@ -540,7 +544,7 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
         \end{axis}
     \end{tikzpicture}
 
-    \caption{拉普拉斯分布, $\mu$ 是位置参数, $b > 0$ 是尺度参数}
+    \caption{拉普拉斯分布, $\mu$ 是位置参数, $b$ 是尺度参数}
 \end{figure}
 
 \note{
@@ -552,6 +556,16 @@ Note the variables with no whitespaces in the definition.
 \begin{equation*}
     f(x \mid \mu,b)={\frac {1}{2b}}\,e^{-{\frac {|x-\mu|}{b}}}
 \end{equation*}
+
+拉普拉斯猜了一个分布, 但好像不对
+
+1. 观测数据存在误差
+2. 误差是对称分布的
+3. 大的误差出现频率低, 小的误差出现频率高
+
+算术平均
+
+}
 
 ## 高斯
 
@@ -640,28 +654,51 @@ Note the variables with no whitespaces in the definition.
     f(x \mid \mu,\sigma)={\frac {1}{\sigma\sqrt {2\pi}}}\,e^{-{\frac {(x-\mu )^{2}}{2\sigma ^{2}}}}
 \end{equation*}
 
-标准化后
+标准化后, $\mu \rightarrow 1, \sigma \rightarrow 1$
 
 \begin{equation*}
     f(x)={\frac {1}{\sqrt {2\pi}}}\,e^{-{\frac {x^{2}}{2}}}
 \end{equation*}
 
+* Normal distribution
+* 又叫\alert{高斯分布}
+
+\note{
+
+法国数学家勒让德也独立发现了最小二乘法, 为了平衡, 给出了正态分布的名字
+
+}
+
+---
+
+![高斯](biostat.images/10-Mark.jpg)
+
+\note{
+
+\url{https://cosx.org/2013/01/story-of-normal-distribution-1/}
+
+钟形曲线
+
+}
+
 ## 数学定理
 
 德莫佛--拉普拉斯定理
-: 参数为 $n, p$ 的二项分布以 $np$ 为均值, $np(1-p)$ 为方差的正态分布为极限 (de Moivre--Laplace).
+:   参数为 $n, p$ 的二项分布以 $np$ 为均值, $np(1-p)$ 为方差的正态分布为极限 (de Moivre--Laplace).
 
 \bigskip
 
 林德伯格--列维定理
-: 独立同分布的, 随机变量序列的标准化和, 以正态分布为极限 (Lindeberg-Levy).
+:   独立同分布的, 随机变量序列的标准化和, 以正态分布为极限 (Lindeberg--Levy).
 
 \bigskip
 
 林德伯格--费勒定理
-: 满足一定条件时, 独立, 但不同分布的随机变量序列的标准化和, 以正态分布为极限 (Lindeberg-Feller).
+:   满足一定条件时, 独立, 但不同分布的随机变量序列的标准化和, 以正态分布为极限 (Lindeberg--Feller).
 
 \note{
+
+拉普拉斯看到了高斯的正态分布之后, 立即明白了自己寻求已久的误差分布曲线与二项分布之间的关系
 
 陈希孺的《数理统计学简史》
 
@@ -676,6 +713,12 @@ Note the variables with no whitespaces in the definition.
 中心极限定理
 : 在适当的条件下, 大量相互独立随机变量的均值经适当标准化后依分布收敛于正态分布.
 
+\bigskip
+
+高斯--马尔可夫定理
+:   在线性回归模型中, 如果误差满足零均值、同方差且互不相关, 则回归系数的最佳线性无偏估计就是普通最小二乘法估计
+    (Gauss--Markov).
+
 \note{
 
 且数学期望和方差有限的
@@ -685,6 +728,7 @@ Note the variables with no whitespaces in the definition.
 ---
 
 \begin{figure}
+    \centering
     \begin{minipage}[b]{.48\linewidth}
         \includegraphics{biostat.images/Probability_Theory.jpg}
     \end{minipage}
@@ -1025,7 +1069,7 @@ Ascertainment bias
     * 数据, 类别, 参数, 图表
 2. 由这个样本的证据如何推断有关总体的结论?
 3. 这些结论有多可靠?
-    * 二项分布, 正态分布等数学上的理论基础
+    * 二项分布, 正态分布, 中心极限定理等数学上的理论基础
 4. 如何取样本才能使它们尽可能说明问题并可信?
     * 避免偏差
 
