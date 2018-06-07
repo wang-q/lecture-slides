@@ -561,6 +561,38 @@ Note the variables with no whitespaces in the definition.
 故正态分布又叫\alert{高斯分布}.
 
 ![高斯](biostat.images/10-Mark.jpg)
+## 最小二乘法
+
+* $\text{累积误差} = \sum{( \text{观测值} - \text{理论值} )^2}$
+
+* 四个数据点 $(x, y)$: $(1,6), (2,5), (3,7), (4,10)$
+* 最匹配的直线 $y=\beta _{1} + \beta _{2}x$
+* 找出 "最佳" $\beta _{1}$ 和 $\beta _{2}$, 大致符合方程组
+
+\begin{equation*}
+    \begin{split}
+    \beta _{1} + 1 \beta _{2} & = 6 \\
+    \beta _{1} + 2 \beta _{2} & = 5 \\
+    \beta _{1} + 3 \beta _{2} & = 7 \\
+    \beta _{1} + 4 \beta _{2} & = 10
+    \end{split}
+\end{equation*}
+
+* 最小二乘法: 尽量使得等号两边的方差最小
+
+---
+
+\center\includegraphics[width=0.5\columnwidth]{biostat.images/Linear_least_squares_example.jpg}
+
+* $\beta _{1}=3.5$ $\beta _{2}=1.4$
+
+* 直线 $y=3.5+1.4x$ 是最佳的
+
+\note{
+
+求偏导数, 得到了一个只有两个未知数的方程组
+
+}
 
 ---
 
