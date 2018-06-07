@@ -1133,6 +1133,9 @@ Ascertainment bias
 
 ---
 
+0. 为什么要使用统计工具?
+    * 统计是归纳科学的科学方法
+    * 统计的研究对象是样本
 1. 如何有效地描述样本?
     * 数据, 类别, 参数, 图表
 2. 由这个样本的证据如何推断有关总体的结论?
@@ -1144,3 +1147,9 @@ Ascertainment bias
 \bigskip
 
 \tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/biostat.slides.pdf}
+
+\note{
+
+不要用错检验, 不要让不正确的检验误导自己
+
+}
