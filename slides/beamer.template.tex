@@ -133,6 +133,20 @@ $endfor$
 
 %%% custom settings
 
+% color math symbols
+% https://tex.stackexchange.com/a/261480
+\usepackage{xcolor}
+
+\makeatletter
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+    \protect\leavevmode
+    \begingroup
+        \color#1{#2}#3%
+    \endgroup
+}
+\makeatother
+
 % subcaption
 % http://tex.stackexchange.com/questions/125579/subcaption-with-beamer
 \usepackage[compatibility=false]{caption}

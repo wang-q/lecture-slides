@@ -303,13 +303,48 @@ $365 \cdot 24 \cdot 60 = 525600$
 
 ---
 
-\begin{figure}
-    \includegraphics{the-number-e/E_with_colors.jpg}
-\end{figure}
+\Large
+\begin{equation*}
+    \mathcolor{violet}{\text{e}} =
+    \mathcolor{brown}{\lim_{n\to \infty}}
+    \left(
+    \mathcolor{teal}{1} +
+    \frac{
+    \mathcolor{red}{1}
+    }{
+    \mathcolor{purple}{n}
+    }
+    \right)
+    ^{
+    \mathcolor{blue}{1}
+    \cdot
+    \mathcolor{purple}{n}
+    }
+\end{equation*}
+
+\bigskip
+
+\normalsize
+\textcolor{violet}{The base for continuous growth} is \newline
+\textcolor{teal}{the unit quantity}
+\textcolor{red}{earning unit interest}
+\textcolor{blue}{for unit time}, \newline
+\textcolor{purple}{compounded}
+\textcolor{brown}{as fast as possible}.
+
+\bigskip
+
+\textcolor{violet}{连续增长的底}是 \newline
+\textcolor{teal}{单位本金}\textcolor{blue}{在单位时间里}\textcolor{red}{以单位利息} \newline
+\textcolor{brown}{尽可能快地}\textcolor{purple}{复利}.
 
 \note{
 
 有了颜色的帮助, 我们理解起来是不是更容易些了?
+
+\begin{figure}
+    \includegraphics{the-number-e/E_with_colors.jpg}
+\end{figure}
 
 }
 
