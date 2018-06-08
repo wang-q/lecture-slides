@@ -1,5 +1,5 @@
 ---
-title: $\text{e}$ 是什么?
+title: "e 是什么?"
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
@@ -24,6 +24,7 @@ $\text{e}$
 \end{equation*}
 
 \pause{
+\bigskip
 定义 $\text{e}$ 为唯一的实数 $x$, 使得
 \begin{equation*}
     \lim_{h\to 0}\frac{x^h-1}{h}=1
@@ -37,6 +38,7 @@ $\text{e}$
 }
 
 \pause{
+\bigskip
 定义 $\text{e}$ 为唯一的正数 $x$, 使得
 \begin{equation*}
     \int_{1}^{x} \frac{1}{t} \, dt = {1}
@@ -114,15 +116,15 @@ $\text{e}$
 ## 利息
 
 利息
-: 指负债方为借债向债权人所付的补偿性费用, interest.
+:   指负债方为借债向债权人所付的补偿性费用, interest.
 
 计算利息的方法:
 
 * 单利
-: 按照固定的本金计算的利息, simple interest.
+:   按照固定的本金计算的利息, simple interest.
 
 * 复利
-: 利息除了会根据本金计算外, 新得到的利息同样可以生息. compound interest.
+:   利息除了会根据本金计算外, 新得到的利息同样可以生息, compound interest.
 
 \note{
 
@@ -135,25 +137,25 @@ $\text{e}$
 ## 利息的计算公式
 
 $F$
-: 财富在未来的价值, \underline{F}uture value.
+:   财富在未来的价值, \underline{F}uture value.
 
 $P$
-: 现值，即本金, \underline{P}resent value.
+:   现值，即本金, \underline{P}resent value.
 
 $r$
-: 周期内的利息率, interest \underline{r}ate.
+:   周期内的利息率, interest \underline{r}ate.
 
 $n$
-: 累计的周期数.
+:   累计的周期数.
 
 单利
-
 \begin{equation*}
     F_\text{S} = P + P \cdot r \cdot n
 \end{equation*}
 
-复利
+\bigskip
 
+复利
 \begin{equation*}
     F_\text{C} = P \cdot (1+r)^{n}
 \end{equation*}
@@ -244,16 +246,14 @@ rm -fr temp
 ---
 
 $m$
-: 一个周期内, 计复利的次数.
+:   一个周期内, 计复利的次数.
 
 前面的简化公式
-
 \begin{equation*}
     F_\text{C} = (1+1)^1
 \end{equation*}
 
 利率 $r=1/m$, 累计的周期数 $n=m$, 上式变成了
-
 \begin{equation*}
     F_\text{C} = (1 + {1 \over m})^m
 \end{equation*}
