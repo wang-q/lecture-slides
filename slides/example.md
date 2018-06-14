@@ -236,7 +236,29 @@ Not **bold**.
     \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
 \end{itemize}
 
-## 颜色
+## \LaTeX 颜色 {.shrink}
+
+* \textcolor{black}{black}
+* \textcolor{blue}{blue}
+* \textcolor{brown}{brown}
+* \textcolor{cyan}{cyan}
+* \textcolor{darkgray}{darkgray}
+* \textcolor{gray}{gray}
+* \textcolor{green}{green}
+* \textcolor{lightgray}{lightgray}
+* \textcolor{lime}{lime}
+* \textcolor{magenta}{magenta}
+* \textcolor{olive}{olive}
+* \textcolor{orange}{orange}
+* \textcolor{pink}{pink}
+* \textcolor{purple}{purple}
+* \textcolor{red}{red}
+* \textcolor{teal}{teal}
+* \textcolor{violet}{violet}
+* \textcolor{white}{white}
+* \textcolor{yellow}{yellow}
+
+## `metropolis` 颜色
 
 * \textcolor{TolDarkRed}{TolDarkRed}
 * \textcolor{TolLightRed}{TolLightRed}
