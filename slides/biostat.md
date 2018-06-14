@@ -202,17 +202,13 @@ Frequently attributed to Richard Feynman
     \caption{帕斯卡三角}
 \end{figure}
 
-\note{
-
-每个数是它左上方和右上方的数的和
-
-}
-
 ---
 
 ![杨辉三角](biostat.images/YangHui.jpg)
 
 \note{
+
+每个数是它左上方和右上方的数的和
 
 朱世杰《四元玉鉴》中的 "古法七乘方图"
 
