@@ -198,7 +198,7 @@ Frequently attributed to Richard Feynman
 ## 帕斯卡三角
 
 \begin{figure}
-    \animategraphics[loop,controls]{1}{biostat.images/Pascal-}{0}{40}
+    \animategraphics[autoplay,loop,controls]{2}{biostat.images/Pascal-}{0}{40}
     \caption{帕斯卡三角}
 \end{figure}
 
