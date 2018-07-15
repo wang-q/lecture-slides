@@ -187,12 +187,15 @@ Term 2 with *inline markup*
     * $3.2 \times 10^9$ bp
 
 * 人名中的点
-    * 艾萨克$\cdot$牛顿
+    * 艾萨克 $\cdot$ 牛顿
     * 艾萨克·牛顿
 
 * 摄氏度
     + $90\,^{\circ}\text{C}$
     + 3.98°C
+
+* 引号
+    * \texttt{``} 和 \texttt{''} 会被转换成 ``双引号''
 
 ## 文字样式
 
