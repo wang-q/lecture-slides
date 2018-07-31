@@ -493,3 +493,53 @@ perl dl_video.pl -a burn -i Khan-update.yml -o Khan-output -d ~/Documents/Course
 bash ~/Documents/Course/Khan-output.burn.sh
 ```
 
+
+# 3Blue1Brown
+
+Math
+
+* Config file
+
+```bash
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/3Blue1Brown.yml
+---
+- URL: https://www.youtube.com/watch?v=mvmuCPvRoWQ
+  category: 3Blue1Brown
+  original_title: "Euler's formula with introductory group theory"
+- URL: https://www.youtube.com/watch?v=F_0yfvm0UoU
+  category: 3Blue1Brown
+  original_title: 'Understanding e to the pi i'
+EOF
+
+```
+
+* Download
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a update --proxy socks5://127.0.0.1:1080 \
+    -i 3Blue1Brown.yml -o 3Blue1Brown-update
+
+perl dl_video.pl -a download --proxy socks5://127.0.0.1:1080 -d ~/Documents/Course \
+    -i 3Blue1Brown-update.yml -o 3Blue1Brown-output 
+
+bash ~/Documents/Course/3Blue1Brown-output.download.sh
+
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i 3Blue1Brown-update.yml -o 3Blue1Brown-output 
+
+```
+
+* Burn
+
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i 3Blue1Brown-update.yml -o 3Blue1Brown-output 
+
+bash ~/Documents/Course/3Blue1Brown-output.burn.sh
+
+```
