@@ -1,6 +1,6 @@
 # Download TED videos
 
-## Software needed
+# Software needed
 
 * Install youtube-dl
 
@@ -64,12 +64,12 @@ youtube-dl \
 
 ```
 
-## TED
+# TED
 
 For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download
 them directly from ted.com.
 
-### On the linode VPS.
+## On the linode VPS.
 
 * Create `TED.yml` manually.
 
@@ -167,7 +167,7 @@ youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang en --skip-download
 youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 ```
 
-### On my Mac
+## On my Mac
 
 * Generate merging bash script.
 * Burn subtitles into videos with the generated script.
@@ -182,9 +182,9 @@ perl dl_video.pl -a burn -i TED-update.yml -o TED-output -d ~/Documents/Course  
 bash ~/Documents/Course/TED-output.burn.sh
 ```
 
-## TED Ed
+# TED Ed
 
-### On the linode VPS.
+## On the linode VPS.
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED-Ed.yml
@@ -263,7 +263,7 @@ bash ~/Documents/Course/TED-Ed-output.download.sh
 perl dl_video.pl -a report -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
 ```
 
-### On my Mac
+## On my Mac
 
 ```bash
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
@@ -274,9 +274,9 @@ perl dl_video.pl -a burn -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Co
 bash ~/Documents/Course/TED-Ed-output.burn.sh
 ```
 
-## WEHI and dnalc animations
+# WEHI and dnalc animations
 
-### On the linode VPS.
+## On the linode VPS.
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/Animation.yml
@@ -337,7 +337,7 @@ bash ~/Documents/Course/Animation-output.download.sh
 perl dl_video.pl -a report -i Animation-update.yml -o Animation-output -d ~/Documents/Course
 ```
 
-### On my Mac
+## On my Mac
 
 ```bash
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
@@ -348,7 +348,7 @@ perl dl_video.pl -a burn -i Animation-update.yml -o Animation-output -d ~/Docume
 bash ~/Documents/Course/Animation-output.burn.sh
 ```
 
-## Random source
+# Random sources
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/Random.yml
@@ -430,11 +430,11 @@ perl dl_video.pl -a burn -i Random-update.yml -o Random-output -d ~/Documents/Co
 bash ~/Documents/Course/Random-output.burn.sh
 ```
 
-## Khan
+# Khan
 
 Videos of human prehistory from 23andme.
 
-### On the linode VPS.
+* Config file
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/Khan.yml
@@ -465,32 +465,40 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Khan.yml
   subs:
     en: Human-Prehistory/Human_Prehistory_101_-_Prologue.en.ass
 EOF
+
 ```
+
+* Download
 
 ```bash
 cd ~/Scripts/lecture-slides/materials
+
 perl dl_video.pl -a update -i Khan.yml -o Khan-update
 
-perl dl_video.pl -a download -i Khan-update.yml -o Khan-output -d ~/Documents/Course
+perl dl_video.pl -a download -d ~/Documents/Course \
+    -i Khan-update.yml -o Khan-output 
 
 bash ~/Documents/Course/Khan-output.download.sh
 
-perl dl_video.pl -a report -i Khan-update.yml -o Khan-output -d ~/Documents/Course
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i Khan-update.yml -o Khan-output 
+
 ```
 
-### On my Mac
+* Create .ass subtitles manually by Aegisub.
 
-Create .ass subtitles manually by Aegisub.
+* Burn
 
 ```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
 cp ~/Scripts/lecture-slides/materials/subtitles/Human-Prehistory/*.en.ass ~/Documents/Course/Human-Prehistory/
 
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a burn -i Khan-update.yml -o Khan-output -d ~/Documents/Course
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i Khan-update.yml -o Khan-output 
 
 bash ~/Documents/Course/Khan-output.burn.sh
+
 ```
 
 
