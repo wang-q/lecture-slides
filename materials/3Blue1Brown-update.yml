@@ -1,0 +1,25 @@
+---
+- URL: https://www.youtube.com/watch?v=mvmuCPvRoWQ
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Euler_s_formula_with_introductory_group_theory.mp4
+  height: 1080
+  original_title: Euler's formula with introductory group theory
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Euler_s_formula_with_introductory_group_theory.en.srt
+    zh-CN: 3Blue1Brown/Euler_s_formula_with_introductory_group_theory.zh-CN.srt
+  title: Euler_s_formula_with_introductory_group_theory
+  width: 1920
+- URL: https://www.youtube.com/watch?v=F_0yfvm0UoU
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Understanding_e_to_the_pi_i.mp4
+  height: 720
+  original_title: Understanding e to the pi i
+  resolution: 1280x720
+  subs:
+    en: 3Blue1Brown/Understanding_e_to_the_pi_i.en.srt
+    zh-TW: 3Blue1Brown/Understanding_e_to_the_pi_i.zh-TW.srt
+  title: Understanding_e_to_the_pi_i
+  width: 1280
