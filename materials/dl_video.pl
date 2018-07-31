@@ -221,7 +221,7 @@ elsif ( $action eq "report" ) {
         chomp( my $duration
                 = `ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 -sexagesimal $video_file`
         );
-        $size = format_bytes($size);
+        $size = Number::Format::format_bytes($size);
         $duration =~ s/\.\d+//;
         $report_file->append("${width}x${height},$size,$duration\n");
     }
@@ -274,8 +274,7 @@ elsif ( $action eq "burn" ) {
 # [% item.original_title %]
 # [% item.width %]x[% item.height %]
 [% IF item.sub_files.size > 0 -%]
-if [ -f [% item.new_file %] ];
-then
+if [ -f [% item.new_file %] ]; then
     echo [% item.new_file %] exists!;
 else
     cat \
@@ -294,7 +293,7 @@ else
 
     ffmpeg \
         -i scaled.tmp.mp4 \
-        -vf "subtitles='merged.srt.tmp'" \
+        -vf "subtitles='merged.srt.tmp':force_style='FontName=PingFangSC-Regular,FontSize=18'" \
         -c:v libx264 -crf 20 \
         -c:a copy \
         [% item.new_file %]
@@ -310,7 +309,7 @@ else
 
     ffmpeg \
         -i scaled.tmp.mp4 \
-        -vf "subtitles='merged.srt.tmp'" \
+        -vf "subtitles='merged.srt.tmp':force_style='FontName=PingFangSC-Regular,FontSize=18'" \
         -c:v libx264 -crf 20 \
         -c:a copy \
         [% item.new_file %]
@@ -319,7 +318,7 @@ else
 [% ELSE -%]
     ffmpeg \
         -i [% item.video_file %] \
-        -vf "subtitles='merged.srt.tmp'" \
+        -vf "subtitles='merged.srt.tmp':force_style='FontName=PingFangSC-Regular,FontSize=18'" \
         -c:v libx264 -crf 20 \
         -c:a libfdk_aac -b:a 128k \
         [% item.new_file %]
@@ -330,8 +329,7 @@ fi
 
 [% ELSE -%]
 echo No subs for [% item.video_file %]
-if [ -f [% item.new_file %] ];
-then
+if [ -f [% item.new_file %] ]; then
     echo [% item.new_file %] exists!;
 else
     ffmpeg \
