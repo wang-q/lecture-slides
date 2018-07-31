@@ -21,7 +21,8 @@ sudo pip3 install you-get
 
 * Install ffmpeg in VPS
 
-Ubuntu 14.04 ships `libav-tools` other than `ffmpeg`, so get it by [ppa](https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media).
+Ubuntu 14.04 ships `libav-tools` other than `ffmpeg`, so get it by
+[ppa](https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media).
 
 ```bash
 sudo add-apt-repository ppa:mc3man/trusty-media
@@ -65,7 +66,8 @@ youtube-dl \
 
 ## TED
 
-For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download them directly from ted.com.
+For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download
+them directly from ted.com.
 
 ### On the linode VPS.
 
@@ -145,7 +147,7 @@ bash ~/Documents/Course/TED-output.download.sh
 perl dl_video.pl -a report -i TED-update.yml -o TED-output -d ~/Documents/Course    # step 3
 ```
 
-* A working example which can be pasted to terminal line by line. 
+* A working example which can be pasted to terminal line by line.
 
     "Pamela Ronald: The case for engineering our food"
 
@@ -170,7 +172,7 @@ youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 * Generate merging bash script.
 * Burn subtitles into videos with the generated script.
 * Or copy and paste command lines of a video to terminal.
-    
+
 ```bash
 rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
 
