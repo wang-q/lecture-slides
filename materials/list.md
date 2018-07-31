@@ -276,7 +276,7 @@ bash ~/Documents/Course/TED-Ed-output.burn.sh
 
 # WEHI and dnalc animations
 
-## On the linode VPS.
+* Config file
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/Animation.yml
@@ -324,28 +324,36 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Animation.yml
   category: Animation/dnalc
   original_title: mRNA Translation (Advanced)
 EOF
+
 ```
+
+* Download
 
 ```bash
 cd ~/Scripts/lecture-slides/materials
+
 perl dl_video.pl -a update -i Animation.yml -o Animation-update
 
-perl dl_video.pl -a download -i Animation-update.yml -o Animation-output -d ~/Documents/Course
+perl dl_video.pl -a download -d ~/Documents/Course \
+    -i Animation-update.yml -o Animation-output
 
 bash ~/Documents/Course/Animation-output.download.sh
 
-perl dl_video.pl -a report -i Animation-update.yml -o Animation-output -d ~/Documents/Course
+perl dl_video.pl -a report -d ~/Documents/Course \
+    -i Animation-update.yml -o Animation-output
+
 ```
 
-## On my Mac
+* Burn
 
 ```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
-
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a burn -i Animation-update.yml -o Animation-output -d ~/Documents/Course
+
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i Animation-update.yml -o Animation-output 
 
 bash ~/Documents/Course/Animation-output.burn.sh
+
 ```
 
 # Random sources
@@ -434,6 +442,8 @@ bash ~/Documents/Course/Random-output.burn.sh
 
 Videos of human prehistory from 23andme.
 
+* Create .ass subtitles manually by Aegisub.
+
 * Config file
 
 ```bash
@@ -484,8 +494,6 @@ perl dl_video.pl -a report -d ~/Documents/Course\
     -i Khan-update.yml -o Khan-output 
 
 ```
-
-* Create .ass subtitles manually by Aegisub.
 
 * Burn
 
