@@ -5,7 +5,8 @@ author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
 toc: true
-...
+
+---
 
 # 一代: Sanger 法电泳测序
 
