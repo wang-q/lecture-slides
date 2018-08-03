@@ -373,7 +373,7 @@ optional background color.
 
 所以尽量用 `\footnote` 来引用.\footnotemark
 
-\footnotetext{\fullcite{Meselson1958}}
+\footnotetext{\fullcite{meselson1958}}
 
 # 图
 
