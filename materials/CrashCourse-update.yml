@@ -1,0 +1,45 @@
+---
+- URL: https://www.youtube.com/watch?v=GIJK3dwCWCw
+  category: CrashCourse/Immunology
+  ext: mp4
+  file: CrashCourse/Immunology/Immune_System_part_1_-_Crash_Course_A_P_45.mp4
+  height: 1080
+  original_title: 'Immune System, part 1: Crash Course A&P #45'
+  resolution: 1920x1080
+  subs:
+    en: CrashCourse/Immunology/Immune_System_part_1_-_Crash_Course_A_P_45.en.srt
+  title: Immune_System_part_1_-_Crash_Course_A_P_45
+  width: 1920
+- URL: https://www.youtube.com/watch?v=2DFN4IBZ3rI
+  category: CrashCourse/Immunology
+  ext: mp4
+  file: CrashCourse/Immunology/Immune_System_part_2_-_Crash_Course_A_P_46.mp4
+  height: 1080
+  original_title: 'Immune System, part 2: Crash Course A&P #46'
+  resolution: 1920x1080
+  subs:
+    en: CrashCourse/Immunology/Immune_System_part_2_-_Crash_Course_A_P_46.en.srt
+  title: Immune_System_part_2_-_Crash_Course_A_P_46
+  width: 1920
+- URL: https://www.youtube.com/watch?v=rd2cf5hValM
+  category: CrashCourse/Immunology
+  ext: mp4
+  file: CrashCourse/Immunology/Immune_System_part_3_-_Crash_Course_A_P_47.mp4
+  height: 1080
+  original_title: 'Immune System, part 3: Crash Course A&P #47'
+  resolution: 1920x1080
+  subs:
+    en: CrashCourse/Immunology/Immune_System_part_3_-_Crash_Course_A_P_47.en.srt
+  title: Immune_System_part_3_-_Crash_Course_A_P_47
+  width: 1920
+- URL: https://www.youtube.com/watch?v=CeVtPDjJBPU
+  category: CrashCourse/Immunology
+  ext: mp4
+  file: CrashCourse/Immunology/Your_Immune_System_-_Natural_Born_Killer_-_Crash_Course_Biology_32.mp4
+  height: 1080
+  original_title: 'Your Immune System: Natural Born Killer - Crash Course Biology #32'
+  resolution: 1920x1080
+  subs:
+    en: CrashCourse/Immunology/Your_Immune_System_-_Natural_Born_Killer_-_Crash_Course_Biology_32.en.srt
+  title: Your_Immune_System_-_Natural_Born_Killer_-_Crash_Course_Biology_32
+  width: 1920

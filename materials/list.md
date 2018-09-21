@@ -596,7 +596,6 @@ perl dl_video.pl -a report -d ~/Documents/Course\
 
 * Burn
 
-
 ```bash
 cd ~/Scripts/lecture-slides/materials
 
@@ -604,6 +603,60 @@ perl dl_video.pl -a burn -d ~/Documents/Course \
     -i 3Blue1Brown-update.yml -o 3Blue1Brown-output 
 
 bash ~/Documents/Course/3Blue1Brown-output.burn.sh
+
+```
+
+# CrashCourse
+
+* Config file
+
+```bash
+cat <<'EOF' > ~/Scripts/lecture-slides/materials/CrashCourse.yml
+---
+- URL: https://www.youtube.com/watch?v=CeVtPDjJBPU
+  category: CrashCourse/Immunology
+  original_title: 'Your Immune System: Natural Born Killer - Crash Course Biology #32'
+- URL: https://www.youtube.com/watch?v=GIJK3dwCWCw
+  category: CrashCourse/Immunology
+  original_title: 'Immune System, part 1: Crash Course A&P #45'
+- URL: https://www.youtube.com/watch?v=2DFN4IBZ3rI
+  category: CrashCourse/Immunology
+  original_title: 'Immune System, part 2: Crash Course A&P #46'
+- URL: https://www.youtube.com/watch?v=rd2cf5hValM
+  category: CrashCourse/Immunology
+  original_title: 'Immune System, part 3: Crash Course A&P #47'
+
+EOF
+
+```
+
+* Download
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a update --proxy socks5://127.0.0.1:1080 \
+    -i CrashCourse.yml -o CrashCourse-update
+
+perl dl_video.pl -a download --proxy socks5://127.0.0.1:1080 -d ~/Documents/Course \
+    -i CrashCourse-update.yml -o CrashCourse-output 
+
+bash ~/Documents/Course/CrashCourse-output.download.sh
+
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i CrashCourse-update.yml -o CrashCourse-output 
+
+```
+
+* Burn
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i CrashCourse-update.yml -o CrashCourse-output 
+
+bash ~/Documents/Course/CrashCourse-output.burn.sh
 
 ```
 
