@@ -35,8 +35,8 @@ dl_video.pl - download videos and subtitles based on yaml
 GetOptions(
     'help|?' => sub { Getopt::Long::HelpMessage(0) },
     'action|a=s' => \( my $action   = "update" ),
-    'dir|d=s'    => \( my $base_dir = path('~/Document/Course')->absolute->stringify ),
-    'in|i=s'     => \( my $in_file  = path( $FindBin::RealBin, "TED.yml" )->absolute->stringify ),
+    'dir|d=s'    => \( my $base_dir = Path::Tiny::path('~/Document/Course')->absolute->stringify ),
+    'in|i=s'     => \( my $in_file  = Path::Tiny::path( $FindBin::RealBin, "TED.yml" )->absolute->stringify ),
     'out|o=s'   => \( my $out ),
     'proxy|p=s' => \( my $proxy ),
 ) or Getopt::Long::HelpMessage(1);
