@@ -660,6 +660,53 @@ bash ~/Documents/Course/CrashCourse-output.burn.sh
 
 ```
 
+
+# Kurzgesagt
+
+* Config file
+
+```bash
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/watch?v=NxvQPzrg2Wg&list=UUsXVk37bltHxD1rDPwtNM8Q' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "Kurzgesagt"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > ~/Scripts/lecture-slides/materials/Kurzgesagt.yml
+
+```
+
+* Download
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a update --proxy socks5://127.0.0.1:1080 \
+    -i Kurzgesagt.yml -o Kurzgesagt-update
+
+perl dl_video.pl -a download --proxy socks5://127.0.0.1:1080 -d ~/Documents/Course \
+    -i Kurzgesagt-update.yml -o Kurzgesagt-output 
+
+bash ~/Documents/Course/Kurzgesagt-output.download.sh
+
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i Kurzgesagt-update.yml -o Kurzgesagt-output 
+
+```
+
+* Burn
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i Kurzgesagt-update.yml -o Kurzgesagt-output 
+
+bash ~/Documents/Course/Kurzgesagt-output.burn.sh
+
+```
+
 # Immunotherapy
 
 * Config file
