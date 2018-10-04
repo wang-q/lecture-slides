@@ -1,13 +1,319 @@
 ---
-- URL: https://www.youtube.com/watch?v=GIJK3dwCWCw
-  category: CrashCourse/Immunology
-  original_title: 'Immune System, part 1: Crash Course A&P #45'
-- URL: https://www.youtube.com/watch?v=2DFN4IBZ3rI
-  category: CrashCourse/Immunology
-  original_title: 'Immune System, part 2: Crash Course A&P #46'
-- URL: https://www.youtube.com/watch?v=rd2cf5hValM
-  category: CrashCourse/Immunology
-  original_title: 'Immune System, part 3: Crash Course A&P #47'
+- URL: https://www.youtube.com/watch?v=-hjGgFgnYIA
+  category: CrashCourse/History-of-Science
+  original_title: Crash Course History of Science Preview
+- URL: https://www.youtube.com/watch?v=YvtCLceNf30
+  category: CrashCourse/History-of-Science
+  original_title: 'Intro to History of Science: Crash Course History of Science #1'
+- URL: https://www.youtube.com/watch?v=epCOGAa7tRQ
+  category: CrashCourse/History-of-Science
+  original_title: 'The Presocratics: Crash Course History of Science #2'
+- URL: https://www.youtube.com/watch?v=rh0fxJkvL44
+  category: CrashCourse/History-of-Science
+  original_title: 'Plato and Aristotle: Crash Course History of Science #3'
+- URL: https://www.youtube.com/watch?v=bDQkpNbsly4
+  category: CrashCourse/History-of-Science
+  original_title: 'India: Crash Course History of Science #4'
+- URL: https://www.youtube.com/watch?v=dCBDUDwaeCA
+  category: CrashCourse/History-of-Science
+  original_title: 'The Americas and Time Keeping: Crash Course History of Science #5'
+- URL: https://www.youtube.com/watch?v=GcReek3z_38
+  category: CrashCourse/History-of-Science
+  original_title: 'Roman Engineering: Crash Course History of Science #6'
+- URL: https://www.youtube.com/watch?v=bkVsus8Ehxs
+  category: CrashCourse/History-of-Science
+  original_title: 'The Medieval Islamicate World: Crash Course History of Science #7'
+- URL: https://www.youtube.com/watch?v=F6Su3rBxea8
+  category: CrashCourse/History-of-Science
+  original_title: 'Medieval China: Crash Course History of Science #8'
+- URL: https://www.youtube.com/watch?v=iGiZXQVGpbY
+  category: CrashCourse/History-of-Science
+  original_title: 'Ancient & Medieval Medicine: Crash Course History of Science #9'
+- URL: https://www.youtube.com/watch?v=gxiLuz9kHi0
+  category: CrashCourse/History-of-Science
+  original_title: 'Alchemy: History of Science #10'
+- URL: https://www.youtube.com/watch?v=-FYvy3_egHw
+  category: CrashCourse/History-of-Science
+  original_title: 'The New Astronomy: Crash Course History of Science #13'
+- URL: https://www.youtube.com/watch?v=UdQreBq6MOY
+  category: CrashCourse/History-of-Science
+  original_title: 'The Scientific Methods: Crash Course History of Science #14'
+- URL: https://www.youtube.com/watch?v=3FX07HzYyqI
+  category: CrashCourse/History-of-Science
+  original_title: 'The New Anatomy: Crash Course History of Science #15'
+- URL: https://www.youtube.com/watch?v=UC5km6-o2oM
+  category: CrashCourse/History-of-Science
+  original_title: 'The Columbian Exchange: Crash Course History of Science #16'
+- URL: https://www.youtube.com/watch?v=9UKGPOwR-iw
+  category: CrashCourse/History-of-Science
+  original_title: 'Newton and Leibniz: Crash Course History of Science #17'
+- URL: https://www.youtube.com/watch?v=_M694ED8GtI
+  category: CrashCourse/History-of-Science
+  original_title: 'The New Chemistry: Crash Course History of Science #18'
+- URL: https://www.youtube.com/watch?v=K4CKmYSMT_0
+  category: CrashCourse/History-of-Science
+  original_title: 'Biology Before Darwin: Crash Course History of Science #19'
+- URL: https://www.youtube.com/watch?v=V2381lUhqc0
+  category: CrashCourse/History-of-Science
+  original_title: 'Earth Science: Crash Course History of Science #20'
+- URL: https://www.youtube.com/watch?v=FCpqN7GmLYk
+  category: CrashCourse/History-of-Science
+  original_title: 'The Industrial Revolution: Crash Course History of Science #21'
+- URL: https://www.youtube.com/watch?v=dfsUz2O2jww
+  category: CrashCourse/History-of-Science
+  original_title: 'Darwin and Natural Selection: Crash Course History of Science #22'
+- URL: https://www.youtube.com/watch?v=zouPoc49xbk
+  category: CrashCourse/Statistics
+  original_title: Crash Course Statistics Preview
+- URL: https://www.youtube.com/watch?v=sxQaBpKfDRk
+  category: CrashCourse/Statistics
+  original_title: 'What Is Statistics: Crash Course Statistics #1'
+- URL: https://www.youtube.com/watch?v=tN9Xl1AcSv8
+  category: CrashCourse/Statistics
+  original_title: 'Mathematical Thinking: Crash Course Statistics #2'
+- URL: https://www.youtube.com/watch?v=kn83BA7cRNM
+  category: CrashCourse/Statistics
+  original_title: 'Mean, Median, and Mode: Measures of Central Tendency: Crash Course Statistics #3'
+- URL: https://www.youtube.com/watch?v=R4yfNi_8Kqw
+  category: CrashCourse/Statistics
+  original_title: 'Measures of Spread: Crash Course Statistics #4'
+- URL: https://www.youtube.com/watch?v=hEWY6kkBdpo
+  category: CrashCourse/Statistics
+  original_title: 'Charts Are Like Pasta - Data Visualization Part 1: Crash Course Statistics #5'
+- URL: https://www.youtube.com/watch?v=HMkllhBI91Y
+  category: CrashCourse/Statistics
+  original_title: 'Plots, Outliers, and Justin Timberlake: Data Visualization Part 2: Crash Course Statistics #6'
+- URL: https://www.youtube.com/watch?v=bPFNxD3Yg6U
+  category: CrashCourse/Statistics
+  original_title: 'The Shape of Data: Distributions: Crash Course Statistics #7'
+- URL: https://www.youtube.com/watch?v=GtV-VYdNt_g
+  category: CrashCourse/Statistics
+  original_title: 'Correlation Doesn’t Equal Causation: Crash Course Statistics #8'
+- URL: https://www.youtube.com/watch?v=kkBDa-ICvyY
+  category: CrashCourse/Statistics
+  original_title: 'Controlled Experiments: Crash Course Statistics #9'
+- URL: https://www.youtube.com/watch?v=Rf-fIpB4D50
+  category: CrashCourse/Statistics
+  original_title: 'Sampling Methods and Bias with Surveys: Crash Course Statistics #10'
+- URL: https://www.youtube.com/watch?v=ZwqOoD17_LU
+  category: CrashCourse/Statistics
+  original_title: 'Science Journalism: Crash Course Statistics #11'
+- URL: https://www.youtube.com/watch?v=CzNANZnoiRs
+  category: CrashCourse/Statistics
+  original_title: 'Henrietta Lacks, the Tuskegee Experiment, & Ethical Data Collection: Crash Course Statistics #12'
+- URL: https://www.youtube.com/watch?v=OyddY7DlV58
+  category: CrashCourse/Statistics
+  original_title: 'Probability Part 1: Rules and Patterns: Crash Course Statistics #13'
+- URL: https://www.youtube.com/watch?v=oZCskBpHWyk
+  category: CrashCourse/Statistics
+  original_title: 'Probability Part 2: Updating Your Beliefs with Bayes: Crash Course Statistics #14'
+- URL: https://www.youtube.com/watch?v=WR0nMTr6uOo
+  category: CrashCourse/Statistics
+  original_title: 'The Binomial Distribution: Crash Course Statistics #15'
+- URL: https://www.youtube.com/watch?v=5VMTeBoEcQg
+  category: CrashCourse/Statistics
+  original_title: 'Geometric Distributions & The Birthday Paradox: Crash Course Statistics #16'
+- URL: https://www.youtube.com/watch?v=jL9en6NvQfk
+  category: CrashCourse/Statistics
+  original_title: 'Randomness: Crash Course Statistics #17'
+- URL: https://www.youtube.com/watch?v=uAxyI_XfqXk
+  category: CrashCourse/Statistics
+  original_title: 'Z-Scores and Percentiles: Crash Course Statistics #18'
+- URL: https://www.youtube.com/watch?v=rBjft49MAO8
+  category: CrashCourse/Statistics
+  original_title: 'The Normal Distribution: Crash Course Statistics #19'
+- URL: https://www.youtube.com/watch?v=yDEvXB6ApWc
+  category: CrashCourse/Statistics
+  original_title: 'Confidence Intervals: Crash Course Statistics #20'
+- URL: https://www.youtube.com/watch?v=bf3egy7TQ2Q
+  category: CrashCourse/Statistics
+  original_title: 'How p-values help us test hypotheses: Crash Course Statistics #21'
+- URL: https://www.youtube.com/watch?v=PPD8lER8ju4
+  category: CrashCourse/Statistics
+  original_title: 'P-Value Problems: Crash Course Statistics #22'
+- URL: https://www.youtube.com/watch?v=WWagtGT1zH4
+  category: CrashCourse/Statistics
+  original_title: 'Playing with Power: P-Values Pt 3: Crash Course Statistics #23'
+- URL: https://www.youtube.com/watch?v=9TDjifpGj-k
+  category: CrashCourse/Statistics
+  original_title: 'You know I’m all about that Bayes: Crash Course Statistics #24'
+- URL: https://www.youtube.com/watch?v=51bLRF02b4w
+  category: CrashCourse/Statistics
+  original_title: 'Bayes in science and everyday life: Crash Course Statistics #25'
+- URL: https://www.youtube.com/watch?v=QZ7kgmhdIwA
+  category: CrashCourse/Statistics
+  original_title: 'Test Statistics: Crash Course Statistics #26'
+- URL: https://www.youtube.com/watch?v=AGh66ZPpOSQ
+  category: CrashCourse/Statistics
+  original_title: 'T-Tests: A Matched Pair Made in Heaven: Crash Course Statistics #27'
+- URL: https://www.youtube.com/watch?v=Cm0vFoGVMB8
+  category: CrashCourse/Statistics
+  original_title: 'Degrees of Freedom & Effect Sizes: Crash Course Statistics #28'
+- URL: https://www.youtube.com/watch?v=7_cs1YlZoug
+  category: CrashCourse/Statistics
+  original_title: 'Chi-Square Tests: Crash Course Statistics #29'
+- URL: https://www.youtube.com/watch?v=Gx0fAjNHb1M
+  category: CrashCourse/Statistics
+  original_title: 'P-Hacking: Crash Course Statistics #30'
+- URL: https://www.youtube.com/watch?v=vBzEGSm23y8
+  category: CrashCourse/Statistics
+  original_title: 'The Replication Crisis: Crash Course Statistics #31'
+- URL: https://www.youtube.com/watch?v=WWqE7YHR4Jc
+  category: CrashCourse/Statistics
+  original_title: 'Regression: Crash Course Statistics #32'
+- URL: https://www.youtube.com/watch?v=QnQe0xW_JY4
+  category: CrashCourse/Biology
+  original_title: "That's Why Carbon Is A Tramp: Crash Course Biology #1"
+- URL: https://www.youtube.com/watch?v=HVT3Y3_gHGg
+  category: CrashCourse/Biology
+  original_title: 'Water - Liquid Awesome: Crash Course Biology #2'
+- URL: https://www.youtube.com/watch?v=H8WJ2KENlK0
+  category: CrashCourse/Biology
+  original_title: 'Biological Molecules - You Are What You Eat: Crash Course Biology #3'
+- URL: https://www.youtube.com/watch?v=cj8dDTHGJBY
+  category: CrashCourse/Biology
+  original_title: 'Eukaryopolis - The City of Animal Cells: Crash Course Biology #4'
+- URL: https://www.youtube.com/watch?v=dPKvHrD1eS4
+  category: CrashCourse/Biology
+  original_title: 'In Da Club - Membranes & Transport: Crash Course Biology #5'
+- URL: https://www.youtube.com/watch?v=9UvlqAVCoqY
+  category: CrashCourse/Biology
+  original_title: 'Plant Cells: Crash Course Biology #6'
+- URL: https://www.youtube.com/watch?v=00jbG_cfGuQ
+  category: CrashCourse/Biology
+  original_title: 'ATP & Respiration: Crash Course Biology #7'
+- URL: https://www.youtube.com/watch?v=sQK3Yr4Sc_k
+  category: CrashCourse/Biology
+  original_title: 'Photosynthesis: Crash Course Biology #8'
+- URL: https://www.youtube.com/watch?v=CBezq1fFUEA
+  category: CrashCourse/Biology
+  original_title: 'Heredity: Crash Course Biology #9'
+- URL: https://www.youtube.com/watch?v=8kK2zwjRV0M
+  category: CrashCourse/Biology
+  original_title: 'DNA Structure and Replication: Crash Course Biology #10'
+- URL: https://www.youtube.com/watch?v=itsb2SqR-R0
+  category: CrashCourse/Biology
+  original_title: 'DNA, Hot Pockets, & The Longest Word Ever: Crash Course Biology #11'
+- URL: https://www.youtube.com/watch?v=L0k-enzoeOM
+  category: CrashCourse/Biology
+  original_title: 'Mitosis: Splitting Up is Complicated - Crash Course Biology #12'
+- URL: https://www.youtube.com/watch?v=qCLmR9-YY7o
+  category: CrashCourse/Biology
+  original_title: 'Meiosis: Where the Sex Starts - Crash Course Biology #13'
+- URL: https://www.youtube.com/watch?v=aTftyFboC_M
+  category: CrashCourse/Biology
+  original_title: 'Natural Selection - Crash Course Biology #14'
+- URL: https://www.youtube.com/watch?v=2oKlKmrbLoU
+  category: CrashCourse/Biology
+  original_title: 'Speciation: Of Ligers & Men - Crash Course Biology #15'
+- URL: https://www.youtube.com/watch?v=k_9MTZgAhv0
+  category: CrashCourse/Biology
+  original_title: "Animal Development: We're Just Tubes - Crash Course Biology #16"
+- URL: https://www.youtube.com/watch?v=9sjwlxQ_6LI
+  category: CrashCourse/Biology
+  original_title: 'Evolutionary Development: Chicken Teeth - Crash Course Biology #17'
+- URL: https://www.youtube.com/watch?v=WhFKPaRnTdQ
+  category: CrashCourse/Biology
+  original_title: 'Population Genetics: When Darwin Met Mendel - Crash Course Biology #18'
+- URL: https://www.youtube.com/watch?v=F38BmgPcZ_I
+  category: CrashCourse/Biology
+  original_title: "Taxonomy: Life's Filing System - Crash Course Biology #19"
+- URL: https://www.youtube.com/watch?v=P3GagfbA2vo
+  category: CrashCourse/Biology
+  original_title: "Evolution: It's a Thing - Crash Course Biology #20"
+- URL: https://www.youtube.com/watch?v=7ABSjKS0hic
+  category: CrashCourse/Biology
+  original_title: 'Comparative Anatomy: What Makes Us Animals - Crash Course Biology #21'
+- URL: https://www.youtube.com/watch?v=tIfsHPpkSPs
+  category: CrashCourse/Biology
+  original_title: 'Simple Animals: Sponges, Jellies, & Octopuses - Crash Course Biology #22'
+- URL: https://www.youtube.com/watch?v=YQb7Xq0enTI
+  category: CrashCourse/Biology
+  original_title: 'Complex Animals: Annelids & Arthropods - CrashCourse Biology #23'
+- URL: https://www.youtube.com/watch?v=kgZRZmEc9j4
+  category: CrashCourse/Biology
+  original_title: 'Chordates - CrashCourse Biology #24'
+- URL: https://www.youtube.com/watch?v=EyyDq19Mi3A
+  category: CrashCourse/Biology
+  original_title: 'Animal Behavior - CrashCourse Biology #25'
+- URL: https://www.youtube.com/watch?v=x4PPZCLnVkA
+  category: CrashCourse/Biology
+  original_title: 'The Nervous System - CrashCourse Biology #26'
+- URL: https://www.youtube.com/watch?v=9fxm85Fy4sQ
+  category: CrashCourse/Biology
+  original_title: 'Circulatory & Respiratory Systems - CrashCourse Biology #27'
+- URL: https://www.youtube.com/watch?v=s06XzaKqELk
+  category: CrashCourse/Biology
+  original_title: 'The Digestive System: CrashCourse Biology #28'
+- URL: https://www.youtube.com/watch?v=WtrYotjYvtU
+  category: CrashCourse/Biology
+  original_title: 'The Excretory System: From Your Heart to the Toilet -  CrashCourse Biology #29'
+- URL: https://www.youtube.com/watch?v=RW46rQKWa-g
+  category: CrashCourse/Biology
+  original_title: "The Skeletal System: It's ALIVE! - CrashCourse Biology #30"
+- URL: https://www.youtube.com/watch?v=jqy0i1KXUO4
+  category: CrashCourse/Biology
+  original_title: 'Big Guns: The Muscular System - CrashCourse Biology #31'
 - URL: https://www.youtube.com/watch?v=CeVtPDjJBPU
-  category: CrashCourse/Immunology
+  category: CrashCourse/Biology
   original_title: 'Your Immune System: Natural Born Killer - Crash Course Biology #32'
+- URL: https://www.youtube.com/watch?v=WVrlHH14q3o
+  category: CrashCourse/Biology
+  original_title: 'Great Glands - Your Endocrine System: CrashCourse Biology #33'
+- URL: https://www.youtube.com/watch?v=_7rsH2loIY8
+  category: CrashCourse/Biology
+  original_title: 'The Reproductive System: How Gonads Go - CrashCourse Biology #34'
+- URL: https://www.youtube.com/watch?v=vAR47-g6tlA
+  category: CrashCourse/Biology
+  original_title: 'Old & Odd: Archaea, Bacteria & Protists - CrashCourse Biology #35'
+- URL: https://www.youtube.com/watch?v=iWaX97p6y9U
+  category: CrashCourse/Biology
+  original_title: 'The Sex Lives of Nonvascular Plants: Alternation of Generations - Crash Course Biology #36'
+- URL: https://www.youtube.com/watch?v=h9oDTMXM7M8
+  category: CrashCourse/Biology
+  original_title: 'Vascular Plants = Winning! - Crash Course Biology #37'
+- URL: https://www.youtube.com/watch?v=ExaQ8shhkw8
+  category: CrashCourse/Biology
+  original_title: 'The Plants & The Bees: Plant Reproduction - CrashCourse Biology #38'
+- URL: https://www.youtube.com/watch?v=m4DUZhnNo4s
+  category: CrashCourse/Biology
+  original_title: 'Fungi: Death Becomes Them - CrashCourse Biology #39'
+- URL: https://www.youtube.com/watch?v=izRvPaAWgyw
+  category: CrashCourse/Biology
+  original_title: 'Ecology - Rules for Living on Earth: Crash Course Biology #40'
+- URL: https://www.youtube.com/watch?v=sjE-Pkjp3u4
+  category: CrashCourse/Ecology
+  original_title: 'The History of Life on Earth - Crash Course Ecology #1'
+- URL: https://www.youtube.com/watch?v=RBOsqmBQBQk
+  category: CrashCourse/Ecology
+  original_title: 'Population Ecology: The Texas Mosquito Mystery - Crash Course Ecology #2'
+- URL: https://www.youtube.com/watch?v=E8dkWQVFAoA
+  category: CrashCourse/Ecology
+  original_title: 'Human Population Growth - Crash Course Ecology #3'
+- URL: https://www.youtube.com/watch?v=GxE1SSqbSn4
+  category: CrashCourse/Ecology
+  original_title: 'Community Ecology: Feel the Love - Crash Course Ecology #4'
+- URL: https://www.youtube.com/watch?v=mFDiiSqGB7M
+  category: CrashCourse/Ecology
+  original_title: 'Community Ecology II: Predators - Crash Course Ecology #5'
+- URL: https://www.youtube.com/watch?v=jZKIHe2LDP8
+  category: CrashCourse/Ecology
+  original_title: 'Ecological Succession: Change is Good - Crash Course Ecology #6'
+- URL: https://www.youtube.com/watch?v=v6ubvEJ3KGM
+  category: CrashCourse/Ecology
+  original_title: 'Ecosystem Ecology: Links in the Chain - Crash Course Ecology #7'
+- URL: https://www.youtube.com/watch?v=2D7hZpIYlCA
+  category: CrashCourse/Ecology
+  original_title: 'The Hydrologic and Carbon Cycles: Always Recycle! - Crash Course Ecology #8'
+- URL: https://www.youtube.com/watch?v=leHy-Y_8nRs
+  category: CrashCourse/Ecology
+  original_title: 'Nitrogen & Phosphorus Cycles: Always Recycle! Part 2 - Crash Course Ecology #9'
+- URL: https://www.youtube.com/watch?v=5eTCZ9L834s
+  category: CrashCourse/Ecology
+  original_title: '5 Human Impacts on the Environment: Crash Course Ecology #10'
+- URL: https://www.youtube.com/watch?v=kdDSRRCKMiI
+  category: CrashCourse/Ecology
+  original_title: 'Pollution: Crash Course Ecology #11'
+- URL: https://www.youtube.com/watch?v=Kaeyr5-O2eU
+  category: CrashCourse/Ecology
+  original_title: 'Conservation and Restoration Ecology: Crash Course Ecology #12'

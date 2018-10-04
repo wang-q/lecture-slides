@@ -638,22 +638,68 @@ bash ~/Documents/Course/3Blue1Brown-output.burn.sh
 * Config file
 
 ```bash
-cat <<'EOF' > ~/Scripts/lecture-slides/materials/CrashCourse.yml
----
-- URL: https://www.youtube.com/watch?v=CeVtPDjJBPU
-  category: CrashCourse/Immunology
-  original_title: 'Your Immune System: Natural Born Killer - Crash Course Biology #32'
-- URL: https://www.youtube.com/watch?v=GIJK3dwCWCw
-  category: CrashCourse/Immunology
-  original_title: 'Immune System, part 1: Crash Course A&P #45'
-- URL: https://www.youtube.com/watch?v=2DFN4IBZ3rI
-  category: CrashCourse/Immunology
-  original_title: 'Immune System, part 2: Crash Course A&P #46'
-- URL: https://www.youtube.com/watch?v=rd2cf5hValM
-  category: CrashCourse/Immunology
-  original_title: 'Immune System, part 3: Crash Course A&P #47'
+# History of Science
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PL8dPuuaLjXtNppY8ZHMPDH5TKK2UpU8Ng' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "CrashCourse/History-of-Science"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp1.yml
 
-EOF
+# Statistics
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "CrashCourse/Statistics"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp2.yml
+
+# Biology
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PL3EED4C1D684D3ADF' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "CrashCourse/Biology"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp3.yml
+
+# Ecology
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PL8dPuuaLjXtNdTKZkV_GiIYXpV9w4WxbX' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "CrashCourse/Ecology"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp4.yml
+
+
+# remove duplicates
+perl -MYAML -e '
+    my @entries, %seen;
+    for (@ARGV) {
+        warn qq{$_\n};
+        my $yml = YAML::LoadFile($_);
+        for my $e (@{$yml}) {
+            if (exists $seen{$e->{URL}}) {
+                warn qq{    SEEN\n};
+                next;
+            }
+            push @entries, $e;
+            $seen{$e->{URL}}++;
+        }
+    }
+    print YAML::Dump(\@entries);
+    ' \
+    tmp1.yml tmp2.yml tmp3.yml tmp4.yml \
+    > ~/Scripts/lecture-slides/materials/CrashCourse.yml
+
+rm tmp*.yml
 
 ```
 
