@@ -12,14 +12,7 @@ The `--proxy` option doesn't work with shadowsocks, so I install it on a linode 
 sudo pip install youtube-dl
 ```
 
-* Install you-get
-
-```bash
-sudo apt-get install python3-pip
-sudo pip3 install you-get
-```
-
-* Install ffmpeg in VPS
+* Install ffmpeg on Ubuntu
 
 Ubuntu 14.04 ships `libav-tools` other than `ffmpeg`, so get it by
 [ppa](https://launchpad.net/~mc3man/+archive/ubuntu/trusty-media).
@@ -34,7 +27,7 @@ sudo add-apt-repository --remove ppa:mc3man/trusty-media
 sudo apt-get update
 ```
 
-* Install ffmpeg in Mac
+* Install ffmpeg on Mac
 
 Use ffmpeg to burn subtitles into videos.
 
@@ -69,9 +62,7 @@ youtube-dl \
 For videos that max resolution less than 480p in youtube (e.g., ones released before 2010), download
 them directly from ted.com.
 
-## On the linode VPS.
-
-* Create `TED.yml` manually.
+* Config file
 
     Human beings make mistakes. Compare `TED.yml` and auto-generated `TED-update.yml` to fix errors.
 
@@ -132,19 +123,29 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED.yml
 EOF
 ```
 
-1. Get video information with `dl_video.pl`.
-2. Generate downloading bash script and download video and subtitles files.
-3. Generate reports.
+* Download
+
+    1. Get video information with `dl_video.pl`.
+    2. Generate downloading bash script and download video and subtitles files.
+    3. Generate reports.
 
 ```bash
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a update -i TED.yml -o TED-update                                 # step 1
 
-perl dl_video.pl -a download -i TED-update.yml -o TED-output -d ~/Documents/Course  # step 2
+# step 1
+perl dl_video.pl -a update --proxy socks5://127.0.0.1:1080 \
+    -i TED.yml -o TED-update
+
+# step 2
+perl dl_video.pl -a download --proxy socks5://127.0.0.1:1080 -d ~/Documents/Course \
+    -i TED-update.yml -o TED-output 
 
 bash ~/Documents/Course/TED-output.download.sh
 
-perl dl_video.pl -a report -i TED-update.yml -o TED-output -d ~/Documents/Course    # step 3
+# step 3
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i TED-update.yml -o TED-output 
+
 ```
 
 * A working example which can be pasted to terminal line by line.
@@ -167,17 +168,18 @@ youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang en --skip-download
 youtube-dl $URL -o "${FULLPATH}" --write-sub --sub-lang zh-CN --skip-download
 ```
 
-## On my Mac
+* Burn
 
-* Generate merging bash script.
-* Burn subtitles into videos with the generated script.
-* Or copy and paste command lines of a video to terminal.
+    * Generate merging bash script.
+    * Burn subtitles into videos with the generated script.
+    * Or copy and paste command lines of a video to terminal.
 
 ```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
-
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a burn -i TED-update.yml -o TED-output -d ~/Documents/Course      # step 4
+
+# step 4
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i TED-update.yml -o TED-output 
 
 bash ~/Documents/Course/TED-output.burn.sh
 ```
