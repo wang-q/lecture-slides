@@ -529,51 +529,77 @@ Math
 * Config file
 
 ```bash
-cat <<'EOF' > ~/Scripts/lecture-slides/materials/3Blue1Brown.yml
----
-- URL: https://www.youtube.com/watch?v=mvmuCPvRoWQ
-  category: 3Blue1Brown
-  original_title: "Euler's formula with introductory group theory"
-- URL: https://www.youtube.com/watch?v=F_0yfvm0UoU
-  category: 3Blue1Brown
-  original_title: 'Understanding e to the pi i'
-- URL: https://www.youtube.com/watch?v=WUvTyaaNkzM
-  category: 3Blue1Brown/calculus
-  original_title: "Essence of calculus, chapter 1"
-- URL: https://www.youtube.com/watch?v=9vKqVkMQHKk
-  category: 3Blue1Brown/calculus
-  original_title: "The paradox of the derivative | Chapter 2, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=S0_qX4VJhMQ
-  category: 3Blue1Brown/calculus
-  original_title: "Derivative formulas through geometry | Chapter 3, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=YG15m2VwSjA
-  category: 3Blue1Brown/calculus
-  original_title: "Visualizing the chain rule and product rule | Chapter 4, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=m2MIpDrF7Es
-  category: 3Blue1Brown/calculus
-  original_title: "Derivatives of exponentials | Chapter 5, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=qb40J4N1fa4
-  category: 3Blue1Brown/calculus
-  original_title: "Implicit differentiation, what's going on here? | Chapter 6, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=kfF40MiS7zA
-  category: 3Blue1Brown/calculus
-  original_title: "Limits | Chapter 7, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=rfG8ce4nNh0
-  category: 3Blue1Brown/calculus
-  original_title: "Integration and the fundamental theorem of calculus | Chapter 8, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=FnJqaIESC2s
-  category: 3Blue1Brown/calculus
-  original_title: "What does area have to do with slope? | Chapter 9, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=BLkz5LGWihw
-  category: 3Blue1Brown/calculus
-  original_title: "Higher order derivatives | Footnote, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=3d6DsjIBzJ4
-  category: 3Blue1Brown/calculus
-  original_title: "Taylor series | Chapter 10, Essence of calculus"
-- URL: https://www.youtube.com/watch?v=CfW845LNObM
-  category: 3Blue1Brown/calculus
-  original_title: "What they won't teach you in calculus"
-EOF
+# Essence of linear algebra
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "3Blue1Brown/algebra"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp1.yml
+
+# Essence of calculus
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "3Blue1Brown/calculus"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp2.yml
+
+# Neural networks
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "3Blue1Brown/neural"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp3.yml
+
+# Recommended
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=PLZHQObOWTQDPHP40bzkb0TKLRPwQGAoC-' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "3Blue1Brown/Recommended"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp4.yml
+
+# PLAY ALL
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?list=UUYO_jab_esuFRV4b17AJtAw' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "3Blue1Brown"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > tmp5.yml
+
+# remove duplicates
+perl -MYAML -e '
+    my @entries, %seen;
+    for (@ARGV) {
+        warn qq{$_\n};
+        my $yml = YAML::LoadFile($_);
+        for my $e (@{$yml}) {
+            if (exists $seen{$e->{URL}}) {
+                warn qq{    SEEN\n};
+                next;
+            }
+            push @entries, $e;
+            $seen{$e->{URL}}++;
+        }
+    }
+    print YAML::Dump(\@entries);
+    ' \
+    tmp1.yml tmp2.yml tmp3.yml tmp4.yml tmp5.yml \
+    > ~/Scripts/lecture-slides/materials/3Blue1Brown.yml
+
+rm tmp*.yml
 
 ```
 
