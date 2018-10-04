@@ -182,9 +182,9 @@ perl dl_video.pl -a burn -i TED-update.yml -o TED-output -d ~/Documents/Course  
 bash ~/Documents/Course/TED-output.burn.sh
 ```
 
-# TED Ed & Kurzgesagt
+# TED Ed
 
-## On the linode VPS.
+* Config file
 
 ```bash
 cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED-Ed.yml
@@ -249,39 +249,38 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/TED-Ed.yml
 - URL: https://www.youtube.com/watch?v=XMriWTvPXHI
   category: TED-Ed/Others
   original_title: 'The mathematical secrets of Pascals triangle - Wajdi Mohamed Ratemi'
-- URL: https://www.youtube.com/watch?v=VzPD009qTN4
-  category: TED-Ed/Kurzgesagt
-  original_title: 'How Bacteria Rule Over Your Body – The Microbiome'
-- URL: https://www.youtube.com/watch?v=hOfRN0KihOU
-  category: TED-Ed/Kurzgesagt
-  original_title: 'How Evolution works'
-- URL: https://www.youtube.com/watch?v=zQGOcOUBi6s
-  category: TED-Ed/Kurzgesagt
-  original_title: 'The Immune System Explained I – Bacteria Infection'
 
 EOF
 ```
 
+* Download
+
 ```bash
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a update -i TED-Ed.yml -o TED-Ed-update
 
-perl dl_video.pl -a download -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
+perl dl_video.pl -a update --proxy socks5://127.0.0.1:1080 \
+    -i TED-Ed.yml -o TED-Ed-update
+
+perl dl_video.pl -a download --proxy socks5://127.0.0.1:1080 -d ~/Documents/Course \
+    -i TED-Ed-update.yml -o TED-Ed-output 
 
 bash ~/Documents/Course/TED-Ed-output.download.sh
 
-perl dl_video.pl -a report -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i TED-Ed-update.yml -o TED-Ed-output 
+
 ```
 
-## On my Mac
+* Burn
 
 ```bash
-rsync -avP wangq@45.79.80.100:Documents/Course/ ~/Documents/Course/
-
 cd ~/Scripts/lecture-slides/materials
-perl dl_video.pl -a burn -i TED-Ed-update.yml -o TED-Ed-output -d ~/Documents/Course
+
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i TED-Ed-update.yml -o TED-Ed-output 
 
 bash ~/Documents/Course/TED-Ed-output.burn.sh
+
 ```
 
 # WEHI and dnalc animations
@@ -733,3 +732,4 @@ cat <<'EOF' > ~/Scripts/lecture-slides/materials/Immunotherapy.yml
 EOF
 
 ```
+
