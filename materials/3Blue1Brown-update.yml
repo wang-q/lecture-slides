@@ -1,15 +1,239 @@
 ---
-- URL: https://www.youtube.com/watch?v=mvmuCPvRoWQ
+- URL: https://www.youtube.com/watch?v=VcgJro0sTiM
   category: 3Blue1Brown
   ext: mp4
-  file: 3Blue1Brown/Euler_s_formula_with_introductory_group_theory.mp4
+  file: 3Blue1Brown/3b1b_featured_creators_1.mp4
   height: 1080
-  original_title: Euler's formula with introductory group theory
+  original_title: '3b1b featured creators #1'
+  resolution: 1920x1080
+  title: 3b1b_featured_creators_1
+  width: 1920
+- URL: https://www.youtube.com/watch?v=R7p-nPg8t_g
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/3blue1brown_channel_trailer.mp4
+  height: 1080
+  original_title: 3blue1brown channel trailer
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/Euler_s_formula_with_introductory_group_theory.en.srt
-    zh-CN: 3Blue1Brown/Euler_s_formula_with_introductory_group_theory.zh-CN.srt
-  title: Euler_s_formula_with_introductory_group_theory
+    en: 3Blue1Brown/3blue1brown_channel_trailer.en.srt
+  title: 3blue1brown_channel_trailer
+  width: 1920
+- URL: https://www.youtube.com/watch?v=84hEmGHw3J8
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/A_Curious_Pattern_Indeed.mp4
+  height: 1080
+  original_title: A Curious Pattern Indeed
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/A_Curious_Pattern_Indeed.en.srt
+  title: A_Curious_Pattern_Indeed
+  width: 1920
+- URL: https://www.youtube.com/watch?v=gN9wvSP6KJ8
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/A_Tau_Day_Sonnet.mp4
+  height: 1080
+  original_title: A Tau Day Sonnet
+  resolution: 1920x1080
+  title: A_Tau_Day_Sonnet
+  width: 1920
+- URL: https://www.youtube.com/watch?v=spUNpyF58BY
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/But_what_is_the_Fourier_Transform_A_visual_introduction..mp4
+  height: 1080
+  original_title: 'But what is the Fourier Transform?  A visual introduction.'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/But_what_is_the_Fourier_Transform_A_visual_introduction..en.srt
+    zh-TW: 3Blue1Brown/But_what_is_the_Fourier_Transform_A_visual_introduction..zh-TW.srt
+  title: But_what_is_the_Fourier_Transform_A_visual_introduction.
+  width: 1920
+- URL: https://www.youtube.com/watch?v=rB83DpBJQsE
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Divergence_and_curl_-_The_language_of_Maxwell_s_equations_fluid_flow_and_more.mp4
+  height: 1080
+  original_title: "Divergence and curl:  The language of Maxwell's equations, fluid flow, and more"
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Divergence_and_curl_-_The_language_of_Maxwell_s_equations_fluid_flow_and_more.en.srt
+  title: Divergence_and_curl_-_The_language_of_Maxwell_s_equations_fluid_flow_and_more
+  width: 1920
+- URL: https://www.youtube.com/watch?v=kjBOesZCoqc
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Essence_of_linear_algebra_preview.mp4
+  height: 1080
+  original_title: Essence of linear algebra preview
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Essence_of_linear_algebra_preview.en.srt
+    zh-CN: 3Blue1Brown/Essence_of_linear_algebra_preview.zh-CN.srt
+  title: Essence_of_linear_algebra_preview
+  width: 1920
+- URL: https://www.youtube.com/watch?v=zLzLxVeqdQg
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Euler_s_Formula_Poem.mp4
+  height: 1080
+  original_title: Euler's Formula Poem
+  resolution: 1440x1080
+  subs:
+    en: 3Blue1Brown/Euler_s_Formula_Poem.en.srt
+  title: Euler_s_Formula_Poem
+  width: 1440
+- URL: https://www.youtube.com/watch?v=RU0wScIj36o
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Fractal_charm_-_Space_filling_curves.mp4
+  height: 1080
+  original_title: 'Fractal charm: Space filling curves'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Fractal_charm_-_Space_filling_curves.en.srt
+    zh-TW: 3Blue1Brown/Fractal_charm_-_Space_filling_curves.zh-TW.srt
+  title: Fractal_charm_-_Space_filling_curves
+  width: 1920
+- URL: https://www.youtube.com/watch?v=bcPTiiiYDs8
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/How_pi_was_almost_6.283185....mp4
+  height: 1080
+  original_title: How pi was almost 6.283185...
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/How_pi_was_almost_6.283185....en.srt
+  title: How_pi_was_almost_6.283185...
+  width: 1920
+- URL: https://www.youtube.com/watch?v=S9JGmA5_unY
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/How_secure_is_256_bit_security.mp4
+  height: 1080
+  original_title: How secure is 256 bit security?
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/How_secure_is_256_bit_security.en.srt
+    zh-CN: 3Blue1Brown/How_secure_is_256_bit_security.zh-CN.srt
+  title: How_secure_is_256_bit_security
+  width: 1920
+- URL: https://www.youtube.com/watch?v=1SMmc9gQmHQ
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/How_to_count_to_1000_on_two_hands.mp4
+  height: 1080
+  original_title: How to count to 1000 on two hands
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/How_to_count_to_1000_on_two_hands.en.srt
+    zh-TW: 3Blue1Brown/How_to_count_to_1000_on_two_hands.zh-TW.srt
+  title: How_to_count_to_1000_on_two_hands
+  width: 1920
+- URL: https://www.youtube.com/watch?v=liL66CApESk
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Q_A_2_+_Net_Neutrality_Nuance.mp4
+  height: 1080
+  original_title: 'Q&A #2 + Net Neutrality Nuance'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Q_A_2_+_Net_Neutrality_Nuance.en.srt
+  title: Q_A_2_+_Net_Neutrality_Nuance
+  width: 1920
+- URL: https://www.youtube.com/watch?v=Qe6o9j4IjTo
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Q_A_with_Grant_Sanderson_3blue1brown.mp4
+  height: 1080
+  original_title: Q&A with Grant Sanderson (3blue1brown)
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Q_A_with_Grant_Sanderson_3blue1brown.en.srt
+  title: Q_A_with_Grant_Sanderson_3blue1brown
+  width: 1920
+- URL: https://www.youtube.com/watch?v=VvCytJvd4H0
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Science_YouTubers_attempting_a_graph_theory_puzzle.mp4
+  height: 1080
+  original_title: Science YouTubers attempting a graph theory puzzle
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Science_YouTubers_attempting_a_graph_theory_puzzle.en.srt
+    zh-CN: 3Blue1Brown/Science_YouTubers_attempting_a_graph_theory_puzzle.zh-CN.srt
+  title: Science_YouTubers_attempting_a_graph_theory_puzzle
+  width: 1920
+- URL: https://www.youtube.com/watch?v=Iq1a_KJTWJ8
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Snell_s_law_proof_using_springs.mp4
+  height: 1080
+  original_title: Snell's law proof using springs
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Snell_s_law_proof_using_springs.en.srt
+  title: Snell_s_law_proof_using_springs
+  width: 1920
+- URL: https://www.youtube.com/watch?v=b7FxPsqfkOY
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Solving_2D_equations_using_color_a_story_of_winding_numbers_and_composition.mp4
+  height: 1080
+  original_title: 'Solving 2D equations using color, a story of winding numbers and composition'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Solving_2D_equations_using_color_a_story_of_winding_numbers_and_composition.en.srt
+  title: Solving_2D_equations_using_color_a_story_of_winding_numbers_and_composition
+  width: 1920
+- URL: https://www.youtube.com/watch?v=IxNb1WG_Ido
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Tattoos_on_Math.mp4
+  height: 1080
+  original_title: Tattoos on Math
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Tattoos_on_Math.en.srt
+    zh-CN: 3Blue1Brown/Tattoos_on_Math.zh-CN.srt
+  title: Tattoos_on_Math
+  width: 1920
+- URL: https://www.youtube.com/watch?v=OkmNXy7er84
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/The_hardest_problem_on_the_hardest_test.mp4
+  height: 1080
+  original_title: The hardest problem on the hardest test
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/The_hardest_problem_on_the_hardest_test.en.srt
+    zh-CN: 3Blue1Brown/The_hardest_problem_on_the_hardest_test.zh-CN.srt
+  title: The_hardest_problem_on_the_hardest_test
+  width: 1920
+- URL: https://www.youtube.com/watch?v=MBnnXbOM5S4
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/The_more_general_uncertainty_principle_beyond_quantum.mp4
+  height: 1080
+  original_title: 'The more general uncertainty principle, beyond quantum'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/The_more_general_uncertainty_principle_beyond_quantum.en.srt
+  title: The_more_general_uncertainty_principle_beyond_quantum
+  width: 1920
+- URL: https://www.youtube.com/watch?v=sULa9Lc4pck
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Triangle_of_Power.mp4
+  height: 1080
+  original_title: Triangle of Power
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Triangle_of_Power.en.srt
+    zh-TW: 3Blue1Brown/Triangle_of_Power.zh-TW.srt
+  title: Triangle_of_Power
   width: 1920
 - URL: https://www.youtube.com/watch?v=F_0yfvm0UoU
   category: 3Blue1Brown
@@ -23,28 +247,459 @@
     zh-TW: 3Blue1Brown/Understanding_e_to_the_pi_i.zh-TW.srt
   title: Understanding_e_to_the_pi_i
   width: 1280
+- URL: https://www.youtube.com/watch?v=d4EgbgTm0Bg
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/What_are_quaternions_and_how_do_you_visualize_them_A_story_of_four_dimensions..mp4
+  height: 1080
+  original_title: 'What are quaternions, and how do you visualize them?  A story of four dimensions.'
+  resolution: 1920x1080
+  title: What_are_quaternions_and_how_do_you_visualize_them_A_story_of_four_dimensions.
+  width: 1920
+- URL: https://www.youtube.com/watch?v=pQa_tWZmlGs
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/What_does_genius_look_like_in_math_Where_does_it_come_from_Dandelin_spheres.mp4
+  height: 1080
+  original_title: 'What does genius look like in math?  Where does it come from? (Dandelin spheres)'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/What_does_genius_look_like_in_math_Where_does_it_come_from_Dandelin_spheres.en.srt
+  title: What_does_genius_look_like_in_math_Where_does_it_come_from_Dandelin_spheres
+  width: 1920
+- URL: https://www.youtube.com/watch?v=CfW845LNObM
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/What_they_won_t_teach_you_in_calculus.mp4
+  height: 1080
+  original_title: What they won't teach you in calculus
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/What_they_won_t_teach_you_in_calculus.en.srt
+  title: What_they_won_t_teach_you_in_calculus
+  width: 1920
+- URL: https://www.youtube.com/watch?v=8GPy_UMV-08
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Why_does_this_product_equal_2_A_new_proof_of_the_Wallis_formula_for_..mp4
+  height: 1080
+  original_title: 'Why does this product equal Ï/2?  A new proof of the Wallis formula for Ï.'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Why_does_this_product_equal_2_A_new_proof_of_the_Wallis_formula_for_..en.srt
+    zh-CN: 3Blue1Brown/Why_does_this_product_equal_2_A_new_proof_of_the_Wallis_formula_for_..zh-CN.srt
+  title: Why_does_this_product_equal_2_A_new_proof_of_the_Wallis_formula_for_.
+  width: 1920
+- URL: https://www.youtube.com/watch?v=d-o3eB9sfls
+  category: 3Blue1Brown
+  ext: mp4
+  file: 3Blue1Brown/Why_is_pi_here_And_why_is_it_squared_A_geometric_answer_to_the_Basel_problem.mp4
+  height: 1080
+  original_title: 'Why is pi here?  And why is it squared?  A geometric answer to the Basel problem'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Why_is_pi_here_And_why_is_it_squared_A_geometric_answer_to_the_Basel_problem.en.srt
+    zh-CN: 3Blue1Brown/Why_is_pi_here_And_why_is_it_squared_A_geometric_answer_to_the_Basel_problem.zh-CN.srt
+  title: Why_is_pi_here_And_why_is_it_squared_A_geometric_answer_to_the_Basel_problem
+  width: 1920
+- URL: https://www.youtube.com/watch?v=QJYmyhnaaek
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/All_possible_pythagorean_triples_visualized.mp4
+  height: 1080
+  original_title: 'All possible pythagorean triples, visualized'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/All_possible_pythagorean_triples_visualized.en.srt
+  title: All_possible_pythagorean_triples_visualized
+  width: 1920
+- URL: https://www.youtube.com/watch?v=2SUvWfNJSsM
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Binary_Hanoi_and_Sierpinski_part_1.mp4
+  height: 1080
+  original_title: 'Binary, Hanoi and Sierpinski, part 1'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Binary_Hanoi_and_Sierpinski_part_1.en.srt
+    zh-Hans: 3Blue1Brown/Recommended/Binary_Hanoi_and_Sierpinski_part_1.zh-Hans.srt
+  title: Binary_Hanoi_and_Sierpinski_part_1
+  width: 1920
+- URL: https://www.youtube.com/watch?v=bdMfjfT0lKk
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Binary_Hanoi_and_Sierpinski_part_2.mp4
+  height: 1080
+  original_title: 'Binary, Hanoi, and Sierpinski, part 2'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Binary_Hanoi_and_Sierpinski_part_2.en.srt
+  title: Binary_Hanoi_and_Sierpinski_part_2
+  width: 1920
+- URL: https://www.youtube.com/watch?v=K8P8uFahAgc
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Circle_Division_Solution.mp4
+  height: 1080
+  original_title: Circle Division Solution
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Circle_Division_Solution.en.srt
+  title: Circle_Division_Solution
+  width: 1920
+- URL: https://www.youtube.com/watch?v=-9OUyo8NFZg
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Euler_s_Formula_and_Graph_Duality.mp4
+  height: 1080
+  original_title: Euler's Formula and Graph Duality
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Euler_s_Formula_and_Graph_Duality.en.srt
+  title: Euler_s_Formula_and_Graph_Duality
+  width: 1920
+- URL: https://www.youtube.com/watch?v=mvmuCPvRoWQ
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Euler_s_formula_with_introductory_group_theory.mp4
+  height: 1080
+  original_title: Euler's formula with introductory group theory
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Euler_s_formula_with_introductory_group_theory.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Euler_s_formula_with_introductory_group_theory.zh-CN.srt
+  title: Euler_s_formula_with_introductory_group_theory
+  width: 1920
+- URL: https://www.youtube.com/watch?v=bBC-nXj3Ng4
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Ever_wonder_how_Bitcoin_and_other_cryptocurrencies_actually_work.mp4
+  height: 1080
+  original_title: Ever wonder how Bitcoin (and other cryptocurrencies) actually work?
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Ever_wonder_how_Bitcoin_and_other_cryptocurrencies_actually_work.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Ever_wonder_how_Bitcoin_and_other_cryptocurrencies_actually_work.zh-CN.srt
+  title: Ever_wonder_how_Bitcoin_and_other_cryptocurrencies_actually_work
+  width: 1920
+- URL: https://www.youtube.com/watch?v=gB9n2gHsHN4
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Fractals_are_typically_not_self-similar.mp4
+  height: 1080
+  original_title: Fractals are typically not self-similar
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Fractals_are_typically_not_self-similar.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Fractals_are_typically_not_self-similar.zh-CN.srt
+  title: Fractals_are_typically_not_self-similar
+  width: 1920
+- URL: https://www.youtube.com/watch?v=3s7h2MHQtxc
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Hilbert_s_Curve_-_Is_infinite_math_useful.mp4
+  height: 1080
+  original_title: "Hilbert's Curve: Is infinite math useful?"
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Hilbert_s_Curve_-_Is_infinite_math_useful.en.srt
+  title: Hilbert_s_Curve_-_Is_infinite_math_useful
+  width: 1920
+- URL: https://www.youtube.com/watch?v=cyW5z-M2yzw
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Music_And_Measure_Theory.mp4
+  height: 1080
+  original_title: Music And Measure Theory
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Music_And_Measure_Theory.en.srt
+    zh-TW: 3Blue1Brown/Recommended/Music_And_Measure_Theory.zh-TW.srt
+  title: Music_And_Measure_Theory
+  width: 1920
+- URL: https://www.youtube.com/watch?v=NaL_Cb42WyY
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Pi_hiding_in_prime_regularities.mp4
+  height: 1080
+  original_title: Pi hiding in prime regularities
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Pi_hiding_in_prime_regularities.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Pi_hiding_in_prime_regularities.zh-CN.srt
+  title: Pi_hiding_in_prime_regularities
+  width: 1920
+- URL: https://www.youtube.com/watch?v=MzRCDLre1b4
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Some_light_quantum_mechanics_with_minutephysics.mp4
+  height: 1080
+  original_title: Some light quantum mechanics (with minutephysics)
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Some_light_quantum_mechanics_with_minutephysics.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Some_light_quantum_mechanics_with_minutephysics.zh-CN.srt
+  title: Some_light_quantum_mechanics_with_minutephysics
+  width: 1920
+- URL: https://www.youtube.com/watch?v=Cld0p3a43fU
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/The_Brachistochrone_with_Steven_Strogatz.mp4
+  height: 1080
+  original_title: 'The Brachistochrone, with Steven Strogatz'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/The_Brachistochrone_with_Steven_Strogatz.en.srt
+  title: The_Brachistochrone_with_Steven_Strogatz
+  width: 1920
+- URL: https://www.youtube.com/watch?v=zwAD6dRSVyI
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Thinking_visually_about_higher_dimensions.mp4
+  height: 1080
+  original_title: Thinking visually about higher dimensions
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Thinking_visually_about_higher_dimensions.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Thinking_visually_about_higher_dimensions.zh-CN.srt
+  title: Thinking_visually_about_higher_dimensions
+  width: 1920
+- URL: https://www.youtube.com/watch?v=sD0NjbwqlYw
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Visualizing_the_Riemann_hypothesis_and_analytic_continuation.mp4
+  height: 1080
+  original_title: Visualizing the Riemann hypothesis and analytic continuation
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Visualizing_the_Riemann_hypothesis_and_analytic_continuation.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Visualizing_the_Riemann_hypothesis_and_analytic_continuation.zh-CN.srt
+  title: Visualizing_the_Riemann_hypothesis_and_analytic_continuation
+  width: 1920
+- URL: https://www.youtube.com/watch?v=XFDM1ip5HdU
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/What_does_it_feel_like_to_invent_math.mp4
+  height: 1080
+  original_title: What does it feel like to invent math?
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/What_does_it_feel_like_to_invent_math.en.srt
+  title: What_does_it_feel_like_to_invent_math
+  width: 1920
+- URL: https://www.youtube.com/watch?v=FhSFkLhDANA
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Who_else_cares_about_topology_Stolen_necklaces_and_Borsuk-Ulam.mp4
+  height: 1080
+  original_title: 'Who (else) cares about topology?  Stolen necklaces and Borsuk-Ulam'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Who_else_cares_about_topology_Stolen_necklaces_and_Borsuk-Ulam.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Who_else_cares_about_topology_Stolen_necklaces_and_Borsuk-Ulam.zh-CN.srt
+  title: Who_else_cares_about_topology_Stolen_necklaces_and_Borsuk-Ulam
+  width: 1920
+- URL: https://www.youtube.com/watch?v=AmgkSdhK4K8
+  category: 3Blue1Brown/Recommended
+  ext: mp4
+  file: 3Blue1Brown/Recommended/Who_cares_about_topology_Inscribed_rectangle_problem.mp4
+  height: 1080
+  original_title: 'Who cares about topology?   (Inscribed rectangle problem)'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/Recommended/Who_cares_about_topology_Inscribed_rectangle_problem.en.srt
+    zh-CN: 3Blue1Brown/Recommended/Who_cares_about_topology_Inscribed_rectangle_problem.zh-CN.srt
+  title: Who_cares_about_topology_Inscribed_rectangle_problem
+  width: 1920
+- URL: https://www.youtube.com/watch?v=TgKwz5Ikpc8
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Abstract_vector_spaces_Essence_of_linear_algebra_chapter_14.mp4
+  height: 1080
+  original_title: 'Abstract vector spaces | Essence of linear algebra, chapter 14'
+  resolution: 1920x1080
+  subs:
+    zh-CN: 3Blue1Brown/algebra/Abstract_vector_spaces_Essence_of_linear_algebra_chapter_14.zh-CN.srt
+  title: Abstract_vector_spaces_Essence_of_linear_algebra_chapter_14
+  width: 1920
+- URL: https://www.youtube.com/watch?v=P2LTAUO1TdA
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Change_of_basis_Essence_of_linear_algebra_chapter_12.mp4
+  height: 1080
+  original_title: 'Change of basis | Essence of linear algebra, chapter 12'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Change_of_basis_Essence_of_linear_algebra_chapter_12.en.srt
+    zh-CN: 3Blue1Brown/algebra/Change_of_basis_Essence_of_linear_algebra_chapter_12.zh-CN.srt
+  title: Change_of_basis_Essence_of_linear_algebra_chapter_12
+  width: 1920
+- URL: https://www.youtube.com/watch?v=BaM7OCEm3G0
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Cross_products_in_the_light_of_linear_transformations_Essence_of_linear_algebra_chapter_11.mp4
+  height: 1080
+  original_title: Cross products in the light of linear transformations | Essence of linear algebra chapter 11
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Cross_products_in_the_light_of_linear_transformations_Essence_of_linear_algebra_chapter_11.en.srt
+    zh-CN: 3Blue1Brown/algebra/Cross_products_in_the_light_of_linear_transformations_Essence_of_linear_algebra_chapter_11.zh-CN.srt
+  title: Cross_products_in_the_light_of_linear_transformations_Essence_of_linear_algebra_chapter_11
+  width: 1920
+- URL: https://www.youtube.com/watch?v=eu6i7WJeinw
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Cross_products_Essence_of_linear_algebra_Chapter_10.mp4
+  height: 1080
+  original_title: 'Cross products | Essence of linear algebra, Chapter 10'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Cross_products_Essence_of_linear_algebra_Chapter_10.en.srt
+    zh-CN: 3Blue1Brown/algebra/Cross_products_Essence_of_linear_algebra_Chapter_10.zh-CN.srt
+  title: Cross_products_Essence_of_linear_algebra_Chapter_10
+  width: 1920
+- URL: https://www.youtube.com/watch?v=LyGKycYT2v0
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Dot_products_and_duality_Essence_of_linear_algebra_chapter_9.mp4
+  height: 1080
+  original_title: 'Dot products and duality | Essence of linear algebra, chapter 9'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Dot_products_and_duality_Essence_of_linear_algebra_chapter_9.en.srt
+    zh-CN: 3Blue1Brown/algebra/Dot_products_and_duality_Essence_of_linear_algebra_chapter_9.zh-CN.srt
+  title: Dot_products_and_duality_Essence_of_linear_algebra_chapter_9
+  width: 1920
+- URL: https://www.youtube.com/watch?v=PFDu9oVAE-g
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Eigenvectors_and_eigenvalues_Essence_of_linear_algebra_chapter_13.mp4
+  height: 1080
+  original_title: 'Eigenvectors and eigenvalues | Essence of linear algebra, chapter 13'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Eigenvectors_and_eigenvalues_Essence_of_linear_algebra_chapter_13.en.srt
+    zh-CN: 3Blue1Brown/algebra/Eigenvectors_and_eigenvalues_Essence_of_linear_algebra_chapter_13.zh-CN.srt
+  title: Eigenvectors_and_eigenvalues_Essence_of_linear_algebra_chapter_13
+  width: 1920
+- URL: https://www.youtube.com/watch?v=uQhTuRlWMxw
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Inverse_matrices_column_space_and_null_space_Essence_of_linear_algebra_chapter_7.mp4
+  height: 1080
+  original_title: 'Inverse matrices, column space and null space | Essence of linear algebra, chapter 7'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Inverse_matrices_column_space_and_null_space_Essence_of_linear_algebra_chapter_7.en.srt
+    zh-CN: 3Blue1Brown/algebra/Inverse_matrices_column_space_and_null_space_Essence_of_linear_algebra_chapter_7.zh-CN.srt
+  title: Inverse_matrices_column_space_and_null_space_Essence_of_linear_algebra_chapter_7
+  width: 1920
+- URL: https://www.youtube.com/watch?v=k7RM-ot2NWY
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Linear_combinations_span_and_basis_vectors_Essence_of_linear_algebra_chapter_2.mp4
+  height: 1080
+  original_title: 'Linear combinations, span, and basis vectors | Essence of linear algebra, chapter 2'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Linear_combinations_span_and_basis_vectors_Essence_of_linear_algebra_chapter_2.en.srt
+    zh-CN: 3Blue1Brown/algebra/Linear_combinations_span_and_basis_vectors_Essence_of_linear_algebra_chapter_2.zh-CN.srt
+  title: Linear_combinations_span_and_basis_vectors_Essence_of_linear_algebra_chapter_2
+  width: 1920
+- URL: https://www.youtube.com/watch?v=kYB8IZa5AuE
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Linear_transformations_and_matrices_Essence_of_linear_algebra_chapter_3.mp4
+  height: 1080
+  original_title: 'Linear transformations and matrices | Essence of linear algebra, chapter 3'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Linear_transformations_and_matrices_Essence_of_linear_algebra_chapter_3.en.srt
+    zh-CN: 3Blue1Brown/algebra/Linear_transformations_and_matrices_Essence_of_linear_algebra_chapter_3.zh-CN.srt
+  title: Linear_transformations_and_matrices_Essence_of_linear_algebra_chapter_3
+  width: 1920
+- URL: https://www.youtube.com/watch?v=XkY2DOUCWMU
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Matrix_multiplication_as_composition_Essence_of_linear_algebra_chapter_4.mp4
+  height: 1080
+  original_title: 'Matrix multiplication as composition | Essence of linear algebra, chapter 4'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Matrix_multiplication_as_composition_Essence_of_linear_algebra_chapter_4.en.srt
+    zh-CN: 3Blue1Brown/algebra/Matrix_multiplication_as_composition_Essence_of_linear_algebra_chapter_4.zh-CN.srt
+  title: Matrix_multiplication_as_composition_Essence_of_linear_algebra_chapter_4
+  width: 1920
+- URL: https://www.youtube.com/watch?v=v8VSDg_WQlA
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Nonsquare_matrices_as_transformations_between_dimensions_Essence_of_linear_algebra_chapter_8.mp4
+  height: 1080
+  original_title: 'Nonsquare matrices as transformations between dimensions | Essence of linear algebra, chapter 8'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Nonsquare_matrices_as_transformations_between_dimensions_Essence_of_linear_algebra_chapter_8.en.srt
+    zh-CN: 3Blue1Brown/algebra/Nonsquare_matrices_as_transformations_between_dimensions_Essence_of_linear_algebra_chapter_8.zh-CN.srt
+  title: Nonsquare_matrices_as_transformations_between_dimensions_Essence_of_linear_algebra_chapter_8
+  width: 1920
+- URL: https://www.youtube.com/watch?v=Ip3X9LOh2dk
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/The_determinant_Essence_of_linear_algebra_chapter_6.mp4
+  height: 1080
+  original_title: 'The determinant | Essence of linear algebra, chapter 6'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/The_determinant_Essence_of_linear_algebra_chapter_6.en.srt
+    zh-CN: 3Blue1Brown/algebra/The_determinant_Essence_of_linear_algebra_chapter_6.zh-CN.srt
+  title: The_determinant_Essence_of_linear_algebra_chapter_6
+  width: 1920
+- URL: https://www.youtube.com/watch?v=rHLEWRxRGiM
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Three-dimensional_linear_transformations_Essence_of_linear_algebra_chapter_5.mp4
+  height: 1080
+  original_title: 'Three-dimensional linear transformations | Essence of linear algebra, chapter 5'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Three-dimensional_linear_transformations_Essence_of_linear_algebra_chapter_5.en.srt
+    zh-CN: 3Blue1Brown/algebra/Three-dimensional_linear_transformations_Essence_of_linear_algebra_chapter_5.zh-CN.srt
+  title: Three-dimensional_linear_transformations_Essence_of_linear_algebra_chapter_5
+  width: 1920
+- URL: https://www.youtube.com/watch?v=fNk_zzaMoSs
+  category: 3Blue1Brown/algebra
+  ext: mp4
+  file: 3Blue1Brown/algebra/Vectors_what_even_are_they_Essence_of_linear_algebra_chapter_1.mp4
+  height: 1080
+  original_title: 'Vectors, what even are they? | Essence of linear algebra, chapter 1'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/algebra/Vectors_what_even_are_they_Essence_of_linear_algebra_chapter_1.en.srt
+    zh-CN: 3Blue1Brown/algebra/Vectors_what_even_are_they_Essence_of_linear_algebra_chapter_1.zh-CN.srt
+  title: Vectors_what_even_are_they_Essence_of_linear_algebra_chapter_1
+  width: 1920
 - URL: https://www.youtube.com/watch?v=S0_qX4VJhMQ
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Derivative_formulas_through_geometry_Chapter_3_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Derivative_formulas_through_geometry_Essence_of_calculus_chapter_3.mp4
   height: 1080
-  original_title: 'Derivative formulas through geometry | Chapter 3, Essence of calculus'
+  original_title: 'Derivative formulas through geometry | Essence of calculus, chapter 3'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Derivative_formulas_through_geometry_Chapter_3_Essence_of_calculus.en.srt
-    zh-CN: 3Blue1Brown/calculus/Derivative_formulas_through_geometry_Chapter_3_Essence_of_calculus.zh-CN.srt
-  title: Derivative_formulas_through_geometry_Chapter_3_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Derivative_formulas_through_geometry_Essence_of_calculus_chapter_3.en.srt
+    zh-CN: 3Blue1Brown/calculus/Derivative_formulas_through_geometry_Essence_of_calculus_chapter_3.zh-CN.srt
+  title: Derivative_formulas_through_geometry_Essence_of_calculus_chapter_3
   width: 1920
 - URL: https://www.youtube.com/watch?v=m2MIpDrF7Es
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Derivatives_of_exponentials_Chapter_5_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Derivatives_of_exponentials_Essence_of_calculus_chapter_5.mp4
   height: 1080
-  original_title: 'Derivatives of exponentials | Chapter 5, Essence of calculus'
+  original_title: 'Derivatives of exponentials | Essence of calculus, chapter 5'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Derivatives_of_exponentials_Chapter_5_Essence_of_calculus.en.srt
-  title: Derivatives_of_exponentials_Chapter_5_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Derivatives_of_exponentials_Essence_of_calculus_chapter_5.en.srt
+  title: Derivatives_of_exponentials_Essence_of_calculus_chapter_5
   width: 1920
 - URL: https://www.youtube.com/watch?v=WUvTyaaNkzM
   category: 3Blue1Brown/calculus
@@ -55,109 +710,146 @@
   resolution: 1920x1080
   subs:
     en: 3Blue1Brown/calculus/Essence_of_calculus_chapter_1.en.srt
-    zh-CN: 3Blue1Brown/calculus/Essence_of_calculus_chapter_1.zh-CN.srt
+    zh-TW: 3Blue1Brown/calculus/Essence_of_calculus_chapter_1.zh-TW.srt
   title: Essence_of_calculus_chapter_1
   width: 1920
 - URL: https://www.youtube.com/watch?v=BLkz5LGWihw
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Higher_order_derivatives_Footnote_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Higher_order_derivatives_Essence_of_calculus_chapter_10.mp4
   height: 1080
-  original_title: 'Higher order derivatives | Footnote, Essence of calculus'
+  original_title: 'Higher order derivatives | Essence of calculus, chapter 10'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Higher_order_derivatives_Footnote_Essence_of_calculus.en.srt
-  title: Higher_order_derivatives_Footnote_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Higher_order_derivatives_Essence_of_calculus_chapter_10.en.srt
+  title: Higher_order_derivatives_Essence_of_calculus_chapter_10
   width: 1920
 - URL: https://www.youtube.com/watch?v=qb40J4N1fa4
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Implicit_differentiation_what_s_going_on_here_Chapter_6_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Implicit_differentiation_what_s_going_on_here_Essence_of_calculus_chapter_6.mp4
   height: 1080
-  original_title: "Implicit differentiation, what's going on here? | Chapter 6, Essence of calculus"
+  original_title: "Implicit differentiation, what's going on here? | Essence of calculus, chapter 6"
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Implicit_differentiation_what_s_going_on_here_Chapter_6_Essence_of_calculus.en.srt
-    zh-CN: 3Blue1Brown/calculus/Implicit_differentiation_what_s_going_on_here_Chapter_6_Essence_of_calculus.zh-CN.srt
-  title: Implicit_differentiation_what_s_going_on_here_Chapter_6_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Implicit_differentiation_what_s_going_on_here_Essence_of_calculus_chapter_6.en.srt
+    zh-CN: 3Blue1Brown/calculus/Implicit_differentiation_what_s_going_on_here_Essence_of_calculus_chapter_6.zh-CN.srt
+  title: Implicit_differentiation_what_s_going_on_here_Essence_of_calculus_chapter_6
   width: 1920
 - URL: https://www.youtube.com/watch?v=rfG8ce4nNh0
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Integration_and_the_fundamental_theorem_of_calculus_Chapter_8_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Integration_and_the_fundamental_theorem_of_calculus_Essence_of_calculus_chapter_8.mp4
   height: 1080
-  original_title: 'Integration and the fundamental theorem of calculus | Chapter 8, Essence of calculus'
+  original_title: 'Integration and the fundamental theorem of calculus | Essence of calculus, chapter 8'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Integration_and_the_fundamental_theorem_of_calculus_Chapter_8_Essence_of_calculus.en.srt
-  title: Integration_and_the_fundamental_theorem_of_calculus_Chapter_8_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Integration_and_the_fundamental_theorem_of_calculus_Essence_of_calculus_chapter_8.en.srt
+  title: Integration_and_the_fundamental_theorem_of_calculus_Essence_of_calculus_chapter_8
   width: 1920
 - URL: https://www.youtube.com/watch?v=kfF40MiS7zA
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Limits_Chapter_7_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Limits_Essence_of_calculus_chapter_7.mp4
   height: 1080
-  original_title: 'Limits | Chapter 7, Essence of calculus'
+  original_title: 'Limits | Essence of calculus, chapter 7'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Limits_Chapter_7_Essence_of_calculus.en.srt
-    zh-CN: 3Blue1Brown/calculus/Limits_Chapter_7_Essence_of_calculus.zh-CN.srt
-  title: Limits_Chapter_7_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Limits_Essence_of_calculus_chapter_7.en.srt
+    zh-CN: 3Blue1Brown/calculus/Limits_Essence_of_calculus_chapter_7.zh-CN.srt
+  title: Limits_Essence_of_calculus_chapter_7
   width: 1920
 - URL: https://www.youtube.com/watch?v=3d6DsjIBzJ4
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Taylor_series_Chapter_10_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Taylor_series_Essence_of_calculus_chapter_11.mp4
   height: 1080
-  original_title: 'Taylor series | Chapter 10, Essence of calculus'
+  original_title: 'Taylor series | Essence of calculus, chapter 11'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Taylor_series_Chapter_10_Essence_of_calculus.en.srt
-  title: Taylor_series_Chapter_10_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Taylor_series_Essence_of_calculus_chapter_11.en.srt
+  title: Taylor_series_Essence_of_calculus_chapter_11
   width: 1920
 - URL: https://www.youtube.com/watch?v=9vKqVkMQHKk
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/The_paradox_of_the_derivative_Chapter_2_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/The_paradox_of_the_derivative_Essence_of_calculus_chapter_2.mp4
   height: 1080
-  original_title: 'The paradox of the derivative | Chapter 2, Essence of calculus'
+  original_title: 'The paradox of the derivative | Essence of calculus, chapter 2'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/The_paradox_of_the_derivative_Chapter_2_Essence_of_calculus.en.srt
-    zh-TW: 3Blue1Brown/calculus/The_paradox_of_the_derivative_Chapter_2_Essence_of_calculus.zh-TW.srt
-  title: The_paradox_of_the_derivative_Chapter_2_Essence_of_calculus
+    en: 3Blue1Brown/calculus/The_paradox_of_the_derivative_Essence_of_calculus_chapter_2.en.srt
+    zh-TW: 3Blue1Brown/calculus/The_paradox_of_the_derivative_Essence_of_calculus_chapter_2.zh-TW.srt
+  title: The_paradox_of_the_derivative_Essence_of_calculus_chapter_2
   width: 1920
 - URL: https://www.youtube.com/watch?v=YG15m2VwSjA
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/Visualizing_the_chain_rule_and_product_rule_Chapter_4_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/Visualizing_the_chain_rule_and_product_rule_Essence_of_calculus_chapter_4.mp4
   height: 1080
-  original_title: 'Visualizing the chain rule and product rule | Chapter 4, Essence of calculus'
+  original_title: 'Visualizing the chain rule and product rule | Essence of calculus, chapter 4'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/Visualizing_the_chain_rule_and_product_rule_Chapter_4_Essence_of_calculus.en.srt
-    zh-CN: 3Blue1Brown/calculus/Visualizing_the_chain_rule_and_product_rule_Chapter_4_Essence_of_calculus.zh-CN.srt
-  title: Visualizing_the_chain_rule_and_product_rule_Chapter_4_Essence_of_calculus
+    en: 3Blue1Brown/calculus/Visualizing_the_chain_rule_and_product_rule_Essence_of_calculus_chapter_4.en.srt
+    zh-CN: 3Blue1Brown/calculus/Visualizing_the_chain_rule_and_product_rule_Essence_of_calculus_chapter_4.zh-CN.srt
+  title: Visualizing_the_chain_rule_and_product_rule_Essence_of_calculus_chapter_4
   width: 1920
 - URL: https://www.youtube.com/watch?v=FnJqaIESC2s
   category: 3Blue1Brown/calculus
   ext: mp4
-  file: 3Blue1Brown/calculus/What_does_area_have_to_do_with_slope_Chapter_9_Essence_of_calculus.mp4
+  file: 3Blue1Brown/calculus/What_does_area_have_to_do_with_slope_Essence_of_calculus_chapter_9.mp4
   height: 1080
-  original_title: 'What does area have to do with slope? | Chapter 9, Essence of calculus'
+  original_title: 'What does area have to do with slope? | Essence of calculus, chapter 9'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/What_does_area_have_to_do_with_slope_Chapter_9_Essence_of_calculus.en.srt
-  title: What_does_area_have_to_do_with_slope_Chapter_9_Essence_of_calculus
+    en: 3Blue1Brown/calculus/What_does_area_have_to_do_with_slope_Essence_of_calculus_chapter_9.en.srt
+  title: What_does_area_have_to_do_with_slope_Essence_of_calculus_chapter_9
   width: 1920
-- URL: https://www.youtube.com/watch?v=CfW845LNObM
-  category: 3Blue1Brown/calculus
+- URL: https://www.youtube.com/watch?v=tIeHLnjs5U8
+  category: 3Blue1Brown/neural
   ext: mp4
-  file: 3Blue1Brown/calculus/What_they_won_t_teach_you_in_calculus.mp4
+  file: 3Blue1Brown/neural/Backpropagation_calculus_Deep_learning_chapter_4.mp4
   height: 1080
-  original_title: What they won't teach you in calculus
+  original_title: 'Backpropagation calculus | Deep learning, chapter 4'
   resolution: 1920x1080
   subs:
-    en: 3Blue1Brown/calculus/What_they_won_t_teach_you_in_calculus.en.srt
-  title: What_they_won_t_teach_you_in_calculus
+    en: 3Blue1Brown/neural/Backpropagation_calculus_Deep_learning_chapter_4.en.srt
+    zh-CN: 3Blue1Brown/neural/Backpropagation_calculus_Deep_learning_chapter_4.zh-CN.srt
+  title: Backpropagation_calculus_Deep_learning_chapter_4
+  width: 1920
+- URL: https://www.youtube.com/watch?v=aircAruvnKk
+  category: 3Blue1Brown/neural
+  ext: mp4
+  file: 3Blue1Brown/neural/But_what_is_a_Neural_Network_Deep_learning_chapter_1.mp4
+  height: 1080
+  original_title: 'But what *is* a Neural Network? | Deep learning, chapter 1'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/neural/But_what_is_a_Neural_Network_Deep_learning_chapter_1.en.srt
+    zh-CN: 3Blue1Brown/neural/But_what_is_a_Neural_Network_Deep_learning_chapter_1.zh-CN.srt
+  title: But_what_is_a_Neural_Network_Deep_learning_chapter_1
+  width: 1920
+- URL: https://www.youtube.com/watch?v=IHZwWFHWa-w
+  category: 3Blue1Brown/neural
+  ext: mp4
+  file: 3Blue1Brown/neural/Gradient_descent_how_neural_networks_learn_Deep_learning_chapter_2.mp4
+  height: 1080
+  original_title: 'Gradient descent, how neural networks learn | Deep learning, chapter 2'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/neural/Gradient_descent_how_neural_networks_learn_Deep_learning_chapter_2.en.srt
+    zh-CN: 3Blue1Brown/neural/Gradient_descent_how_neural_networks_learn_Deep_learning_chapter_2.zh-CN.srt
+  title: Gradient_descent_how_neural_networks_learn_Deep_learning_chapter_2
+  width: 1920
+- URL: https://www.youtube.com/watch?v=Ilg3gGewQ5U
+  category: 3Blue1Brown/neural
+  ext: mp4
+  file: 3Blue1Brown/neural/What_is_backpropagation_really_doing_Deep_learning_chapter_3.mp4
+  height: 1080
+  original_title: 'What is backpropagation really doing? | Deep learning, chapter 3'
+  resolution: 1920x1080
+  subs:
+    en: 3Blue1Brown/neural/What_is_backpropagation_really_doing_Deep_learning_chapter_3.en.srt
+    zh-CN: 3Blue1Brown/neural/What_is_backpropagation_really_doing_Deep_learning_chapter_3.zh-CN.srt
+  title: What_is_backpropagation_really_doing_Deep_learning_chapter_3
   width: 1920
