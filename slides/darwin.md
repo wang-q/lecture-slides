@@ -43,6 +43,32 @@ toc: false
 
 }
 
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{darwin/Young_Darwin.jpg}
+        \subcaption{年青时的达尔文}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-25.images/image26.jpg}
+        \subcaption{贝格尔号}
+    \end{minipage}
+\end{figure}
+
+\note{
+
+1831--1836 年, 达尔文 (22岁) 乘 "Beagle" 军舰作了5年环球探险航行. 观察采集动, 植物和化石标本.
+
+战列舰, 将大炮换成科学仪器
+
+博物学, 自然神学
+
+无薪博物学家
+
+}
+
 ## 欧洲的历史
 
 * 古典时代
