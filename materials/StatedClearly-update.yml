@@ -1,0 +1,294 @@
+---
+- URL: https://www.youtube.com/watch?v=fgQLyqWaCbA
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Can_Science_Explain_the_Origin_of_Life.mp4
+  height: 1080
+  original_title: Can Science Explain the Origin of Life?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/Can_Science_Explain_the_Origin_of_Life.en.srt
+    zh-TW: StatedClearly/Can_Science_Explain_the_Origin_of_Life.zh-TW.srt
+  title: Can_Science_Explain_the_Origin_of_Life
+  width: 1920
+- URL: https://www.youtube.com/watch?v=iFpc35walI8
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Did_Dinosaurs_Ever_Live_Alongside_Humans.mp4
+  height: 1080
+  original_title: Did Dinosaurs Ever Live Alongside Humans?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/Did_Dinosaurs_Ever_Live_Alongside_Humans.en.srt
+  title: Did_Dinosaurs_Ever_Live_Alongside_Humans
+  width: 1920
+- URL: https://www.youtube.com/watch?v=hqepQGOYKZ0
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Does_the_Theory_of_Evolution_Really_Matter.mp4
+  height: 1080
+  original_title: Does the Theory of Evolution Really Matter?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/Does_the_Theory_of_Evolution_Really_Matter.en.srt
+  title: Does_the_Theory_of_Evolution_Really_Matter
+  width: 1920
+- URL: https://www.youtube.com/watch?v=1tz6WE4ALUs
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/How_Does_Cooperation_Evolve.mp4
+  height: 1080
+  original_title: How Does Cooperation Evolve?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/How_Does_Cooperation_Evolve.en.srt
+  title: How_Does_Cooperation_Evolve
+  width: 1920
+- URL: https://www.youtube.com/watch?v=pbZ2MFAbGrk
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/How_to_Spot_an_Alien_According_to_NASA.mp4
+  height: 1080
+  original_title: 'How to Spot an Alien, According to NASA!'
+  resolution: 1920x1080
+  subs: {}
+  title: How_to_Spot_an_Alien_According_to_NASA
+  width: 1920
+- URL: https://www.youtube.com/watch?v=DlhpvcgK_28
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Part_1_-_How_Does_New_Genetic_Information_Evolve_Point_Mutations.mp4
+  height: 1080
+  original_title: 'Part 1: How Does New Genetic Information Evolve? Point Mutations'
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/Part_1_-_How_Does_New_Genetic_Information_Evolve_Point_Mutations.en.srt
+  title: Part_1_-_How_Does_New_Genetic_Information_Evolve_Point_Mutations
+  width: 1920
+- URL: https://www.youtube.com/watch?v=G4VINRUe_o4
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Part_2_-_How_Does_New_Genetic_Information_Evolve_Gene_Duplications.mp4
+  height: 1080
+  original_title: 'Part 2: How Does New Genetic Information Evolve? Gene Duplications'
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/Part_2_-_How_Does_New_Genetic_Information_Evolve_Gene_Duplications.en.srt
+  title: Part_2_-_How_Does_New_Genetic_Information_Evolve_Gene_Duplications
+  width: 1920
+- URL: https://www.youtube.com/watch?v=bSaOS7erEOk
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Soft_Tissue_Found_Inside_a_Dinosaur_Bone.mp4
+  height: 1080
+  original_title: Soft Tissue Found Inside a Dinosaur Bone!
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/Soft_Tissue_Found_Inside_a_Dinosaur_Bone.en.srt
+  title: Soft_Tissue_Found_Inside_a_Dinosaur_Bone
+  width: 1920
+- URL: https://www.youtube.com/watch?v=iicnmrKwjkM
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Stated_Clearly_News_-_New_Biology_Game_Show.mp4
+  height: 1080
+  original_title: 'Stated Clearly News: New Biology Game Show!'
+  resolution: 1920x1080
+  title: Stated_Clearly_News_-_New_Biology_Game_Show
+  width: 1920
+- URL: https://www.youtube.com/watch?v=HBWjjiDycoE
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Support_Stated_Clearly_on_Patreon.mp4
+  height: 1080
+  original_title: Support Stated Clearly on Patreon!
+  resolution: 1920x1080
+  title: Support_Stated_Clearly_on_Patreon
+  width: 1920
+- URL: https://www.youtube.com/watch?v=VUfNEHl44hc
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_Caused_Life_s_Major_Evolutionary_Transitions.mp4
+  height: 1080
+  original_title: What Caused Life's Major Evolutionary Transitions?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_Caused_Life_s_Major_Evolutionary_Transitions.en.srt
+  title: What_Caused_Life_s_Major_Evolutionary_Transitions
+  width: 1920
+- URL: https://www.youtube.com/watch?v=K1xnYFCZ9Yg
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_Is_the_RNA_World_Hypothesis.mp4
+  height: 1080
+  original_title: What Is the RNA World Hypothesis?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_Is_the_RNA_World_Hypothesis.en.srt
+  title: What_Is_the_RNA_World_Hypothesis
+  width: 1920
+- URL: https://www.youtube.com/watch?v=NNijmxsKGbc
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_Was_The_Miller-Urey_Experiment.mp4
+  height: 1080
+  original_title: What Was The Miller-Urey Experiment?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_Was_The_Miller-Urey_Experiment.en.srt
+    zh-TW: StatedClearly/What_Was_The_Miller-Urey_Experiment.zh-TW.srt
+  title: What_Was_The_Miller-Urey_Experiment
+  width: 1920
+- URL: https://www.youtube.com/watch?v=mRzxTzKIsp8
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_Chemical_Evolution.mp4
+  height: 1080
+  original_title: What is Chemical Evolution?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_is_Chemical_Evolution.en.srt
+    zh-TW: StatedClearly/What_is_Chemical_Evolution.zh-TW.srt
+  title: What_is_Chemical_Evolution
+  width: 1920
+- URL: https://www.youtube.com/watch?v=zwibgNGe4aY
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_DNA_and_How_Does_it_Work.mp4
+  height: 1080
+  original_title: What is DNA and How Does it Work?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_is_DNA_and_How_Does_it_Work.en.srt
+    zh-TW: StatedClearly/What_is_DNA_and_How_Does_it_Work.zh-TW.srt
+  title: What_is_DNA_and_How_Does_it_Work
+  width: 1920
+- URL: https://www.youtube.com/watch?v=GhHOjC4oxh8
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_Evolution.mp4
+  height: 1080
+  original_title: What is Evolution?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_is_Evolution.en.srt
+    zh-TW: StatedClearly/What_is_Evolution.zh-TW.srt
+  title: What_is_Evolution
+  width: 1920
+- URL: https://www.youtube.com/watch?v=0SCjhI86grU
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_Natural_Selection.mp4
+  height: 1080
+  original_title: What is Natural Selection?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_is_Natural_Selection.en.srt
+  title: What_is_Natural_Selection
+  width: 1920
+- URL: https://www.youtube.com/watch?v=IePMXxQ-KWY
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_a_Chromosome.mp4
+  height: 1080
+  original_title: What is a Chromosome?
+  resolution: 1920x1080
+  subs: {}
+  title: What_is_a_Chromosome
+  width: 1920
+- URL: https://www.youtube.com/watch?v=5MQdXjRPHmQ
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_a_gene.mp4
+  height: 1080
+  original_title: What is a gene?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_is_a_gene.en.srt
+    zh-TW: StatedClearly/What_is_a_gene.zh-TW.srt
+  title: What_is_a_gene
+  width: 1920
+- URL: https://www.youtube.com/watch?v=LhveTGblGHY
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_an_atom_and_how_do_we_know.mp4
+  height: 1080
+  original_title: What is an atom and how do we know?
+  resolution: 1920x1080
+  title: What_is_an_atom_and_how_do_we_know
+  width: 1920
+- URL: https://www.youtube.com/watch?v=lIEoO5KdPvg
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/What_is_the_Evidence_for_Evolution.mp4
+  height: 1080
+  original_title: What is the Evidence for Evolution?
+  resolution: 1920x1080
+  subs:
+    en: StatedClearly/What_is_the_Evidence_for_Evolution.en.srt
+  title: What_is_the_Evidence_for_Evolution
+  width: 1920
+- URL: https://www.youtube.com/watch?v=xefoK59P5NE
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Puede_la_ciencia_explicar_el_origen_de_la_vida.mp4
+  height: 1080
+  original_title: Â¿Puede la ciencia explicar el origen de la vida?
+  resolution: 1920x1080
+  title: Puede_la_ciencia_explicar_el_origen_de_la_vida
+  width: 1920
+- URL: https://www.youtube.com/watch?v=qdvp8TYrCmg
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Que_Fue_El_Experimento_De_Miller-Urey.mp4
+  height: 1080
+  original_title: Â¿QuÃ© Fue El Experimento De Miller-Urey?
+  resolution: 1920x1080
+  title: Que_Fue_El_Experimento_De_Miller-Urey
+  width: 1920
+- URL: https://www.youtube.com/watch?v=NQaZecHCCNA
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Que_es_el_ADN_y_Como_Funciona.mp4
+  height: 1080
+  original_title: Â¿QuÃ© es el ADN y CÃ³mo Funciona?
+  resolution: 1920x1080
+  subs: {}
+  title: Que_es_el_ADN_y_Como_Funciona
+  width: 1920
+- URL: https://www.youtube.com/watch?v=0wOf2Fgi3DE
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/Que_es_la_hipotesis_del_mundo_de_ARN.mp4
+  height: 1080
+  original_title: Â¿QuÃ© es la hipÃ³tesis del mundo de ARN?
+  resolution: 1920x1080
+  title: Que_es_la_hipotesis_del_mundo_de_ARN
+  width: 1920
+- URL: https://www.youtube.com/watch?v=aP96C-YJCzA
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/_.mp4
+  height: 720
+  original_title: ÙØ§ÙÙ Ø§ÙØ­ÙØ¶ Ø§ÙÙÙÙÙ ÙÙÙÙ ÙØ¹ÙÙ Ø
+  resolution: 1280x720
+  title: _
+  width: 1280
+- URL: https://www.youtube.com/watch?v=9MTPzUT3ljU
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/_.mp4
+  height: 1080
+  original_title: ÙØ§ÙÙ Ø§ÙØ£Ø¯ÙØ© Ø¹ÙÙ Ø§ÙØªØ·ÙØ± Ø
+  resolution: 1920x1080
+  title: _
+  width: 1920
+- URL: https://www.youtube.com/watch?v=MpPKYUueF18
+  category: StatedClearly
+  ext: mp4
+  file: StatedClearly/_.mp4
+  height: 1080
+  original_title: ÙÙ ÙØ¸Ø±ÙØ© Ø§ÙØªØ·ÙØ± ÙÙÙØ© ÙØ¹ÙÙØ§Ø
+  resolution: 1920x1080
+  title: _
+  width: 1920

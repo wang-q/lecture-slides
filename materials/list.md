@@ -780,6 +780,53 @@ bash ~/Documents/Course/Kurzgesagt-output.burn.sh
 
 ```
 
+
+# Stated Clearly
+
+* Config file
+
+```bash
+youtube-dl -j --flat-playlist \
+    --proxy socks5://127.0.0.1:1080 \
+    'https://www.youtube.com/playlist?playnext=1&list=UU_cznB5YZZmvAmeq7Y3EriQ&index=1' |
+    jq '{URL: ("https://www.youtube.com/watch?v=" + .url), original_title: .title}' |
+    jq '. + {category: "StatedClearly"}' |
+    jq -s '.' |
+    perl -MYAML -MJSON -0777 -e '$c = <>; print YAML::Dump(decode_json($c))' \
+    > ~/Scripts/lecture-slides/materials/StatedClearly.yml
+
+```
+
+* Download
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a update --proxy socks5://127.0.0.1:1080 \
+    -i StatedClearly.yml -o StatedClearly-update
+
+perl dl_video.pl -a download --proxy socks5://127.0.0.1:1080 -d ~/Documents/Course \
+    -i StatedClearly-update.yml -o StatedClearly-output 
+
+bash ~/Documents/Course/StatedClearly-output.download.sh
+
+perl dl_video.pl -a report -d ~/Documents/Course\
+    -i StatedClearly-update.yml -o StatedClearly-output 
+
+```
+
+* Burn
+
+```bash
+cd ~/Scripts/lecture-slides/materials
+
+perl dl_video.pl -a burn -d ~/Documents/Course \
+    -i StatedClearly-update.yml -o StatedClearly-output 
+
+bash ~/Documents/Course/StatedClearly-output.burn.sh
+
+```
+
 # Immunotherapy
 
 * Config file
