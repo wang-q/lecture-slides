@@ -24,17 +24,34 @@
     %
     \begin{tikzpicture}
         % Axis
-        \draw[thick,->,black] (-3,0)--(3,0) node[below] {$x$}; % x axis
+        \draw[thick,->,black] (-3,0)--(3,0) coordinate (A) node[below] {$x$}; % x axis
         \draw[thick,->,black] (0,-3)--(0,3) node[left] {$y$}; % y axis
         \draw[black,thin] (0,0) circle (2.5cm);
-        \node[black,below] at (2.7,0) {1};
-        \node[black,right] at (0,-2.7) {1};
         %
         \draw[ultra thick, cyan] (\theangle:2.5cm) -- (\theangle:2.5cm |- 0,0); % vertical line
         %
-        \draw[ultra thick,red,->,rotate=\theangle] (0,0) -- (2.5,0);
+        \draw[ultra thick,red,->,rotate=\theangle] (0,0) -- (2.5,0) coordinate (B);
         \node[red,cyan,right] at (0,-3.1)
         {\footnotesize$\sin(\theangle^{\mathrm{o}}) = \pgfmathsin{\theangle}\pgfmathresult$};
+        \begin{scope}
+            \begin{axis}[
+                    thick,
+                    y=2.5cm,
+                    axis lines=center,
+                    xmin=0, xmax=360,
+                    ymin=-1, ymax=1,
+                    anchor=origin, at=(A),
+                    xshift=3ex,
+                    enlarge y limits,
+                    enlarge x limits=upper,
+                    samples=99,
+                    xtick={0,90,...,360},
+                    ytick={-1,1},
+                ]
+                \addplot[domain=0:\theangle+0.01,ultra thick,no markers,cyan] {sin(x)} coordinate (C);
+            \end{axis}
+            \draw [densely dashed,cyan, thick] (B) -- (C);
+        \end{scope}
     \end{tikzpicture}
     %
     \stepcounter{angle}
