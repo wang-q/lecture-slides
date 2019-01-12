@@ -1,0 +1,21 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass{standalone}
+
+\input{preamble.tex}
+\input{preamble-chemfig.tex}
+
+\begin{document}
+
+% display the template, so that we know what is where
+\chemfig{entry-[6]!{ribosetemplate}-[6]exit}
+
+\hspace{5em}
+
+% put it all together
+\chemfig{X-[6,2]!{guanosine}-[6,2]{stuff}-[6,2]!{deoxyadenosine}-[6,2]B}
+
+\end{document}

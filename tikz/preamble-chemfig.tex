@@ -1,0 +1,116 @@
+% https://tex.stackexchange.com/questions/343851/chemfig-submolecule-that-takes-an-argument
+
+\usepackage{chemfig}
+\usepackage{xstring}
+
+\makeatletter
+
+% he sent me this later ... it seems this is simply a slight refactoring.
+
+\newcommand*\if@csfirst[1]{%
+    \csname @\ifcat\relax\expandafter\noexpand\@car#1\@nil first\else second\fi oftwo\endcsname
+}
+
+\newcommand*\derivesubmol[4]{%
+    \saveexpandmode\saveexploremode\expandarg\exploregroups
+    \if@csfirst{#2}
+        {\expandafter\StrSubstitute\@car#2\@nil}
+        {\expandafter\StrSubstitute\csname CF@@#2\endcsname}
+    {\@empty#3}{\@empty#4}[\temp@]%
+    \if@csfirst{#1}
+        {\expandafter\let\@car#1\@nil}
+        {\expandafter\let\csname CF@@#1\endcsname}\temp@
+    \restoreexpandmode\restoreexploremode
+}
+
+\newcommand*\showsubmol[1]{%
+    \if@csfirst{#1}%
+        {\begingroup submol "\expandafter\showsubmol@i\string#1" = \ttfamily
+        \expandafter\expandafter\expandafter\def\expandafter\expandafter\expandafter#1%
+            \expandafter\expandafter\expandafter{\expandafter\@gobble#1}%
+        \expandafter\expandafter\expandafter\strip@prefix\expandafter\meaning\@car#1\@nil
+        \endgroup}%
+        {\expandafter\showsubmol\csname CF@@#1\endcsname}%
+}
+
+\def\showsubmol@i#1#2#3#4#5{}
+
+\newcommand*\exp@addtomacro[2]{\expandafter\@xs@addtomacro\expandafter#1\expandafter{#2}}
+
+\newcommand*\expandsubmol[1]{%
+    \if@csfirst{#1}%
+        {\saveexpandmode\saveexploremode\expandarg\noexploregroups
+        \let\parsed@mol\@empty\let\remain@mol#1%
+        \IfSubStr#1!%
+            {\expandsubmol@i
+            \let#1\parsed@mol
+            }%
+            \relax
+        }%
+        {\expandafter\expandsubmol\csname CF@@#1\endcsname}%
+}
+
+\newcommand*\expandsubmol@i{%
+    \StrBefore\remain@mol![\temp@]%
+    \exp@addtomacro\parsed@mol\temp@
+    \StrBehind\remain@mol![\remain@mol]%
+    \StrSplit\remain@mol\@ne\remain@mol\temp@
+    \StrRemoveBraces\remain@mol[\remain@mol]%
+    \expandafter\if@csfirst\expandafter{\remain@mol}%
+        {\expandafter\let\expandafter\remain@mol\remain@mol}%
+        {\expandafter\let\expandafter\remain@mol\csname CF@@\remain@mol\endcsname}%
+    \StrGobbleLeft\remain@mol\@ne[\remain@mol]%
+    \exp@addtomacro\remain@mol\temp@
+    \IfSubStr\remain@mol!%
+        \expandsubmol@i
+        {\exp@addtomacro\parsed@mol\remain@mol
+        \restoreexpandmode\restoreexploremode
+        }%
+}
+
+\makeatother
+
+% cosmetic enhancements for the example
+\setcrambond{1.75pt}{0.4pt}{1.0pt} % previously too crammed for print.
+\setatomsep{18pt}
+\renewcommand*\printatom[1]{\ensuremath{\mathsf{#1}}}
+
+\tikzset{ % bond in the foreground
+    fgbond/.style={% foreground bond - connecting two cram bonds.
+        line width=1.6pt,
+        shorten <=-.6pt,
+        shorten >=-.6pt
+   }
+}
+
+% define named substituent dummies. Not strictly necessary, but useful for
+% visual display of the template that contains them.
+\definesubmol{rt1}{-[:90]rt1}
+\definesubmol{rt2}{-[:-90,0.6]rt2}
+
+% define a template that contains named dummy substituents that can be replaced
+\definesubmol{ribosetemplate}{%
+        (
+            -[:28,1.508]O
+            -[:-28,1.508]
+        )
+    <[:-45]
+        (
+          -[0,1.25,,,fgbond]
+              (!{rt2})
+          >[:45]
+              (!{rt1})
+         )
+}
+
+% partially specialize the template by supplying a substituent for the ribose
+\derivesubmol{ribonucleoside}{ribosetemplate}{!{rt2}}{-[6,0.9]OH}
+\derivesubmol{deoxyribonucleoside}{ribosetemplate}{!{rt2}}{}
+
+% define some more submols
+\definesubmol{adenine}{N*5([::-18]-*6(-N=-N=(-NH_2)-)=-N=-)}
+\redefinesubmol{guanine}{N*5([::-18]-*6(-N=(-NH_2)-NH-(=O)-)=-N=-)}
+
+% put those into the second position
+\derivesubmol{guanosine}{ribonucleoside}{!{rt1}}{-[2]!{guanine}}
+\derivesubmol{deoxyadenosine}{deoxyribonucleoside}{!{rt1}}{-[2]!{adenine}}
