@@ -36,10 +36,6 @@
 *.egp
 *.mkv
 
-# Generated files
-*.tex
-*.pdf
-
 # Templates
 !slides/beamer.template.tex
 !articles/article.template.tex
