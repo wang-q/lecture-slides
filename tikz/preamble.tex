@@ -1,0 +1,59 @@
+\usepackage{amssymb,amsmath}
+\usepackage{upgreek} % upright greek symbols
+
+% xetex
+\usepackage{mathspec}
+%\usepackage[no-math]{fontspec}
+\usepackage[no-sscript]{xltxtra}
+\usepackage{xunicode}
+
+\setmainfont[BoldFont={Fira Sans}]{Fira Sans Light}
+\setmonofont{Fira Mono}
+
+\setmathsfont(Digits,Latin,Greek){Fira Sans Light}
+\setmathrm{Fira Sans Light}
+
+% 中文字体
+\usepackage{xeCJK}
+    \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
+    \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
+    \punctstyle{plain}
+
+% don't move this line above
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+    \usepackage{microtype}
+    \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+    }{}
+
+% https://tex.stackexchange.com/questions/272790/xecjk-breaks-non-chinese-characters
+\AtBeginDocument{%
+  \XeTeXcharclass`^^^^2026=0
+  \XeTeXcharclass`^^^^2019=0
+}
+
+\usepackage{color}
+\usepackage{animate}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+
+% Paul Tol's 12-color palette
+\definecolor{TolDarkBlue}{HTML}{6699CC}
+\definecolor{TolDarkBrown}{HTML}{999933}
+\definecolor{TolDarkGreen}{HTML}{117733}
+\definecolor{TolDarkPink}{HTML}{882255}
+\definecolor{TolDarkPurple}{HTML}{332288}
+\definecolor{TolDarkRed}{HTML}{661100}
+\definecolor{TolLightBlue}{HTML}{88CCEE}
+\definecolor{TolLightBrown}{HTML}{DDCC77}
+\definecolor{TolLightGreen}{HTML}{44AA99}
+\definecolor{TolLightPink}{HTML}{AA4466}
+\definecolor{TolLightPurple}{HTML}{AA4499}
+\definecolor{TolLightRed}{HTML}{CC6677}

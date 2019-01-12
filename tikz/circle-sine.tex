@@ -1,17 +1,13 @@
 % !TEX TS-program = arara
 % arara: xelatex
-% arara: xelatex: { synctex: yes }
+% 2-pass is needed for animation
+% arara: xelatex
 % arara: indent: { overwrite: yes }
 % arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
 
 \documentclass{standalone}
 
-\usepackage{color}
-\usepackage{animate}
-
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usetikzlibrary{calc}
+\input{preamble.tex}
 
 \begin{document}
 
