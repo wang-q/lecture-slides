@@ -1,0 +1,80 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass{standalone}
+
+\usepackage{color}
+\usepackage{animate}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+
+% Paul Tol's 12-color palette
+\definecolor{TolDarkBlue}{HTML}{6699CC}
+\definecolor{TolDarkBrown}{HTML}{999933}
+\definecolor{TolDarkGreen}{HTML}{117733}
+\definecolor{TolDarkPink}{HTML}{882255}
+\definecolor{TolDarkPurple}{HTML}{332288}
+\definecolor{TolDarkRed}{HTML}{661100}
+\definecolor{TolLightBlue}{HTML}{88CCEE}
+\definecolor{TolLightBrown}{HTML}{DDCC77}
+\definecolor{TolLightGreen}{HTML}{44AA99}
+\definecolor{TolLightPink}{HTML}{AA4466}
+\definecolor{TolLightPurple}{HTML}{AA4499}
+\definecolor{TolLightRed}{HTML}{CC6677}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{axis}[
+            grid=major,
+            xmin=0,
+            xmax=8,
+            ymax=400,
+            xlabel={Generations},
+            ylabel={Population size ($N$)},
+            axis x line=bottom,
+            axis y line=left,
+        ]
+        \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:4.9,
+            ]{exp(1.2 * x )} node[above,pos=1] {$e^{1.2t}$};
+        \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:5.8,
+            ]{exp(1.0 * x )} node[above,pos=1] {$e^{1.0 t}$};
+        \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:7,
+            ]{exp(0.8 * x )} node[above,pos=1] {$e^{0.8t}$};
+        \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:7.2,
+            ]{exp(0.6 * x )} node[above,pos=1] {$e^{0.6t}$};
+        \addplot[
+                color=TolDarkRed,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:7.5,
+            ]{exp(0.4 * x )} node[above,pos=1] {$e^{0.4t}$};
+    \end{axis}
+\end{tikzpicture}
+
+\end{document}

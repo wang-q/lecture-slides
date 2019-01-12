@@ -416,6 +416,19 @@ optional background color.
     \caption{两栏样式的图}
 \end{figure}
 
+---
+
+\begin{figure}
+    \includegraphics{../tikz/ExponentialGrowth.pdf}
+    \caption{外源 pdf}
+\end{figure}
+
+\note{
+
+不支持外源动画 pdf
+
+}
+
 # Beamer
 
 ## 页面尺寸
