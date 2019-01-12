@@ -1,0 +1,40 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{axis}[
+            grid=major,
+            xmin=0,
+            xmax=16,
+            ymax=400,
+            xlabel={Generations},
+            ylabel={Population size ($N$)},
+            axis x line=bottom,
+            axis y line=left,
+        ]
+        \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:5.9,
+            ]{exp(x)} node[above,pos=1] {$r=1$};
+        \addplot[
+                color=TolDarkRed,
+                ultra thick,
+                mark=none,
+                samples=100,
+                domain=0:12.8,
+            ]{(300 * exp(x))/(300 + (exp(x) - 1))} node[above,pos=1] {$r=1, K=300$};
+    \end{axis}
+\end{tikzpicture}
+
+\end{document}
