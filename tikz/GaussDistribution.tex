@@ -1,0 +1,61 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\scriptsize
+\begin{tikzpicture}[
+        declare function={gausspdf(\x,\mu,\sigma)=
+                ( (1 / (\sigma * sqrt(2 * pi))) * exp(- (\x - \mu)^2 / (2 * \sigma) ) ); }
+    ]
+    \begin{axis}[
+            grid=major,
+            xmin=-5,
+            xmax=5,
+            ymax=1,
+            ymin=0,
+            axis x line=bottom,
+            axis y line=left,
+        ]
+        \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, 0, 1)};
+        \addlegendentry{$\mu=0, \sigma=1$};
+        \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, 0, 0.5)};
+        \addlegendentry{$\mu=0, \sigma=0.5$};
+        \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, 0, 2)};
+        \addlegendentry{$\mu=0, \sigma=2$};
+        \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=101,
+                domain=-5:5,
+            ]{gausspdf(x, -2, 0.8)};
+        \addlegendentry{$\mu=-2, \sigma=0.8$};
+    \end{axis}
+\end{tikzpicture}
+
+\end{document}

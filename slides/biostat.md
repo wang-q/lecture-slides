@@ -509,50 +509,8 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 ---
 
 \begin{figure}
-
-    \centering
-    \scriptsize
-
-    \begin{tikzpicture}[
-        declare function={laplacepdf(\x,\mu,\b)=
-            ( (1 / (2 * \b)) * exp(- abs(\x - \mu) / \b) ); }
-    ]
-        \begin{axis}[
-            grid=major,
-            xmin=-10,
-            xmax=10,
-            ymax=0.6,
-            ymin=0,
-            axis x line=bottom,
-            axis y line=left,
-        ]
-            \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-10:10,
-            ]{laplacepdf(x, 0, 1)};
-            \addlegendentry{$\mu=0, b=1$};
-            \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-10:10,
-            ]{laplacepdf(x, 0, 2)};
-            \addlegendentry{$\mu=0, b=2$};
-            \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-10:10,
-            ]{laplacepdf(x, 0, 4)};
-            \addlegendentry{$\mu=0, b=2$};
-        \end{axis}
-    \end{tikzpicture}
-
+    \centering  
+    \includegraphics{../tikz/LaplaceDistribution.pdf}
     \caption{拉普拉斯分布, $\mu$ 是位置参数, $b$ 是尺度参数}
 \end{figure}
 
@@ -569,7 +527,9 @@ Note the variables with no whitespaces in the definition.
 拉普拉斯猜了一个分布, 但好像不对
 
 1. 观测数据存在误差
+
 2. 误差是对称分布的
+
 3. 大的误差出现频率低, 小的误差出现频率高
 
 算术平均
@@ -685,58 +645,8 @@ Note the variables with no whitespaces in the definition.
 ---
 
 \begin{figure}
-
     \centering
-    \scriptsize
-
-    \begin{tikzpicture}[
-        declare function={gausspdf(\x,\mu,\sigma)=
-            ( (1 / (\sigma * sqrt(2 * pi))) * exp(- (\x - \mu)^2 / (2 * \sigma) ) ); }
-    ]
-        \begin{axis}[
-            grid=major,
-            xmin=-5,
-            xmax=5,
-            ymax=1,
-            ymin=0,
-            axis x line=bottom,
-            axis y line=left,
-        ]
-            \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, 0, 1)};
-            \addlegendentry{$\mu=0, \sigma=1$};
-            \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, 0, 0.5)};
-            \addlegendentry{$\mu=0, \sigma=0.5$};
-            \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, 0, 2)};
-            \addlegendentry{$\mu=0, \sigma=2$};
-            \addplot[
-                color=TolDarkGreen,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, -2, 0.8)};
-            \addlegendentry{$\mu=-2, \sigma=0.8$};
-        \end{axis}
-    \end{tikzpicture}
-
+    \includegraphics{../tikz/GaussDistribution.pdf}
     \caption{正态分布, $\mu$ 是位置参数, $\sigma$ 是尺度参数}
 \end{figure}
 
