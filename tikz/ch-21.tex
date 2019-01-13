@@ -1,0 +1,52 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+    % nodes
+    \node[punkt] (0) {前体};
+    \node[punkt, right=1.2cm of 0] (1) {鸟氨酸};
+    \node[punkt, right=1.2cm of 1] (2) {瓜氨酸};
+    \node[punkt, right=1.2cm of 2] (3) {精氨酸};
+
+    % paths
+    \path (0) edge [pil, right] node[auto, align=center] {酶 I\\(\textit{arg1})} (1);
+    \path (1) edge [pil, right] node[auto, align=center] {酶 II\\(\textit{arg2})} (2);
+    \path (2) edge [pil, right] node[auto, align=center] {酶 III\\(\textit{arg3})} (3);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+    % nodes
+    \node[punkt] (dna) {DNA};
+    \node[punkt, right=1.2cm of dna] (rna) {RNA};
+    \node[punkt, right=1.2cm of rna] (pro) {PROTEIN};
+
+    % paths
+    \path (dna) edge [pil, loop left] node[auto, align=center] {复制} (dna);
+    \path (dna) edge [pil, right]     node[auto, align=center] {转录} (rna);
+    \path (rna) edge [pil, right]     node[auto, align=center] {翻译} (pro);
+\end{tikzpicture}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+    % nodes
+    \node[punkt] (pro) {PROTEIN};
+    \node[punkt] (dna) [above left=1cm of pro] {DNA};
+    \node[punkt] (rna) [above right=1cm of pro] {RNA};
+
+    % paths
+    \path (dna) edge [pil, loop left]      node {} (dna);
+    \path (dna) edge [pil, right]          node {} (rna);
+    \path (dna) edge [pil, dashed, below]  node {} (pro);
+    \path (rna) edge [pil, loop right]     node {} (rna);
+    \path (rna) edge [pil, out=165, in=15] node {} (dna);
+    \path (rna) edge [pil, below]          node {} (pro);
+\end{tikzpicture}
+
+\end{document}
