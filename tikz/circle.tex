@@ -5,7 +5,7 @@
 % arara: indent: { overwrite: yes }
 % arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
 
-\documentclass{standalone}
+\documentclass[export]{standalone}
 
 \input{preamble.tex}
 
@@ -16,15 +16,15 @@
 
 \begin{animateinline}[loop, poster = first, controls]{30}
     %
-    \whiledo{\theangle<359}{
+    \whiledo{\theangle<360}{
     %
     \begin{tikzpicture}
         % Axis
-        \draw[thick,->,blue] (-3,0)--(3,0) node[below] {$x$}; % x axis
-        \draw[thick,->,blue] (0,-3)--(0,3) node[left] {$y$}; % y axis
-        \draw[red,thick] (0,0) circle (2.5cm);
-        \node[red,below] at (2.6,0) {1};
-        \node[red,above] at (0.1,-2.5) {1};
+        \draw[thick,->,black] (-3,0)--(3,0) node[below] {$x$}; % x axis
+        \draw[thick,->,black] (0,-3)--(0,3) node[left] {$y$}; % y axis
+        \draw[black,thin] (0,0) circle (2.5cm);
+        \node[black,below] at (2.6,0) {1};
+        \node[black,above] at (0.1,-2.5) {1};
         %
         \draw[ultra thick,cyan] (0,0) -- (0,0 |- \theangle:2.5cm); % UpOn x axis
         \draw[ultra thick,orange] (0,0) -- (\theangle:2.5cm |- 0,0); % UpOn y axis
@@ -39,11 +39,7 @@
     \end{tikzpicture}
     %
     \stepcounter{angle}
-    \ifthenelse{\theangle<359}{
-    \newframe
-    }{
-\end{animateinline}
-}
+    \ifnum \theangle < 360 \newframe \else \end{animateinline} \fi
 }
 
 \end{document}
