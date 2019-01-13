@@ -1,0 +1,27 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+    % nodes
+    \node[punkt] (N) {种群数量};
+    \node[punkt, above=1.5cm of N] (I) {迁入};
+    \node[punkt, below=1.5cm of N] (E) {迁出};
+    \node[punkt, left=1.5cm of N]  (B) {出生};
+    \node[punkt, right=1.5cm of N] (D) {死亡};
+    \node[below=2.7cm of N] {$N_1 = N_0 + B - D + I - E$};
+    % pathes
+    \path (N) edge [pil, right] node[auto, align=center] {$- D$} (D);
+    \path (N) edge [pil, below] node[auto, align=center] {$- E$} (E);
+    \path (B) edge [pil, right] node[auto, align=center] {$+ B$} (N);
+    \path (I) edge [pil, below] node[auto, align=center] {$+ I$} (N);
+\end{tikzpicture}
+
+\end{document}
