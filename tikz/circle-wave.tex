@@ -1,0 +1,58 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% 2-pass is needed for animation
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\newcounter{angle}
+\setcounter{angle}{0}
+
+\begin{animateinline}[loop, poster = first, controls]{30}
+    %
+    \whiledo{\theangle<360}{
+    %
+    \begin{tikzpicture}
+        % Axis
+        \draw[thick,->,black] (-3,0)--(3,0) coordinate (A) node[below] {$x$}; % x axis
+        \draw[thick,->,black] (0,-3)--(0,3) node[left] {$y$}; % y axis
+        \draw[black,thin] (0,0) circle (2.5cm);
+        %
+        \draw[ultra thick, cyan] (\theangle:2.5cm) -- (\theangle:2.5cm |- 0,0); % vertical line
+        %
+        \draw[ultra thick,red,->,rotate=\theangle] (0,0) -- (2.5,0) coordinate (B);
+        \begin{scope}
+            \begin{axis}[
+                    thick,
+                    y=2.5cm,
+                    axis lines=center,
+                    xmin=0, xmax=720,
+                    ymin=-1, ymax=1,
+                    anchor=origin, at=(A),
+                    xshift=3ex,
+                    enlarge y limits,
+                    samples=99,
+                    xtick={0,360,720},
+                    ytick={-1,1},
+                    xticklabels={,,},
+                ]
+                \addplot[domain=0:720,ultra thick,no markers,cyan] {sin(-(x+360-\theangle))};
+                \coordinate (C) at (\theangle:2.5cm);
+                \coordinate[above=2.5cm of C] (D); % In this axis, left-bottom is (0,0)
+                \coordinate (E) at (0,2.5cm |- D); %
+            \end{axis}
+            \draw[densely dashed, cyan, thick] (B) -- (E);
+        \end{scope}
+    \end{tikzpicture}
+    %
+    \stepcounter{angle}
+    \ifnum \theangle < 360 \newframe \else \end{animateinline} \fi
+}
+
+\end{document}

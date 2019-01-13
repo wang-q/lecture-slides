@@ -29,8 +29,8 @@
         \draw[ultra thick,cyan] (0,0) -- (0,0 |- \theangle:2.5cm); % UpOn x axis
         \draw[ultra thick,orange] (0,0) -- (\theangle:2.5cm |- 0,0); % UpOn y axis
         %
-        \draw[densely dotted,orange] (\theangle:2.5cm) -- (\theangle:2.5cm |- 0,0); % vertical line
-        \draw[densely dotted,cyan] (\theangle:2.5cm) -- (0,0 |- \theangle:2.5cm); % horizontal line
+        \draw[densely dotted,cyan] (\theangle:2.5cm) -- (\theangle:2.5cm |- 0,0); % vertical line
+        \draw[densely dotted,orange] (\theangle:2.5cm) -- (0,0 |- \theangle:2.5cm); % horizontal line
         \draw[ultra thick,red,->,rotate=\theangle] (0,0) -- (2.5,0);
         \node[red,orange,right] at (0,-3.5)
         {\footnotesize$\cos(\theangle^{\mathrm{o}}) = \pgfmathcos{\theangle}\pgfmathresult$};
