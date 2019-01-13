@@ -445,153 +445,30 @@ context.
 ---
 
 \begin{figure}
-
     \centering
-
-    \begin{tikzpicture}
-        \begin{axis}[
-            grid=major,
-            xmin=-2,
-            xmax=2,
-            ymax=4,
-            ymin=0,
-            axis x line=bottom,
-            axis y line=middle,
-        ]
-            \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-2:1.5,
-            ]{(2^(x) - 1 ) / x } node[above,pos=1] {R=2};
-            \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-2:1.5,
-            ]{(3^(x) - 1 ) / x } node[above,pos=1] {R=3};
-            \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-2:1.2,
-            ]{(4^(x) - 1 ) / x } node[above,pos=1] {R=4};
-        \end{axis}
-    \end{tikzpicture}
-
+    \includegraphics[page=1]{../tikz/ExponentialDerivative.pdf}
     \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2 \rightarrow 4$}
 \end{figure}
 
 ---
 
 \begin{figure}
-
     \centering
-
-    \begin{tikzpicture}
-        \begin{axis}[
-            grid=major,
-            xmin=-1,
-            xmax=1,
-            ymax=1.6,
-            ymin=0.6,
-            axis x line=bottom,
-            axis y line=middle,
-        ]
-            \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-1:0.6,
-            ]{(2.6^(x) - 1 ) / x } node[right,pos=1] {R=2.6};
-            \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-1:0.6,
-            ]{(2.7^(x) - 1 ) / x } node[right,pos=1] {R=2.7};
-            \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-1:0.6,
-            ]{(2.8^(x) - 1 ) / x } node[right,pos=1] {R=2.8};
-            \addplot[
-                color=TolDarkGreen,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-1:0.6,
-            ]{(2.9^(x) - 1 ) / x } node[right,pos=1] {R=2.9};
-        \end{axis}
-    \end{tikzpicture}
-
+    \includegraphics[page=2]{../tikz/ExponentialDerivative.pdf}
     \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2.6 \rightarrow 2.9$}
 \end{figure}
 
 ---
 
 \begin{figure}
-
     \centering
-    \pgfplotsset{xticklabel style={
-                         /pgf/number format/fixed,
-                         /pgf/number format/precision=5
-                 },
-                 scaled x ticks=false}
-    \begin{tikzpicture}
-        \begin{axis}[
-            grid=major,
-            xmin=0,
-            xmax=0.08,
-            ymax=1.04,
-            ymin=0.98,
-            axis x line=bottom,
-            axis y line=left,
-        ]
-            \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=0.005:0.06,
-            ]{(2.70^(x) - 1 ) / x } node[right,pos=1] {R=2.70};
-            \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=0.005:0.06,
-            ]{(2.71^(x) - 1 ) / x } node[right,pos=1] {R=2.71};
-            \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=0.005:0.06,
-            ]{(2.72^(x) - 1 ) / x } node[right,pos=1] {R=2.72};
-            \addplot[
-                color=TolDarkGreen,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=0.005:0.06,
-            ]{(2.73^(x) - 1 ) / x } node[right,pos=1] {R=2.73};
-        \end{axis}
-    \end{tikzpicture}
-
+    \includegraphics[page=3]{../tikz/ExponentialDerivative.pdf}
     \caption{$\lim_{h\to0} \frac{R^h - 1}{h}$, $R = 2.70 \rightarrow 2.73$}
 \end{figure}
 
-#  剩下的两个
+# 剩下的两个
 
-##  第三种定义
+## 第三种定义
 
 \begin{equation*}
      \text{e} = \sum_{n=0}^\infty {1 \over n!} = {1 \over 0!} + {1 \over 1!} + {1 \over 2!} + {1 \over 3!} + {1 \over 4!} + \cdots
@@ -609,7 +486,7 @@ $\text{e}^x$ 的泰勒展式, 令 $x = 1$
 
 }
 
-##  第四种定义
+## 第四种定义
 
 定义 $\text{e}$ 为唯一的正数 $x$, 使得
 \begin{equation*}

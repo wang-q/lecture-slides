@@ -1,0 +1,136 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+% R 2 -- 4
+\begin{tikzpicture}
+    \begin{axis}[
+            grid=major,
+            xmin=-2,
+            xmax=2,
+            ymax=4,
+            ymin=0,
+            axis x line=bottom,
+            axis y line=middle,
+        ]
+        \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-2:1.5,
+            ]{(2^(x) - 1 ) / x } node[above,pos=1] {R=2};
+        \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-2:1.5,
+            ]{(3^(x) - 1 ) / x } node[above,pos=1] {R=3};
+        \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-2:1.2,
+            ]{(4^(x) - 1 ) / x } node[above,pos=1] {R=4};
+    \end{axis}
+\end{tikzpicture}
+
+% R 2.6 -- 2.9
+\begin{tikzpicture}
+    \begin{axis}[
+            grid=major,
+            xmin=-1,
+            xmax=1,
+            ymax=1.6,
+            ymin=0.6,
+            axis x line=bottom,
+            axis y line=middle,
+        ]
+        \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.6^(x) - 1 ) / x } node[right,pos=1] {R=2.6};
+        \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.7^(x) - 1 ) / x } node[right,pos=1] {R=2.7};
+        \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.8^(x) - 1 ) / x } node[right,pos=1] {R=2.8};
+        \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=-1:0.6,
+            ]{(2.9^(x) - 1 ) / x } node[right,pos=1] {R=2.9};
+    \end{axis}
+\end{tikzpicture}
+
+% R 2.70 -- 2.73
+\begin{tikzpicture}
+    \pgfplotsset{xticklabel style={
+                    /pgf/number format/fixed,
+                    /pgf/number format/precision=5
+                },
+            scaled x ticks=false}
+    \begin{axis}[
+            grid=major,
+            xmin=0,
+            xmax=0.08,
+            ymax=1.04,
+            ymin=0.98,
+            axis x line=bottom,
+            axis y line=left,
+        ]
+        \addplot[
+                color=TolDarkBlue,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.062,
+            ]{(2.70^(x) - 1 ) / x } node[right,pos=1] {R=2.70};
+        \addplot[
+                color=TolDarkBrown,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.062,
+            ]{(2.71^(x) - 1 ) / x } node[right,pos=1] {R=2.71};
+        \addplot[
+                color=TolDarkPurple,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.062,
+            ]{(2.72^(x) - 1 ) / x } node[right,pos=1] {R=2.72};
+        \addplot[
+                color=TolDarkGreen,
+                ultra thick,
+                mark=none,
+                samples=37,
+                domain=0.005:0.062,
+            ]{(2.73^(x) - 1 ) / x } node[right,pos=1] {R=2.73};
+    \end{axis}
+\end{tikzpicture}
+
+\end{document}
