@@ -1,0 +1,27 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+    %nodes
+    \node[punkt, text width=6em, align=center] (0) {黑麦\\(2n=14)};
+    \node[punkt, text width=6em, align=center, right=1.5cm of 0] (1) {小麦\\(6n=42)};
+
+    \path (0) edge [pil, -, right] node[invisible] (0x1) {} (1);
+
+    %nodes
+    \node[punkt, text width=6em, align=center, below=1.5cm of 0x1] (2) {杂种\\(4n=7+21)};
+    \node[punkt, text width=6em, align=center, below=1cm of 2] (3) {小黑麦\\(8n=56)};
+
+    \path (0x1) edge [pil, below] (2);
+    \path (2) edge [pil, below] node[auto, align=center] {染色体加倍} (3);
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,37 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm, auto]
+    %nodes
+    \node[punkt, text width=6em, align=center] (0) {乌拉尔图小麦\\(14)};
+    \node[punkt, text width=8em, align=center, right=1.5cm of 0] (1) {拟斯卑尔脱山羊草\\(14)};
+
+    \path
+    (0) edge [pil, -, right] node[invisible] (0x1) {} (1);
+
+    %nodes
+    \node[punkt, text width=6em, align=center, below=1.5cm of 0x1] (2) {野生二粒小麦\\(28)};
+    \node[punkt, text width=6em, align=center, below=.8cm of 2] (3) {栽培二粒小麦\\(28)};
+    \node[punkt, text width=6em, align=center, right=1.5cm of 3] (4) {粗山羊草\\(14)};
+
+    \path
+    (3) edge [pil, -, right] node[invisible] (3x4) {} (4);
+
+    %nodes
+    \node[punkt, text width=6em, align=center, below=1.5cm of 3x4] (5) {小麦\\(42)};
+
+
+    \path (0x1) edge [pil, below] node[auto, align=center] {\\ \\染色体加倍} (2);
+    \path (2) edge [pil, below] (3);
+    \path (3x4) edge [pil, below] node[auto, align=center] {\\ \\染色体加倍} (5);
+\end{tikzpicture}
+
+\end{document}
