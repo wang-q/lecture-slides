@@ -1,0 +1,72 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: animate: {options: [-alpha, remove]}
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+% https://gist.github.com/seungwonpark/b10d86dd27920bba4b33d41e81855c47
+\foreach \angle in {0,6,...,360}{
+        \begin{tikzpicture}
+            \draw[white] (-4,-1.6) rectangle (6.5,1); % frame to keep enough width
+            \node at (1.5,8.5) {\fbox{\parbox{6cm}{
+                                    \centering
+                                    $ \displaystyle f(x) = \frac{4}{\pi} \sum_{2\nmid n}^{\infty}
+                                    \frac{1}{n}\sin\left(\frac{n\pi x}{L}\right) $
+                                }}};
+            \begin{scope}
+                % wave
+                \draw plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)+1/5*sin(5*\x)+1/7*sin(7*\x)});
+                % epicycles
+                \draw (-2,0) circle [radius=1];
+                \draw (-2,0) -- +(\angle:1);
+                \draw (-2,0) +(\angle:1) circle [radius=1/3];
+                \draw (-2,0) +($ (\angle:1) + (3*\angle:1/3) $) circle [radius=1/5];
+                \draw (-2,0) +($ (\angle:1) + (3*\angle:1/3) + (5*\angle:1/5) $) circle [radius=1/7];
+                % radiuses
+                \filldraw
+                (-2,0) +(\angle:1) circle (1pt) --
+                +($ (\angle:1) + (3*\angle:1/3)  $) circle (1pt) --
+                +($ (\angle:1) + (3*\angle:1/3) + (5*\angle:1/5) $) circle (1pt) --
+                +($ (\angle:1) + (3*\angle:1/3) + (5*\angle:1/5) + (7*\angle:1/7) $) circle (1pt) --
+                (pi/180*\angle-pi/180*\angle,{sin(\angle)+1/3*sin(3*\angle)+1/5*sin(5*\angle)+1/7*sin(7*\angle)}) circle (1pt);
+                \node at (-2,-1.3) {\footnotesize $ (n=1,3,5,7) $};
+            \end{scope}
+
+            \begin{scope}[shift={(0,3)}]
+                % wave
+                \draw plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)});
+                % epicycles
+                \draw (-2,0) circle [radius=1];
+                \draw (-2,0) -- +(\angle:1);
+                \draw (-2,0) +(\angle:1) circle [radius=1/3];
+                % radiuses
+                \filldraw
+                (-2,0) +(\angle:1) circle (1pt) --
+                +($ (\angle:1) + (3*\angle:1/3)  $) circle (1pt) --
+                (pi/180*\angle-pi/180*\angle,{sin(\angle)+1/3*sin(3*\angle)}) circle (1pt);
+                \node at (-2,-1.3) {\footnotesize $ (n=1,3) $};
+            \end{scope}
+
+            \begin{scope}[shift={(0,6)}]
+                % wave
+                \draw plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)});
+                % epicycles
+                \draw (-2,0) circle [radius=1];
+                \draw (-2,0) -- +(\angle:1);
+                % radiuses
+                \filldraw
+                (-2,0) +(\angle:1) circle (1pt) --
+                (pi/180*\angle-pi/180*\angle,{sin(\angle)}) circle (1pt);
+                \node at (-2,-1.3) {\footnotesize $ (n=1) $};
+            \end{scope}
+
+        \end{tikzpicture}
+    }
+
+\end{document}
