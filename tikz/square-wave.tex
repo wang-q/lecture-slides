@@ -11,59 +11,130 @@
 \begin{document}
 
 % https://gist.github.com/seungwonpark/b10d86dd27920bba4b33d41e81855c47
-\foreach \angle in {0,6,...,360}{
+% https://en.wikipedia.org/wiki/File:Fourier_series_square_wave_circles_animation.gif
+
+\foreach \angle in {0,4,...,360}{
         \begin{tikzpicture}
-            \draw[white] (-4,-1.6) rectangle (6.5,1); % frame to keep enough width
-            \node at (1.5,8.5) {\fbox{\parbox{6cm}{
+            \node at (0,2.5) {\fbox{\parbox{6cm}{
                                     \centering
                                     $ \displaystyle f(x) = \frac{4}{\pi} \sum_{2\nmid n}^{\infty}
-                                    \frac{1}{n}\sin\left(\frac{n\pi x}{L}\right) $
+                                    \frac{1}{n}\sin\left(\frac{n\pi x}{\mathrm{L}}\right) $
                                 }}};
-            \begin{scope}
+
+            \begin{scope}[shift={(0,0)}]
                 % wave
-                \draw plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)+1/5*sin(5*\x)+1/7*sin(7*\x)});
+                \draw[TolDarkBlue] plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)});
+
                 % epicycles
-                \draw (-2,0) circle [radius=1];
-                \draw (-2,0) -- +(\angle:1);
-                \draw (-2,0) +(\angle:1) circle [radius=1/3];
-                \draw (-2,0) +($ (\angle:1) + (3*\angle:1/3) $) circle [radius=1/5];
-                \draw (-2,0) +($ (\angle:1) + (3*\angle:1/3) + (5*\angle:1/5) $) circle [radius=1/7];
-                % radiuses
+                \coordinate (O1) at (-2,0);
+                \draw[TolDarkBlue] (O1) circle [radius=1];
+                \draw[TolDarkBlue] (O1) -- +(\angle:1) coordinate (E1);
+
+                \begin{scope}[shift={(-2.5,0)}]
+                    \coordinate (O) at (-2,0);
+                    \draw[TolDarkBlue] (O) circle [radius=1];
+                    \draw[TolDarkBlue] (O) -- +(\angle:1);
+                \end{scope}
+
+                % link
                 \filldraw
-                (-2,0) +(\angle:1) circle (1pt) --
-                +($ (\angle:1) + (3*\angle:1/3)  $) circle (1pt) --
-                +($ (\angle:1) + (3*\angle:1/3) + (5*\angle:1/5) $) circle (1pt) --
-                +($ (\angle:1) + (3*\angle:1/3) + (5*\angle:1/5) + (7*\angle:1/7) $) circle (1pt) --
-                (pi/180*\angle-pi/180*\angle,{sin(\angle)+1/3*sin(3*\angle)+1/5*sin(5*\angle)+1/7*sin(7*\angle)}) circle (1pt);
-                \node at (-2,-1.3) {\footnotesize $ (n=1,3,5,7) $};
+                (E1) circle (1pt) --
+                (0,{sin(\angle)}) circle (1pt);
+
+                \node at (-2,-1.3) {\footnotesize $ (n=1) $};
             \end{scope}
 
-            \begin{scope}[shift={(0,3)}]
+            \begin{scope}[shift={(0,-3)}]
                 % wave
-                \draw plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)});
+                \draw[TolDarkBrown] plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)});
+
                 % epicycles
-                \draw (-2,0) circle [radius=1];
-                \draw (-2,0) -- +(\angle:1);
-                \draw (-2,0) +(\angle:1) circle [radius=1/3];
-                % radiuses
+                \coordinate (O1) at (-2,0);
+                \draw[TolDarkBlue] (O1) circle [radius=1];
+                \draw[TolDarkBlue] (O1) -- +(\angle:1) coordinate (E1);
+
+                \coordinate (O3) at (E1);
+                \draw[TolDarkBrown] (O3) circle [radius=1/3];
+                \draw[TolDarkBrown] (O3) -- +(3*\angle:1/3) coordinate (E3);
+
+                \begin{scope}[shift={(-2.5,0)}]
+                    \coordinate (O) at (-2,0);
+                    \draw[TolDarkBrown] (O) circle [radius=1/3];
+                    \draw[TolDarkBrown] (O) -- +(3*\angle:1/3);
+                \end{scope}
+
+                % link
                 \filldraw
-                (-2,0) +(\angle:1) circle (1pt) --
-                +($ (\angle:1) + (3*\angle:1/3)  $) circle (1pt) --
-                (pi/180*\angle-pi/180*\angle,{sin(\angle)+1/3*sin(3*\angle)}) circle (1pt);
+                (E3) circle (1pt) --
+                (0,{sin(\angle)+1/3*sin(3*\angle)}) circle (1pt);
+
                 \node at (-2,-1.3) {\footnotesize $ (n=1,3) $};
             \end{scope}
 
-            \begin{scope}[shift={(0,6)}]
+            \begin{scope}[shift={(0,-6)}]
                 % wave
-                \draw plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)});
+                \draw[TolDarkGreen] plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)+1/5*sin(5*\x)});
+
                 % epicycles
-                \draw (-2,0) circle [radius=1];
-                \draw (-2,0) -- +(\angle:1);
-                % radiuses
+                \coordinate (O1) at (-2,0);
+                \draw[TolDarkBlue] (O1) circle [radius=1];
+                \draw[TolDarkBlue] (O1) -- +(\angle:1) coordinate (E1);
+
+                \coordinate (O3) at (E1);
+                \draw[TolDarkBrown] (O3) circle [radius=1/3];
+                \draw[TolDarkBrown] (O3) -- +(3*\angle:1/3) coordinate (E3);
+
+                \coordinate (O5) at (E3);
+                \draw[TolDarkGreen] (O5) circle [radius=1/5];
+                \draw[TolDarkGreen] (O5) -- +(5*\angle:1/5) coordinate (E5);
+
+                \begin{scope}[shift={(-2.5,0)}]
+                    \coordinate (O) at (-2,0);
+                    \draw[TolDarkGreen] (O) circle [radius=1/5];
+                    \draw[TolDarkGreen] (O) -- +(5*\angle:1/5);
+                \end{scope}
+
+                % link
                 \filldraw
-                (-2,0) +(\angle:1) circle (1pt) --
-                (pi/180*\angle-pi/180*\angle,{sin(\angle)}) circle (1pt);
-                \node at (-2,-1.3) {\footnotesize $ (n=1) $};
+                (E5) circle (1pt) --
+                (0,{sin(\angle)+1/3*sin(3*\angle)+1/5*sin(5*\angle)}) circle (1pt);
+
+                \node at (-2,-1.3) {\footnotesize $ (n=1,3,5) $};
+            \end{scope}
+
+            \begin{scope}[shift={(0,-9)}]
+                % wave
+                \draw[TolDarkPink] plot[smooth,samples=100,domain=\angle-360:\angle] (pi/180*\angle-pi/180*\x,{sin(\x)+1/3*sin(3*\x)+1/5*sin(5*\x)+1/7*sin(7*\x)});
+
+                % epicycles
+                \coordinate (O1) at (-2,0);
+                \draw[TolDarkBlue] (O1) circle [radius=1];
+                \draw[TolDarkBlue] (O1) -- +(\angle:1) coordinate (E1);
+
+                \coordinate (O3) at (E1);
+                \draw[TolDarkBrown] (O3) circle [radius=1/3];
+                \draw[TolDarkBrown] (O3) -- +(3*\angle:1/3) coordinate (E3);
+
+                \coordinate (O5) at (E3);
+                \draw[TolDarkGreen] (O5) circle [radius=1/5];
+                \draw[TolDarkGreen] (O5) -- +(5*\angle:1/5) coordinate (E5);
+
+                \coordinate (O7) at (E5);
+                \draw[TolDarkPink] (O7) circle [radius=1/7];
+                \draw[TolDarkPink] (O7) -- +(7*\angle:1/7) coordinate (E7);
+
+                \begin{scope}[shift={(-2.5,0)}]
+                    \coordinate (O) at (-2,0);
+                    \draw[TolDarkPink] (O) circle [radius=1/7];
+                    \draw[TolDarkPink] (O) -- +(7*\angle:1/7);
+                \end{scope}
+
+                % link
+                \filldraw
+                (E7) circle (1pt) --
+                (0,{sin(\angle)+1/3*sin(3*\angle)+1/5*sin(5*\angle)+1/7*sin(7*\angle)}) circle (1pt);
+
+                \node at (-2,-1.3) {\footnotesize $ (n=1,3,5,7) $};
             \end{scope}
 
         \end{tikzpicture}
