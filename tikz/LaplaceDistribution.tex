@@ -24,28 +24,28 @@
             axis y line=left,
         ]
         \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-10:10,
-            ]{laplacepdf(x, 0, 1)};
+            color=TolDarkBlue,
+            ultra thick,
+            mark=none,
+            samples=37,
+            domain=-10:10,
+        ]{laplacepdf(x, 0, 1)};
         \addlegendentry{$\mu=0, b=1$};
         \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-10:10,
-            ]{laplacepdf(x, 0, 2)};
+            color=TolDarkBrown,
+            ultra thick,
+            mark=none,
+            samples=37,
+            domain=-10:10,
+        ]{laplacepdf(x, 0, 2)};
         \addlegendentry{$\mu=0, b=2$};
         \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=37,
-                domain=-10:10,
-            ]{laplacepdf(x, 0, 4)};
+            color=TolDarkPurple,
+            ultra thick,
+            mark=none,
+            samples=37,
+            domain=-10:10,
+        ]{laplacepdf(x, 0, 4)};
         \addlegendentry{$\mu=0, b=2$};
     \end{axis}
 \end{tikzpicture}

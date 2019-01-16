@@ -24,36 +24,36 @@
             axis y line=left,
         ]
         \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, 0, 1)};
+            color=TolDarkBlue,
+            ultra thick,
+            mark=none,
+            samples=101,
+            domain=-5:5,
+        ]{gausspdf(x, 0, 1)};
         \addlegendentry{$\mu=0, \sigma=1$};
         \addplot[
-                color=TolDarkBrown,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, 0, 0.5)};
+            color=TolDarkBrown,
+            ultra thick,
+            mark=none,
+            samples=101,
+            domain=-5:5,
+        ]{gausspdf(x, 0, 0.5)};
         \addlegendentry{$\mu=0, \sigma=0.5$};
         \addplot[
-                color=TolDarkPurple,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, 0, 2)};
+            color=TolDarkPurple,
+            ultra thick,
+            mark=none,
+            samples=101,
+            domain=-5:5,
+        ]{gausspdf(x, 0, 2)};
         \addlegendentry{$\mu=0, \sigma=2$};
         \addplot[
-                color=TolDarkGreen,
-                ultra thick,
-                mark=none,
-                samples=101,
-                domain=-5:5,
-            ]{gausspdf(x, -2, 0.8)};
+            color=TolDarkGreen,
+            ultra thick,
+            mark=none,
+            samples=101,
+            domain=-5:5,
+        ]{gausspdf(x, -2, 0.8)};
         \addlegendentry{$\mu=-2, \sigma=0.8$};
     \end{axis}
 \end{tikzpicture}

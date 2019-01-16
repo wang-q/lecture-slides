@@ -21,19 +21,19 @@
             axis y line=left,
         ]
         \addplot[
-                color=TolDarkBlue,
-                ultra thick,
-                mark=none,
-                samples=100,
-                domain=0:5.9,
-            ]{exp(x)} node[above,pos=1] {$r=1$};
+            color=TolDarkBlue,
+            ultra thick,
+            mark=none,
+            samples=100,
+            domain=0:5.9,
+        ]{exp(x)} node[above,pos=1] {$r=1$};
         \addplot[
-                color=TolDarkRed,
-                ultra thick,
-                mark=none,
-                samples=100,
-                domain=0:12.8,
-            ]{(300 * exp(x))/(300 + (exp(x) - 1))} node[above,pos=1] {$r=1, K=300$};
+            color=TolDarkRed,
+            ultra thick,
+            mark=none,
+            samples=100,
+            domain=0:12.8,
+        ]{(300 * exp(x))/(300 + (exp(x) - 1))} node[above,pos=1] {$r=1, K=300$};
     \end{axis}
 \end{tikzpicture}
 
