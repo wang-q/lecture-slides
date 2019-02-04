@@ -1,11 +1,10 @@
 % !TEX TS-program = arara
 % arara: xelatex
-% 2-pass is needed for animation
-% arara: xelatex
+% arara: animate: {delay: 5, options: [-alpha, remove]}
 % arara: indent: { overwrite: yes }
-% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+% arara: clean: {extensions: [aux, bak, bbl, bcf, blg, idx, ilg, ind, ist, log, nlo, nls, out, run.xml, synctex.gz,]}
 
-\documentclass{standalone}
+\documentclass[tikz]{standalone}
 
 \input{preamble.tex}
 
@@ -14,21 +13,18 @@
 \newcounter{angle}
 \setcounter{angle}{0}
 
-\begin{animateinline}[loop, poster = first, controls]{30}
-    %
-    \whiledo{\theangle<360}{
-    %
+\foreach \angle in {0,1,...,359}{
     \begin{tikzpicture}
         % Axis
         \draw[thick,->,black] (-3,0)--(3,0) coordinate (A) node[below] {$x$}; % x axis
         \draw[thick,->,black] (0,-3)--(0,3) node[left] {$y$}; % y axis
         \draw[black,thin] (0,0) circle (2.5cm);
         %
-        \draw[ultra thick, cyan] (\theangle:2.5cm) -- (\theangle:2.5cm |- 0,0); % vertical line
+        \draw[ultra thick, cyan] (\angle:2.5cm) -- (\angle:2.5cm |- 0,0); % vertical line
         %
-        \draw[ultra thick,red,->,rotate=\theangle] (0,0) -- (2.5,0) coordinate (B);
+        \draw[ultra thick,red,->,rotate=\angle] (0,0) -- (2.5,0) coordinate (B);
         \node[red,cyan,right] at (0,-3.1)
-        {\footnotesize$\sin(\theangle^{\mathrm{o}}) = \pgfmathsin{\theangle}\pgfmathresult$};
+        {\footnotesize$\sin(\angle^{\mathrm{o}}) = \pgfmathsin{\angle}\pgfmathresult$};
         \begin{scope}
             \begin{axis}[
                     thick,
@@ -44,13 +40,11 @@
                     xtick={0,90,...,360},
                     ytick={-1,1},
                 ]
-                \addplot[domain=0:\theangle+0.01,ultra thick,no markers,cyan] {sin(x)} coordinate (C);
+                \addplot[domain=0:\angle+0.01,ultra thick,no markers,cyan] {sin(x)} coordinate (C);
             \end{axis}
             \draw [densely dashed,cyan, thick] (B) -- (C);
         \end{scope}
     \end{tikzpicture}
-    %
-    \stepcounter{angle}
-    \ifnum \theangle < 360 \newframe \else \end{animateinline} \fi
 }
+
 \end{document}

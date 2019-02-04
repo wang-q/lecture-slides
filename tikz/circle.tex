@@ -1,23 +1,16 @@
 % !TEX TS-program = arara
 % arara: xelatex
-% 2-pass is needed for animation
-% arara: xelatex
+% arara: animate: {delay: 5, options: [-alpha, remove]}
 % arara: indent: { overwrite: yes }
-% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+% arara: clean: {extensions: [aux, bak, bbl, bcf, blg, idx, ilg, ind, ist, log, nlo, nls, out, run.xml, synctex.gz,]}
 
-\documentclass[export]{standalone}
+\documentclass[tikz]{standalone}
 
 \input{preamble.tex}
 
 \begin{document}
 
-\newcounter{angle}
-\setcounter{angle}{0}
-
-\begin{animateinline}[loop, poster = first, controls]{30}
-    %
-    \whiledo{\theangle<360}{
-    %
+\foreach \angle in {0,1,...,359}{
     \begin{tikzpicture}
         % Axis
         \draw[thick,->,black] (-3,0)--(3,0) node[below] {$x$}; % x axis
@@ -26,20 +19,17 @@
         \node[black,below] at (2.6,0) {1};
         \node[black,above] at (0.1,-2.5) {1};
         %
-        \draw[ultra thick,cyan] (0,0) -- (0,0 |- \theangle:2.5cm); % UpOn x axis
-        \draw[ultra thick,orange] (0,0) -- (\theangle:2.5cm |- 0,0); % UpOn y axis
+        \draw[ultra thick,cyan] (0,0) -- (0,0 |- \angle:2.5cm); % UpOn x axis
+        \draw[ultra thick,orange] (0,0) -- (\angle:2.5cm |- 0,0); % UpOn y axis
         %
-        \draw[densely dotted,cyan] (\theangle:2.5cm) -- (\theangle:2.5cm |- 0,0); % vertical line
-        \draw[densely dotted,orange] (\theangle:2.5cm) -- (0,0 |- \theangle:2.5cm); % horizontal line
-        \draw[ultra thick,red,->,rotate=\theangle] (0,0) -- (2.5,0);
+        \draw[densely dotted,cyan] (\angle:2.5cm) -- (\angle:2.5cm |- 0,0); % vertical line
+        \draw[densely dotted,orange] (\angle:2.5cm) -- (0,0 |- \angle:2.5cm); % horizontal line
+        \draw[ultra thick,red,->,rotate=\angle] (0,0) -- (2.5,0);
         \node[red,orange,right] at (0,-3.5)
-        {\footnotesize$\cos(\theangle^{\mathrm{o}}) = \pgfmathcos{\theangle}\pgfmathresult$};
+        {\footnotesize$\cos(\angle^{\mathrm{o}}) = \pgfmathcos{\angle}\pgfmathresult$};
         \node[red,cyan,right] at (0,-3.1)
-        {\footnotesize$\sin(\theangle^{\mathrm{o}}) = \pgfmathsin{\theangle}\pgfmathresult$};
+        {\footnotesize$\sin(\angle^{\mathrm{o}}) = \pgfmathsin{\angle}\pgfmathresult$};
     \end{tikzpicture}
-    %
-    \stepcounter{angle}
-    \ifnum \theangle < 360 \newframe \else \end{animateinline} \fi
 }
 
 \end{document}
