@@ -818,15 +818,15 @@ ANOVA 方差分析
 
 ## 非正态群体
 
-|                  目标                  |             方法             |
+|                  目标                  |            方法             |
 |:-------------------------------------:|:---------------------------:|
-|                描述数据                 | Median, interquartile range |
+|                描述数据                | Median, interquartile range |
 |             一组数据与假定值             |        Wilcoxon test        |
-|                两组数据                 |     Mann--Whitney test      |
+|                两组数据                |     Mann--Whitney test      |
 |              成对的两组数据              |        Wilcoxon test        |
 |    \textcolor{gray}{三组或更多组数据}    |    Kruskal--Wallis test     |
-|  \textcolor{gray}{成对的三组或更多组数据}  |        Friedman test        |
-|  \textcolor{gray}{两个变量间的量化关系}   |    Spearman correlation     |
+| \textcolor{gray}{成对的三组或更多组数据}  |        Friedman test        |
+|           两个变量间的量化关系            |    Spearman correlation     |
 | \textcolor{gray}{从其它测定变量得到预测值} |  Nonparametric regression   |
 
 \note{
