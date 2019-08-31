@@ -45,7 +45,7 @@ Markdown + Latex
 
 ### Required
 
-* TeXLive 2016: `brew cask install mactex` or download from
+* TeXLive 2019: `brew cask install mactex` or download from
   [TUG](https://tug.org/mactex/mactex-download.html)
     * Update TeX packages
         * `sudo tlmgr update --self`
