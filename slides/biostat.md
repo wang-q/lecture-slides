@@ -509,7 +509,7 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 ---
 
 \begin{figure}
-    \centering  
+    \centering
     \includegraphics{../tikz/LaplaceDistribution.pdf}
     \caption{拉普拉斯分布, $\mu$ 是位置参数, $b$ 是尺度参数}
 \end{figure}

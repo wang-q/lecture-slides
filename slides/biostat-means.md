@@ -65,3 +65,11 @@ toc: false
 \begin{equation*}
     SD= \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}
 \end{equation*}
+
+## 毕达哥拉斯平均数
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\columnwidth]{biostat.images/Pythagorean-means.pdf}
+    \caption{$H_n \le G_n \le A_n \le Q_n$}
+\end{figure}
