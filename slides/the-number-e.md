@@ -207,9 +207,9 @@ rm -fr temp
 
 \note{
 
-上的的周期是一年. 现在来观察一年内的情况.
+上面的周期是一年. 现在来观察一年内的情况.
 
-利息学随着时间的推移, 慢慢地出现的.
+利息是随着时间的推移, 慢慢地出现的.
 
 }
 
@@ -390,7 +390,7 @@ Trillion 万亿
 
 UNDETERMINED
 
-http://www.snopes.com/quotes/einstein/interest.asp
+\url{http://www.snopes.com/quotes/einstein/interest.asp}
 
 }
 
@@ -543,6 +543,6 @@ Watterson's $\theta$, 3005 次, 世界上最难的一篇论文.
 
 《小王子》作者
 
-一个数学家的叹息 保罗·拉克哈特
+《一个数学家的叹息》 保罗·拉克哈特
 
 }
