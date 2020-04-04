@@ -17,4 +17,5 @@ gifsicle -O3 --colors 256 -b circle.gif
 
 find . -name "*.gif" |
     parallel -j 4 'gifsicle -O3 --colors 256 -b {}'
+
 ```
