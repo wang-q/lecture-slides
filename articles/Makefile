@@ -6,7 +6,7 @@
 	    --standalone \
 		-t latex \
 		--template article.template.tex \
-		--latex-engine xelatex \
+		--pdf-engine xelatex \
 		-V fontsize=12pt \
 		-o $(basename $@).tex
 	latexmk -xelatex $(basename $@)
@@ -38,7 +38,7 @@ texs  := $(patsubst %.md, %.tex, $(markdowns))
 clean:
 	latexmk -c
 	rm -rf $(texs)
-	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib *.nls *.nlo
+	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib *.nls *.nlo *.xdv
 
 .DEFAULT_GOAL := all
 
