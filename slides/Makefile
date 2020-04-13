@@ -1,4 +1,21 @@
 #----------------------------#
+# Windows and macOS
+#----------------------------#
+ifeq ($(OS),Windows_NT)
+RM = del /Q /F
+CP = copy /Y
+ifdef ComSpec
+SHELL := $(ComSpec)
+endif
+ifdef COMSPEC
+SHELL := $(COMSPEC)
+endif
+else
+RM = rm -rf
+CP = cp -f
+endif
+
+#----------------------------#
 # Defined individual targets
 #----------------------------#
 %.notes.pdf: %.md
@@ -66,14 +83,14 @@ slides_tex := $(patsubst %.md, %.slides.tex, $(markdowns))
 # clean up everything except pdfs
 clean:
 	latexmk -c
-	rm -rf $(slides_tex) $(notes_tex)
-	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib *.xdv
+	${RM} $(slides_tex) $(notes_tex)
+	${RM} *.nav *.snm *.vrb *.bbl *.run.xml *-blx.bib *.xdv
 
 # clean up everything including pdfs
 realclean:
 	latexmk -C
-	rm -rf $(slides_tex) $(notes_tex)
-	rm -rf *.nav *.snm *.vrb *.bbl *.run.xml
+	${RM} $(slides_tex) $(notes_tex)
+	${RM} *.nav *.snm *.vrb *.bbl *.run.xml
 
 .DEFAULT_GOAL := all
 
