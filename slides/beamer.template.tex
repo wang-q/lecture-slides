@@ -11,7 +11,7 @@
 % theme
 \usetheme[]{metropolis}
 
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath,amssymb}
 \usepackage{upgreek} % upright greek symbols
 
 % xetex
@@ -20,27 +20,34 @@
 
 % 中文字体
 \usepackage{xeCJK}
-    \setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Kaiti SC Regular}]{Hiragino Sans GB W3}
-    \xeCJKsetup{CJKecglue = {\hskip 0pt plus 0.08\baselineskip}, xCJKecglue = {false}}
-    \punctstyle{plain}
+\setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={STFangsong}]{Hiragino Sans GB W3}
+\xeCJKsetup{
+    CJKecglue = {\hskip 0pt plus 0.08\baselineskip},
+    xCJKecglue = {false},
+    PunctStyle = plain
+}
 
-% don't move this line above
-\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+%% don't move this line above
+%\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-    \usepackage{microtype}
-    \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-    }{}
+%% use microtype if available
+%\IfFileExists{microtype.sty}{%
+%    \usepackage{microtype}
+%    \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+%    }{}
 
-% https://tex.stackexchange.com/questions/272790/xecjk-breaks-non-chinese-characters
-\AtBeginDocument{%
-  \XeTeXcharclass`^^^^2026=0
-  \XeTeXcharclass`^^^^2019=0
-}
+%% https://tex.stackexchange.com/questions/272790/xecjk-breaks-non-chinese-characters
+%\AtBeginDocument{%
+%  \XeTeXcharclass`^^^^2026=0
+%  \XeTeXcharclass`^^^^2019=0
+%}
+
+\usepackage{hyperref}
+\usepackage{url}
+\urlstyle{same}  % don't use monospace font for urls
 
 % citations
 % http://tex.stackexchange.com/questions/202988/beamer-patching-footnotes-warning
@@ -92,9 +99,6 @@ $if(tables)$
 \makeatletter
 \def\fnum@table{\tablename~\thetable}
 \makeatother
-$endif$
-$if(url)$
-\usepackage{url}
 $endif$
 
 $if(graphics)$

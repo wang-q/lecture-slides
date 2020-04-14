@@ -34,7 +34,7 @@ endif
 		--no-landscape \
 		--frame true \
 		--nup 2x4 \
-		--a4paper \
+		--paper a4paper \
 		--scale 0.95 \
 		--suffix nup
 	mv $*.notes-nup.pdf $@

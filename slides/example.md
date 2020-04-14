@@ -107,19 +107,19 @@ toc: true
 
 * 基本内容[这本书](https://www.gitbook.com/book/gitbookio/markdown/details)讲得足够了, 正文仅十页.
 
-* Pandoc扩展部分[在此](http://pandoc.org/README.html#pandocs-markdown).
+* Pandoc 扩展部分[在此](http://pandoc.org/README.html#pandocs-markdown).
 
 ## 文字样式
 
 Regular 普通
 
-*italic* *楷体*[^note]
+*italic* *仿宋*[^note]
 
 **Bold** **加粗**
 
 ~~Strikethrough~~ ~~删除线~~
 
-[^note]: 中文用 *楷体* 来代替 *italic*, 但是水平线并不一致, 慎用
+[^note]: 中文用 *仿宋* 来代替 *italic*, 慎用
 
 ## Line blocks
 
@@ -194,14 +194,12 @@ Term 2 with *inline markup*
     + $90\,^{\circ}\text{C}$
     + 3.98°C
 
-* 引号
-    * \texttt{``} 和 \texttt{''} 会被转换成 ``双引号''
 
 ## 文字样式
 
 下面是\LaTeX 文字样式的例子\footnote{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}.
 
-* \textit{楷体} 
+* \textit{仿宋} 
     * `\textit{}`
 * \textbf{粗体} 
     * `\textbf{}`
@@ -212,7 +210,7 @@ Term 2 with *inline markup*
 
 注释中可以用latex的格式, 但不可以用markdown的.
 
-Some \textit{italic} texts.
+Some \textit{italic} or \textbf{bold} texts.
 
 Not *italic*.
 
@@ -222,7 +220,11 @@ Not **bold**.
 
 ---
 
-还有\textsuperscript{上标}\textsubscript{下标}, 以及\alert{强调}, 再加上脚注\footnote{中文使用楷体代替斜体}.
+还有 $^{superscript}_{subscript}$ , 以及\alert{强调}, 再加上脚注\footnote{上下标使用中文时有问题}.
+
+\tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/example.slides.pdf}
+
+\tiny\href{https://github.com/wang-q/lecture-slides/blob/master/slides/example.slides.pdf}{\url{pdf}}
 
 ## 更多文字样式
 
@@ -305,37 +307,27 @@ optional background color.
 
 \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
-
         \metroset{block=transparent}
-    
         \begin{block}{Default}
             Block content.
         \end{block}
-        
         \begin{alertblock}{Alert}
             Block content.
         \end{alertblock}
-        
         \begin{exampleblock}{Example}
             Block content.
         \end{exampleblock}
-
     \column{0.5\textwidth}
-
         \metroset{block=fill}
-        
         \begin{block}{Default}
             Block content.
         \end{block}
-        
         \begin{alertblock}{Alert}
             Block content.
         \end{alertblock}
-        
         \begin{exampleblock}{Example}
             Block content.
         \end{exampleblock}
-
 \end{columns}
 
 ## Math
@@ -347,7 +339,7 @@ optional background color.
 ## Quotes
 
 \begin{exampleblock}{}
-    {\large ``To be, or not to be: that is the question.''}
+    {\large "To be, or not to be: that is the question."}
     \vskip5mm
     \hspace*\fill{\small--- William Shakespeare, Hamlet}
 \end{exampleblock}
@@ -357,7 +349,7 @@ optional background color.
 \includegraphics{example.images/feynman_blackboard5.jpg}
 
 \begin{exampleblock}{}
-    {\large ``What I cannot create, I do not understand.''}
+    {\large "What I cannot create, I do not understand."}
     \vskip5mm
     \hspace*\fill{\small--- Richard Feynman}
 \end{exampleblock}
@@ -433,9 +425,9 @@ optional background color.
 
 ## 页面尺寸
 
-Beamer 中的设置的页面尺寸比较小, 为 ``128 mm $\times$ 96 mm''.
+Beamer 中的设置的页面尺寸比较小, 为 "128 mm $\times$ 96 mm".
 
-因此, 图片大小设置为 ``8 cm $\times$ 300 dpi'' 就比较适宜.
+因此, 图片大小设置为 "8 cm $\times$ 300 dpi" 就比较适宜.
 
 纵向尺寸:
 
@@ -459,15 +451,15 @@ Beamer 中的设置的页面尺寸比较小, 为 ``128 mm $\times$ 96 mm''.
     由 `pandoc` 自动生成, 默认的样式是 `pygments`. `行内代码`
 
 ```bash
-find . -type f -name "*.jpeg" \
-    | parallel \
-    convert -units PixelsPerInch -density 300 \
-    {.}.jpeg {.}.jpg
+find . -type f -name "*.jpeg" |
+    parallel \
+        convert -units PixelsPerInch -density 300 \
+            {.}.jpeg {.}.jpg
 ```
 
 \note{
 
-统一为300 dpi
+统一为 300 dpi
 
 }
 
@@ -478,9 +470,9 @@ find . -type f -name "*.jpeg" \
 可以为程序添加行号
 
 ```{.bash .numberLines}
-cd ~/Documents/Course/lecture-slides/slides/ch-25.images
-find . -type f -name "*.jpeg" -or -name "*.png" \
-    | parallel sh ../../resize.sh {}
+cd ~/Scripts/lecture-slides/slides/ch-25.images
+find . -type f -name "*.jpeg" -or -name "*.png" |
+    parallel sh ../../resize.sh {}
 ```
 
 ---
@@ -491,6 +483,7 @@ find . -type f -name "*.jpeg" -or -name "*.png" \
 mogrify -resize "x945" image11.jpg # Fill page
 
 mogrify -resize "x709" image11.jpg # Normal size
+
 ```
 
 ## 动画
