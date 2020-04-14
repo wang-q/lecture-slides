@@ -1,0 +1,21 @@
+% !TEX TS-program = arara
+% arara: xelatex
+% arara: indent: { overwrite: yes }
+% arara: clean: {extensions: [aux, idx, ilg, ind, log, bbl, bcf, ist, blg, run.xml, nlo, nls, out, synctex.gz]}
+
+\documentclass[tikz]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \shade[top color=gray!50,bottom color=gray!30] (0,0) circle (2);
+    \draw[black, line width=0.3mm] (0,0) circle (2);
+    \shade[top color=gray!30,bottom color=gray!50] (0,0) circle (0.8);
+    \draw[black, line width=0.3mm] (0,0) circle (0.8);
+    \node[auto] at (0,0) {主体};
+    \node[below=1] at (0,0) {环境};
+\end{tikzpicture}
+
+\end{document}
