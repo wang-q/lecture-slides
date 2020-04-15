@@ -14,15 +14,18 @@ library(tidyverse)
 library(lubridate)
 library(survival)
 library(survminer)
+library(randomNames)
 
 # set output options
-knitr::opts_chunk$set(fig.width = 4, fig.height = 3, dpi=300)
+knitr::opts_chunk$set(fig.width = 4, fig.height = 4, dpi=300)
 options(digits = 4)
 ```
 
 ```{bash compile, include=FALSE}
 # Rscript -e "library(knitr); knitr::knit('biostat-survival.rmd');"
 # make biostat-survival
+
+# Rscript -e "library(randomNames); randomNames(10, ethnicity=5, which.names='first', sample.with.replacement=F);"
 
 ```
 
@@ -43,15 +46,11 @@ options(digits = 4)
 
 ## Basic Kaplan--Meier plot
 
-Let's start by creating some basic data. We have 10 patients "at risk", with a follow-up of 10
-months. Every participant gets an identical treatment.
-
-
 ```{r scenario1, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 eventtype <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
-patientID <- c("John", "Jess", "Ann", "Mary", "Frank", "Steven", "Andy", "Elizabeth", "Joe", "Kate")
+patientID <- c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", "Morgen", "Brandie", "Luke" )
 scenario <- c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
 
 toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
@@ -63,22 +62,21 @@ kable(toy_dataset)
 
 \note{
 
+Let's start by creating some basic data. We have 10 patients "at risk", with a follow-up of 10
+months. Every participant gets an identical treatment.
+
 If we take a closer look at the 'Follow-up' and 'Eventtype' columns:
 
 * Follow-up time can be any time-interval: days, months, years.
 * Event type of 1 equals an event (for example death in an overall survival study)
 * Event type of 0 equals a right-censored event.
 
-}
-
 In this first example, there are no censored events.
 
----
+}
 
-Every month, 1 participant has an event (in an overall survival study this would be death). Every
-time an event occurs, the survival probability drops by 0.1 of the remaining curve (= #events / #at
-risk = $\frac{1}{10}$ of the remaining curve at month 1, $\frac{1}{9}$ of the remaining curve at
-month 2 and so on):
+
+---
 
 ```{r basicplot, warning=F, echo=F, message=F}
 # We can plot this table with the `survival` and `survminer` packages.
@@ -87,14 +85,45 @@ month 2 and so on):
 # Note that in this simulation we are showing multiple scenarios, so we are fitting to `toy_dataset$Scenario`, but this can also be for example a treatment column.
 surv_object <- Surv(time = toy_dataset$Followup , event = toy_dataset$Eventtype)
 fit1 <- survfit(surv_object ~ Scenario, data = toy_dataset)
-j <- ggsurvplot(fit1, data = toy_dataset, xlim = c(0,11), conf.int = FALSE,  risk.table = "nrisk_cumcensor", legend.title = " ", tables.theme = theme_cleantable(), break.time.by = 2,risk.table.fontsize = 4 ,risk.table.height = 0.20, censor.shape = c("|"), censor.size = 6)
+j <- ggsurvplot(fit1,
+    data = toy_dataset,
+    conf.int = FALSE,
+    risk.table = "nrisk_cumcensor",
+    cumcensor.title = NULL,
+    break.time.by = 2,
+    risk.table.fontsize = 3,
+    risk.table.height = 0.20,
+    censor.shape = "|",
+    censor.size = 2,
+    ggtheme = theme_bw()
+)
 
 j$plot <- j$plot +
-  scale_x_continuous(breaks = sort(c(seq(0, 10, 1)))) +
-  scale_y_continuous(breaks = sort(c(seq(0, 1, 0.1))))
+    theme(aspect.ratio=1) +
+    theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
+    theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank()) +
+    scale_x_continuous(limits = c(0,10), breaks = sort(c(seq(0, 10, 1)))) +
+    scale_y_continuous(limits = c(0,1), breaks = seq(0, 1, 0.2), expand = c(0.02,0.02)) +
+    theme(legend.background = element_rect(colour = "transparent", fill = "transparent")) +
+    theme(legend.justification=c(1,1), legend.position=c(1,1), legend.direction = "vertical") +
+    theme(legend.title = element_blank())
+
+j$table <- j$table +
+    theme_cleantable() +
+    theme(plot.title = element_text(size=6))
+
 j
 
 ```
+
+\note{
+
+Every month, 1 participant has an event (in an overall survival study this would be death). Every
+time an event occurs, the survival probability drops by 0.1 of the remaining curve (= events / at
+risk = 1/10 of the remaining curve at month 1, 1/9 of the remaining curve at
+month 2 and so on)
+
+}
 
 ## Kaplan Meier plot with censored data
 
@@ -117,15 +146,6 @@ kable(toy_dataset)
 
 ## Importance of confidence intervals
 
-Especially when there are very few patients at risk, the impact of a censored event can have a big
-impact on the appearance of the KM curve.
-
-In the previous plot, it seems that the survival curve reaches a plateau at 0.2 surival probability
-(curve A). If we would swap the censored status between Joe and Kate (participants 9 and 10), the KM
-curve changes drastically and drops to 0 at the end of the study period. In this scenario (curve B),
-all participants either had an event or were censored.
-
-
 ```{r scenario3, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10, 1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
 eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0, 1, 1,  0, 0, 1, 1, 1, 0, 0, 1)
@@ -143,6 +163,18 @@ for (value in unique(toy_dataset$Scenario)){
 toy_dataset$Followup = ifelse(toy_dataset$Scenario == "A", toy_dataset$Followup + 0.07, toy_dataset$Followup + 0)
 
 ```
+
+\note{
+
+Especially when there are very few patients at risk, the impact of a censored event can have a big
+impact on the appearance of the KM curve.
+
+In the previous plot, it seems that the survival curve reaches a plateau at 0.2 surival probability
+(curve A). If we would swap the censored status between Joe and Kate (participants 9 and 10), the KM
+curve changes drastically and drops to 0 at the end of the study period. In this scenario (curve B),
+all participants either had an event or were censored.
+
+}
 
 ---
 
