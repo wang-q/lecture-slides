@@ -46,7 +46,7 @@ options(digits = 4)
 
 ## Basic Kaplan--Meier plot
 
-```{r scenario1, warning=F, echo=F, message=F, comment=NA}
+```{r basic, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 eventtype <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
@@ -54,7 +54,7 @@ patientID <- c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", 
 scenario <- c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
 
 toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(toy_dataset) <- c("PatientID", "Followup", "Eventtype", "Scenario")
+colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
 kable(toy_dataset)
 
@@ -78,12 +78,12 @@ In this first example, there are no censored events.
 
 ---
 
-```{r basicplot, warning=F, echo=F, message=F}
+```{r km, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
 # We can plot this table with the `survival` and `survminer` packages.
 # First, we define what the time column is (`toy_dataset$Followup`) and the event column is (`toy_dataset$Eventtype`).
 # Afterwards, we can fit the Kaplan Meier curve to this data (`survfit(surv_object ~ Scenario)`).
 # Note that in this simulation we are showing multiple scenarios, so we are fitting to `toy_dataset$Scenario`, but this can also be for example a treatment column.
-surv_object <- Surv(time = toy_dataset$Followup , event = toy_dataset$Eventtype)
+surv_object <- Surv(time = toy_dataset$FollowUp , event = toy_dataset$EventType)
 fit1 <- survfit(surv_object ~ Scenario, data = toy_dataset)
 j <- ggsurvplot(fit1,
     data = toy_dataset,
@@ -94,7 +94,7 @@ j <- ggsurvplot(fit1,
     risk.table.fontsize = 3,
     risk.table.height = 0.20,
     censor.shape = "|",
-    censor.size = 2,
+    censor.size = 3,
     ggtheme = theme_bw()
 )
 
@@ -110,7 +110,7 @@ j$plot <- j$plot +
 
 j$table <- j$table +
     theme_cleantable() +
-    theme(plot.title = element_text(size=6))
+    theme(plot.title = element_text(size=8))
 
 j
 
@@ -120,19 +120,18 @@ j
 
 Every month, 1 participant has an event (in an overall survival study this would be death). Every
 time an event occurs, the survival probability drops by 0.1 of the remaining curve (= events / at
-risk = 1/10 of the remaining curve at month 1, 1/9 of the remaining curve at
-month 2 and so on)
+risk = 1/10 of the remaining curve at month 1, 1/9 of the remaining curve at month 2 and so on)
 
 }
 
 ## Kaplan Meier plot with censored data
 
-```{r scenario2, warning=F, echo=F, message=F, comment=NA}
+```{r censor, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
 eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0)
 
 toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(toy_dataset) <- c("PatientID", "Followup", "Eventtype", "Scenario")
+colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
 kable(toy_dataset)
 
@@ -140,27 +139,27 @@ kable(toy_dataset)
 
 ---
 
-```{r basicplot2, ref.label='basicplot', warning=F, echo=F, message=F}
+```{r km_censor, fig.cap = 'KM - censored', ref.label='km', warning=F, echo=F, message=F}
 ```
 
 
 ## Importance of confidence intervals
 
-```{r scenario3, warning=F, echo=F, message=F, comment=NA}
+```{r scenario, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10, 1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
 eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0, 1, 1,  0, 0, 1, 1, 1, 0, 0, 1)
 
 scenario <- rep(c("A", "B"), each = 10)
 
 toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(toy_dataset) <- c("PatientID", "Followup", "Eventtype", "Scenario")
-
-for (value in unique(toy_dataset$Scenario)){
-  print(tail((toy_dataset[toy_dataset$Scenario == value,]),2))
-}
+colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
 # small offset otherwise curves would almost fully overlap.
-toy_dataset$Followup = ifelse(toy_dataset$Scenario == "A", toy_dataset$Followup + 0.07, toy_dataset$Followup + 0)
+toy_dataset$FollowUp = ifelse(toy_dataset$Scenario == "A", toy_dataset$FollowUp + 0.1, toy_dataset$FollowUp + 0)
+
+for (value in unique(toy_dataset$Scenario)){
+    print(tail((toy_dataset[toy_dataset$Scenario == value,]),2))
+}
 
 ```
 
@@ -178,5 +177,6 @@ all participants either had an event or were censored.
 
 ---
 
-```{r basicplot3, ref.label='basicplot', warning=F, echo=F, message=F}
+```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km', warning=F, echo=F, message=F}
 ```
+
