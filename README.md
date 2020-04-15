@@ -27,9 +27,17 @@ make example -B
 
 `make clean` to delete all intermediate files.
 
+## [`tikz`](tikz/)
+
+Graphics by tikz.
+
+```bash
+arara ch-21
+```
+
 ## [`materials`](materials/)
 
-Video materials for students.
+Video materials.
 
 See [`list.md`](materials/list.md) for details.
 
@@ -43,101 +51,67 @@ Markdown + Latex
 
 ## Tools needed
 
-### Required
-
-* TeXLive 2019: `brew cask install mactex` or download from
-  [TUG](https://tug.org/mactex/mactex-download.html)
-    * Update TeX packages
-        * `sudo tlmgr update --self`
-        * `sudo tlmgr update --all`
-    * Template: `sudo tlmgr install beamertheme-metropolis`
-    * TeX utils
-        * XeLaTeX
-        * latexmk
-        * pdfjam
-    * Some TeX packages that should come with MacTeX.
-        * xeCJK
-        * TikZ
-        * graphicx
-        * caption
-        * subcaption
-        * animate
-        * mhchem
-        * biblatex
-        * hyperref
-        * pgfpages
-        * calc
-* General tools
-    * pandoc: `brew install pandoc`
-    * GNU `make` utitily
-    * imagemagick: `brew install imagemagick`
+* TeXLive
+  * [here](https://github.com/wang-q/dotfiles/blob/master/tex/texlive.md)
+  * Or [MacTex](https://tug.org/mactex/mactex-download.html)
 * Fonts
-    * [Fira](https://github.com/mozilla/Fira): `brew cask install caskroom/fonts/font-fira-sans caskroom/fonts/font-fira-mono`
-    * Hiragino Sans GB (冬青黑体简体中文)
-    * Kaiti SC (常州华文 楷体-简)
-
-### Optional
-
-* Image converter
-    * pdf2svg: `brew install pdf2svg`
-    * inkscape
-* References management
-    * JabRef: `brew cask install jabref`
-* Text editor
-    * IntelliJ with markdown and latex supports
+  * [Fira](https://github.com/mozilla/Fira): `brew cask install font-fira-sans font-fira-mono`
+  * Hiragino Sans GB (冬青黑体简体中文)
+  * STFangsong (仿宋)
 
 ## Pandoc templates
 
-[`slides/beamer.template.tex`](slides/beamer.template.tex) contains customized pandoc template for
+[`slides/beamer.template.tex`](slides/beamer.template.tex) is a customized pandoc template for
 [beamer](https://en.wikipedia.org/wiki/Beamer_(LaTeX)).
 
 ### Variables and control statements in pandoc templates
 
 1. `$---$`: variables. Can be provided with YAML document or `pandoc -V key=value`.
 
-    ```yaml
-    ---
-    title: "21 基因的分子生物学"
-    author: "王强"
-    institute: "南京大学生命科学学院"
-    date: \today{}
-    ...
-    ```
+   ```yaml
+   ---
+   title: "21 基因的分子生物学"
+   author: "王强"
+   institute: "南京大学生命科学学院"
+   date: \today{}
+   ...
+   ```
 
-    ```bash
-    pandoc $< \
-		-t beamer \
-		--template beamer.template.tex \
-		--latex-engine xelatex \
-		--slide-level 2 \
-		-V fontsize=12pt \
-		-V bibliography=course.bib \
-		--toc \
-		-o $(basename $@).tex
-    ```
+   ```bash
+   pandoc $< \
+   		-t beamer \
+   		--template beamer.template.tex \
+   		--latex-engine xelatex \
+   		--slide-level 2 \
+   		-V fontsize=12pt \
+   		-V bibliography=course.bib \
+   		--toc \
+   		-o $(basename $@).tex
+   ```
 
 2. `$if(---)$ --- $else$ --- $endif$`: conditional branch statements.
 
-    Inline.
+   Inline.
 
-    ```
-    $if(fontsize)$$fontsize$,$endif$
-    ```
+   ```
+   $if(fontsize)$$fontsize$,$endif$
+   ```
 
-    Standalone.
+   Standalone.
 
-    ```
-    $if(listings)$
-    \usepackage{listings}
-    $endif$
-    ```
+   ```
+   $if(listings)$
+   \usepackage{listings}
+   $endif$
+   ```
 
 3. `$for(---)$ --- $endfor$`: loop statements.
 
-    ```
-    $for(bibliography)$
-    \addbibresource{$bibliography$}
-    $endfor$
-    ```
+   ```
+   $for(bibliography)$
+   \addbibresource{$bibliography$}
+   $endfor$
+   ```
 
 4. `$body$` contains all the contents of `input.md` file after processed by Pandoc converter.
+
