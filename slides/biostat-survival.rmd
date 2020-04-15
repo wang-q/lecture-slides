@@ -108,10 +108,10 @@ eventtype <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 patientID <- c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", "Morgen", "Brandie", "Luke" )
 scenario <- c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
 
-toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- data.frame(patientID, followup, eventtype, scenario)
+colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
-kable(toy_dataset)
+kable(dataset)
 
 ```
 
@@ -163,27 +163,27 @@ Note that in this simulation we are showing multiple scenarios, so we are fittin
 # The R package `survival`
 library(survival)
 
-# Define what the time column is toy_dataset$FollowUp
-#   and the event column is toy_dataset$EventType
+# Define what the time column is dataset$FollowUp
+#   and the event column is dataset$EventType
 surv_object <- Surv(
-    time = toy_dataset$FollowUp,
-    event = toy_dataset$EventType
+    time = dataset$FollowUp,
+    event = dataset$EventType
 )
 
 # Fit the Kaplan--Meier curve to this data `Scenario`
 fit <- survfit(
     surv_object ~ Scenario,
-    data = toy_dataset
+    data = dataset
 )
 ```
 
 ---
 
 ```{r km, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
-surv_object <- Surv(time = toy_dataset$FollowUp , event = toy_dataset$EventType)
-fit1 <- survfit(surv_object ~ Scenario, data = toy_dataset)
+surv_object <- Surv(time = dataset$FollowUp , event = dataset$EventType)
+fit1 <- survfit(surv_object ~ Scenario, data = dataset)
 j <- ggsurvplot(fit1,
-    data = toy_dataset,
+    data = dataset,
     conf.int = FALSE,
     risk.table = "nrisk_cumcensor",
     break.time.by = 2,
@@ -228,10 +228,10 @@ Every time an event occurs, the survival probability drops by 0.1 of the remaini
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
 eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0)
 
-toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- data.frame(patientID, followup, eventtype, scenario)
+colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
-kable(toy_dataset)
+kable(dataset)
 
 ```
 
@@ -253,15 +253,15 @@ eventtype <- c(1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1)
 
 scenario <- rep(c("A", "B"), each = 10)
 
-toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- data.frame(patientID, followup, eventtype, scenario)
+colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
-for (value in unique(toy_dataset$Scenario)){
-    print(tail((toy_dataset[toy_dataset$Scenario == value,]),2))
+for (value in unique(dataset$Scenario)){
+    print(tail((dataset[dataset$Scenario == value,]),2))
 }
 
 # small offset otherwise curves would almost fully overlap.
-toy_dataset$FollowUp = ifelse(toy_dataset$Scenario == "A", toy_dataset$FollowUp + 0.1, toy_dataset$FollowUp + 0)
+dataset$FollowUp = ifelse(dataset$Scenario == "A", dataset$FollowUp - 0.1, dataset$FollowUp + 0)
 
 ```
 
