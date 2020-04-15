@@ -21,7 +21,7 @@ knitr::opts_chunk$set(fig.width = 4, fig.height = 4, dpi=300)
 options(digits = 4)
 ```
 
-```{bash compile, include=FALSE}
+```{text compile, include=FALSE}
 # Rscript -e "library(knitr); knitr::knit('biostat-survival.rmd');"
 # make biostat-survival
 
@@ -29,10 +29,42 @@ options(digits = 4)
 
 ```
 
-
 # 生存分析
 
-## 生存数据
+## 定义
+
+* 生存分析
+: 是统计的一个分支，用于分析一个或多个事件发生前的预期持续时间.
+
+* Survival analysis
+
+* 事件 - 例如生物体死亡和机械系统故障
+
+\note{
+
+生存分析试图回答以下问题：
+
+将在一定时间后生存的人口比例是多少？
+
+在那些幸存者中，他们将以何种速度死亡或失败？
+
+可以考虑多种死亡或失败原因吗？
+
+特定情况或特征如何增加或降低生存概率？
+
+事件可以是非常明确的, 例如死亡; 但也可能有些模糊, 心肌梗死, 器官衰竭等
+
+对于机械系统, 故障可能无法明确定义
+
+}
+
+---
+
+* 工程学 - 可靠性分析
+* 经济学 - 持续时间分析
+* 社会学 - 事件历史分析
+
+## 数据
 
 对于癌症
 
@@ -42,9 +74,32 @@ options(digits = 4)
   * Time from start of treatment to progression, Time to progression (TTP)
   * Time from response to recurrence
 
-# Kaplan--Meier plot
+## 分析方法
 
-## Basic Kaplan--Meier plot
+* 描述生存时间
+
+  * 生命表
+  * Kaplan--Meier 曲线
+  * 生存函数
+  * 风险函数
+
+* 比较两组或多组生存时间
+
+  * 秩和检验
+
+* 变量对生存的影响
+
+  * Cox 比例风险回归
+
+\note{
+
+保险公司里精算师 生命表（也称死亡率表或精算表）
+
+}
+
+# Kaplan--Meier curve
+
+## Basic Kaplan--Meier curve
 
 ```{r basic, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -62,12 +117,12 @@ kable(toy_dataset)
 
 \note{
 
-Let's start by creating some basic data. We have 10 patients "at risk", with a follow-up of 10
-months. Every participant gets an identical treatment.
+从创建一些简单的数据开始
+
+10 个高加索人种的病人, 10 个月的随访数据, 对所有参与者, 同样的治疗手段
 
 If we take a closer look at the 'Follow-up' and 'Eventtype' columns:
 
-* Follow-up time can be any time-interval: days, months, years.
 * Event type of 1 equals an event (for example death in an overall survival study)
 * Event type of 0 equals a right-censored event.
 
@@ -75,21 +130,62 @@ In this first example, there are no censored events.
 
 }
 
+---
+
+随访
+: Follow up, 可以用任何时间间隔, 天、月、年
+
+事件
+: Event type,　`1` 表示事件发生, 在 Overall Survival 里, 代表死亡
+
+分层
+: Strata, Scenario
+
+拟合
+: Fit
+
+\note{
+
+Strata
+
+英  ˈstrɑːtə   美  ˈstreɪtə
+
+男/女, 给药/安慰剂, 高/低分险 等
+
+Note that in this simulation we are showing multiple scenarios, so we are fitting to
+`Scenario`, but this can also be for example a treatment column.
+
+}
+
+---
+
+```{.r .numberLines}
+# The R package `survival`
+library(survival)
+
+# Define what the time column is toy_dataset$FollowUp
+#   and the event column is toy_dataset$EventType
+surv_object <- Surv(
+    time = toy_dataset$FollowUp,
+    event = toy_dataset$EventType
+)
+
+# Fit the Kaplan--Meier curve to this data `Scenario`
+fit <- survfit(
+    surv_object ~ Scenario,
+    data = toy_dataset
+)
+```
 
 ---
 
 ```{r km, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
-# We can plot this table with the `survival` and `survminer` packages.
-# First, we define what the time column is (`toy_dataset$Followup`) and the event column is (`toy_dataset$Eventtype`).
-# Afterwards, we can fit the Kaplan Meier curve to this data (`survfit(surv_object ~ Scenario)`).
-# Note that in this simulation we are showing multiple scenarios, so we are fitting to `toy_dataset$Scenario`, but this can also be for example a treatment column.
 surv_object <- Surv(time = toy_dataset$FollowUp , event = toy_dataset$EventType)
 fit1 <- survfit(surv_object ~ Scenario, data = toy_dataset)
 j <- ggsurvplot(fit1,
     data = toy_dataset,
     conf.int = FALSE,
     risk.table = "nrisk_cumcensor",
-    cumcensor.title = NULL,
     break.time.by = 2,
     risk.table.fontsize = 3,
     risk.table.height = 0.20,
@@ -118,13 +214,15 @@ j
 
 \note{
 
-Every month, 1 participant has an event (in an overall survival study this would be death). Every
-time an event occurs, the survival probability drops by 0.1 of the remaining curve (= events / at
-risk = 1/10 of the remaining curve at month 1, 1/9 of the remaining curve at month 2 and so on)
+Every month, 1 participant has an event (in an overall survival study this would be death).
+
+Every time an event occurs, the survival probability drops by 0.1 of the remaining curve
+(= events / at risk = 1/10 of the remaining curve at month 1,
+1/9 of the remaining curve at month 2 and so on)
 
 }
 
-## Kaplan Meier plot with censored data
+## Kaplan--Meier curve with censored data
 
 ```{r censor, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
@@ -139,27 +237,31 @@ kable(toy_dataset)
 
 ---
 
-```{r km_censor, fig.cap = 'KM - censored', ref.label='km', warning=F, echo=F, message=F}
-```
+删失
+: Censored, Censoring
 
+---
+
+```{r km_censored, fig.cap = 'KM - censored', ref.label='km', warning=F, echo=F, message=F}
+```
 
 ## Importance of confidence intervals
 
 ```{r scenario, warning=F, echo=F, message=F, comment=NA}
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10, 1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
-eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0, 1, 1,  0, 0, 1, 1, 1, 0, 0, 1)
+eventtype <- c(1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1)
 
 scenario <- rep(c("A", "B"), each = 10)
 
 toy_dataset <- data.frame(patientID, followup, eventtype, scenario)
 colnames(toy_dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
-# small offset otherwise curves would almost fully overlap.
-toy_dataset$FollowUp = ifelse(toy_dataset$Scenario == "A", toy_dataset$FollowUp + 0.1, toy_dataset$FollowUp + 0)
-
 for (value in unique(toy_dataset$Scenario)){
     print(tail((toy_dataset[toy_dataset$Scenario == value,]),2))
 }
+
+# small offset otherwise curves would almost fully overlap.
+toy_dataset$FollowUp = ifelse(toy_dataset$Scenario == "A", toy_dataset$FollowUp + 0.1, toy_dataset$FollowUp + 0)
 
 ```
 
