@@ -115,8 +115,12 @@ eventtype <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 patientID <- c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", "Morgen", "Brandie", "Luke" )
 scenario <- c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
 
-dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- tibble(
+    PatientID = patientID,
+    FollowUp = followup,
+    EventType = eventtype,
+    Scenario = scenario
+)
 
 kable(dataset)
 
@@ -146,7 +150,7 @@ In this first example, there are no censored events.
 : Event type,　`1` 表示事件发生, 在 Overall Survival 里, 代表死亡
 
 分层
-: Strata, Scenario, 可以是类别变量, 也可以是连续变量
+: Strata, Scenario, 类别变量, 也可以是分组后的连续变量
 
 拟合
 : Fit
@@ -166,16 +170,26 @@ Note that in this simulation we are showing multiple scenarios, so we are fittin
 
 }
 
----
+## R 代码 {.allowframebreaks}
 
 ```{.r .numberLines}
-# The R package `survival`
+# R packages
+library(tidyverse)
 library(survival)
+
+# Init data
+dataset <- tibble(
+    PatientID = c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", "Morgen", "Brandie", "Luke"),
+    FollowUp  = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+    EventType = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+    Scenario  = c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
+)
+# dataset <- read_tsv("basic.tsv")
 
 # Define what the time column is dataset$FollowUp
 #   and the event column is dataset$EventType
 surv_object <- Surv(
-    time = dataset$FollowUp,
+    time  = dataset$FollowUp,
     event = dataset$EventType
 )
 
