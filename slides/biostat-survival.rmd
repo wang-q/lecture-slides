@@ -191,13 +191,10 @@ fit <- survfit(
 ```{r km_code, warning=F, echo=F, message=F}
 surv_object <- Surv(time = dataset$FollowUp , event = dataset$EventType)
 fit <- survfit(surv_object ~ Scenario, data = dataset)
-j <- ggsurvplot(fit,
+j <- ggsurvplot(
+    fit,
     data = dataset,
     conf.int = FALSE,
-    risk.table = "nrisk_cumcensor",
-    break.time.by = 2,
-    risk.table.fontsize = 3,
-    risk.table.height = 0.20,
     censor.shape = "|",
     censor.size = 3,
     ggtheme = theme_bw()
@@ -216,11 +213,7 @@ j$plot <- j$plot +
     theme(legend.justification=c(1,1), legend.position=c(1,1), legend.direction = "vertical") +
     theme(legend.title = element_blank())
 
-j$table <- j$table +
-    theme_cleantable() +
-    theme(plot.title = element_text(size=8))
-
-j
+j$plot
 
 ```
 
@@ -352,10 +345,6 @@ fit <- survfit(surv_object ~ Scenario, data = dataset)
 j <- ggsurvplot(fit,
     data = dataset,
     conf.int = TRUE,
-    risk.table = "nrisk_cumcensor",
-    break.time.by = 2,
-    risk.table.fontsize = 3,
-    risk.table.height = 0.20,
     censor.shape = "|",
     censor.size = 3,
     ggtheme = theme_bw()
@@ -432,10 +421,6 @@ fit <- survfit(surv_object ~ Scenario, data = dataset)
 j <- ggsurvplot(fit,
     data = dataset,
     conf.int = FALSE,
-    risk.table = "nrisk_cumcensor",
-    break.time.by = 2,
-    risk.table.fontsize = 3,
-    risk.table.height = 0.20,
     censor.shape = "|",
     censor.size = 3,
     surv.median.line = c("hv"),
@@ -444,7 +429,7 @@ j <- ggsurvplot(fit,
 
 ```
 
-```{r km_best_worst, fig.cap = 'KM - Actual/Best/Worst', ref.label='km_plot', warning=F, echo=F, message=F}
+```{r km_best_worst, fig.cap = 'KM - actual/best/worst', ref.label='km_plot', warning=F, echo=F, message=F}
 ```
 
 \note{
@@ -459,3 +444,12 @@ scenario the curve drops to 0. The median survival times are also very different
 * Worst case: 5.5 months
 
 }
+
+## Conclusions
+
+* Censored data can substantially affect the KM curve, but have to be included when fitting the
+  curve.
+* Show censored data on the curve as much as possible.
+* Be cautious when interpreting the end of the KM if there are big drops present.
+* The height of the drop can inform you about the number of patients at risk, even when it’s not
+  reported or when there are no confidence intervals shown.
