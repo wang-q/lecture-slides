@@ -1,5 +1,6 @@
 ---
 title: 生物统计原理
+subtitle: 生存分析
 author: "王强"
 institute: "南京大学生命科学学院"
 date: \today{}
@@ -21,7 +22,7 @@ knitr::opts_chunk$set(fig.width = 4, fig.height = 4, dpi=300)
 options(digits = 4)
 ```
 
-```{text compile, include=FALSE}
+```{bash compile, include=FALSE}
 # Rscript -e "library(knitr); knitr::knit('biostat-survival.rmd');"
 # make biostat-survival
 
@@ -33,12 +34,18 @@ options(digits = 4)
 
 ## 定义
 
-* 生存分析
-: 是统计的一个分支，用于分析一个或多个事件发生前的预期持续时间.
+生存分析
+: 是统计学的分支，用于分析一个或多个\alert{事件}发生前的预期持续\alert{时间} (Survival analysis).
 
-* Survival analysis
+\smallskip
 
-* 事件 - 例如生物体死亡和机械系统故障
+事件
+: 死亡、疾病发生、疾病复发、疾病进展或机械系统故障等 (Event).
+
+\smallskip
+
+时间
+: 从观察期开始 (如手术或开始治疗) 到 1) 事件发生、2) 研究结束、3) 失去联系或退出研究 的时间 (Time).
 
 \note{
 
@@ -63,15 +70,16 @@ options(digits = 4)
 * 工程学 - 可靠性分析
 * 经济学 - 持续时间分析
 * 社会学 - 事件历史分析
+* Time-to-Event (TTE) Analysis
 
 ## 数据
 
 对于癌症
 
-* Overall survival (OS)
+* 总生存 (Overall survival, OS)
   * Time from surgery to death
-* Progression-free survival (PFS)
-  * Time from start of treatment to progression, Time to progression (TTP)
+* 无进展生存 (Progression-free survival, PFS)
+  * Time from start of treatment to progression
   * Time from response to recurrence
 
 ## 分析方法
@@ -81,7 +89,6 @@ options(digits = 4)
   * 生命表
   * Kaplan--Meier 曲线
   * 生存函数
-  * 风险函数
 
 * 比较两组或多组生存时间
 
@@ -135,16 +142,18 @@ In this first example, there are no censored events.
 随访
 : Follow up, 可以用任何时间间隔, 天、月、年
 
-事件
+事件类型
 : Event type,　`1` 表示事件发生, 在 Overall Survival 里, 代表死亡
 
 分层
-: Strata, Scenario
+: Strata, Scenario, 可以是类别变量, 也可以是连续变量
 
 拟合
 : Fit
 
 \note{
+
+事件类型不为 1 的, 后面讲
 
 Strata
 
@@ -179,10 +188,10 @@ fit <- survfit(
 
 ---
 
-```{r km, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
+```{r km_code, warning=F, echo=F, message=F}
 surv_object <- Surv(time = dataset$FollowUp , event = dataset$EventType)
-fit1 <- survfit(surv_object ~ Scenario, data = dataset)
-j <- ggsurvplot(fit1,
+fit <- survfit(surv_object ~ Scenario, data = dataset)
+j <- ggsurvplot(fit,
     data = dataset,
     conf.int = FALSE,
     risk.table = "nrisk_cumcensor",
@@ -194,6 +203,9 @@ j <- ggsurvplot(fit1,
     ggtheme = theme_bw()
 )
 
+```
+
+```{r km_plot, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
 j$plot <- j$plot +
     theme(aspect.ratio=1) +
     theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
@@ -237,19 +249,53 @@ kable(dataset)
 
 ---
 
+时间
+: 从观察期开始到 1) 事件发生、2) 研究结束、3) 失去联系或退出研究 的时间 (Time).
+
+\smallskip
+
 删失
-: Censored, Censoring
+
+: 如果一个主体在观察时间内没有发生\underline{事件}, 则被描述为被删失 (Censored/Censoring). 删失之后,
+不了解该主体的信息, 它可能发生也可能不发生事件.
+
+\note {
+
+需要对应回我们对于时间的定义来理解这个概念
+
+这是我最不习惯的翻译之一, 也有译为 截断
+
+对于删失数据, 我们只知道该主体没有发生事件的时间长度
+
+censor 检查员
+
+imperil censor 御史
+
+censorship 查禁
+
+censored 被和谐
+
+}
 
 ---
 
-```{r km_censored, fig.cap = 'KM - censored', ref.label='km', warning=F, echo=F, message=F}
+```{r, ref.label='km_code', warning=F, echo=F, message=F}
+```
+
+```{r km_censored, fig.cap = 'KM - censored', ref.label='km_plot', warning=F, echo=F, message=F}
 ```
 
 ## Importance of confidence intervals
 
-```{r scenario, warning=F, echo=F, message=F, comment=NA}
-followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10, 1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
-eventtype <- c(1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1)
+```{r scenario, results='asis', warning=F, echo=F, message=F, comment=NA}
+followup <- c(
+    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
+    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10
+)
+eventtype <- c(
+    1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
+    1, 1, 0, 0, 1, 1, 1, 0, 0, 1
+)
 
 scenario <- rep(c("A", "B"), each = 10)
 
@@ -257,7 +303,8 @@ dataset <- data.frame(patientID, followup, eventtype, scenario)
 colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
 for (value in unique(dataset$Scenario)){
-    print(tail((dataset[dataset$Scenario == value,]),2))
+    print(kable(tail((dataset[dataset$Scenario == value,]),2), row.names = F))
+    cat('\n\n')
 }
 
 # small offset otherwise curves would almost fully overlap.
@@ -279,6 +326,136 @@ all participants either had an event or were censored.
 
 ---
 
-```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km', warning=F, echo=F, message=F}
+```{r, ref.label='km_code', warning=F, echo=F, message=F}
 ```
 
+```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km_plot', warning=F, echo=F, message=F}
+```
+
+\note{
+
+In other words, only one events marks the difference between the survival curve reaching 0 or
+reaching a plateau staying stable at 0.2.
+
+}
+
+---
+
+
+```{r ci, warning=F, echo=F, message=F, comment=NA}
+dataset <- subset(dataset, Scenario == "A")
+
+surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
+
+fit <- survfit(surv_object ~ Scenario, data = dataset)
+
+j <- ggsurvplot(fit,
+    data = dataset,
+    conf.int = TRUE,
+    risk.table = "nrisk_cumcensor",
+    break.time.by = 2,
+    risk.table.fontsize = 3,
+    risk.table.height = 0.20,
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+```
+
+```{r km_ci, fig.cap = 'KM - CI', ref.label='km_plot', warning=F, echo=F, message=F}
+```
+
+\note{
+
+We can also see this is if we plot the 95% confidence intervals on the KM curve. The confidence
+intervals are very wide, giving a clue that the study contains very few participants:
+
+}
+
+## Remove censored data?
+
+感觉删失数据用处不大, 把它们去掉行不行?
+
+---
+
+```{r Actual, results='markup', warning=F, echo=F, message=F, comment=NA}
+followup <- c(
+    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
+    1, 2, 10, 10, 5, 6, 6.2, 10, 10, 10,
+    1, 2, 2, 2, 5, 6, 6.2, 9, 9, 10
+)
+eventtype <- c(
+    1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
+    1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+)
+
+scenario <- rep(c("Actual", "Best", "Worst"), each = 10)
+
+dataset <- data.frame(patientID, followup, eventtype, scenario)
+colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+
+kable(dataset[dataset$Scenario == "Actual",], row.names = F)
+
+```
+
+\note{
+
+We can simulate the best case scenario (all censoring = no events) and the worst case scenario (all
+censoring = events) and compare this to the actual curve (scroll through the data sheet to see the
+differences).
+
+}
+
+---
+
+```{r Best, results='markup', warning=F, echo=F, message=F, comment=NA}
+kable(dataset[dataset$Scenario == "Best",], row.names = F)
+
+```
+
+---
+
+```{r Worst, results='markup', warning=F, echo=F, message=F, comment=NA}
+kable(dataset[dataset$Scenario == "Worst",], row.names = F)
+
+```
+
+---
+
+```{r best_worst, warning=F, echo=F, message=F}
+surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
+
+fit <- survfit(surv_object ~ Scenario, data = dataset)
+
+j <- ggsurvplot(fit,
+    data = dataset,
+    conf.int = FALSE,
+    risk.table = "nrisk_cumcensor",
+    break.time.by = 2,
+    risk.table.fontsize = 3,
+    risk.table.height = 0.20,
+    censor.shape = "|",
+    censor.size = 3,
+    surv.median.line = c("hv"),
+    ggtheme = theme_bw()
+)
+
+```
+
+```{r km_best_worst, fig.cap = 'KM - Actual/Best/Worst', ref.label='km_plot', warning=F, echo=F, message=F}
+```
+
+\note{
+
+In the best case scenario, the curve stops at 0.5 at the end of the study, while in the worst case
+scenario the curve drops to 0. The median survival times are also very different:
+
+* Actual curve: 6.2 months
+
+* Best case: 8.1 months
+
+* Worst case: 5.5 months
+
+}
