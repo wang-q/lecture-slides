@@ -109,7 +109,7 @@ options(digits = 4)
 ## Basic Kaplan--Meier curve
 
 ```{r basic, warning=F, echo=F, message=F, comment=NA}
-followup <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+followup <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) * 6
 eventtype <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
 patientID <- c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", "Morgen", "Brandie", "Luke" )
@@ -180,7 +180,7 @@ library(survival)
 # Init data
 dataset <- tibble(
     PatientID = c("Sarah", "Joel", "James", "Daniel", "Eric", "Kaitlynn", "Kelly", "Morgen", "Brandie", "Luke"),
-    FollowUp  = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+    FollowUp  = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) * 6,
     EventType = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
     Scenario  = c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
 )
@@ -216,12 +216,12 @@ j <- ggsurvplot(
 
 ```
 
-```{r km_plot, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
+```{r km_basic, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
 j$plot <- j$plot +
     theme(aspect.ratio=1) +
     theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
     theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank()) +
-    scale_x_continuous(limits = c(0,10), breaks = sort(c(seq(0, 10, 1)))) +
+    scale_x_continuous(limits = c(0,60), breaks = sort(c(seq(0, 60, 6)))) +
     scale_y_continuous(limits = c(0,1), breaks = seq(0, 1, 0.2), expand = c(0.02,0.02)) +
     theme(legend.background = element_rect(colour = "transparent", fill = "transparent")) +
     theme(legend.justification=c(1,1), legend.position=c(1,1), legend.direction = "vertical") +
@@ -244,7 +244,7 @@ Every time an event occurs, the survival probability drops by 0.1 of the remaini
 ## Kaplan--Meier curve with censored data
 
 ```{r censor, warning=F, echo=F, message=F, comment=NA}
-followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10)
+followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10) * 6
 eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0)
 
 dataset <- data.frame(patientID, followup, eventtype, scenario)
@@ -259,7 +259,7 @@ kable(dataset)
 ```{r, ref.label='km_code', warning=F, echo=F, message=F}
 ```
 
-```{r km_censored, fig.cap = 'KM - censored', ref.label='km_plot', warning=F, echo=F, message=F}
+```{r km_censored, fig.cap = 'KM - censored', ref.label='km_basic', warning=F, echo=F, message=F}
 ```
 
 ---
@@ -340,7 +340,7 @@ had the event or not by 10 years - how do we incorporate this subject into our e
 
 ## Remove censored data?
 
-感觉删失数据用处不大, 把它们去掉行不行?
+感觉删失数据用处不大/不可靠/破坏完整性, 把它们去掉行不行?
 
 ---
 
@@ -348,8 +348,8 @@ had the event or not by 10 years - how do we incorporate this subject into our e
 followup <- c(
     1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
     1, 2, 10, 10, 5, 6, 6.2, 10, 10, 10,
-    1, 2, 2, 2, 5, 6, 6.2, 9, 9, 10
-)
+    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10
+) * 6
 eventtype <- c(
     1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
     1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
@@ -368,8 +368,7 @@ kable(dataset[dataset$Scenario == "Actual",], row.names = F)
 \note{
 
 We can simulate the best case scenario (all censoring = no events) and the worst case scenario (all
-censoring = events) and compare this to the actual curve (scroll through the data sheet to see the
-differences).
+censoring = events) and compare this to the actual curve.
 
 }
 
@@ -390,6 +389,10 @@ kable(dataset[dataset$Scenario == "Worst",], row.names = F)
 ---
 
 ```{r best_worst, warning=F, echo=F, message=F}
+# small offset otherwise curves would almost fully overlap.
+dataset$FollowUp = ifelse(dataset$Scenario == "Actual", dataset$FollowUp - 0.6, dataset$FollowUp + 0)
+dataset$FollowUp = ifelse(dataset$Scenario == "Worst", dataset$FollowUp - 1.2, dataset$FollowUp + 0)
+
 surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
 
 fit <- survfit(surv_object ~ Scenario, data = dataset)
@@ -405,7 +408,7 @@ j <- ggsurvplot(fit,
 
 ```
 
-```{r km_best_worst, fig.cap = 'KM - actual/best/worst', ref.label='km_plot', warning=F, echo=F, message=F}
+```{r km_best_worst, fig.cap = 'KM - actual/best/worst', ref.label='km_basic', warning=F, echo=F, message=F}
 ```
 
 \note{
@@ -427,7 +430,7 @@ scenario the curve drops to 0. The median survival times are also very different
 followup <- c(
     1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
     1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10
-)
+) * 6
 eventtype <- c(
     1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
     1, 1, 0, 0, 1, 1, 1, 0, 0, 1
@@ -444,7 +447,7 @@ for (value in unique(dataset$Scenario)){
 }
 
 # small offset otherwise curves would almost fully overlap.
-dataset$FollowUp = ifelse(dataset$Scenario == "A", dataset$FollowUp - 0.1, dataset$FollowUp + 0)
+dataset$FollowUp = ifelse(dataset$Scenario == "A", dataset$FollowUp - 0.6, dataset$FollowUp + 0)
 
 ```
 
@@ -465,7 +468,7 @@ all participants either had an event or were censored.
 ```{r, ref.label='km_code', warning=F, echo=F, message=F}
 ```
 
-```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km_plot', warning=F, echo=F, message=F}
+```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km_basic', warning=F, echo=F, message=F}
 ```
 
 \note{
@@ -495,7 +498,7 @@ j <- ggsurvplot(fit,
 
 ```
 
-```{r km_ci, fig.cap = 'KM - CI', ref.label='km_plot', warning=F, echo=F, message=F}
+```{r km_ci, fig.cap = 'KM - CI', ref.label='km_basic', warning=F, echo=F, message=F}
 ```
 
 \note{
