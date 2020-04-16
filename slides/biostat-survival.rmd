@@ -86,11 +86,11 @@ options(digits = 4)
 
 * 描述生存时间
 
-  * 生命表
   * Kaplan--Meier 曲线
   * 生存函数
+  * 生命表
 
-* 比较两组或多组生存时间
+* 比较生存时间
 
   * 秩和检验
 
@@ -242,6 +242,14 @@ kable(dataset)
 
 ---
 
+```{r, ref.label='km_code', warning=F, echo=F, message=F}
+```
+
+```{r km_censored, fig.cap = 'KM - censored', ref.label='km_plot', warning=F, echo=F, message=F}
+```
+
+---
+
 时间
 : 从观察期开始到 1) 事件发生、2) 研究结束、3) 失去联系或退出研究 的时间 (Time).
 
@@ -272,93 +280,47 @@ censored 被和谐
 
 ---
 
-```{r, ref.label='km_code', warning=F, echo=F, message=F}
-```
-
-```{r km_censored, fig.cap = 'KM - censored', ref.label='km_plot', warning=F, echo=F, message=F}
-```
-
-## Importance of confidence intervals
-
-```{r scenario, results='asis', warning=F, echo=F, message=F, comment=NA}
-followup <- c(
-    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
-    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10
+```{r swimmer, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+# make fake data
+set.seed(202004016)
+fkdt <- tibble(
+    Subject = as.factor(1:10),
+    Months = sample(12:72, 10, replace = T)
 )
-eventtype <- c(
-    1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
-    1, 1, 0, 0, 1, 1, 1, 0, 0, 1
-)
-
-scenario <- rep(c("A", "B"), each = 10)
-
-dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
-
-for (value in unique(dataset$Scenario)){
-    print(kable(tail((dataset[dataset$Scenario == value,]),2), row.names = F))
-    cat('\n\n')
+fkdt$censor <- sample(c("Censored", rep("Event", 2)), 10, replace = T)
+for (i in 1:10) {
+    if (fkdt$Months[i] > 60) {
+        fkdt$censor[i] <- "Censored"
+    }
 }
 
-# small offset otherwise curves would almost fully overlap.
-dataset$FollowUp = ifelse(dataset$Scenario == "A", dataset$FollowUp - 0.1, dataset$FollowUp + 0)
+# plot with shapes to indicate censoring or event
+j <- ggplot(fkdt, aes(Subject, Months)) +
+    geom_bar(stat = "identity", width = 0.2) +
+    geom_point(data = fkdt,
+               aes(Subject, Months, color = censor, shape = censor),
+               size = 4) +
+    geom_hline(yintercept = 60, color="orange", size=1) +
+    coord_flip() +
+    theme_minimal() +
+    theme(legend.title = element_blank(), legend.position = "bottom")
+
+j
 
 ```
 
 \note{
 
-Especially when there are very few patients at risk, the impact of a censored event can have a big
-impact on the appearance of the KM curve.
+观察期 5 年时间
 
-In the previous plot, it seems that the survival curve reaches a plateau at 0.2 surival probability
-(curve A). If we would swap the censored status between Joe and Kate (participants 9 and 10), the KM
-curve changes drastically and drops to 0 at the end of the study period. In this scenario (curve B),
-all participants either had an event or were censored.
-
-}
-
----
-
-```{r, ref.label='km_code', warning=F, echo=F, message=F}
-```
-
-```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km_plot', warning=F, echo=F, message=F}
-```
-
-\note{
-
-In other words, only one events marks the difference between the survival curve reaching 0 or
-reaching a plateau staying stable at 0.2.
-
-}
-
----
+右删失, 左删失; 具体的意义可以暂时不管
 
 
-```{r ci, warning=F, echo=F, message=F, comment=NA}
-dataset <- subset(dataset, Scenario == "A")
+In this example, how would we compute the proportion who are event-free at 10 years?
 
-surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
-
-fit <- survfit(surv_object ~ Scenario, data = dataset)
-
-j <- ggsurvplot(fit,
-    data = dataset,
-    conf.int = TRUE,
-    censor.shape = "|",
-    censor.size = 3,
-    ggtheme = theme_bw()
-)
-
-```
-
-```{r km_ci, fig.cap = 'KM - CI', ref.label='km_plot', warning=F, echo=F, message=F}
-```
-
-\note{
-
-We can also see this is if we plot the 95% confidence intervals on the KM curve. The confidence
-intervals are very wide, giving a clue that the study contains very few participants:
+Subjects 2, 3, 5, 6, 8, 9, and 10 were all **event-free at 10 years**. Subjects 4 and 7 had the
+**event before 10 years**. Subject 1 was **censored before 10 years**, so we don't know whether they
+had the event or not by 10 years - how do we incorporate this subject into our estimate?
 
 }
 
@@ -442,6 +404,90 @@ scenario the curve drops to 0. The median survival times are also very different
 * Best case: 8.1 months
 
 * Worst case: 5.5 months
+
+}
+
+## Importance of confidence intervals
+
+```{r scenario, results='asis', warning=F, echo=F, message=F, comment=NA}
+followup <- c(
+    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
+    1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10
+)
+eventtype <- c(
+    1, 1, 0, 0, 1, 1, 1, 0, 1, 0,
+    1, 1, 0, 0, 1, 1, 1, 0, 0, 1
+)
+
+scenario <- rep(c("A", "B"), each = 10)
+
+dataset <- data.frame(patientID, followup, eventtype, scenario)
+colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+
+for (value in unique(dataset$Scenario)){
+    print(kable(tail((dataset[dataset$Scenario == value,]),2), row.names = F))
+    cat('\n\n')
+}
+
+# small offset otherwise curves would almost fully overlap.
+dataset$FollowUp = ifelse(dataset$Scenario == "A", dataset$FollowUp - 0.1, dataset$FollowUp + 0)
+
+```
+
+\note{
+
+Especially when there are very few patients at risk, the impact of a censored event can have a big
+impact on the appearance of the KM curve.
+
+In the previous plot, it seems that the survival curve reaches a plateau at 0.2 surival probability
+(curve A). If we would swap the censored status between Joe and Kate (participants 9 and 10), the KM
+curve changes drastically and drops to 0 at the end of the study period. In this scenario (curve B),
+all participants either had an event or were censored.
+
+}
+
+---
+
+```{r, ref.label='km_code', warning=F, echo=F, message=F}
+```
+
+```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km_plot', warning=F, echo=F, message=F}
+```
+
+\note{
+
+In other words, only one events marks the difference between the survival curve reaching 0 or
+reaching a plateau staying stable at 0.2.
+
+}
+
+---
+
+
+```{r ci, warning=F, echo=F, message=F, comment=NA}
+dataset <- subset(dataset, Scenario == "A")
+
+surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
+
+fit <- survfit(surv_object ~ Scenario, data = dataset)
+
+j <- ggsurvplot(fit,
+    data = dataset,
+    conf.int = TRUE,
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+```
+
+```{r km_ci, fig.cap = 'KM - CI', ref.label='km_plot', warning=F, echo=F, message=F}
+```
+
+\note{
+
+We can also see this is if we plot the 95% confidence intervals on the KM curve. The confidence
+intervals are very wide, giving a clue that the study contains very few participants:
 
 }
 
