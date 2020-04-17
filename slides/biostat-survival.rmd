@@ -12,9 +12,9 @@ toc: true
 # load packages
 library(knitr)
 library(tidyverse)
-library(lubridate)
 library(survival)
 library(survminer)
+library(KMsurv)
 library(randomNames)
 
 options(kableExtra.latex.load_packages = FALSE)
@@ -29,11 +29,18 @@ km_mod <- function(plot) {
         theme(aspect.ratio=1) +
         theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
         theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank()) +
-        scale_x_continuous(limits = c(0,60), breaks = sort(c(seq(0, 60, 6)))) +
         scale_y_continuous(limits = c(0,1), breaks = seq(0, 1, 0.2), expand = c(0.02,0.02)) +
         theme(legend.background = element_rect(colour = "transparent", fill = "transparent")) +
         theme(legend.justification=c(1,1), legend.position=c(1,1), legend.direction = "vertical") +
         theme(legend.title = element_blank())
+
+    plot
+}
+
+km_mod_60 <- function(plot) {
+    plot <- km_mod(plot)
+    plot <- plot +
+        scale_x_continuous(limits = c(0,60), breaks = sort(c(seq(0, 60, 6))))
 
     plot
 }
@@ -53,7 +60,7 @@ km_mod <- function(plot) {
 ## 定义
 
 生存分析
-: 是统计学的分支，用于分析一个或多个\alert{事件}发生前的预期持续\alert{时间} (Survival analysis).
+: 是统计学的分支, 用于分析一个或多个\alert{事件}发生前的预期持续\alert{时间} (Survival analysis).
 
 \smallskip
 
@@ -71,7 +78,7 @@ km_mod <- function(plot) {
 
 将在一定时间后生存的人口比例是多少？
 
-在那些幸存者中，他们将以何种速度死亡或失败？
+在那些幸存者中, 他们将以何种速度死亡或失败？
 
 可以考虑多种死亡或失败原因吗？
 
@@ -118,7 +125,9 @@ km_mod <- function(plot) {
 
 \note{
 
-保险公司里精算师 生命表（也称死亡率表或精算表）
+这是今天讲的内容的大纲, 重点讲 KM 曲线 和 Cox 回归
+
+生存函数, 生命表 和 秩和检验 会对照着实例略讲一下
 
 }
 
@@ -218,6 +227,18 @@ fit <- survfit(
 )
 ```
 
+\note{
+
+R 里用 packages (包) 这个词, 其它语言里经常也用 modules (模块), libraries (库) 之类的.
+
+它们是都是包装好的, 完成特定任务的功能性程序组合.
+
+tidyverse 是现代 R 程序处理数据的事实标准
+
+survival 是生存分析最常用的, 也是最全面的包. 也可以在 SPSS 里完成今天我们所说的所有分析
+
+}
+
 ---
 
 ```{r km_code, warning=F, echo=F, message=F}
@@ -235,7 +256,7 @@ j <- ggsurvplot(
 ```
 
 ```{r km_basic, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
-km_mod(j$plot)
+km_mod_60(j$plot)
 ```
 
 \note{
@@ -267,7 +288,7 @@ kable(dataset, "markdown")
 ```
 
 ```{r km_censored, fig.cap = 'KM - censored', warning=F, echo=F, message=F}
-km_mod(j$plot)
+km_mod_60(j$plot)
 ```
 
 ---
@@ -280,7 +301,7 @@ km_mod(j$plot)
 删失
 
 : 如果一个受试者在观察时间内没有发生\underline{事件}, 则被描述为被删失 (Censored/Censoring). 删失之后,
-不了解该受试者的信息, 它可能发生也可能不发生事件.
+不观察或不了解该受试者的信息, 它可能发生也可能不发生事件.
 
 \note {
 
@@ -294,7 +315,7 @@ censor 检查员
 
 imperil censor 御史
 
-censorship 查禁
+censorship 查禁, 省察
 
 censored 被和谐
 
@@ -415,7 +436,7 @@ j <- ggsurvplot(fit,
 ```
 
 ```{r km_best_worst, fig.cap = 'KM - actual/best/worst', warning=F, echo=F, message=F}
-km_mod(j$plot)
+km_mod_60(j$plot)
 ```
 
 \note{
@@ -476,7 +497,7 @@ all participants either had an event or were censored.
 ```
 
 ```{r km_scenario, fig.cap = 'KM - scenarios', warning=F, echo=F, message=F}
-km_mod(j$plot)
+km_mod_60(j$plot)
 ```
 
 \note{
@@ -507,7 +528,7 @@ j <- ggsurvplot(fit,
 ```
 
 ```{r km_ci, fig.cap = 'KM - CI', warning=F, echo=F, message=F}
-km_mod(j$plot)
+km_mod_60(j$plot)
 ```
 
 \note{
@@ -546,7 +567,7 @@ $F(t) = Pr(\{T \leq t\})$: 累计分布函数
 
 \note{
 
-在理论上，生存函数是平滑的；在实践中，我们在离散时间尺度上观察事件。
+在理论上, 生存函数是平滑的；在实践中, 我们在离散时间尺度上观察事件, 通常用 KM 曲线来估计.
 
 第一个生存率明显比第二个要低
 
