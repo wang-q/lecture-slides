@@ -24,6 +24,20 @@ library(kableExtra)
 knitr::opts_chunk$set(fig.width = 4, fig.height = 4, dpi=300)
 options(digits = 4)
 
+km_mod <- function(plot) {
+    plot <- plot +
+        theme(aspect.ratio=1) +
+        theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
+        theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank()) +
+        scale_x_continuous(limits = c(0,60), breaks = sort(c(seq(0, 60, 6)))) +
+        scale_y_continuous(limits = c(0,1), breaks = seq(0, 1, 0.2), expand = c(0.02,0.02)) +
+        theme(legend.background = element_rect(colour = "transparent", fill = "transparent")) +
+        theme(legend.justification=c(1,1), legend.position=c(1,1), legend.direction = "vertical") +
+        theme(legend.title = element_blank())
+
+    plot
+}
+
 ```
 
 ```{bash compile, include=FALSE}
@@ -207,7 +221,7 @@ fit <- survfit(
 ---
 
 ```{r km_code, warning=F, echo=F, message=F}
-surv_object <- Surv(time = dataset$FollowUp , event = dataset$EventType)
+surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
 fit <- survfit(surv_object ~ Scenario, data = dataset)
 j <- ggsurvplot(
     fit,
@@ -221,18 +235,7 @@ j <- ggsurvplot(
 ```
 
 ```{r km_basic, fig.cap = 'KM - basic', warning=F, echo=F, message=F}
-j$plot <- j$plot +
-    theme(aspect.ratio=1) +
-    theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
-    theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank()) +
-    scale_x_continuous(limits = c(0,60), breaks = sort(c(seq(0, 60, 6)))) +
-    scale_y_continuous(limits = c(0,1), breaks = seq(0, 1, 0.2), expand = c(0.02,0.02)) +
-    theme(legend.background = element_rect(colour = "transparent", fill = "transparent")) +
-    theme(legend.justification=c(1,1), legend.position=c(1,1), legend.direction = "vertical") +
-    theme(legend.title = element_blank())
-
-j$plot
-
+km_mod(j$plot)
 ```
 
 \note{
@@ -263,7 +266,8 @@ kable(dataset, "markdown")
 ```{r, ref.label='km_code', warning=F, echo=F, message=F}
 ```
 
-```{r km_censored, fig.cap = 'KM - censored', ref.label='km_basic', warning=F, echo=F, message=F}
+```{r km_censored, fig.cap = 'KM - censored', warning=F, echo=F, message=F}
+km_mod(j$plot)
 ```
 
 ---
@@ -380,14 +384,12 @@ censoring = events) and compare this to the actual curve.
 
 ```{r Best, results='markup', warning=F, echo=F, message=F, comment=NA}
 kable(dataset[dataset$Scenario == "Best",], "markdown", row.names = F)
-
 ```
 
 ---
 
 ```{r Worst, results='markup', warning=F, echo=F, message=F, comment=NA}
 kable(dataset[dataset$Scenario == "Worst",], "markdown", row.names = F)
-
 ```
 
 ---
@@ -412,7 +414,8 @@ j <- ggsurvplot(fit,
 
 ```
 
-```{r km_best_worst, fig.cap = 'KM - actual/best/worst', ref.label='km_basic', warning=F, echo=F, message=F}
+```{r km_best_worst, fig.cap = 'KM - actual/best/worst', warning=F, echo=F, message=F}
+km_mod(j$plot)
 ```
 
 \note{
@@ -472,7 +475,8 @@ all participants either had an event or were censored.
 ```{r, ref.label='km_code', warning=F, echo=F, message=F}
 ```
 
-```{r km_scenario, fig.cap = 'KM - scenarios', ref.label='km_basic', warning=F, echo=F, message=F}
+```{r km_scenario, fig.cap = 'KM - scenarios', warning=F, echo=F, message=F}
+km_mod(j$plot)
 ```
 
 \note{
@@ -502,7 +506,8 @@ j <- ggsurvplot(fit,
 
 ```
 
-```{r km_ci, fig.cap = 'KM - CI', ref.label='km_basic', warning=F, echo=F, message=F}
+```{r km_ci, fig.cap = 'KM - CI', warning=F, echo=F, message=F}
+km_mod(j$plot)
 ```
 
 \note{
