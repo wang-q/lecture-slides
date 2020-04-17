@@ -17,14 +17,18 @@ library(survival)
 library(survminer)
 library(randomNames)
 
+options(kableExtra.latex.load_packages = FALSE)
+library(kableExtra)
+
 # set output options
 knitr::opts_chunk$set(fig.width = 4, fig.height = 4, dpi=300)
 options(digits = 4)
+
 ```
 
 ```{bash compile, include=FALSE}
 # Rscript -e "library(knitr); knitr::knit('biostat-survival.rmd');"
-# make biostat-survival
+# make biostat-survival.slides.pdf
 
 # Rscript -e "library(randomNames); randomNames(10, ethnicity=5, which.names='first', sample.with.replacement=F);"
 
@@ -122,7 +126,7 @@ dataset <- tibble(
     Scenario = scenario
 )
 
-kable(dataset)
+kable(dataset, "markdown")
 
 ```
 
@@ -250,7 +254,7 @@ eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0)
 dataset <- data.frame(patientID, followup, eventtype, scenario)
 colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
-kable(dataset)
+kable(dataset, "markdown")
 
 ```
 
@@ -271,8 +275,8 @@ kable(dataset)
 
 删失
 
-: 如果一个主体在观察时间内没有发生\underline{事件}, 则被描述为被删失 (Censored/Censoring). 删失之后,
-不了解该主体的信息, 它可能发生也可能不发生事件.
+: 如果一个受试者在观察时间内没有发生\underline{事件}, 则被描述为被删失 (Censored/Censoring). 删失之后,
+不了解该受试者的信息, 它可能发生也可能不发生事件.
 
 \note {
 
@@ -280,7 +284,7 @@ kable(dataset)
 
 这是我最不习惯的翻译之一, 也有译为 截断
 
-对于删失数据, 我们只知道该主体没有发生事件的时间长度
+对于删失数据, 我们只知道该受试者没有发生事件的时间长度
 
 censor 检查员
 
@@ -361,7 +365,7 @@ scenario <- rep(c("Actual", "Best", "Worst"), each = 10)
 dataset <- data.frame(patientID, followup, eventtype, scenario)
 colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
-kable(dataset[dataset$Scenario == "Actual",], row.names = F)
+kable(dataset[dataset$Scenario == "Actual",], "markdown", row.names = F)
 
 ```
 
@@ -375,14 +379,14 @@ censoring = events) and compare this to the actual curve.
 ---
 
 ```{r Best, results='markup', warning=F, echo=F, message=F, comment=NA}
-kable(dataset[dataset$Scenario == "Best",], row.names = F)
+kable(dataset[dataset$Scenario == "Best",], "markdown", row.names = F)
 
 ```
 
 ---
 
 ```{r Worst, results='markup', warning=F, echo=F, message=F, comment=NA}
-kable(dataset[dataset$Scenario == "Worst",], row.names = F)
+kable(dataset[dataset$Scenario == "Worst",], "markdown", row.names = F)
 
 ```
 
@@ -442,7 +446,7 @@ dataset <- data.frame(patientID, followup, eventtype, scenario)
 colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
 
 for (value in unique(dataset$Scenario)){
-    print(kable(tail((dataset[dataset$Scenario == value,]),2), row.names = F))
+    print(kable(tail((dataset[dataset$Scenario == value,]),2), "markdown", row.names = F))
     cat('\n\n')
 }
 
