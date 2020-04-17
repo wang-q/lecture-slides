@@ -134,7 +134,7 @@ km_mod_60 <- function(plot) {
 
 ## Basic Kaplan--Meier curve
 
-```{r basic, warning=F, echo=F, message=F, comment=NA}
+```{r basic, warning=F, echo=F, message=F}
 followup <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) * 6
 eventtype <- c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
@@ -143,9 +143,9 @@ scenario <- c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A")
 
 dataset <- tibble(
     PatientID = patientID,
-    FollowUp = followup,
+    FollowUp  = followup,
     EventType = eventtype,
-    Scenario = scenario
+    Scenario  = scenario
 )
 
 kable(dataset, "markdown")
@@ -272,12 +272,16 @@ Every time an event occurs, the survival probability drops by 0.1 of the remaini
 
 ## Kaplan--Meier curve with censored data
 
-```{r censor, warning=F, echo=F, message=F, comment=NA}
+```{r censor, warning=F, echo=F, message=F}
 followup <- c(1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10) * 6
 eventtype <- c(1, 1,  0, 0, 1, 1, 1, 0, 1, 0)
 
-dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- tibble(
+    PatientID = patientID,
+    FollowUp = followup,
+    EventType = eventtype,
+    Scenario = scenario
+)
 
 kable(dataset, "markdown")
 
@@ -328,7 +332,7 @@ censored 被和谐
 
 ---
 
-```{r Actual, results='markup', warning=F, echo=F, message=F, comment=NA}
+```{r, results='markup', warning=F, echo=F, message=F}
 followup <- c(
     1, 2, 3, 4, 5, 6, 6.2, 8, 9, 10,
     1, 2, 10, 10, 5, 6, 6.2, 10, 10, 10,
@@ -342,11 +346,23 @@ eventtype <- c(
 
 scenario <- rep(c("Actual", "Best", "Worst"), each = 10)
 
-dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- tibble(
+    PatientID = rep(patientID, times = 3),
+    FollowUp  = followup,
+    EventType = eventtype,
+    Scenario  = scenario
+)
 
-kable(dataset[dataset$Scenario == "Actual",], "markdown", row.names = F)
+dataset <-
+    dataset %>%
+    filter(Scenario == "Actual") %>%
+    filter(EventType == 1) %>%
+    mutate(Scenario = "Event") %>%
+    add_row(dataset, .before = 0)
 
+dataset %>%
+    filter(Scenario == "Actual") %>%
+    kable("markdown", row.names = F)
 ```
 
 \note{
@@ -358,14 +374,26 @@ censoring = events) and compare this to the actual curve.
 
 ---
 
-```{r Best, results='markup', warning=F, echo=F, message=F, comment=NA}
-kable(dataset[dataset$Scenario == "Best",], "markdown", row.names = F)
+```{r, results='markup', warning=F, echo=F, message=F}
+dataset %>%
+    filter(Scenario == "Best") %>%
+    kable("markdown", row.names = F)
 ```
 
 ---
 
-```{r Worst, results='markup', warning=F, echo=F, message=F, comment=NA}
-kable(dataset[dataset$Scenario == "Worst",], "markdown", row.names = F)
+```{r, results='markup', warning=F, echo=F, message=F}
+dataset %>%
+    filter(Scenario == "Worst") %>%
+    kable("markdown", row.names = F)
+```
+
+---
+
+```{r, results='markup', warning=F, echo=F, message=F}
+dataset %>%
+    filter(Scenario == "Event") %>%
+    kable("markdown", row.names = F)
 ```
 
 ---
@@ -421,8 +449,12 @@ eventtype <- c(
 
 scenario <- rep(c("A", "B"), each = 10)
 
-dataset <- data.frame(patientID, followup, eventtype, scenario)
-colnames(dataset) <- c("PatientID", "FollowUp", "EventType", "Scenario")
+dataset <- tibble(
+    PatientID = rep(patientID, times = 2),
+    FollowUp  = followup,
+    EventType = eventtype,
+    Scenario  = scenario
+)
 
 for (value in unique(dataset$Scenario)){
     print(kable(tail((dataset[dataset$Scenario == value,]),2), "markdown", row.names = F))
@@ -465,7 +497,7 @@ reaching a plateau staying stable at 0.2.
 ---
 
 
-```{r ci, warning=F, echo=F, message=F, comment=NA}
+```{r ci, warning=F, echo=F, message=F}
 dataset <- subset(dataset, Scenario == "A")
 
 surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
