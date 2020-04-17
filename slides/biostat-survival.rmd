@@ -512,6 +512,66 @@ intervals are very wide, giving a clue that the study contains very few particip
 
 }
 
+# 生存函数
+
+---
+
+受试者在任何指定的时间内存活下来的概率
+
+$$S(t)=Pr(\{T>t\})=\int _{t}^{\infty }f(u)\,du=1-F(t)$$
+
+$S(t)$: 生存函数
+
+$F(t) = Pr(\{T \leq t\})$: 累计分布函数
+
+\note{
+
+看起来有点复杂, 直接看用法就好
+
+}
+
+---
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+        \includegraphics{biostat-survival.images/Survival_function_1.svg.png}
+    \column{0.5\textwidth}
+        \includegraphics{biostat-survival.images/Survival_function_2.svg.png}
+\end{columns}
+
+\note{
+
+在理论上，生存函数是平滑的；在实践中，我们在离散时间尺度上观察事件。
+
+第一个生存率明显比第二个要低
+
+For example, for survival function 1, the probability of surviving longer than t = 2 months is 0.37.
+That is, 37% of subjects survive more than 2 months.
+
+For survival function 2, the probability of surviving longer than t = 2 months is 0.97. That is, 97%
+of subjects survive more than 2 months.
+
+}
+
+---
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+        \includegraphics{biostat-survival.images/Survival_function_2_median_survival.svg.png}
+    \column{0.5\textwidth}
+        \includegraphics{biostat-survival.images/Median_survival_greater_than_10_months.svg.png}
+\end{columns}
+
+\note{
+
+Median survival may be determined from the survival function. For example, for survival function 2,
+50% of the subjects survive 3.72 months. Median survival is thus 3.72 months.
+
+In some cases, median survival cannot be determined from the graph. For example, for survival
+function 4, more than 50% of the subjects survive longer than the observation period of 10 months.
+
+}
+
 ## Conclusions
 
 * Censored data can substantially affect the KM curve, but have to be included when fitting the
