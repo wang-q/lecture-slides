@@ -14,7 +14,6 @@ library(knitr)
 library(tidyverse)
 library(survival)
 library(survminer)
-library(KMsurv)
 library(randomNames)
 
 options(kableExtra.latex.load_packages = FALSE)
@@ -724,9 +723,10 @@ AML 的数据比较简单, 我们用它来介绍另一个概念
 
 }
 
-## John Graunt's Life Table (1662)
+---
 
 \begin{longtable}[]{@{}lrrl@{}}
+    \caption{John Graunt's Life Table (1662)} \\
     \toprule
     Age Interval & Proportion Deaths & Proportion Surviving until\tabularnewline
     & in Interval & start of Interval\tabularnewline
@@ -756,6 +756,10 @@ Mortality) 发表于格里历1663年或儒略历1662年, 分析查理二世时�
 有些院士却不乐见一位服饰经销商成为他们的同僚. 但英国国王查理二世仍独排众议, 让葛兰特进入皇家学会.
 
 }
+
+---
+
+![Life table for `aml`](biostat-survival.images/Life_table_for_the_aml_data.png)
 
 ## `lung`
 
