@@ -756,6 +756,77 @@ Mortality) 发表于格里历1663年或儒略历1662年, 分析查理二世时�
 有些院士却不乐见一位服饰经销商成为他们的同僚. 但英国国王查理二世仍独排众议, 让葛兰特进入皇家学会.
 
 }
+
+## `lung`
+
+```{r viewlung, results='asis', warning=F, echo=F, message=F}
+kable(head(lung), "latex", booktabs=T, linesep = "") %>%
+    kable_styling(latex_options =c("scale_down"))
+```
+
+`R` 的 `Surv` 函数可以接受三种指标样式
+
+1. `1/0` (`1` = event)
+2. `1/2` (`2` = event)
+3. `TRUE/FALSE` (`TRUE` = event)
+
+\note{
+
+以前只有这么几个指标, 统计学家玩出花儿来, 也得不到什么有用的东西.
+
+现在我们有了几十万个表观遗传位点, 直接用暴力穷举, 找到最好的指标组合.
+
+NCCTG Lung Cancer Data
+
+inst:       Institution code
+
+time:	Survival time in days ($Y_i$)
+
+status:	censoring status 1=censored, 2=dead ($\delta_i$)
+
+age:        Age in years
+
+sex:        Male=1 Female=2
+
+ph.ecog:    ECOG performance score (0=good 5=dead)
+
+ph.karno:   Karnofsky performance score (bad=0-good=100) rated by physician
+
+pat.karno:  Karnofsky performance score as rated by patient
+
+meal.cal:   Calories consumed at meals
+
+wt.loss:    Weight loss in last six months
+
+The use of 1/2 for alive/dead instead of the usual 0/1 is a historical footnote. For data contained
+on punch cards, IBM 360 Fortran treated blank as a zero, which led to a policy within the section of
+Biostatistics to never use "0" as a data value since one could not distinguish it from a missing
+value. The policy became a habit, as is often the case; and the 1/2 coding endured long beyond the
+demise of punch cards and Fortran.
+
+}
+
+---
+
+```{r fuptimes, fig.cap = 'Distribution of follow-up time', warning=F, echo=F, message=F}
+j <- ggplot(lung, aes(x = time, fill = factor(status))) +
+    geom_histogram(bins = 25, alpha = 0.6, position = "identity") +
+    scale_fill_manual(values = c("blue", "red"), labels = c("Censored", "Dead")) +
+    labs(x = "Days", y = "Count") +
+    theme_minimal()
+
+j
+```
+
+\note{
+
+- Censored subjects still provide information so must be appropriately included in the analysis
+
+- Distribution of follow-up times is skewed, and may differ between censored patients and those with
+  events
+
+- Follow-up times are always positive
+
 }
 
 ## Conclusions
