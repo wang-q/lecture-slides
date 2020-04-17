@@ -708,6 +708,7 @@ km_mod(j$plot)
 
 }
 
+CMH Logrank test.
 ## 生命表
 
 生命表
