@@ -708,7 +708,22 @@ km_mod(j$plot)
 
 }
 
+## 秩和检验
+
 CMH Logrank test.
+
+建立在二项数据的标准方法的基础上, 在每个不同的死亡时间构建一个 2x2 的表，并比较两组之间的死亡率与风险人数, 然后用
+Cochran--Mantel--Haenszel 检验将这些表格合并. 有时也被叫作 Mantel--Cox 检验.
+
+```{r aml_diff, result='asis', warning=F, echo=T, message=F}
+diff <- survdiff(
+    Surv(time=aml$time, event=aml$status) ~ aml$x,
+    rho=0
+)
+
+pchisq(diff$chisq, length(diff$n)-1, lower.tail=F)
+```
+
 ## 生命表
 
 生命表
