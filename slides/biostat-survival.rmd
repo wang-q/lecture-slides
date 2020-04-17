@@ -321,52 +321,6 @@ censored 被和谐
 
 }
 
----
-
-```{r swimmer, fig.cap = 'Censored data', warning=F, echo=F, message=F}
-# make fake data
-set.seed(202004016)
-fkdt <- tibble(
-    Subject = as.factor(1:10),
-    Months = sample(12:72, 10, replace = T)
-)
-fkdt$censor <- sample(c("Censored", rep("Event", 2)), 10, replace = T)
-for (i in 1:10) {
-    if (fkdt$Months[i] > 60) {
-        fkdt$censor[i] <- "Censored"
-    }
-}
-
-# plot with shapes to indicate censoring or event
-j <- ggplot(fkdt, aes(Subject, Months)) +
-    geom_bar(stat = "identity", width = 0.2) +
-    geom_point(data = fkdt,
-               aes(Subject, Months, color = censor, shape = censor),
-               size = 4) +
-    geom_hline(yintercept = 60, color="orange", size=1) +
-    coord_flip() +
-    theme_minimal() +
-    theme(legend.title = element_blank(), legend.position = "bottom")
-
-j
-
-```
-
-\note{
-
-观察期 5 年时间
-
-右删失, 左删失; 具体的意义可以暂时不管
-
-
-In this example, how would we compute the proportion who are event-free at 10 years?
-
-Subjects 2, 3, 5, 6, 8, 9, and 10 were all **event-free at 10 years**. Subjects 4 and 7 had the
-**event before 10 years**. Subject 1 was **censored before 10 years**, so we don't know whether they
-had the event or not by 10 years - how do we incorporate this subject into our estimate?
-
-}
-
 ## Remove censored data?
 
 感觉删失数据用处不大/不可靠/破坏完整性, 把它们去掉行不行?
@@ -596,6 +550,212 @@ Median survival may be determined from the survival function. For example, for s
 In some cases, median survival cannot be determined from the graph. For example, for survival
 function 4, more than 50% of the subjects survive longer than the observation period of 10 months.
 
+The Kaplan--Meier method is the most common way to estimate survival times and probabilities.
+
+}
+
+# 现实数据
+
+---
+
+对于一个受试者 $i$:
+
+1. 事件时间 $T_i$
+2. 删失时间 $C_i$
+3. 事件指标 $\delta_i$:
+
+    * 如果事件发生, `1` (i.e. $T_i \leq C_i$)
+    * 如果删失, `0` (i.e. $T_i > C_i$)
+
+4. 观察时间 $Y_i = \min(T_i, C_i)$
+
+像前面强调的, \underline{事件} 与 \underline{时间} 是最重要的, 其它的数据项基本都是用来分组的.
+
+
+\note{
+
+事件发生在第 72 个月, 而观察区间设成 60 个月, 那就是一个 60 个月的删失时间
+
+}
+
+---
+
+```{r swimmer, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+# make fake data
+set.seed(202004016)
+fkdt <- tibble(
+    Subject = as.factor(1:10),
+    Months = sample(12:72, 10, replace = T)
+)
+fkdt$censor <- sample(c("Censored", rep("Event", 2)), 10, replace = T)
+for (i in 1:10) {
+    if (fkdt$Months[i] > 60) {
+        fkdt$censor[i] <- "Censored"
+    }
+}
+
+# plot with shapes to indicate censoring or event
+j <- ggplot(fkdt, aes(Subject, Months)) +
+    geom_bar(stat = "identity", width = 0.2) +
+    geom_point(data = fkdt,
+               aes(Subject, Months, color = censor, shape = censor),
+               size = 4) +
+    geom_hline(yintercept = 60, color="orange", size=1) +
+    coord_flip() +
+    theme_minimal() +
+    theme(legend.title = element_blank(), legend.position = "bottom")
+
+j
+
+```
+
+\note{
+
+观察期 5 年时间
+
+右删失, 左删失; 具体的意义可以暂时不管
+
+事件发生在第 72 个月, 而观察区间设成 60 个月, 那就是一个 60 个月的删失时间
+
+
+In this example, how would we compute the proportion who are event-free at 10 years?
+
+Subjects 2, 3, 5, 6, 8, 9, and 10 were all **event-free at 10 years**. Subjects 4 and 7 had the
+**event before 10 years**. Subject 1 was **censored before 10 years**, so we don't know whether they
+had the event or not by 10 years - how do we incorporate this subject into our estimate?
+
+}
+
+## `aml`
+
+```{r viewaml, results='asis', warning=F, echo=F, message=F}
+aml %>%
+    mutate(ID = row_number()) %>%
+    select(ID, everything()) %>%
+    arrange(time) %>%
+    kable(format="latex", booktabs=T, linesep="") %>%
+    kable_styling(font_size = 5)
+```
+
+\note{
+
+以 `survival` 包里的 `aml` 和 `lung` 数据为例
+
+AML - 急性髓细胞白血病
+
+Time 是生存或删失时间
+
+Event 是 AML 复发
+
+Treatment group: the variable "x" indicates if maintenance chemotherapy was given
+
+最后一位受试者 11, 在 161 周时删失, 剔除表示该患者没有发生事件, 即没有 AML 复发.
+
+另一个受试者 3 号, 在 13 周时删失 (状态=0). 这名受试者只在研究中呆了 13 周, 而在这13周内, aml 没有复发.
+这名患者有可能是在研究接近尾声时入组的, 所以只观察了13周. 也有可能是这名患者在研究早期入组,
+但在研究中失去了随访或退出研究. 从表中可以看出, 其他受试者在16周、28周和45周时删失 (17、6、9的状态=0).
+
+其余受试者在研究期间都经历了事件, AML 复发.
+
+}
+
+---
+
+```{r aml_km, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+fit <- survfit(Surv(time = aml$time, event = aml$status) ~ 1, data = aml)
+
+j <- ggsurvplot(
+    fit,
+    data = aml,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+km_mod(j$plot)
+```
+
+\note{
+
+这个就是生存函数
+
+我们感兴趣的问题是, 与非维持性患者相比, 维持性患者的复发发生时间是否比非维持性患者晚.
+
+}
+
+---
+
+```{r aml_km_x, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+fit <- survfit(Surv(time = aml$time, event = aml$status) ~ aml$x, data = aml)
+
+j <- ggsurvplot(
+    fit,
+    data = aml,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+km_mod(j$plot)
+```
+
+\note{
+
+置信区间重叠这么大, 两组间有差异吗? 显著吗?
+
+}
+
+## 生命表
+
+生命表
+: 是指每一个年龄段的人在下一个生日前死亡的概率 (Life table).
+
+\note{
+
+AML 的数据比较简单, 我们用它来介绍另一个概念
+
+保险公司里精算师, 生命表 (也称死亡率表或精算表)
+
+死亡是一种事件, 我们也可以把它换成其它类型的事件, 这里就 AML 的数据来说, 换成 AML 复发事件.
+
+}
+
+## John Graunt's Life Table (1662)
+
+\begin{longtable}[]{@{}lrrl@{}}
+    \toprule
+    Age Interval & Proportion Deaths & Proportion Surviving until\tabularnewline
+    & in Interval & start of Interval\tabularnewline
+    \midrule
+    \endhead
+    0--6   & 0.36 & 1.00 \tabularnewline
+    7--16  & 0.24 & 0.64 \tabularnewline
+    17--26 & 0.15 & 0.40 \tabularnewline
+    27--36 & 0.09 & 0.25 \tabularnewline
+    37--46 & 0.06 & 0.16 \tabularnewline
+    47--56 & 0.04 & 0.10 \tabularnewline
+    57--66 & 0.03 & 0.06 \tabularnewline
+    67--76 & 0.02 & 0.03 \tabularnewline
+    77--86 & 0.01 & 0.01 \tabularnewline
+    \bottomrule
+\end{longtable}
+
+\note{
+
+约翰·葛兰特是一位英国经济学家, 也是第一位从事人口统计学调查的研究者；根据同业描述, 他原本是位服饰经销商.
+
+他的著作《对死亡率表的自然与政治观察》 (Natural and Political Observations Made upon the Bills of
+Mortality) 发表于格里历1663年或儒略历1662年, 分析查理二世时期伦敦地区死亡率的起伏, 研究腺鼠疫的开始与扩散的系统性方法,
+并发出警告. 虽然这个方法并未真正发明出来, 但他的著作仍被用以判断当时的伦敦人口数目.
+
+葛兰特的表现使他带着著作前往英国皇家学会, 参与院士选举,
+有些院士却不乐见一位服饰经销商成为他们的同僚. 但英国国王查理二世仍独排众议, 让葛兰特进入皇家学会.
+
+}
 }
 
 ## Conclusions
