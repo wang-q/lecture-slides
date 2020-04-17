@@ -221,9 +221,11 @@ surv_object <- Surv(
 
 # Fit the Kaplan--Meier curve to this data `Scenario`
 fit <- survfit(
-    surv_object ~ Scenario,
-    data = dataset
+    surv_object ~ dataset$Scenario
 )
+
+# Figure
+plot(fit)
 ```
 
 \note{
@@ -642,7 +644,7 @@ aml %>%
 
 AML - 急性髓细胞白血病
 
-Time 是生存或删失时间
+Time 是生存或删失时间, weeks
 
 Event 是 AML 复发
 
@@ -660,7 +662,7 @@ Treatment group: the variable "x" indicates if maintenance chemotherapy was give
 
 ---
 
-```{r aml_km, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+```{r aml_km, fig.cap = 'AML - survival', warning=F, echo=F, message=F}
 fit <- survfit(Surv(time = aml$time, event = aml$status) ~ 1, data = aml)
 
 j <- ggsurvplot(
@@ -668,6 +670,7 @@ j <- ggsurvplot(
     data = aml,
     conf.int = T,
     xlab = "Days",
+    surv.median.line = c("hv"),
     censor.shape = "|",
     censor.size = 3,
     ggtheme = theme_bw()
@@ -686,7 +689,7 @@ km_mod(j$plot)
 
 ---
 
-```{r aml_km_x, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+```{r aml_km_x, fig.cap = 'AML - maintenance', warning=F, echo=F, message=F}
 fit <- survfit(Surv(time = aml$time, event = aml$status) ~ aml$x, data = aml)
 
 j <- ggsurvplot(
