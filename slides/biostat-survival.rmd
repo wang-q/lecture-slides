@@ -175,8 +175,11 @@ In this first example, there are no censored events.
 事件类型
 : Event type,　`1` 表示事件发生, 在 Overall Survival 里, 代表死亡
 
+分组
+: Scenario, 类别变量, 也可以是分组后的连续变量
+
 分层
-: Strata, Scenario, 类别变量, 也可以是分组后的连续变量
+: Strata, 除了分组的作用外, 有的软件会加上一些其它的意义
 
 拟合
 : Fit
@@ -525,17 +528,15 @@ intervals are very wide, giving a clue that the study contains very few particip
 
 }
 
-# 生存函数
+# 生存函数与风险比
 
----
+## 生存函数
 
 受试者在任何指定的时间内存活下来的概率
 
-$$S(t)=Pr(\{T>t\})=\int _{t}^{\infty }f(u)\,du=1-F(t)$$
+$$S(t)=Pr(\{T>t\})=\int _{t}^{\infty }f(u)\,du$$
 
 $S(t)$: 生存函数
-
-$F(t) = Pr(\{T \leq t\})$: 累计分布函数
 
 \note{
 
@@ -583,7 +584,58 @@ Median survival may be determined from the survival function. For example, for s
 In some cases, median survival cannot be determined from the graph. For example, for survival
 function 4, more than 50% of the subjects survive longer than the observation period of 10 months.
 
-The Kaplan--Meier method is the most common way to estimate survival times and probabilities.
+KM 方法是最常见的估计生存函数的方法
+
+}
+
+## 风险比
+
+\begin{columns}[T,onlytextwidth]
+    \column{0.6\textwidth}
+        \begin{description}
+            \tightlist
+            \item[相对危险]
+            暴露组与未暴露组中事件发生率的比值 (Relative Risk, risk ratio, RR).
+        \end{description}
+    \column{0.4\textwidth}
+        \includegraphics{biostat-survival.images/1256px-Illustration_of_risk_reduction.svg.png}
+\end{columns}
+
+\note{
+
+在流行病统计学中使用, 要求两组受试者中所有个体的观察时间相同.
+
+Risk - 危险
+
+Hazard - 风险
+
+}
+
+---
+
+风险率
+: 单位时间内发生的事件数占被试总体的百分比 (Hazard rate).
+
+$$h(t)=\lim _{{\Delta t\rightarrow 0}}{\frac {{\text {observed events in interval}}[t,t+\Delta t]/N(t)}{\Delta t}}$$
+
+\note{
+
+$N(t)$ is the number at risk at the beginning of an interval
+
+}
+
+---
+
+风险比
+: 指一个解释变量的两个水平所描述的条件对应的风险率之比 (Hazard Ratio).
+
+比例风险模型, Proportional hazards model
+
+\note{
+
+基本假设是, 比例恒定不变
+
+风险率是从生存函数的估计, 也就是 KM 曲线里得出
 
 }
 
