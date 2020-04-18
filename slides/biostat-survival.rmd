@@ -117,6 +117,7 @@ km_mod_60 <- function(plot) {
 * 比较生存时间
 
   * 秩和检验
+  * 风险比
 
 * 变量对生存的影响
 
@@ -637,6 +638,8 @@ $N(t)$ is the number at risk at the beginning of an interval
 
 风险率是从生存函数的估计, 也就是 KM 曲线里得出
 
+RR 和 HR 的区别中文网上的资料很混乱, 我这边给出的是简化的理解, 按我的这个来
+
 }
 
 # 现实数据
@@ -799,16 +802,48 @@ km_mod(j$plot)
 
 CMH Logrank test.
 
-建立在二项数据的标准方法的基础上, 在每个不同的死亡时间构建一个 2x2 的表，并比较两组之间的死亡率与风险人数, 然后用
-Cochran--Mantel--Haenszel 检验将这些表格合并. 有时也被叫作 Mantel--Cox 检验.
+在每个不同的死亡时间构建一个 $2 \times 2$ 的表，比较两组之间的死亡率与风险人数, 然后用 Cochran--Mantel--Haenszel
+检验将这些表格合并. 有时也被叫作 Mantel--Cox 检验.
+
+\note{
+
+建立在二项数据的标准分析方法的基础上
+
+PP Logrank test
+
+}
+
+---
 
 ```{r aml_diff, result='asis', warning=F, echo=T, message=F}
+surv_object <- Surv(
+    time  = aml$time,
+    event = aml$status
+)
+
 diff <- survdiff(
-    Surv(time=aml$time, event=aml$status) ~ aml$x,
+    surv_object ~ aml$x,
     rho=0
 )
 
 pchisq(diff$chisq, length(diff$n)-1, lower.tail=F)
+```
+
+## 化疗在 `aml` 里的风险比
+
+```{r aml_hr, result='asis', warning=F, echo=T, message=F}
+hr <- (diff$obs[1]/diff$exp[1]) /
+    (diff$obs[2]/diff$exp[2])
+cilow <- exp(log(hr) -
+    qnorm(0.975) *
+    sqrt(1/diff$exp[1]+1/diff$exp[2]))
+cihigh <- exp(log(hr) +
+    qnorm(0.975) *
+    sqrt(1/diff$exp[1]+1/diff$exp[2]))
+
+cat(str_interp(
+"HR = $[.2f]{hr}\n95% CI: $[.2f]{cilow}-$[.2f]{cihigh}"
+))
 ```
 
 ## 生命表
