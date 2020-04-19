@@ -14,6 +14,7 @@ library(knitr)
 library(tidyverse)
 library(survival)
 library(survminer)
+library(gridExtra)
 library(randomNames)
 
 options(kableExtra.latex.load_packages = FALSE)
@@ -42,6 +43,24 @@ km_mod_60 <- function(plot) {
         scale_x_continuous(limits = c(0,60), breaks = sort(c(seq(0, 60, 6))))
 
     plot
+}
+
+diff_result <- function(diff) {
+    p <- pchisq(diff$chisq, length(diff$n)-1, lower.tail=F)
+    p <- signif(p, 2)
+
+    hr <- (diff$obs[1]/diff$exp[1]) /
+        (diff$obs[2]/diff$exp[2])
+    cilow <- exp(log(hr) -
+        qnorm(0.975) *
+        sqrt(1/diff$exp[1]+1/diff$exp[2]))
+    cihigh <- exp(log(hr) +
+        qnorm(0.975) *
+        sqrt(1/diff$exp[1]+1/diff$exp[2]))
+
+    cat(str_interp(
+        "P = ${p}; HR = $[.2f]{hr}; $[.2f]{cilow}-$[.2f]{cihigh}"
+    ))
 }
 
 ```
@@ -589,7 +608,7 @@ KM 方法是最常见的估计生存函数的方法
 
 }
 
-## 风险比
+## 风险比 HR
 
 \begin{columns}[T,onlytextwidth]
     \column{0.6\textwidth}
@@ -642,79 +661,9 @@ RR 和 HR 的区别中文网上的资料很混乱, 我这边给出的是简化�
 
 }
 
-# 现实数据
+# 样例数据 aml
 
 ---
-
-对于一个受试者 $i$:
-
-1. 事件时间 $T_i$
-2. 删失时间 $C_i$
-3. 事件指标 $\delta_i$:
-
-    * 如果事件发生, `1` (i.e. $T_i \leq C_i$)
-    * 如果删失, `0` (i.e. $T_i > C_i$)
-
-4. 观察时间 $Y_i = \min(T_i, C_i)$
-
-像前面强调的, \underline{事件} 与 \underline{时间} 是最重要的, 其它的数据项基本都是用来分组的.
-
-
-\note{
-
-事件发生在第 72 个月, 而观察区间设成 60 个月, 那就是一个 60 个月的删失时间
-
-}
-
----
-
-```{r swimmer, fig.cap = 'Censored data', warning=F, echo=F, message=F}
-# make fake data
-set.seed(202004016)
-fkdt <- tibble(
-    Subject = as.factor(1:10),
-    Months = sample(12:72, 10, replace = T)
-)
-fkdt$censor <- sample(c("Censored", rep("Event", 2)), 10, replace = T)
-for (i in 1:10) {
-    if (fkdt$Months[i] > 60) {
-        fkdt$censor[i] <- "Censored"
-    }
-}
-
-# plot with shapes to indicate censoring or event
-j <- ggplot(fkdt, aes(Subject, Months)) +
-    geom_bar(stat = "identity", width = 0.2) +
-    geom_point(data = fkdt,
-               aes(Subject, Months, color = censor, shape = censor),
-               size = 4) +
-    geom_hline(yintercept = 60, color="orange", size=1) +
-    coord_flip() +
-    theme_minimal() +
-    theme(legend.title = element_blank(), legend.position = "bottom")
-
-j
-
-```
-
-\note{
-
-观察期 5 年时间
-
-右删失, 左删失; 具体的意义可以暂时不管
-
-事件发生在第 72 个月, 而观察区间设成 60 个月, 那就是一个 60 个月的删失时间
-
-
-In this example, how would we compute the proportion who are event-free at 10 years?
-
-Subjects 2, 3, 5, 6, 8, 9, and 10 were all **event-free at 10 years**. Subjects 4 and 7 had the
-**event before 10 years**. Subject 1 was **censored before 10 years**, so we don't know whether they
-had the event or not by 10 years - how do we incorporate this subject into our estimate?
-
-}
-
-## `aml`
 
 ```{r viewaml, results='asis', warning=F, echo=F, message=F}
 aml %>%
@@ -899,10 +848,12 @@ Mortality) 发表于格里历1663年或儒略历1662年, 分析查理二世时�
 
 ![Life table for `aml`](biostat-survival.images/Life_table_for_the_aml_data.png)
 
-## `lung`
+# 样例数据 lung
+
+---
 
 ```{r viewlung, results='asis', warning=F, echo=F, message=F}
-kable(head(lung), "latex", booktabs=T, linesep = "") %>%
+kable(head(lung, n=10), "latex", booktabs=T, linesep = "") %>%
     kable_styling(latex_options =c("scale_down"))
 ```
 
@@ -913,6 +864,8 @@ kable(head(lung), "latex", booktabs=T, linesep = "") %>%
 3. `TRUE/FALSE` (`TRUE` = event)
 
 \note{
+
+这部分任务是观察时间的变化的影响, 以及协变量的作用
 
 以前只有这么几个指标, 统计学家玩出花儿来, 也得不到什么有用的东西.
 
@@ -950,6 +903,78 @@ demise of punch cards and Fortran.
 
 ---
 
+对于一个受试者 $i$:
+
+1. 事件时间 $T_i$
+2. 删失时间 $C_i$
+3. 事件指标 $\delta_i$:
+
+    * 如果事件发生, `1` (i.e. $T_i \leq C_i$)
+    * 如果删失, `0` (i.e. $T_i > C_i$)
+
+4. 观察时间 $Y_i = \min(T_i, C_i)$
+
+* \underline{事件} 与 \underline{时间} 是最重要的
+* 其它的数据项常称为 \underline{协变量}, 基本都是用来分组的
+
+\note{
+
+事件发生在第 72 个月, 而观察区间设成 60 个月, 那就是一个 60 个月的删失时间
+
+像前面强调的
+
+}
+
+---
+
+```{r swimmer, fig.cap = 'Censored data', warning=F, echo=F, message=F}
+# make fake data
+set.seed(202004016)
+fkdt <- tibble(
+    Subject = as.factor(1:10),
+    Months = sample(12:72, 10, replace = T)
+)
+fkdt$censor <- sample(c("Censored", rep("Event", 2)), 10, replace = T)
+for (i in 1:10) {
+    if (fkdt$Months[i] > 60) {
+        fkdt$censor[i] <- "Censored"
+    }
+}
+
+# plot with shapes to indicate censoring or event
+j <- ggplot(fkdt, aes(Subject, Months)) +
+    geom_bar(stat = "identity", width = 0.2) +
+    geom_point(data = fkdt,
+               aes(Subject, Months, color = censor, shape = censor),
+               size = 4) +
+    geom_hline(yintercept = 60, color="orange", size=1) +
+    coord_flip() +
+    theme_minimal() +
+    theme(legend.title = element_blank(), legend.position = "bottom")
+
+j
+
+```
+
+\note{
+
+观察期 5 年时间
+
+右删失, 左删失; 具体的意义可以暂时不管
+
+事件发生在第 72 个月, 而观察区间设成 60 个月, 那就是一个 60 个月的删失时间
+
+
+In this example, how would we compute the proportion who are event-free at 10 years?
+
+Subjects 2, 3, 5, 6, 8, 9, and 10 were all **event-free at 10 years**. Subjects 4 and 7 had the
+**event before 10 years**. Subject 1 was **censored before 10 years**, so we don't know whether they
+had the event or not by 10 years - how do we incorporate this subject into our estimate?
+
+}
+
+## 观察时间
+
 ```{r fuptimes, fig.cap = 'Distribution of follow-up time', warning=F, echo=F, message=F}
 j <- ggplot(lung, aes(x = time, fill = factor(status))) +
     geom_histogram(bins = 25, alpha = 0.6, position = "identity") +
@@ -957,10 +982,14 @@ j <- ggplot(lung, aes(x = time, fill = factor(status))) +
     labs(x = "Days", y = "Count") +
     theme_minimal()
 
+j <- j + geom_vline(xintercept = 730, color="orange", size=1)
+
 j
 ```
 
 \note{
+
+设观察时间为两年, 730 天, 之后的所有数据都视为删失
 
 - Censored subjects still provide information so must be appropriately included in the analysis
 
@@ -971,7 +1000,158 @@ j
 
 }
 
-## Conclusions
+---
+
+```{r lung_km, fig.cap = 'Lung - survival', fig.width=12, warning=F, echo=F, message=F}
+lung2 <- lung
+lung2$status = ifelse(lung2$time > 730, 1, lung2$status)
+
+lung3 <- lung
+lung3$status = ifelse(lung3$time > 730, 1, lung3$status)
+lung3 <- lung
+lung3$time = ifelse(lung3$time > 730, 730, lung3$time)
+
+j <- ggsurvplot(
+    survfit(Surv(time = time, event = status) ~ 1, data = lung),
+    data = lung,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+j <- km_mod(j$plot)
+
+j2 <- ggsurvplot(
+    survfit(Surv(time = time, event = status) ~ 1, data = lung2),
+    data = lung2,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+j2 <- km_mod(j2$plot)
+
+j3 <- ggsurvplot(
+    survfit(Surv(time = time, event = status) ~ 1, data = lung3),
+    data = lung2,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+j3 <- km_mod(j3$plot)
+
+grid.arrange(j, j2, j3, ncol=3, nrow=1)
+```
+
+---
+
+```{r lung_km_sex, fig.cap = 'Lung - sex', fig.width=12, warning=F, echo=F, message=F}
+# KM
+j <- ggsurvplot(
+    survfit(Surv(time = time, event = status) ~ sex, data = lung),
+    data = lung,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+j <- km_mod(j$plot)
+
+j2 <- ggsurvplot(
+    survfit(Surv(time = time, event = status) ~ sex, data = lung2),
+    data = lung2,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+j2 <- km_mod(j2$plot)
+
+j3 <- ggsurvplot(
+    survfit(Surv(time = time, event = status) ~ sex, data = lung3),
+    data = lung3,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+j3 <- km_mod(j3$plot)
+
+grid.arrange(j, j2, j3, ncol=3, nrow=1)
+```
+
+```{r, results='asis', warning=F, echo=F, message=F}
+# P, HR
+diff <- survdiff(Surv(time, status) ~ sex, data = lung, rho=0)
+diff_result(diff)
+cat("\n\n")
+
+diff2 <- survdiff(Surv(time, status) ~ sex, data = lung2, rho=0)
+diff_result(diff2)
+cat("\n\n")
+
+diff3 <- survdiff(Surv(time, status) ~ sex, data = lung3, rho=0)
+diff_result(diff3)
+cat("\n\n")
+
+```
+
+\note{
+
+一般采用第二种形式, 即超出观察时间的, 都计为删失, 但保留完整的时间值. 所以把 censored 译成截断并不好.
+
+}
+
+## 离散变量
+
+```{r lung_km_ecog, fig.cap = 'Lung - ph.ecog', warning=F, echo=F, message=F}
+# KM
+j <- ggsurvplot(
+    survfit(Surv(time, status) ~ ph.ecog, data = lung),
+    data = lung,
+    conf.int = F,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+km_mod(j$plot)
+
+```
+
+```{r, results='asis', warning=F, echo=F, message=F}
+# P, HR
+diff <- survdiff(Surv(time, status) ~ ph.ecog, data = lung, rho=0)
+diff_result(diff)
+cat("\n\n")
+```
+
+\note{
+
+我们不可能按每个年龄来分组, 像生命表那样, 手工分组也比较麻烦.
+
+对类似体重, BMI 这样的连续变量, 更麻烦.
+
+有没有自动一些的方法?
+
+}
+
+# Cox 比例风险回归
+
+---
+
+
+# 总结
+
+---
 
 * Censored data can substantially affect the KM curve, but have to be included when fitting the
   curve.
@@ -979,3 +1159,7 @@ j
 * Be cautious when interpreting the end of the KM if there are big drops present.
 * The height of the drop can inform you about the number of patients at risk, even when it’s not
   reported or when there are no confidence intervals shown.
+
+\bigskip
+
+\tiny\url{https://github.com/wang-q/lecture-slides/blob/master/slides/biostat-survival.slides.pdf}
