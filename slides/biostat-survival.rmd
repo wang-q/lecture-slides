@@ -606,9 +606,21 @@ Median survival may be determined from the survival function. For example, for s
 In some cases, median survival cannot be determined from the graph. For example, for survival
 function 4, more than 50% of the subjects survive longer than the observation period of 10 months.
 
+}
+
+## Kaplan–-Meier estimator
+
 KM 方法是最常见的估计生存函数的方法
 
-}
+$$
+\widehat{S}(t)=\prod_{i: t_{i} \leq t}\left(1-\frac{d_{i}}{n_{i}}\right)
+$$
+
+$t_i$: 至少有一个事件发生的时间
+
+$d_i$: 在时间 $t_i$ 时发生的事件 (如死亡) 的数量
+
+$n_i$: 在时间 $t_i$ 前存活的 (未发生事件或删失的) 个体数量
 
 ## 风险比 HR
 
