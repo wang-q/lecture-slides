@@ -793,7 +793,7 @@ km_mod(j$plot)
 ---
 
 ```{r aml_km_x, fig.cap = 'AML - maintenance', warning=F, echo=F, message=F}
-fit <- survfit(Surv(time = aml$time, event = aml$status) ~ aml$x, data = aml)
+fit <- survfit(Surv(time, status) ~ x, data = aml)
 
 j <- ggsurvplot(
     fit,
@@ -834,13 +834,8 @@ PP Logrank test
 ---
 
 ```{r aml_diff, result='asis', warning=F, echo=T, message=F}
-surv_object <- Surv(
-    time  = aml$time,
-    event = aml$status
-)
-
 diff <- survdiff(
-    surv_object ~ aml$x,
+    Surv(time, status) ~ x, data = aml,
     rho=0
 )
 
@@ -1203,7 +1198,7 @@ cat("\n\n")
 
 ---
 
-![blue2001](biostat-survival.images/blue2001.png)
+![Blue2001](biostat-survival.images/Blue2001.png)
 
 研究人员认为, 经过培训的护士可以改善慢性心力衰竭患者的发病率和死亡率.
 
@@ -1253,6 +1248,12 @@ cat("\n\n")
 连续变量
 : Continuous variable
 
+\note{
+
+对于简单的类别变量, 手工处理是可行的
+
+}
+
 ---
 
 ```{r lung_km_ecog, fig.cap = 'Lung - ph.ecog', warning=F, echo=F, message=F}
@@ -1292,6 +1293,73 @@ cat("\n\n")
 
 ---
 
+生存模型
+
+: 将某类事件发生前的时间与一个或多个可能与该时间量相关的 \underline{协变量} 联系起来的模型.
+
+回归分析
+
+: 是一套估计因变量 (通常称为 "结果变量") 和一个或多个独立变量 (通常称为 "预测因子"、"协变量 "或 "特征")
+之间关系的统计过程.
+
+Cox 比例风险模型是一种生存模型, 协变量的独立效应按 \underline{风险比} 倍增, 即 \underline{风险比} 恒定.
+
+---
+
+![Cox1972](biostat-survival.images/Cox1972.png)
+
+---
+
+$$
+h(t)=h_{0}(t) \times \exp \left(b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}\right)
+$$
+
+$$
+\ln \left(\frac{h(t)}{h_{0}(t)}\right)=b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}
+$$
+
+## 单因素 Cox 回归
+
+```{r lung_uni_cox, result='asis', warning=F, echo=F, message=F}
+tbl <- coxph(Surv(time,status) ~ inst, data = lung2) %>%
+    broom::tidy(exp=T)
+
+for (i in colnames(lung2)[4:10]) {
+    f <- str_c('Surv(time, status) ~ ', i)
+    cox <- coxph(as.formula(f), data = lung2)
+    tbl <- tbl %>%
+        add_row(broom::tidy(cox, exp=T)[1,])
+}
+
+tbl %>%
+    mutate(
+        p.value = cell_spec(signif(p.value, 2), "latex", color = ifelse(p.value<0.05, "red", "black"))
+    ) %>%
+    kable("latex", escape = F, booktabs = T, linesep = "") %>%
+    kable_styling(latex_options =c("scale_down"))
+
+```
+
+
+## 多因素 Cox 回归
+
+```{r lung_multi_cox, result='asis', warning=F, echo=T, message=F}
+multivariate_cox <- coxph(
+    Surv(time, status) ~
+        age + sex + ph.ecog + ph.karno + pat.karno,
+    data = lung2
+)
+```
+
+```{r, result='asis', warning=F, echo=F, message=F}
+multivariate_cox %>%
+    broom::tidy(exp=T) %>%
+    mutate(
+        p.value = cell_spec(signif(p.value, 2), "latex", color = ifelse(p.value<0.05, "red", "black"))
+    ) %>%
+    kable("latex", escape = F, booktabs = T, linesep = "") %>%
+    kable_styling(latex_options =c("scale_down"))
+```
 
 # 总结
 
