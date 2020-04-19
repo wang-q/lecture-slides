@@ -239,14 +239,10 @@ dataset <- tibble(
 
 # Define what the time column is dataset$FollowUp
 #   and the event column is dataset$EventType
-surv_object <- Surv(
-    time  = dataset$FollowUp,
-    event = dataset$EventType
-)
-
 # Fit the Kaplan--Meier curve to this data `Scenario`
 fit <- survfit(
-    surv_object ~ dataset$Scenario
+    Surv(FollowUp, EventType) ~ Scenario,
+    data = dataset
 )
 
 # Figure
@@ -268,8 +264,7 @@ survival 是生存分析最常用的, 也是最全面的包. 也可以在 SPSS �
 ---
 
 ```{r km_code, warning=F, echo=F, message=F}
-surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
-fit <- survfit(surv_object ~ Scenario, data = dataset)
+fit <- survfit(Surv(FollowUp, EventType) ~ Scenario, data = dataset)
 j <- ggsurvplot(
     fit,
     data = dataset,
@@ -428,9 +423,7 @@ dataset %>%
 dataset$FollowUp = ifelse(dataset$Scenario == "Actual", dataset$FollowUp - 0.6, dataset$FollowUp + 0)
 dataset$FollowUp = ifelse(dataset$Scenario == "Worst", dataset$FollowUp - 1.2, dataset$FollowUp + 0)
 
-surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
-
-fit <- survfit(surv_object ~ Scenario, data = dataset)
+fit <- survfit(Surv(FollowUp, EventType) ~ Scenario, data = dataset)
 
 j <- ggsurvplot(fit,
     data = dataset,
@@ -525,11 +518,10 @@ reaching a plateau staying stable at 0.2.
 ```{r ci, warning=F, echo=F, message=F}
 dataset <- subset(dataset, Scenario == "A")
 
-surv_object <- Surv(time = dataset$FollowUp, event = dataset$EventType)
+fit <- survfit(Surv(FollowUp, EventType) ~ Scenario, data = dataset)
 
-fit <- survfit(surv_object ~ Scenario, data = dataset)
-
-j <- ggsurvplot(fit,
+j <- ggsurvplot(
+    fit,
     data = dataset,
     conf.int = TRUE,
     censor.shape = "|",
@@ -764,7 +756,7 @@ Treatment group: the variable "x" indicates if maintenance chemotherapy was give
 ---
 
 ```{r aml_km, fig.cap = 'AML - survival', warning=F, echo=F, message=F}
-fit <- survfit(Surv(time = aml$time, event = aml$status) ~ 1, data = aml)
+fit <- survfit(Surv(time, status) ~ 1, data = aml)
 
 j <- ggsurvplot(
     fit,
@@ -1090,7 +1082,7 @@ lung3 <- lung
 lung3$time = ifelse(lung3$time > 730, 730, lung3$time)
 
 j <- ggsurvplot(
-    survfit(Surv(time = time, event = status) ~ 1, data = lung),
+    survfit(Surv(time, status) ~ 1, data = lung),
     data = lung,
     conf.int = T,
     xlab = "Days",
@@ -1101,7 +1093,7 @@ j <- ggsurvplot(
 j <- km_mod(j$plot)
 
 j2 <- ggsurvplot(
-    survfit(Surv(time = time, event = status) ~ 1, data = lung2),
+    survfit(Surv(time, status) ~ 1, data = lung2),
     data = lung2,
     conf.int = T,
     xlab = "Days",
@@ -1112,7 +1104,7 @@ j2 <- ggsurvplot(
 j2 <- km_mod(j2$plot)
 
 j3 <- ggsurvplot(
-    survfit(Surv(time = time, event = status) ~ 1, data = lung3),
+    survfit(Surv(time, status) ~ 1, data = lung3),
     data = lung2,
     conf.int = T,
     xlab = "Days",
@@ -1130,7 +1122,7 @@ grid.arrange(j, j2, j3, ncol=3, nrow=1)
 ```{r lung_km_sex, fig.cap = 'Lung - sex', fig.width=12, warning=F, echo=F, message=F}
 # KM
 j <- ggsurvplot(
-    survfit(Surv(time = time, event = status) ~ sex, data = lung),
+    survfit(Surv(time, status) ~ sex, data = lung),
     data = lung,
     conf.int = T,
     xlab = "Days",
@@ -1141,7 +1133,7 @@ j <- ggsurvplot(
 j <- km_mod(j$plot)
 
 j2 <- ggsurvplot(
-    survfit(Surv(time = time, event = status) ~ sex, data = lung2),
+    survfit(Surv(time, status) ~ sex, data = lung2),
     data = lung2,
     conf.int = T,
     xlab = "Days",
@@ -1152,7 +1144,7 @@ j2 <- ggsurvplot(
 j2 <- km_mod(j2$plot)
 
 j3 <- ggsurvplot(
-    survfit(Surv(time = time, event = status) ~ sex, data = lung3),
+    survfit(Surv(time, status) ~ sex, data = lung3),
     data = lung3,
     conf.int = T,
     xlab = "Days",
