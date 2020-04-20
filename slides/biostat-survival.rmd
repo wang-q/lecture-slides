@@ -1468,6 +1468,38 @@ print(coefs)
 
 }
 
+## ROC AUC
+
+```{r lung_roc, fig.cap = 'Lung - ROC', warning=F, echo=F, message=F}
+roc <-pROC::roc(lung2$status, predictor, levels = c(1, 2), na.rm = TRUE)
+
+rocauc <- signif(roc$auc, digits=3)
+aucci <- pROC::ci.auc(roc)
+cilow <- signif(aucci[1], digits=2)
+cihigh <- signif(aucci[3], digits=2)
+
+breaks = seq(0, 1, 0.2)
+plot <- ggplot() +
+    geom_segment(aes(x = 0, y = 0, xend = 1,yend = 1)) +
+    scale_x_continuous(name = "1 - Specificity", limits = c(0,1), breaks = breaks, expand = c(0.02,0.02)) +
+    scale_y_continuous(name = "Sensitivity", limits = c(0,1), breaks = breaks, expand = c(0.02,0.02)) +
+    theme_bw() +
+    theme(aspect.ratio=1) +
+    theme(panel.grid.major.x = element_blank(), panel.grid.major.y = element_blank()) +
+    theme(panel.grid.minor.x = element_blank(), panel.grid.minor.y = element_blank())
+
+plot <- plot +
+    geom_text(data=data.frame(),
+        aes(label = paste("AUC = ", rocauc, "\n95% CI: ", cilow, "-", cihigh, sep=""), x = 1, y = 0),
+        hjust=1, vjust=0, size = 3 )
+
+sens_spec <- data.frame(spec=rev(1 - roc$specificities), sens=rev(roc$sensitivities))
+plot <- plot +
+    geom_step(aes(x=spec, y=sens), data=sens_spec, lwd=0.8)
+
+plot
+```
+
 # 总结
 
 ---
