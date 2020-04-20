@@ -1302,13 +1302,23 @@ Cox 比例风险模型是一种生存模型, 协变量的独立效应按 \underl
 
 ---
 
-$$
-h(t)=h_{0}(t) \times \exp \left(b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}\right)
-$$
+\begin{equation*}
+    h(t)=h_{0}(t) \times \exp \left(b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}\right)
+\end{equation*}
 
-$$
-\ln \left(\frac{h(t)}{h_{0}(t)}\right)=b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}
-$$
+\pause{
+\bigskip
+\begin{equation*}
+    \ln \left(\frac{h(t)}{h_{0}(t)}\right)=b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}
+\end{equation*}
+}
+
+\pause{
+\bigskip
+\begin{equation*}
+    \ln \left(HR\right)=b_{1} X_{1}+b_{2} X_{2}+b_{3} X_{3}+\cdots+b_{k} X_{k}
+\end{equation*}
+}
 
 ## 单因素 Cox 回归
 
@@ -1335,7 +1345,7 @@ tbl %>%
 
 ## 多因素 Cox 回归
 
-```{r lung_multi_cox, result='asis', warning=F, echo=T, message=F}
+```{r, result='asis', warning=F, echo=T, message=F}
 multivariate_cox <- coxph(
     Surv(time, status) ~
         age + sex + ph.ecog + ph.karno + pat.karno,
@@ -1343,7 +1353,7 @@ multivariate_cox <- coxph(
 )
 ```
 
-```{r, result='asis', warning=F, echo=F, message=F}
+```{r lung_multi_cox, result='asis', warning=F, echo=F, message=F}
 multivariate_cox %>%
     broom::tidy(exp=T) %>%
     mutate(
@@ -1352,6 +1362,111 @@ multivariate_cox %>%
     kable("latex", escape = F, booktabs = T, linesep = "") %>%
     kable_styling(latex_options =c("scale_down"))
 ```
+
+---
+
+```{r, result='asis', warning=F, echo=T, message=F}
+multivariate_cox <- coxph(
+    Surv(time, status) ~
+        sex + ph.ecog,
+    data = lung2
+)
+```
+
+```{r, ref.label='lung_multi_cox', result='asis', warning=F, echo=F, message=F}
+```
+
+```{r, include=FALSE, result='asis', warning=F, echo=F, message=F}
+multivariate_cox %>%
+    gtsummary::tbl_regression(exp = TRUE) %>%
+    gtsummary::as_kable()
+```
+
+---
+
+```{r lung_forest, fig.cap = 'Lung - forest', warning=F, echo=F, message=F}
+ggforest(multivariate_cox, data = lung2)
+```
+
+---
+
+```{r lung_km_multivairate, fig.cap = 'Lung - multivairate', warning=F, echo=F, message=F}
+# KM
+j <- ggsurvplot(
+    survfit(Surv(time, status) ~ sex + ph.ecog, data = lung2),
+    data = lung2,
+    conf.int = F,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+km_mod(j$plot)
+
+```
+
+---
+
+```{r lung_km_median, fig.cap = 'Lung - multivairate - median', warning=F, echo=F, message=F}
+results <- summary(multivariate_cox)$coefficients
+markers <- dimnames(results)[[1]]
+coefs <- results[,1]
+
+predictor <- numeric(nrow(lung2))
+for (i in 1:length(markers)) {
+    predictor <- predictor + coefs[[ markers[i] ]] * lung2[[ markers[i] ]]
+}
+
+score_median <- median(predictor, na.rm=TRUE)
+group <- ifelse(predictor < score_median, 0, 1) # to make HR > 1
+
+# KM
+j <- ggsurvplot(
+    survfit(Surv(time, status) ~ group, data = lung2),
+    data = lung2,
+    conf.int = T,
+    xlab = "Days",
+    censor.shape = "|",
+    censor.size = 3,
+    ggtheme = theme_bw()
+)
+
+km_mod(j$plot)
+
+```
+
+## 组合与单因素对比
+
+```{r, result='asis', warning=F, echo=F, message=F}
+tbl <- coxph(Surv(time,status) ~ group, data = lung2) %>%
+    broom::tidy(exp=T)
+
+for (i in markers) {
+    f <- str_c('Surv(time, status) ~ ', i)
+    cox <- coxph(as.formula(f), data = lung2)
+    tbl <- tbl %>%
+        add_row(broom::tidy(cox, exp=T)[1,])
+}
+
+tbl %>%
+    mutate(
+        p.value = cell_spec(signif(p.value, 2), "latex")
+    ) %>%
+    kable("latex", escape = F, booktabs = T, linesep = "") %>%
+    kable_styling(latex_options =c("scale_down"))
+
+```
+
+```{r, result='asis', warning=F, echo=F, message=F}
+print(coefs)
+```
+
+\note{
+
+性别的 HR 如果转换成大于 1 的, 是 1.78
+
+}
 
 # 总结
 
