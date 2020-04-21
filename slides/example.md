@@ -113,13 +113,13 @@ toc: true
 
 Regular 普通
 
-*italic* *仿宋*[^note]
+*Italic* *宋体*[^note]
 
 **Bold** **加粗**
 
 ~~Strikethrough~~ ~~删除线~~
 
-[^note]: 中文用 *仿宋* 来代替 *italic*, 慎用
+[^note]: 中文用 *宋体* 来代替 *italic*
 
 ## Line blocks
 
@@ -199,11 +199,11 @@ Term 2 with *inline markup*
 
 下面是\LaTeX 文字样式的例子\footnote{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}.
 
-* \textit{仿宋} 
+* \textit{宋体} \textit{italic} 
     * `\textit{}`
-* \textbf{粗体} 
+* \textbf{粗体} \textbf{bold} 
     * `\textbf{}`
-* \underline{下划线} 
+* \underline{下划线} \underline{underline} 
     * `\underline{}`
 
 \note{
@@ -339,7 +339,7 @@ optional background color.
 ## Quotes
 
 \begin{exampleblock}{}
-    {\large "To be, or not to be: that is the question."}
+    {\large ``To be, or not to be: that is the question.''}
     \vskip5mm
     \hspace*\fill{\small--- William Shakespeare, Hamlet}
 \end{exampleblock}
@@ -349,7 +349,7 @@ optional background color.
 \includegraphics{example.images/feynman_blackboard5.jpg}
 
 \begin{exampleblock}{}
-    {\large "What I cannot create, I do not understand."}
+    {\large ``What I cannot create, I do not understand.''}
     \vskip5mm
     \hspace*\fill{\small--- Richard Feynman}
 \end{exampleblock}
