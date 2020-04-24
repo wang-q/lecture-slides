@@ -57,7 +57,7 @@ Markdown + Latex
 * Fonts
   * [Fira](https://github.com/mozilla/Fira): `brew cask install font-fira-sans font-fira-mono`
   * Hiragino Sans GB (冬青黑体简体中文)
-  * STFangsong (仿宋)
+  * Source Han Serif SC (思源宋体)
 
 ## Pandoc templates
 

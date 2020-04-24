@@ -1504,12 +1504,16 @@ plot
 
 ---
 
-* Censored data can substantially affect the KM curve, but have to be included when fitting the
-  curve.
-* Show censored data on the curve as much as possible.
-* Be cautious when interpreting the end of the KM if there are big drops present.
-* The height of the drop can inform you about the number of patients at risk, even when it’s not
-  reported or when there are no confidence intervals shown.
+
+* 删失数据会对 KM 曲线产生实质性的影响, 但在拟合曲线时必须包括在内, 在曲线上尽可能地显示删失的数据.
+
+* KM 曲线是最常用的对生存函数的估计
+
+* 秩和检验可以用于检验 KM 曲线间的差异
+
+* 对于协变量, 可以用 Cox 回归来明确它们的影响
+
+* Cox 回归的效果, 除可以用 KM 曲线来定性评判, 还可以用 ROC 曲线的 AUC 值来定量
 
 \bigskip
 
