@@ -788,15 +788,15 @@ Note the variables with no whitespaces in the definition.
 
 ## 正态群体
 
-|         目标         |              方法               |
-|:-------------------:|:------------------------------:|
-|       描述数据        |            Mean, SD            |
-|    一组数据与假定值    |      One-sample *t* test       |
-|       两组数据        |            *t* test            |
-|     成对的两组数据     |        Paired *t* test         |
-|    三组或更多组数据    |         One-way ANOVA          |
-|  成对的三组或更多组数据  |    Repeated-measures ANOVA     |
-|  两个变量间的量化关系   |      Pearson correlation       |
+|      目标      |               方法               |
+|:------------:|:------------------------------:|
+|     描述数据     |            Mean, SD            |
+|   一组数据与假定值   |      One-sample *t* test       |
+|     两组数据     |            *t* test            |
+|   成对的两组数据    |        Paired *t* test         |
+|   三组或更多组数据   |         One-way ANOVA          |
+| 成对的三组或更多组数据  |    Repeated-measures ANOVA     |
+|  两个变量间的量化关系  |      Pearson correlation       |
 | 从其它测定变量得到预测值 | Linear or nonlinear regression |
 
 \note{
@@ -819,15 +819,15 @@ ANOVA 方差分析
 
 ## 非正态群体
 
-|                  目标                  |            方法             |
-|:-------------------------------------:|:---------------------------:|
-|                描述数据                | Median, interquartile range |
-|             一组数据与假定值             |        Wilcoxon test        |
-|                两组数据                |     Mann--Whitney test      |
-|              成对的两组数据              |        Wilcoxon test        |
-|    \textcolor{gray}{三组或更多组数据}    |    Kruskal--Wallis test     |
-| \textcolor{gray}{成对的三组或更多组数据}  |        Friedman test        |
-|           两个变量间的量化关系            |    Spearman correlation     |
+|               目标               |             方法              |
+|:------------------------------:|:---------------------------:|
+|              描述数据              | Median, interquartile range |
+|            一组数据与假定值            |        Wilcoxon test        |
+|              两组数据              |     Mann--Whitney test      |
+|            成对的两组数据             |        Wilcoxon test        |
+|            三组或更多组数据            |    Kruskal--Wallis test     |
+|          成对的三组或更多组数据           |        Friedman test        |
+|           两个变量间的量化关系           |    Spearman correlation     |
 | \textcolor{gray}{从其它测定变量得到预测值} |  Nonparametric regression   |
 
 \note{
@@ -840,16 +840,16 @@ ANOVA 方差分析
 
 ## 二项实验
 
-|                 目标                 |            方法            |
-|:------------------------------------:|:-------------------------:|
-|               描述数据                |        Proportion         |
-|            一组数据与假定值             |        Chi-square         |
-|               两组数据                | Fisher test or Chi-square |
-|    \textcolor{gray}{成对的两组数据}    |       McNemar test        |
-|   \textcolor{gray}{三组或更多组数据}    |      Chi-square test      |
+|              目标               |            方法             |
+|:-----------------------------:|:-------------------------:|
+|             描述数据              |        Proportion         |
+|           一组数据与假定值            |        Chi-square         |
+|             两组数据              | Fisher test or Chi-square |
+|   \textcolor{gray}{成对的两组数据}   |       McNemar test        |
+|  \textcolor{gray}{三组或更多组数据}   |      Chi-square test      |
 | \textcolor{gray}{成对的三组或更多组数据} |        Cochrane Q         |
-|  \textcolor{gray}{两个变量间的量化关系}  | Contingency coefficients  |
-|         从其它测定变量得到预测值         |    Logistic regression    |
+| \textcolor{gray}{两个变量间的量化关系}  | Contingency coefficients  |
+|         从其它测定变量得到预测值          |    Logistic regression    |
 
 \note{
 
@@ -859,20 +859,20 @@ Fisher's test (chi-square for large samples)
 
 ## 生存时间
 
-|                目标                 |             方法              |
-|:----------------------------------:|:----------------------------:|
-|               描述数据               | Kaplan--Meier survival curve |
+|              目标               |              方法              |
+|:-----------------------------:|:----------------------------:|
+|             描述数据              | Kaplan--Meier survival curve |
 |  \textcolor{gray}{一组数据与假定值}   |                              |
-|               两组数据               |        Log-rank test         |
-|            成对的两组数据             |    Conditional regression    |
+|             两组数据              |        Log-rank test         |
+|   \textcolor{gray}{成对的两组数据}   |    Conditional regression    |
 |           三组或更多组数据            |        Cox regression        |
-|         成对的三组或更多组数据         |    Conditional regression    |
-| \textcolor{gray}{两个变量间的量化关系} |                              |
-|        从其它测定变量得到预测值         |        Cox regression        |
+| \textcolor{gray}{成对的三组或更多组数据} |    Conditional regression    |
+| \textcolor{gray}{两个变量间的量化关系}  |                              |
+|         从其它测定变量得到预测值          |        Cox regression        |
 
 \note{
 
-对数秩检验
+秩和检验
 
 }
 
