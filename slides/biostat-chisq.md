@@ -76,14 +76,15 @@ given name 约翰
 ---
 
 \begin{columns}[onlytextwidth]
-    \column{0.6\textwidth}
+    \column{0.58\textwidth}
         \begin{itemize}
-        \item 1851年，孟德尔前往维也纳大学
+        \item 1851 年, 孟德尔前往 \alert{维也纳大学}
         \item 在多普勒的指导下学习数学和物理
         \item 在昂格尔的指导下学习植物学
-        \item 昂格尔使用显微镜进行植物学研究; 假设植物细胞内简单元素的组合决定了植物的遗传性
+        \item 昂格尔使用显微镜进行植物学研究; 假设植物细胞内简单元素的组合决定了 \alert{植物的遗传}; 1852 年的著作中讨论了植物的进化问题
+        \item 1853 年, 孟德尔回到圣托马斯修道院
         \end{itemize}
-    \column{0.4\textwidth}
+    \column{0.38\textwidth}
     \begin{figure}
         \includegraphics{biostat-chisq.images/Franz_Unger.jpg}
         \caption{Franz Unger, 1800--1870}
@@ -92,9 +93,9 @@ given name 约翰
 
 \note{
 
-由修道院出资，继续他的科学研究
+由修道院出资, 继续他的科学研究
 
-在昂格尔的《植物世界史的尝试》（1852年）一书中，他用了一章来讨论植物的进化问题
+在昂格尔的《植物世界史的尝试》（1852年）一书中, 他用了一章来讨论植物的进化问题
 
 Attempt of a History of the Plant World
 
