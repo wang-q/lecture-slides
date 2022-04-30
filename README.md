@@ -56,7 +56,7 @@ Markdown + Latex
   * Or [MacTex](https://tug.org/mactex/mactex-download.html)
 * Fonts
   * [Fira](https://github.com/mozilla/Fira): `brew cask install font-fira-sans font-fira-mono`
-  * Hiragino Sans GB (冬青黑体简体中文)
+  * Hiragino Sans GB (冬青黑体简体中文)/Source Han Sans SC (思源黑体)
   * Source Han Serif SC (思源宋体)
 
 ## Pandoc templates

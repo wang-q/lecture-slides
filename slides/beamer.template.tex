@@ -20,7 +20,20 @@
 
 % 中文字体
 \usepackage{xeCJK}
-\setCJKmainfont[BoldFont={Hiragino Sans GB W6}, ItalicFont={Source Han Serif SC Medium}]{Hiragino Sans GB W3}
+\iffontsavailable{Hiragino Sans GB W3}%
+{%
+\setCJKmainfont[BoldFont={Hiragino Sans GB W6},%
+    ItalicFont={Source Han Serif SC Medium}]%
+    {Hiragino Sans GB W3}
+}{%
+\iffontsavailable{Source Han Sans SC Normal}%
+{%
+\setCJKmainfont[BoldFont={Source Han Sans SC Medium},%
+    ItalicFont={Source Han Serif SC Medium}]%
+    {Source Han Sans SC Normal}
+}{}
+}
+
 \xeCJKsetup{
     CJKecglue = {\hskip 0pt plus 0.08\baselineskip},
     xCJKecglue = {false},
