@@ -199,11 +199,11 @@ Term 2 with *inline markup*
 
 下面是\LaTeX 文字样式的例子\footnote{注意latex的control sequence后不要紧接着写中文字符. 这也是通篇都用半角符号的原因之一.}.
 
-* \textit{宋体} \textit{italic} 
+* \textit{宋体} \textit{italic}
     * `\textit{}`
-* \textbf{粗体} \textbf{bold} 
+* \textbf{粗体} \textbf{bold}
     * `\textbf{}`
-* \underline{下划线} \underline{underline} 
+* \underline{下划线} \underline{underline}
     * `\underline{}`
 
 \note{
@@ -286,13 +286,13 @@ Not **bold**.
         \begin{itemize}
             \item Milk \item Eggs \item Potatos
         \end{itemize}
-    
+
     \column{0.33\textwidth}
         Enumerations
         \begin{enumerate}
             \item First, \item Second and \item Last.
         \end{enumerate}
-    
+
     \column{0.33\textwidth}
         Descriptions
         \begin{description}
@@ -339,7 +339,7 @@ optional background color.
 ## Quotes
 
 \begin{exampleblock}{}
-    {\large ``To be, or not to be: that is the question.''}
+    {\large "To be, or not to be: that is the question."}
     \vskip5mm
     \hspace*\fill{\small--- William Shakespeare, Hamlet}
 \end{exampleblock}
@@ -349,7 +349,7 @@ optional background color.
 \includegraphics{example.images/feynman_blackboard5.jpg}
 
 \begin{exampleblock}{}
-    {\large ``What I cannot create, I do not understand.''}
+    {\large "What I cannot create, I do not understand."}
     \vskip5mm
     \hspace*\fill{\small--- Richard Feynman}
 \end{exampleblock}
@@ -441,7 +441,7 @@ Beamer 中的设置的页面尺寸比较小, 为 "128 mm $\times$ 96 mm".
 
 ## 从PowerPoint迁移
 
-将`.ppt`另存为`.pptx`; 解压`.pptx`到一个新的文件夹, 所有的图片都以 `ppt/media/imageNN.png` 或 `imageNN.jpeg` 
+将`.ppt`另存为`.pptx`; 解压`.pptx`到一个新的文件夹, 所有的图片都以 `ppt/media/imageNN.png` 或 `imageNN.jpeg`
 名字存在.
 
 ## 图像格式转换
