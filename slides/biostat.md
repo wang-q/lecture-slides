@@ -673,7 +673,7 @@ Note the variables with no whitespaces in the definition.
 
 ## 数学定理
 
-德莫佛--拉普拉斯定理
+棣莫佛--拉普拉斯定理
 :   参数为 $n, p$ 的二项分布以 $np$ 为均值, $np(1-p)$ 为方差的正态分布为极限 (de Moivre--Laplace).
 
 \bigskip
