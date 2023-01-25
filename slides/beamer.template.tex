@@ -20,17 +20,17 @@
 
 % 中文字体
 \usepackage{xeCJK}
-\iffontsavailable{Hiragino Sans GB W3}%
-{%
-\setCJKmainfont[BoldFont={Hiragino Sans GB W6},%
-    ItalicFont={Source Han Serif SC Medium}]%
-    {Hiragino Sans GB W3}
-}{%
 \iffontsavailable{Source Han Sans SC Normal}%
 {%
 \setCJKmainfont[BoldFont={Source Han Sans SC Medium},%
-    ItalicFont={Source Han Serif SC Medium}]%
+    ItalicFont={LXGW WenKai}]%
     {Source Han Sans SC Normal}
+}{%
+\iffontsavailable{Hiragino Sans GB W3}%
+{%
+\setCJKmainfont[BoldFont={Hiragino Sans GB W6},%
+    ItalicFont={LXGW WenKai}]%
+    {Hiragino Sans GB W3}
 }{}
 }
 
