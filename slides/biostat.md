@@ -381,9 +381,9 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 
 ## 高尔顿板
 
-\href{https://www.mathsisfun.com/data/quincunx.html}{模拟}
+\href{run:./biostat.images/Galton_box.mp4}{视频}
 
-\href{run:./biostat.images/Galton_box.webm}{视频}
+\href{https://www.mathsisfun.com/data/quincunx.html}{模拟}
 
 \note{
 
@@ -394,6 +394,10 @@ $$\binom{n}{k}=\frac{n!}{k!(n-k)!}$$
 高尔顿板可以看作是伯努利试验的实验模型. 如果我们把小球碰到钉子看作一次实验, 而把从右边落下算是成功, 从左边落下看作失败,
 就有了一次 p = 0.5 的伯努利试验. 小球从顶端到底层共需要经过 n 排钉子, 这就相当于一个 n 次伯努利试验.
 小球的高度曲线也就可以看作二项分布随机变量的概率密度函数.
+
+\url{https://it.wikipedia.org/wiki/File:Galton_box.webm}
+
+ffmpeg -i Galton_box.webm -vf "scale=trunc(oh*a/2)*2:720" -c:v libx264 -crf 20 -c:a aac -b:a 128k Galton_box.mp4
 
 }
 
