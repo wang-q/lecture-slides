@@ -151,11 +151,12 @@ toc: false
 
 经典的三段论
 
-> 所有人都是必死的;
-
-> 苏格拉底是人;
-
-> 苏格拉底是必死的.
+\begin{exampleblock}{}
+    {\textit{所有人都是必死的;\\}}
+    {\textit{苏格拉底是人;\\}}
+    {\textit{苏格拉底是必死的.}}
+    \vskip5mm
+\end{exampleblock}
 
 于十九世纪末, 传统逻辑被弗雷格和罗素提出的
 [数理逻辑](https://zh.wikipedia.org/wiki/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91) 所取代.
@@ -173,9 +174,11 @@ toc: false
 metaphysics
 : 通过理性的推理和逻辑去研究不能直接透过感知而得到答案的问题.
 
-> 根本上有什么存在?
-
-> 它是什么样的?
+\begin{exampleblock}{}
+    {\textit{根本上有什么存在?\\}}
+    {\textit{它是什么样的?\\}}
+    \vskip5mm
+\end{exampleblock}
 
 \note{
 
@@ -191,14 +194,15 @@ metaphysica 的出现其实由于亚里斯多德在他的作品集中把他对�
 
 ---
 
+\begin{exampleblock}{}
+    {\large\textit{形而上者谓之道, 形而下者谓之器.}}
+    \vskip5mm
+    \hspace*\fill{\small--- \textit{《易经$\cdot$系辞上传》} }
+    \vskip5mm
+\end{exampleblock}
+
 [形而上学](https://zh.wikipedia.org/wiki/%E5%BD%A2%E8%80%8C%E4%B8%8A%E5%AD%A6),
 是对存在本质的非经验性哲学研究.
-
-\begin{exampleblock}{}
-    {\large "形而上者谓之道, 形而下者谓之器."}
-    \vskip5mm
-    \hspace*\fill{\small--- 易经$\cdot$系辞上传}
-\end{exampleblock}
 
 \note{
 
@@ -498,17 +502,17 @@ framework known as the "The Chain of Being."
 ---
 
 \begin{exampleblock}{}
-    {\large "Plato is dear to me, but dearer still is truth."}
+    {\large\textit{"Plato is dear to me, but dearer still is truth."}}
     \vskip5mm
-    {\large "吾爱吾师, 吾更爱真理."}
+    {\large\textit{"吾爱吾师, 吾更爱真理."}}
     \vskip5mm
-    \hspace*\fill{\small--- 亚里士多德}
+    \hspace*\fill{\small--- \textit{亚里士多德}}
 \end{exampleblock}
 
 \begin{exampleblock}{}
-    {\large "凡是亚里士多德说的就是真理."}
+    {\large\textit{"凡是亚里士多德说的就是真理."}}
     \vskip5mm
-    \hspace*\fill{\small--- 某教会}
+    \hspace*\fill{\small--- \textit{某教会}}
 \end{exampleblock}
 
 \note{
