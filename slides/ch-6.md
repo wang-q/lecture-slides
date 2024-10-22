@@ -326,6 +326,8 @@ XXY
 
 1933 年, 第一位遗传学方面的诺奖得主
 
+\url{https://www.lindahall.org/about/news/scientist-of-the-day/thomas-hunt-morgan/}
+
 }
 
 ---
