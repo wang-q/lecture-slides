@@ -11,13 +11,15 @@ date: \today{}
 
 ## 6.1.1 性状的颗粒式遗传与孟德尔第一定律
 
-![孟德尔](ch-20.images/image1.jpg)
+![孟德尔](ch-6.images/image1.jpg)
 
 \note{
 
 介绍孟德尔背景以及奥地利历史.
 
 捷克以前是神罗的一部分
+
+\emph{提问:} 生物学以前是一个学科的分支, 你们知道是哪个吗?
 
 }
 
@@ -38,7 +40,7 @@ date: \today{}
 
 ---
 
-![孟德尔豌豆杂交实验](ch-20.images/image2.jpg)
+![孟德尔豌豆杂交实验](ch-6.images/image2.jpg)
 
 \note{
 
@@ -48,7 +50,7 @@ date: \today{}
 
 ---
 
-![豌豆性状](ch-20.images/image3.jpg)
+![豌豆性状](ch-6.images/image3.jpg)
 
 \note{
 
@@ -64,7 +66,7 @@ date: \today{}
 
 ## 一对性状的遗传分析
 
-![一对性状的遗传分析](ch-20.images/image4.jpg)
+![一对性状的遗传分析](ch-6.images/image4.jpg)
 
 \note{
 
@@ -86,7 +88,7 @@ date: \today{}
 
 ## 6.1.2 自由组合与孟德尔第二定律
 
-![两对性状的遗传分析](ch-20.images/image5.jpg)
+![两对性状的遗传分析](ch-6.images/image5.jpg)
 
 ---
 
@@ -103,15 +105,15 @@ date: \today{}
 
 ## 6.1.3 人类性状的孟德尔式遗传
 
-![人类遗传](ch-20.images/image6.jpg)
+![人类遗传](ch-6.images/image6.jpg)
 
 ---
 
-![棕色母亲和白色父亲生下一对分别为棕色和白色的双胞胎](ch-20.images/image7.jpg)
+![棕色母亲和白色父亲生下一对分别为棕色和白色的双胞胎](ch-6.images/image7.jpg)
 
 ---
 
-![一对等位基因控制的人类特征](ch-20.images/image8.jpg)
+![一对等位基因控制的人类特征](ch-6.images/image8.jpg)
 
 \note{
 
@@ -155,7 +157,7 @@ Red face 基因的效率是普通的 100 倍, 自然就是显性
 
 ## 不完全显性的中间表型
 
-![金鱼草花色不完全显性](ch-20.images/image9.jpg)
+![金鱼草花色不完全显性](ch-6.images/image9.jpg)
 
 ## 复等位基因的遗传
 
@@ -169,7 +171,7 @@ Red face 基因的效率是普通的 100 倍, 自然就是显性
 
 ---
 
-![复等位基因的遗传 --- 人类的 ABO 血型](ch-20.images/image10.jpg)
+![复等位基因的遗传 --- 人类的 ABO 血型](ch-6.images/image10.jpg)
 
 \note{
 
@@ -181,11 +183,11 @@ Red face 基因的效率是普通的 100 倍, 自然就是显性
 
 ## 单个基因影响多种表型
 
-![镰刀形贫血症](ch-20.images/image11.jpg)
+![镰刀形贫血症](ch-6.images/image11.jpg)
 
 ---
 
-![镰刀形贫血症](ch-20.images/image12.jpg)
+![镰刀形贫血症](ch-6.images/image12.jpg)
 
 \note{
 
@@ -237,16 +239,6 @@ Red face 基因的效率是普通的 100 倍, 自然就是显性
 * 1876, Oscar Hertwig, 减数分裂
 * 1883, Edouard Van Beneden, 以染色体角度再次描述减数分裂
 
-\note{
-
-\url{https://en.wikipedia.org/wiki/Walther_Flemming}
-
-\url{https://en.wikipedia.org/wiki/Eduard_Strasburger}
-
-\url{https://en.wikipedia.org/wiki/Meiosis#History}
-
-}
-
 ## 萨顿和博韦里的假说
 
 * 1900 年, 孟德尔定律被重新发现
@@ -268,11 +260,11 @@ Red face 基因的效率是普通的 100 倍, 自然就是显性
 
 ---
 
-![减数分裂](ch-20.images/image13.jpg)
+![减数分裂](ch-6.images/image13.jpg)
 
 ---
 
-![遗传的染色体学说](ch-20.images/image15.jpg)
+![遗传的染色体学说](ch-6.images/image15.jpg)
 
 ---
 
@@ -300,11 +292,11 @@ Red face 基因的效率是普通的 100 倍, 自然就是显性
 
 ## 性染色体与性别决定
 
-![性染色体与性别决定](ch-20.images/image16.jpg)
+![性染色体与性别决定](ch-6.images/image16.jpg)
 
 ---
 
-![性染色体异常, XO 与 XXY](ch-20.images/image17.jpg)
+![性染色体异常, XO 与 XXY](ch-6.images/image17.jpg)
 
 \note{
 
@@ -338,35 +330,41 @@ XXY
     * 繁殖力强;
     * 染色体数目少且形态特点十分分明.
 
+\note{
+
+\emph{提问:} 自然状态的果蝇都是杂交的, 那么它们就都是杂合体, 但遗传学的研究需要纯合体.
+
+怎么让果蝇成为纯合体? 怎么实现 $N - 1$?
+
+}
+
 ---
 
-![果蝇](ch-20.images/image18.jpg)
+![果蝇](ch-6.images/image18.jpg)
 
 ---
 
-![性连锁遗传的果蝇眼色](ch-20.images/image19.jpg)
+![性连锁遗传的果蝇眼色](ch-6.images/image19.jpg)
 
 ---
 
-![果蝇眼色的性连锁遗传分析](ch-20.images/image20.jpg)
+![果蝇眼色的性连锁遗传分析](ch-6.images/image20.jpg)
 
 ## 6.2.2 人类的性连锁遗传
 
-![人染色体](ch-20.images/image21.jpg)
+![人染色体](ch-6.images/image21.jpg)
 
 ---
 
-![欧洲皇室的血友病 X-性连锁遗传谱系](ch-20.images/image22.jpg)
+![欧洲皇室的血友病 X-性连锁遗传谱系](ch-6.images/image22.jpg)
 
 ---
 
-![色盲症的 X-性连锁遗传](ch-20.images/image23.jpg)
+![色盲症的 X-性连锁遗传](ch-6.images/image23.jpg)
 
 ## 6.2.3 连锁交换与遗传第三定律
 
----
-
-![Bateson 和 Punnett 的实验](ch-20.images/image24.jpg)
+![Bateson 和 Punnett 的实验](ch-6.images/image24.jpg)
 
 \note{
 
@@ -382,7 +380,7 @@ XXY
 
 ---
 
-![果蝇的不完全连锁](ch-20.images/image25.jpg)
+![果蝇的不完全连锁](ch-6.images/image25.jpg)
 
 ## 摩尔根与遗传的第三定律
 
@@ -391,9 +389,15 @@ XXY
   重组类型的产生是由于配子形成过程中, 同源染色体的非姐妹染色单体间发生局部交换的结果.
 * 重组频率的大小与连锁基因在染色体上的位置有关.
 
+\note{
+
+注意重组的几重涵义
+
+}
+
 ---
 
-![联会](ch-20.images/image14.jpg)
+![联会](ch-6.images/image14.jpg)
 
 ## 6.2.4 基因定位与连锁作图
 
@@ -404,5 +408,7 @@ XXY
 举例: 小概率事件发生的次数 (泊松分布)
 
 被鸟屎碰到, 人, 伞, 南大这么大面积
+
+总结: 遗传一、二定律只是染色体在减数分裂中的行为, 并不能推理出后续归纳出来的结果
 
 }
