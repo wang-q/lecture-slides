@@ -6,25 +6,6 @@ date: \today{}
 
 ---
 
-## 遗传学世纪的大事件 {.allowframebreaks}
-
-* 1865 Genes are particulate factors
-* 1903 Chromosomes are hereditary units
-* 1910 Genes lie on chromosomes
-* 1913 Chromosomes are linear arrays of genes
-* 1931 Recombination occurs by crossing over
-* 1944 DNA is the genetic material
-* 1945 A gene codes for protein
-* 1951 First protein sequence
-* 1953 DNA is a double helix
-* 1958 DNA replicates semiconservatively
-* 1961 Genetic code is triplet
-* 1977 Eukaryotic genes are interrupted
-* 1977 DNA can be sequenced
-* 1995 Bacterial genomes sequenced
-* 2001 Human genome sequenced
-
-
 # 7.1 DNA 是遗传物质
 
 ## 肺炎链球菌转化实验
@@ -305,14 +286,325 @@ DOI:10.1021/jacs.5b02251
 
 # 7.3 基因的概念与演变
 
----
+## 遗传学世纪的大事件 {.allowframebreaks}
+
+* 1865 Genes are particulate factors
+* 1903 Chromosomes are hereditary units
+* 1910 Genes lie on chromosomes
+* 1913 Chromosomes are linear arrays of genes
+* 1931 Recombination occurs by crossing over
+* 1944 DNA is the genetic material
+* 1945 A gene codes for protein
+* 1951 First protein sequence
+* 1953 DNA is a double helix
+* 1958 DNA replicates semiconservatively
+* 1961 Genetic code is triplet
+* 1977 Eukaryotic genes are interrupted
+* 1977 DNA can be sequenced
+* 1995 Bacterial genomes sequenced
+* 2001 Human genome sequenced
 
 * 蛋白质是表型特征的分子基础
 * DNA 与蛋白质的合成
 * 遗传信息在细胞质中被翻译
 * 中心法则
 
+\note{
+
+本书第五版在第 9 章详细讲这部分内容
+
+}
+
 # 7.4 基因组
+
+## 基因组及基因组学
+
+基因组
+:   一个生物个体中, DNA 分子所携带的遗传信息总和.
+
+* genome
+* 核基因组
+* 叶绿体基因组
+* 线粒体基因组
+* 病毒基因组
+* 人的基因组 (22+X+Y)
+
+基因组学
+:   研究生物体的基因和基因组的结构, 组成和功能.
+
+\note{
+
+* 结构基因组学: 研究基因和基因组的结构, 各种元件的序列特征, 基因定位和基因组作图等.
+* 功能基因组学: 在基因组水平上阐明 DNA 序列的功能,
+  着重研究不同的序列结构所具有的不同功能, 基因的表达与调控, 基因和环境之间的相互作用等.
+* 多种生物和病毒的基因组全序列测定.
+
+}
+
+---
+
+![不同生物基因组碱基对数目比较](ch-7.images/C-value.jpg)
+
+人类基因组计划
+
+* 1985 年, 美国能源部正式提出人类基因组测序.
+* 1990 年, 正式启动人类基因组测序.
+
+1. 绘制人类基因组连锁图
+2. 绘制物理图
+3. 人类基因组测序
+4. 其他物种基因组分析
+
+---
+
+!["绘制"](ch-7.images/drawing.jpg)
+
+---
+
+![Electropherogram](ch-7.images/Electropherogram.jpg)
+
+---
+
+![模板与测序室](ch-7.images/sequencing-lab.jpg)
+
+---
+
+![Clusters, Storages](ch-7.images/clusters.jpg)
+
+---
+
+![贡献](ch-7.images/contribution.jpg)
+
+## 基因专利
+
+* Myriad genetics 公司拥有 *BRCA1* 和 *BRCA2* 基因的国际专利, 乳腺癌与卵巢癌的相关基因.
+* Myriad 的测试费为 \$869.
+* 现在有更便宜的方法, 只要 \$100, 但都侵犯了 Myriad 的专利.
+
+\note{
+
+朱莉检查之后, 切除了乳腺
+
+}
+
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-7.images/ventor.jpg}
+    \end{minipage}
+\hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-7.images/celera.jpg}
+    \end{minipage}
+\caption{文特尔, J. Craig Venter}
+\end{figure}
+
+---
+
+![HGP sequencing strategy](ch-7.images/image101.jpg)
+
+---
+
+![Celera assembly strategy](ch-7.images/image102.jpg)
+
+\note{
+
+Then order scaffolds on the chromosomes using the HGP clone map and
+other publicly available maps.
+
+}
+
+---
+
+![Celera stock](ch-7.images/celera-stock.jpg)
+
+## 基因组草图, 2001
+
+* International Human Genome Sequencing Consortium
+    * **公共项目**
+    * \fullcite{lander2001}
+* Celera Genomics, Venter JC *et al.*
+    * **私有项目**
+    * \fullcite{venter2001}
+
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-7.images/nature-cover.jpg}
+        \subcaption{Nature}
+    \end{minipage}
+\hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-7.images/science-cover.jpg}
+        \subcaption{Science}
+    \end{minipage}
+\caption{基因组草图, 2001}
+\end{figure}
+
+---
+
+![全基因组测序的生物](ch-7.images/species_tree.jpg)
+
+## 基因组研究成果
+
+* $3.2\times10^9$ bp
+* 约 2 万个基因
+
+测序已完成; 进一步的工作是确定各个基因的功能及他们之间的相互关系.
+
+\note{
+
+Informatics is to biology what mathematics is to physics.
+
+费曼: Physics is to math what sex is to masturbation.
+
+}
+
+---
+
+![测序能力的增长](ch-7.images/sequencing-capacity.jpg)
+
+---
+
+![Illumina](ch-7.images/hiseq.jpg)
+
+---
+
+![比摩尔定律更快](ch-7.images/faster-than-moore.jpg)
+
+---
+
+![千个基因组计划](ch-7.images/1000-genome.jpg)
+
+\note{
+
+\url{http://www.ebiotrade.com/newsf/2010-3/2010315172205631.htm}
+
+}
+
+## Personal Genomes
+
+\begin{columns}[onlytextwidth]
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item Craig Venter
+        \item James Watson
+        \item Stephen Quake
+        \item George Church
+        \item Marjolein Kriek
+        \item Hermann Hauser
+        \item Han Chinese
+        \item Seong-Jin Kim
+        \item Korean AK1
+        \item Yoruban African NA18507
+    \end{itemize}
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item 14 others sequenced by Complete Genomics
+        \item Unknown number sequenced by Knome
+        \item 6 genomes sequenced at high depth by the 1000 Genomes Project
+        \item 180 genomes sequenced at low coverage by the 1000 Genomes Project
+        \item Two acute myeloid leukemia patients
+    \end{itemize}
+\end{columns}
+
+\note{
+
+People Who’ve Had Their Genomes Sequenced
+
+Stephen Quake, A Stanford engineer
+
+Marjolein Kriek, a clinical geneticist at LUMC
+
+Dr. Hauser, Partner, Amadeus Capital Partners Ltd, is the first consumer
+to purchase Illumina's individual genome sequencing service.
+
+}
+
+
+---
+
+\begin{figure}
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-7.images/image29.jpg}
+        \subcaption{脊椎动物}
+    \end{minipage}
+\hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \includegraphics{ch-7.images/image31.jpg}
+        \subcaption{英国人健康计划}
+    \end{minipage}\\
+    \begin{minipage}[b]{\linewidth}
+        \includegraphics{ch-7.images/image30.jpg}
+        \subcaption{拟南芥}
+    \end{minipage}%
+\caption{其它计划}
+\end{figure}
+
+\note{
+
+奥巴马卸任总统后，下一步考虑做风投。
+
+"我与硅谷以及风投的交流， 极大地满足了我对科学和组织的兴趣 ……
+你可以只花几千美元，而不是十万美元,就可以把个人的基因绘制出来，你可以有能力辨识自己的（基因）倾向，
+去生产对你这个个体而言最有效的药物，这只是可以让我坐下来，与别人谈几个小时的科技创业的例子之一。"
+
+在最近与彭博社的一次采访中，奥巴马透露了自己想要进入科技风投界的想法。
+
+}
+
+---
+
+![爆发性增长的数据量](ch-7.images/image32.jpg)
+
+\note{
+
+Remember when you used to think that GenBank was ‘big’? The NCBI
+Sequence Read Archive (SRA) now dominates the NCBI FTP site and accounts
+for 1.14 Petabytes of storage (perhaps explaining why it is to be phased
+out). In comparison, the Genome and GenBank directories on the FTP site
+account for less than a tenth of one percent of all sequences. Sequences
+from ‘traditional’ sequencing methods now contribute less and less to
+genome projects. The so called ‘short’ reads – which are getting longer
+all the time –  dominate the scene.
+
+}
+
+---
+
+
+---
+
+\begin{figure}
+    \includegraphics[height=0.75\textheight, keepaspectratio]{ch-7.images/image34.jpg}
+    \caption{追踪罕见遗传疾病的致病基因\footnotemark}
+\end{figure}
+
+\footnotetext{\fullcite{lupski2010}}
+
+\note{
+
+研究人员首次通过测序有罕见遗传疾病的人的全部基因去追踪致病基因.
+
+休斯顿 Baylor 医学院遗传学家 James Lupski 和他的三个兄弟姐妹生来就有腓骨肌萎缩症, 这种遗传病会影响神经系统,
+使腿部和手臂肌肉变得虚弱. 因为基因测序费用已大幅下降, Baylor 医学院的研究人员测序了 Lupski 的 DNA, 然后将 注意力集中在
+40 个已知与神经疾病有关的基因. 他们在 SH3TC2 基因的两个副本上发现了突变, 该基因导致了腓骨肌萎缩症, 并可能参与了神经传递.
+其中一个突变之前从未报告过, Lupski 的三个兄弟姐妹也有相同的突变, 而他健康的双亲和 其他兄弟姐妹只有一个突变基因.
+报告发表在《新英格兰医学杂志》上. 测序费用总共花了 5 万美元.
+
+}
+
+## 人类基因组各组成成分的基本特征
+
+1. 基因
+    * 断裂基因
+2. 基因外 DNA
+    * 单拷贝序列和低拷贝数序列占 70--80%
+    * 中度和高度重复序列占 20--30%
+3. 分散重复序列
+4. 簇状重复序列
 
 # 7.5 非孟德尔式遗传
 
