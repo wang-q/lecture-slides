@@ -120,7 +120,7 @@ S, R 指的是菌落的表型
 
 ---
 
-![DNA 晶体的 X-射线衍射照片](ch-7.images/image12.jpg)
+![DNA 晶体的 X-射线衍射照片](ch-7.images/photo-51.jpg)
 
 \note{
 
