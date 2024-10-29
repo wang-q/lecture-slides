@@ -353,6 +353,8 @@ DOI:10.1021/jacs.5b02251
 
 ![不同生物基因组碱基对数目比较](ch-7.images/C-value.jpg)
 
+---
+
 人类基因组计划
 
 * 1985 年, 美国能源部正式提出人类基因组测序.
@@ -399,7 +401,7 @@ DOI:10.1021/jacs.5b02251
 
 \begin{figure}
     \begin{minipage}[b]{.48\linewidth}
-        \includegraphics{ch-7.images/ventor.jpg}
+        \includegraphics{ch-7.images/venter.jpg}
     \end{minipage}
 \hfill
     \begin{minipage}[b]{.48\linewidth}
