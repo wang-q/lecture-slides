@@ -101,7 +101,7 @@ DNA 就像是文件, 而 RNA 和蛋白质是电脑里其它的东西.
 
 ---
 
-![tRNA 结构](ch-21.images/tRNA-structure.jpg)
+![tRNA 结构](ch-9.images/tRNA-structure.jpg)
 
 ## 遗传密码
 
@@ -111,19 +111,19 @@ DNA 就像是文件, 而 RNA 和蛋白质是电脑里其它的东西.
 
 ---
 
-![遗传密码表](ch-21.images/image31.jpg)
+![遗传密码表](ch-9.images/image31.jpg)
 
 ---
 
-![tRNA 三级结构](ch-21.images/image32.jpg)
+![tRNA 三级结构](ch-9.images/image32.jpg)
 
 ---
 
-![摆动 (Wobble)](ch-21.images/image33.jpg)
+![摆动 (Wobble)](ch-9.images/image33.jpg)
 
 ---
 
-![阅读框及其重要性](ch-21.images/image34.jpg)
+![阅读框及其重要性](ch-9.images/image34.jpg)
 
 ## 9.1.3 基因的转录与 RNA 的加工
 
@@ -148,11 +148,11 @@ Protein 20 aa
 
 ---
 
-![基因转录起始](ch-21.images/image29.jpg)
+![基因转录起始](ch-9.images/image29.jpg)
 
 ---
 
-![转录](ch-21.images/image30.jpg)
+![转录](ch-9.images/image30.jpg)
 
 \note{
 
@@ -172,7 +172,7 @@ NTP
 
 ---
 
-![真核生物基因结构](ch-22.images/image20.jpg)
+![真核生物基因结构](ch-9.images/image20.jpg)
 
 ---
 
@@ -190,15 +190,15 @@ RNA 剪接
 
 ---
 
-![RNA 加帽, 多聚腺苷酸化和剪接](ch-22.images/image21.jpg)
+![RNA 加帽, 多聚腺苷酸化和剪接](ch-9.images/image21.jpg)
 
 ---
 
-![RNA 剪接](ch-22.images/image22.jpg)
+![RNA 剪接](ch-9.images/image22.jpg)
 
 ---
 
-![RNA 可变剪接](ch-22.images/image23.jpg)
+![RNA 可变剪接](ch-9.images/image23.jpg)
 
 ## 9.1.4 蛋白质的合成
 
@@ -210,15 +210,11 @@ RNA 剪接
 
 ---
 
-![核糖体](ch-21.images/image35.jpg)
+![核糖体与其中的的 tRNA 结合位点](ch-9.images/image35.jpg)
 
 ---
 
-![核糖体中的 tRNA 结合位点](ch-21.images/image36.jpg)
-
----
-
-![转录和翻译](ch-21.images/image38.jpg)
+![转录和翻译](ch-9.images/image38.jpg)
 
 ---
 
@@ -239,7 +235,7 @@ RNA 剪接
 
 ---
 
-![不同类型的细胞](ch-22.images/image1.jpg)
+![不同类型的细胞](ch-9.images/image1.jpg)
 
 \note{
 
@@ -280,7 +276,7 @@ RNA 剪接
 
 大肠杆菌的乳糖操纵子模型
 
-![大肠杆菌. 左: 结构示意图; 右: 扫描电镜照片.](ch-22.images/image2.jpg)
+![大肠杆菌. 左: 结构示意图; 右: 扫描电镜照片.](ch-9.images/image2.jpg)
 
 \note{
 
@@ -292,7 +288,7 @@ RNA 剪接
 
 ---
 
-![乳糖 (Lactose)](ch-22.images/image4.jpg)
+![乳糖 (Lactose)](ch-9.images/image4.jpg)
 
 \note{
 
@@ -304,12 +300,12 @@ RNA 剪接
 
 \begin{figure}
     \begin{minipage}[b]{.48\linewidth}
-        \includegraphics{ch-22.images/image5.jpg}
+        \includegraphics{ch-9.images/image5.jpg}
         \subcaption{Francois Jacob}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{.48\linewidth}
-        \includegraphics{ch-22.images/image6.jpg}
+        \includegraphics{ch-9.images/image6.jpg}
         \subcaption{Jacques Monod}
     \end{minipage}
     \caption{1965 年诺贝尔生理学或医学奖}
@@ -325,7 +321,7 @@ RNA 剪接
 
 ---
 
-![The \textit{lac} Operon](ch-22.images/image8.jpg)
+![The \textit{lac} Operon](ch-9.images/image8.jpg)
 
 ---
 
@@ -369,7 +365,7 @@ genes.
 
 ---
 
-![Leó Szilárd 提出了负调控模型的设想](ch-22.images/image9.jpg)
+![Leó Szilárd 提出了负调控模型的设想](ch-9.images/image9.jpg)
 
 \note{
 
@@ -387,7 +383,7 @@ Einstein-Szilárd letter
 
 ---
 
-![\textit{lac} 操纵子在染色体上的结构](ch-22.images/image10.jpg)
+![\textit{lac} 操纵子在染色体上的结构](ch-9.images/image10.jpg)
 
 ---
 
@@ -399,11 +395,11 @@ Einstein-Szilárd letter
 
 ---
 
-![乳糖操纵子模型](ch-22.images/image11.jpg)
+![乳糖操纵子模型](ch-9.images/image11.jpg)
 
 ---
 
-![对诱导物的响应](ch-22.images/image12.jpg)
+![对诱导物的响应](ch-9.images/image12.jpg)
 
 ## 其它类型的操纵子
 
@@ -416,15 +412,15 @@ Einstein-Szilárd letter
 
 ---
 
-![负调控](ch-22.images/image13.jpg)
+![负调控](ch-9.images/image13.jpg)
 
 ---
 
-![正调控](ch-22.images/image14.jpg)
+![正调控](ch-9.images/image14.jpg)
 
 ---
 
-![基因表达的负调控与正调控](ch-22.images/image15.jpg)
+![基因表达的负调控与正调控](ch-9.images/image15.jpg)
 
 ## 9.2.2 真核生物的基因表达调控
 
@@ -436,7 +432,7 @@ Einstein-Szilárd letter
 
 ---
 
-![\textit{KNAT1} 的表达](ch-22.images/image16.jpg)
+![\textit{KNAT1} 的表达](ch-9.images/image16.jpg)
 
 ---
 
@@ -468,15 +464,15 @@ Table: 不同的细胞有特异的基因表达方式
 
 ---
 
-![染色体结构](ch-22.images/image17.jpg)
+![染色体结构](ch-9.images/image17.jpg)
 
 ---
 
-![DNA 包装的层次](ch-22.images/image18.jpg)
+![DNA 包装的层次](ch-9.images/image18.jpg)
 
 ---
 
-![组蛋白的乙酰化](ch-22.images/image19.jpg)
+![组蛋白的乙酰化](ch-9.images/image19.jpg)
 
 ## 异染色质化与基因的表达失活
 
@@ -485,7 +481,7 @@ Table: 不同的细胞有特异的基因表达方式
 
 ---
 
-![玳瑁猫 Rainbow 和 cc](ch-22.images/Rainbow__cc__Allie2.jpg)
+![玳瑁猫 Rainbow 和 cc](ch-9.images/Rainbow__cc__Allie2.jpg)
 
 \note{
 
@@ -553,7 +549,7 @@ Up to 35% of interindividual variability in CRC risk has been attributed to gene
 
 ---
 
-![体细胞突变的积累](ch-24.images/image9.jpg)
+![体细胞突变的积累](ch-9.images/mutation-in-cancer.jpg)
 
 \note{
 
