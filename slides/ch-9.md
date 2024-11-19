@@ -272,7 +272,7 @@ RNA 剪接
 
 }
 
-## 9.2.1 单细胞原核生物的基因表达调控
+## 9.2.1 原核生物的基因表达调控
 
 大肠杆菌的乳糖操纵子模型
 
@@ -516,7 +516,7 @@ Up to 35% of interindividual variability in CRC risk has been attributed to gene
 ## 原癌基因和抑癌基因
 
 1. 病毒癌基因和原癌基因
-    * 1910年, Peyton Rous 鸡肉瘤
+    * 1910年, Peyton Rous, 鸡肉瘤的无细胞的抽提液, 诱发新的肉瘤
     * 1970年, Martin 等确定反转录病毒病毒基因与细胞癌变有关
     * 1976年, 分离出该基因 *src*
 2. 抑癌基因
@@ -561,7 +561,7 @@ acquired by the cancer cell and the processes that contribute to them.
 
 }
 
-## 改变生活方式能降低癌症的危险性
+---
 
 能够改变 DNA 的结构, 引起 DNA 损伤的物质, 可以使细胞癌变.
 
