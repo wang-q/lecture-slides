@@ -468,6 +468,12 @@ Table: 不同的细胞有特异的基因表达方式
 
 ![DNA 包装的层次](ch-9.images/image18.jpg)
 
+\note{
+
+请同学计算不折叠时, 人类 单倍体 DNA 的长度. 一匝 10 bp, 3.4 nm.
+
+}
+
 ---
 
 ![组蛋白的乙酰化](ch-9.images/image19.jpg)
