@@ -10,7 +10,6 @@ toc: true
 
 # 统计的科学基础
 
-
 ## 统计学是什么
 
 \includegraphics{biostat.images/symbols.png}

@@ -588,7 +588,7 @@ framework known as the "The Chain of Being."
 
 ---
 
-伽利略
+伽利略将数学引入了
 
 \note{
 
