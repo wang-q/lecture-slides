@@ -60,6 +60,8 @@ toc: true
 
 根据预测来检验
 
+https://x.com/mdancho84/status/1934210887260282916
+
 ## 分布与检验
 
 * $\chi^2$ 分布, *t* 分布, *F* 分布
